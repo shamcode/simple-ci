@@ -1,0 +1,10 @@
+{% import Header from './Header.sht' %}
+{% import Footer from './Footer.sht' %}
+
+<Header/>
+<main>
+    <pre>
+        Client fo simple-ci
+    </pre>
+</main>
+<Footer/>
