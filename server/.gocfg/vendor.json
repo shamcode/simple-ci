@@ -1,0 +1,17 @@
+{
+  "GitRepos": {
+    "vendor/src/github.com/elazarl/go-bindata-assetfs": {
+      "URI": "https://github.com/elazarl/go-bindata-assetfs",
+      "Ref": "38087fe4dafb822e541b3f7955075cc1c30bd294"
+    },
+    "vendor/src/github.com/jteeuwen/go-bindata": {
+      "URI": "https://github.com/jteeuwen/go-bindata",
+      "Ref": "6025e8de665b31fa74ab1a66f2cddd8c0abf887e"
+    },
+    "vendor/src/github.com/nytimes/gziphandler": {
+      "URI": "https://github.com/nytimes/gziphandler",
+      "Ref": "5032c8878b9dd46cfe8c625c0d9b9f258a560ee8"
+    }
+  },
+  "MercurialRepos": {}
+}
