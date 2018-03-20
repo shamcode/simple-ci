@@ -4,32 +4,26 @@ import (
 	"net/http"
 	"log"
 	"github.com/nytimes/gziphandler"
+	"fmt"
 )
 
+func bytesResponseHandler(callbackForBytesResponse func() ([]byte, error)) http.Handler {
+	bytes, err := callbackForBytesResponse()
+	if err != nil {
+		log.Fatal(err)
+	}
+	handler := http.HandlerFunc(func(writer http.ResponseWriter, request *http.Request) {
+		writer.Write(bytes)
+	})
+	return gziphandler.GzipHandler(handler)
+}
+
 func main() {
-	http.Handle("/", gziphandler.GzipHandler(http.HandlerFunc(func(writer http.ResponseWriter, request *http.Request) {
-		indexHtmlBytes, err := ClientIndexHtmlBytes()
-		if err != nil {
-			log.Fatal(err)
-		}
-		writer.Write(indexHtmlBytes)
-	})))
+	fmt.Print("Server start on port :3000\n")
 
-	http.Handle("/dist/bundle.css", gziphandler.GzipHandler(http.HandlerFunc(func(writer http.ResponseWriter, request *http.Request) {
-		bundleCssBytes, err := ClientDistBundleCssBytes()
-		if err != nil {
-			log.Fatal(err)
-		}
-		writer.Write(bundleCssBytes)
-	})))
-
-	http.Handle("/dist/bundle.js", gziphandler.GzipHandler(http.HandlerFunc(func(writer http.ResponseWriter, request *http.Request) {
-		bundleJsBytes, err := ClientDistBundleJsBytes()
-		if err != nil {
-			log.Fatal(err)
-		}
-		writer.Write(bundleJsBytes)
-	})))
+	http.Handle("/", bytesResponseHandler(ClientIndexHtmlBytes))
+	http.Handle("/dist/bundle.css", bytesResponseHandler(ClientDistBundleCssBytes))
+	http.Handle("/dist/bundle.js", bytesResponseHandler(ClientDistBundleJsBytes))
 
 	log.Fatal(http.ListenAndServe(":3000", nil))
 }
