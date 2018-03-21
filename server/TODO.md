@@ -1,2 +1,3 @@
 ## TODO
-* Serve static for client
+[x] Serve static for client
+* JWT-auth
