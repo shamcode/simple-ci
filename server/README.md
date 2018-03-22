@@ -8,6 +8,6 @@ wgo get github.com/elazarl/go-bindata-assetfs/...
 Build client before
 ```
 gvm use go1.8
-go-bindata-assetfs -o src/simpleci/bindata.go ../client/dist/ ../client/index.html
+go-bindata-assetfs -o src/assets/bindata.go -pkg assets ../client/dist/ ../client/index.html
 wgo install simpleci
 ```
