@@ -11,6 +11,14 @@
     "vendor/src/github.com/nytimes/gziphandler": {
       "URI": "https://github.com/nytimes/gziphandler",
       "Ref": "5032c8878b9dd46cfe8c625c0d9b9f258a560ee8"
+    },
+    "vendor/src/gopkg.in/gcfg.v1": {
+      "URI": "https://gopkg.in/gcfg.v1",
+      "Ref": "298b7a6a3838f79debfaee8bd3bfb2b8d779e756"
+    },
+    "vendor/src/gopkg.in/warnings.v0": {
+      "URI": "https://gopkg.in/warnings.v0",
+      "Ref": "ec4a0fea49c7b46c2aeb0b51aac55779c607e52b"
     }
   },
   "MercurialRepos": {}
