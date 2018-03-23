@@ -6,7 +6,7 @@ import (
 	"github.com/nytimes/gziphandler"
 )
 
-func BytesResponseHandler(callbackForBytesResponse func() ([]byte, error)) http.Handler {
+func bytesResponseHandler(callbackForBytesResponse func() ([]byte, error)) http.Handler {
 	bytes, err := callbackForBytesResponse()
 	if err != nil {
 		log.Fatal(err)

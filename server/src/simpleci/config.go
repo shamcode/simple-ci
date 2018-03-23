@@ -11,7 +11,7 @@ type Config struct {
 	}
 }
 
-func LoadConfiguration() Config {
+func loadConfiguration() Config {
 	var cfg Config
 	err := gcfg.ReadFileInto(&cfg, "config.cfg")
 	if err != nil {
