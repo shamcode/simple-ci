@@ -10,6 +10,12 @@ import (
 func main() {
 	cfg := loadConfiguration()
 
+	db := CreateDatabase(cfg.Database)
+	db.Connect()
+	defer db.Close()
+
+	db.CreateStructure()
+
 	fmt.Printf("Server start on port :%d\n", cfg.Server.Port)
 
 	http.Handle("/", bytesResponseHandler(assets.ClientIndexHtmlBytes))

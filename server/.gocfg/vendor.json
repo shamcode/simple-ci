@@ -1,5 +1,9 @@
 {
   "GitRepos": {
+    "vendor/src/github.com/bmizerany/pq": {
+      "URI": "https://github.com/bmizerany/pq",
+      "Ref": "da2b95e392c172df0be322eadc19a90b0f771548"
+    },
     "vendor/src/github.com/elazarl/go-bindata-assetfs": {
       "URI": "https://github.com/elazarl/go-bindata-assetfs",
       "Ref": "38087fe4dafb822e541b3f7955075cc1c30bd294"
