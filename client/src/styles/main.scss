@@ -1,5 +1,34 @@
+@import "widgets/projects-list";
+@import "widgets/page-data-loading";
+
 html, body {
   margin: 0;
   height: 100%;
   width: 100%;
+  font-family: Roboto, Noto, serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  header {
+    flex-basis: 5%;
+    padding-left: 5%;
+    background: #AED581;
+    .logo {
+      color: #455A64;
+      font-size: 34pt;
+      opacity: 0.87;
+      font-weight: normal;
+    }
+  }
+  main {
+    position: relative;
+    flex-grow: 1;
+    background: #C5E1A5;
+  }
+  footer {
+    padding-left: 25px;
+    background: #AED581;
+  }
 }

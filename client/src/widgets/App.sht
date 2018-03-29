@@ -1,10 +1,9 @@
+{% import ActivePageContainer from 'sham-ui-router/active-page-container' %}
 {% import Header from './Header.sht' %}
 {% import Footer from './Footer.sht' %}
 
 <Header/>
 <main>
-    <pre>
-        Client fo simple-ci
-    </pre>
+    <ActivePageContainer/>
 </main>
 <Footer/>
