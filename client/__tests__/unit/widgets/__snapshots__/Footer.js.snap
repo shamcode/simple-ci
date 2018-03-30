@@ -4,7 +4,7 @@ exports[`renders correctly 1`] = `
 Object {
   "ID": "widget",
   "constructorOptions": Object {},
-  "html": "<footer></footer>",
+  "html": "<footer> Sham 2018 </footer>",
   "nodes": Array [
     Object {
       "ID": undefined,

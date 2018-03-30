@@ -4,22 +4,8 @@ exports[`renders correctly 1`] = `
 Object {
   "ID": "widget",
   "constructorOptions": Object {},
-  "html": "<header><a class=\\"logo\\">Simple CI</a></header><!--Header--><main></main><footer> Sham 2018 </footer><!--Footer-->",
+  "html": "<!--if-->",
   "nodes": Array [
-    Object {
-      "ID": undefined,
-      "constructorOptions": null,
-      "html": null,
-      "nodes": null,
-      "options": null,
-    },
-    Object {
-      "ID": undefined,
-      "constructorOptions": null,
-      "html": null,
-      "nodes": null,
-      "options": null,
-    },
     Object {
       "ID": undefined,
       "constructorOptions": null,
