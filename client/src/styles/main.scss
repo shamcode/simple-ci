@@ -1,5 +1,7 @@
+@import "widgets/forms";
 @import "widgets/projects-list";
 @import "widgets/page-data-loading";
+@import "widgets/project-create-form";
 
 html, body {
   margin: 0;
@@ -20,6 +22,7 @@ body {
       font-size: 34pt;
       opacity: 0.87;
       font-weight: normal;
+      text-decoration: none;
     }
   }
   main {

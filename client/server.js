@@ -11,6 +11,10 @@ const compiler = webpack( config );
 app.use( webpackDevMiddleware( compiler, { noInfo: true, publicPath: config.output.publicPath } ) );
 app.use( webpackHotMiddleware( compiler ) );
 
+app.get( '/favicon.ico', function( req, res ) {
+    res.sendFile( __dirname + '/favicon.ico' )
+} );
+
 app.get( "*", function( req, res ) {
     res.sendFile( __dirname + '/index.html' )
 } );

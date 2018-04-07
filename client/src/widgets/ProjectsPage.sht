@@ -1,4 +1,4 @@
-{% import ProjectsList from './ProjectsList.sht' %}
+{% import ProjectsList from './ProjectsList' %}
 {% import PageDataLoading from './PageDataLoading.sht' %}
 {% import ErrorsPanel from './ErrorsPanel.sht' %}
 

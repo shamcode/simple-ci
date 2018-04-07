@@ -35,8 +35,9 @@
     "webpack-hot-middleware": "^2.20.0"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "sham-ui": "^1.3.5",
-    "sham-ui-router": "^0.0.2"
+    "sham-ui-router": "^0.0.3"
   },
   "babel": {
     "presets": [

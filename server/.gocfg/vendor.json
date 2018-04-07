@@ -12,6 +12,10 @@
       "URI": "https://github.com/jteeuwen/go-bindata",
       "Ref": "6025e8de665b31fa74ab1a66f2cddd8c0abf887e"
     },
+    "vendor/src/github.com/julienschmidt/httprouter": {
+      "URI": "https://github.com/julienschmidt/httprouter",
+      "Ref": "d1898390779332322e6b5ca5011da4bf249bb056"
+    },
     "vendor/src/github.com/nytimes/gziphandler": {
       "URI": "https://github.com/nytimes/gziphandler",
       "Ref": "5032c8878b9dd46cfe8c625c0d9b9f258a560ee8"

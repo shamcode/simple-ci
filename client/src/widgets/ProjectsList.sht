@@ -6,4 +6,7 @@
             </span>
         </a>
     {% endfor %}
+    <a class="project-card project-card-create" href="{{createProjectURL}}">
+        <div class="create-icon"></div>
+    </a>
 </div>

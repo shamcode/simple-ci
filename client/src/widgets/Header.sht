@@ -1,3 +1,8 @@
+{% import LinkTo from 'sham-ui-router/link-to' %}
+
 <header>
-    <a class="logo">Simple CI</a>
+    <LinkTo
+        text="Simple CI"
+        className="logo"
+        path="project-list"/>
 </header>

@@ -1,15 +1,23 @@
 import { DI } from 'sham-ui';
 import Router from 'sham-ui-router';
+import Store from '../services/store';
+import disabled from '../directives/disabled';
 import App from '../widgets/App.sht';
-import ProjectPage from '../widgets/ProjectsPage';
+import ProjectsPage from '../widgets/ProjectsPage';
+import ProjectCreatePage from '../widgets/ProjectCreatePage';
 
 export default function() {
+    new Store();
+
     const router = new Router();
     router
-        .bindPage( '/', 'project-list', ProjectPage, {} );
+        .bindPage( '/',                'project-list',   ProjectsPage,      {} )
+        .bindPage( '/projects/create', 'project-create', ProjectCreatePage, {} );
 
     const app = new App( 'body', 'app', {
-
+        directives: {
+            disabled
+        }
     } );
 
     DI.bind( 'widgets:app', app );

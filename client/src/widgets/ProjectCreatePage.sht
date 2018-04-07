@@ -1,0 +1,9 @@
+{% import ErrorsPanel from './ErrorsPanel.sht' %}
+{% import ProjectCreateForm from './ProjectCreateForm' %}
+
+<ErrorsPanel errors={{errors}}/>
+
+<ProjectCreateForm
+        dataSaving={{dataSaving}}
+        onSubmit={{this.createProject.bind( this )}}
+/>

@@ -17,3 +17,10 @@ func bytesResponseHandler(callbackForBytesResponse func() ([]byte, error), conte
 	})
 	return gziphandler.GzipHandler(handler)
 }
+
+func wrapHandler(handler func(http.ResponseWriter, *http.Request, *Db), db *Db) http.Handler {
+	handlerFunc := http.HandlerFunc(func(writer http.ResponseWriter, request *http.Request) {
+		handler(writer, request, db)
+	})
+	return gziphandler.GzipHandler(handlerFunc)
+}

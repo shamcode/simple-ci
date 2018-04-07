@@ -1,0 +1,21 @@
+<div class="project-create-form">
+    <form>
+        <div class="group">
+            <input name="name" type="text" required/>
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label>Name</label>
+        </div>
+        <div class="group">
+            <input name="cwd" type="text" required/>
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label>Current Work Directory</label>
+        </div>
+        <div class="group">
+            <button type="submit" :disabled={{dataSaving}} >
+                <span>Create</span>
+            </button>
+        </div>
+    </form>
+</div>
