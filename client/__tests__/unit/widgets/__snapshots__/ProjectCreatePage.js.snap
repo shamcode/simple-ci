@@ -3,8 +3,12 @@
 exports[`renders correctly 1`] = `
 Object {
   "ID": "widget",
-  "constructorOptions": Object {},
-  "html": "<!--ErrorsPanel--><!--ProjectCreateForm-->",
+  "constructorOptions": Object {
+    "directives": Object {
+      "disabled": [Function],
+    },
+  },
+  "html": "<!--if--><!--ErrorsPanel--><div class=\\"project-create-form\\"><form><div class=\\"group\\"><input name=\\"name\\" type=\\"text\\" required=\\"\\"><span class=\\"highlight\\"></span><span class=\\"bar\\"></span><label>Name</label></div><div class=\\"group\\"><input name=\\"cwd\\" type=\\"text\\" required=\\"\\"><span class=\\"highlight\\"></span><span class=\\"bar\\"></span><label>Current Work Directory</label></div><div class=\\"group\\"><button type=\\"submit\\"><span>Create</span></button></div></form></div><!--ProjectCreateForm-->",
   "nodes": Array [
     Object {
       "ID": undefined,
@@ -26,6 +30,11 @@ Object {
       "render",
       "bindEvents",
     ],
+    "dataSaving": false,
+    "directives": Object {
+      "disabled": [Function],
+    },
+    "errors": Array [],
     "renderAsync": false,
     "renderDependence": Array [],
     "types": Array [],

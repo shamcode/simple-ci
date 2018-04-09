@@ -17,14 +17,13 @@ export default class ProjectsPage extends ProjectsPageTemplate {
         this.store.getProjects().then(
             ::this._loadedPageDataSuccess,
             ::this._loadedPageDataFail
-        ).finally(
-            () => this.update( { dataLoaded: true } )
-        )
+        );
     }
 
     _loadedPageDataSuccess( { projects } ) {
         this.update( {
             projects,
+            dataLoaded: true,
             errors: []
         } )
     }
@@ -32,6 +31,7 @@ export default class ProjectsPage extends ProjectsPageTemplate {
     _loadedPageDataFail() {
         this.update( {
             projects: [],
+            dataLoaded: true,
             errors: [ "Fail loaded project!" ]
         } )
     }

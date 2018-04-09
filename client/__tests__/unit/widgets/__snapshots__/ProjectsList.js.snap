@@ -4,7 +4,7 @@ exports[`renders correctly 1`] = `
 Object {
   "ID": "widget",
   "constructorOptions": Object {},
-  "html": "<div class=\\"project-list\\"><!--for--><a class=\\"project-card project-card-create\\"><div class=\\"create-icon\\"></div></a></div>",
+  "html": "<div class=\\"project-list\\"><!--for--><a class=\\"project-card project-card-create\\" href=\\"/\\"><div class=\\"create-icon\\"></div></a></div>",
   "nodes": Array [
     Object {
       "ID": undefined,
@@ -19,6 +19,7 @@ Object {
       "render",
       "bindEvents",
     ],
+    "createProjectURL": "/",
     "renderAsync": false,
     "renderDependence": Array [],
     "types": Array [],
