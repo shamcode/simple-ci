@@ -1,3 +1,4 @@
+import { DI } from 'sham-ui';
 import App from '../../../src/widgets/App.sht';
 import renderer from 'sham-ui-test-helpers';
 import DummyPage from './DummyPage.sht';
