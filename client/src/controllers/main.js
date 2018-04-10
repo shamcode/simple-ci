@@ -2,6 +2,7 @@ import { DI } from 'sham-ui';
 import Router from 'sham-ui-router';
 import Store from '../services/store';
 import disabled from '../directives/disabled';
+import EventListenerDirectives from '../directives/event-listener';
 import App from '../widgets/App.sht';
 import ProjectsPage from '../widgets/ProjectsPage';
 import ProjectCreatePage from '../widgets/ProjectCreatePage';
@@ -16,7 +17,8 @@ export default function() {
 
     const app = new App( 'body', 'app', {
         directives: {
-            disabled
+            disabled,
+            ...EventListenerDirectives
         }
     } );
 

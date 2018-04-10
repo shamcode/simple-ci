@@ -9,29 +9,6 @@ export default class ProjectCreateForm extends ProjectCreateFormTemplate {
         return this.querySelector( 'form' );
     }
 
-    bindEvents() {
-        this.__bindedSubmitForm = this._submitForm.bind( this );
-        this.formNode.addEventListener(
-            'submit',
-            this.__bindedSubmitForm
-        )
-    }
-
-    destroy() {
-        this.formNode.removeEventListener(
-            'submit',
-            this.__bindedSubmitForm
-        );
-    }
-
-    remove() {
-        this.formNode.removeEventListener(
-            'submit',
-            this.__bindedSubmitForm
-        );
-        super.remove( ...arguments );
-    }
-
     _submitForm( e ) {
         e.preventDefault();
         const formData = new FormData( this.formNode );

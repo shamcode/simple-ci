@@ -3,7 +3,12 @@
 exports[`renders correctly 1`] = `
 Object {
   "ID": "widget",
-  "constructorOptions": Object {},
+  "constructorOptions": Object {
+    "directives": Object {
+      "onclick": [Function],
+      "onsubmit": [Function],
+    },
+  },
   "html": "<div class=\\"project-list\\"><!--for--><a class=\\"project-card project-card-create\\" href=\\"/\\"><div class=\\"create-icon\\"></div></a></div>",
   "nodes": Array [
     Object {
@@ -20,6 +25,10 @@ Object {
       "bindEvents",
     ],
     "createProjectURL": "/",
+    "directives": Object {
+      "onclick": [Function],
+      "onsubmit": [Function],
+    },
     "renderAsync": false,
     "renderDependence": Array [],
     "types": Array [],

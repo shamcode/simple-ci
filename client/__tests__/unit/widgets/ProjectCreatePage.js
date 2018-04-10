@@ -1,6 +1,7 @@
 import { DI } from 'sham-ui';
 import ProjectCreatePage from '../../../src/widgets/ProjectCreatePage';
 import disabled from '../../../src/directives/disabled';
+import directives from '../../../src/directives/event-listener';
 import renderer from 'sham-ui-test-helpers';
 
 afterEach( () => {
@@ -14,7 +15,8 @@ it( 'renders correctly', () => {
 
     const meta = renderer( ProjectCreatePage, {
         directives: {
-            disabled
+            disabled,
+            ...directives
         }
     } );
     expect( meta.toJSON() ).toMatchSnapshot();

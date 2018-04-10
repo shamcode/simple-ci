@@ -6,7 +6,11 @@
             </span>
         </a>
     {% endfor %}
-    <a class="project-card project-card-create" href="{{createProjectURL}}">
+    <a
+            class="project-card project-card-create"
+            href="{{createProjectURL}}"
+            :onclick={{this._clickToCreateNewProject.bind(this)}}
+    >
         <div class="create-icon"></div>
     </a>
 </div>

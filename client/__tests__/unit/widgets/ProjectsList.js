@@ -1,4 +1,5 @@
 import ProjectsList from '../../../src/widgets/ProjectsList.js';
+import directives from '../../../src/directives/event-listener';
 import renderer from 'sham-ui-test-helpers';
 
 afterEach( () => {
@@ -10,6 +11,6 @@ it( 'renders correctly', () => {
         generate: jest.fn().mockReturnValueOnce( '/' )
     } );
 
-    const meta = renderer( ProjectsList, {} );
+    const meta = renderer( ProjectsList, { directives } );
     expect( meta.toJSON() ).toMatchSnapshot();
 } );

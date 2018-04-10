@@ -1,5 +1,5 @@
 <div class="project-create-form">
-    <form>
+    <form :onsubmit={{this._submitForm.bind(this)}}>
         <div class="group">
             <input name="name" type="text" required/>
             <span class="highlight"></span>
