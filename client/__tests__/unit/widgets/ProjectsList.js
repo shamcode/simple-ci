@@ -7,10 +7,28 @@ afterEach( () => {
 } );
 
 it( 'renders correctly', () => {
+    const generateMock = jest.fn().mockReturnValueOnce( '/' );
     DI.bind( 'router', {
-        generate: jest.fn().mockReturnValueOnce( '/' )
+        generate: generateMock
     } );
 
     const meta = renderer( ProjectsList, { directives } );
+    expect( generateMock.mock.calls.length ).toBe( 1 );
+    expect( generateMock.mock.calls[ 0 ][ 0 ] ).toEqual( "project-create" );
+    expect( Object.keys( generateMock.mock.calls[ 0 ][ 1 ] ).length ).toBe( 0 );
+    expect( meta.toJSON() ).toMatchSnapshot();
+} );
+
+it( 'go to create page', () => {
+    const navigateMock = jest.fn();
+    DI.bind( 'router', {
+        generate: jest.fn().mockReturnValueOnce( '/' ),
+        navigate: navigateMock
+    } );
+
+    const meta = renderer( ProjectsList, { directives } );
+    meta.widget.querySelector( '.project-card-create' ).click();
+
+    expect( navigateMock.mock.calls.length ).toBe( 1 );
     expect( meta.toJSON() ).toMatchSnapshot();
 } );
