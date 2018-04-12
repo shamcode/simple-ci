@@ -4,7 +4,15 @@ exports[`renders correctly 1`] = `
 Object {
   "ID": "widget",
   "constructorOptions": Object {},
-  "html": "<header><a href=\\"/\\" class=\\"logo\\">Simple CI</a></header><!--Header--><main></main><footer> Sham 2018 </footer><!--Footer-->",
+  "html": "
+<header>
+  <a href=\\"/\\" class=\\"logo\\">Simple CI</a>
+</header>
+<!--Header-->
+<main></main>
+<footer> Sham 2018 </footer>
+<!--Footer-->
+",
   "nodes": Array [
     Object {
       "ID": undefined,

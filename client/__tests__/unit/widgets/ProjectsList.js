@@ -32,3 +32,18 @@ it( 'go to create page', () => {
     expect( navigateMock.mock.calls.length ).toBe( 1 );
     expect( meta.toJSON() ).toMatchSnapshot();
 } );
+
+it( 'renders list', () => {
+    DI.bind( 'router', {
+        generate: jest.fn().mockReturnValueOnce( '/' )
+    } );
+
+    const meta = renderer( ProjectsList, {
+        directives,
+        projects: [
+            { id: 1, name: 'Simple CI', cwd: '/tmp/' },
+            { id: 1, name: 'ShamUI', cwd: '/home/' }
+        ]
+    } );
+    expect( meta.toJSON() ).toMatchSnapshot();
+} );

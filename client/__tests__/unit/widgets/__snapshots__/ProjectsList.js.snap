@@ -9,7 +9,14 @@ Object {
       "onsubmit": [Function],
     },
   },
-  "html": "<div class=\\"project-list\\"><!--for--><a class=\\"project-card project-card-create\\" href=\\"/\\"><div class=\\"create-icon\\"></div></a></div>",
+  "html": "
+<div class=\\"project-list\\">
+  <!--for-->
+  <a class=\\"project-card project-card-create\\" href=\\"/\\">
+    <div class=\\"create-icon\\"></div>
+  </a>
+</div>
+",
   "nodes": Array [
     Object {
       "ID": undefined,
@@ -45,7 +52,14 @@ Object {
       "onsubmit": [Function],
     },
   },
-  "html": "<div class=\\"project-list\\"><!--for--><a class=\\"project-card project-card-create\\" href=\\"/\\"><div class=\\"create-icon\\"></div></a></div>",
+  "html": "
+<div class=\\"project-list\\">
+  <!--for-->
+  <a class=\\"project-card project-card-create\\" href=\\"/\\">
+    <div class=\\"create-icon\\"></div>
+  </a>
+</div>
+",
   "nodes": Array [
     Object {
       "ID": undefined,
@@ -65,6 +79,75 @@ Object {
       "onclick": [Function],
       "onsubmit": [Function],
     },
+    "renderAsync": false,
+    "renderDependence": Array [],
+    "types": Array [],
+  },
+}
+`;
+
+exports[`renders list 1`] = `
+Object {
+  "ID": "widget",
+  "constructorOptions": Object {
+    "directives": Object {
+      "onclick": [Function],
+      "onsubmit": [Function],
+    },
+    "projects": Array [
+      Object {
+        "cwd": "/tmp/",
+        "id": 1,
+        "name": "Simple CI",
+      },
+      Object {
+        "cwd": "/home/",
+        "id": 1,
+        "name": "ShamUI",
+      },
+    ],
+  },
+  "html": "
+<div class=\\"project-list\\">
+  <a class=\\"project-card\\" href=\\"#\\"><span class=\\"name\\">Simple CI</span></a>
+  <a class=\\"project-card\\" href=\\"#\\"><span class=\\"name\\">ShamUI</span></a>
+  <!--for-->
+  <a class=\\"project-card project-card-create\\" href=\\"/\\">
+    <div class=\\"create-icon\\"></div>
+  </a>
+</div>
+",
+  "nodes": Array [
+    Object {
+      "ID": undefined,
+      "constructorOptions": null,
+      "html": null,
+      "nodes": null,
+      "options": null,
+    },
+  ],
+  "options": Object {
+    "actionSequence": Array [
+      "render",
+      "bindEvents",
+    ],
+    "createProjectURL": "/",
+    "directives": Object {
+      "onclick": [Function],
+      "onsubmit": [Function],
+    },
+    "projects": Array [
+      Object {
+        "cwd": "/tmp/",
+        "id": 1,
+        "name": "Simple CI",
+      },
+      Object {
+        "cwd": "/home/",
+        "id": 1,
+        "name": "ShamUI",
+      },
+    ],
     "renderAsync": false,
     "renderDependence": Array [],
     "types": Array [],
