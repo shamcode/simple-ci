@@ -2,10 +2,10 @@ package main
 
 import (
 	"net/http"
-	"log"
-	"fmt"
 	"assets"
 	"github.com/julienschmidt/httprouter"
+	log "github.com/sirupsen/logrus"
+	"strconv"
 )
 
 func main() {
@@ -32,7 +32,8 @@ func main() {
 	router.Handler("GET", "/", root)
 	router.NotFound = root
 
-	fmt.Printf("Server start on port :%d\n", cfg.Server.Port)
-	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%d", cfg.Server.Port), router))
+	port := strconv.Itoa(cfg.Server.Port)
+	log.Infof("Server start on port :%s", port)
+	log.Fatal(http.ListenAndServe(":" + port, router))
 }
 

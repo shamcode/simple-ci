@@ -20,6 +20,18 @@
       "URI": "https://github.com/nytimes/gziphandler",
       "Ref": "5032c8878b9dd46cfe8c625c0d9b9f258a560ee8"
     },
+    "vendor/src/github.com/sirupsen/logrus": {
+      "URI": "https://github.com/sirupsen/logrus",
+      "Ref": "778f2e774c725116edbc3d039dc0dfc1cc62aae8"
+    },
+    "vendor/src/golang.org/x/crypto": {
+      "URI": "https://go.googlesource.com/crypto",
+      "Ref": "d6449816ce06963d9d136eee5a56fca5b0616e7e"
+    },
+    "vendor/src/golang.org/x/sys": {
+      "URI": "https://go.googlesource.com/sys",
+      "Ref": "3b87a42e500a6dc65dae1a55d0b641295971163e"
+    },
     "vendor/src/gopkg.in/gcfg.v1": {
       "URI": "https://gopkg.in/gcfg.v1",
       "Ref": "298b7a6a3838f79debfaee8bd3bfb2b8d779e756"

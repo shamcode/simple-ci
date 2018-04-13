@@ -4,7 +4,7 @@ import (
 	_ "github.com/bmizerany/pq"
 	"database/sql"
 	"fmt"
-	"log"
+	log "github.com/sirupsen/logrus"
 )
 
 type Db struct {
@@ -38,6 +38,7 @@ func (db *Db) Close() {
 }
 
 func (db *Db) CreateStructure() {
+	log.Info("Create DB schema")
 	_, err := db.connection.Exec(`CREATE TABLE IF NOT EXISTS project("id" SERIAL PRIMARY KEY, "name" varchar(50), "cwd" varchar(255));`)
 	if err != nil {
 		log.Fatal(err)

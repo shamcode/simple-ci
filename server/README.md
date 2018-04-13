@@ -3,6 +3,7 @@
 wgo get github.com/jteeuwen/go-bindata/...
 wgo get github.com/elazarl/go-bindata-assetfs/...
 wgo get github.com/julienschmidt/httprouter
+wgo get github.com/sirupsen/logrus
 ```
 
 # Build
