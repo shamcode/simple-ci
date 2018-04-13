@@ -1,3 +1,4 @@
 ## TODO
 * JWT-auth
-* Create new project
+* [x] Create new project
+* Project detail page
