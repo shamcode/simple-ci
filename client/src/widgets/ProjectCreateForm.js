@@ -13,7 +13,10 @@ export default class ProjectCreateForm extends ProjectCreateFormTemplate {
         e.preventDefault();
         const formData = new FormData( this.formNode );
         const data = {};
-        formData.forEach( ( value, key ) => data[ key ] = value );
+        [
+            'name',
+            'cwd'
+        ].forEach( ( key ) => data[ key ] = formData.get( key ) );
         this.options.onSubmit( data );
     }
 }
