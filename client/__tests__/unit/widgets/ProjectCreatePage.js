@@ -21,3 +21,68 @@ it( 'renders correctly', () => {
     } );
     expect( meta.toJSON() ).toMatchSnapshot();
 } );
+
+it( 'create', () => {
+    DI.bind( 'router', {
+        generate: jest.fn().mockReturnValueOnce( '/' ),
+        navigate: jest.fn()
+    } );
+    const createProjectMock = jest.fn();
+    DI.bind( 'store', {
+        createProject: createProjectMock.mockReturnValueOnce( Promise.resolve() )
+    } );
+
+    const { widget: { container } } = renderer( ProjectCreatePage, {
+        directives: {
+            disabled,
+            ...directives
+        }
+    } );
+    const formData = {
+        name: 'Test name',
+        cwd: 'test cwd'
+    };
+    container.querySelector( '[name="name"]' ).value = formData.name;
+    container.querySelector( '[name="cwd"]' ).value = formData.cwd;
+    container.querySelector( '[type="submit"]' ).click();
+
+
+    expect( createProjectMock.mock.calls.length ).toBe( 1 );
+    expect( createProjectMock.mock.calls[ 0 ].length ).toBe( 1 );
+
+    const data = createProjectMock.mock.calls[ 0 ][ 0 ];
+    expect( Object.keys( data ) ).toEqual( [ 'name', 'cwd' ] );
+    expect( data.name ).toBe( formData.name );
+    expect( data.cwd ).toBe( formData.cwd );
+} );
+
+it( 'create fail', () => {
+    DI.bind( 'router', {
+        generate: jest.fn().mockReturnValueOnce( '/' ),
+        navigate: jest.fn()
+    } );
+    const createProjectMock = jest.fn();
+    DI.bind( 'store', {
+        createProject: createProjectMock.mockReturnValueOnce( Promise.reject() )
+    } );
+
+    const meta = renderer( ProjectCreatePage, {
+        directives: {
+            disabled,
+            ...directives
+        }
+    } );
+    const formData = {
+        name: 'Test name',
+        cwd: 'test cwd'
+    };
+    const { widget: { container } } = meta;
+    container.querySelector( '[name="name"]' ).value = formData.name;
+    container.querySelector( '[name="cwd"]' ).value = formData.cwd;
+    container.querySelector( '[type="submit"]' ).click();
+
+
+    expect( createProjectMock.mock.calls.length ).toBe( 1 );
+    expect( createProjectMock.mock.calls[ 0 ].length ).toBe( 1 );
+    expect( meta.toJSON() ).toMatchSnapshot();
+} );

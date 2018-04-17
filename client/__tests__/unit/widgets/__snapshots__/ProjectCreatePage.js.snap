@@ -1,5 +1,70 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`create fail 1`] = `
+Object {
+  "ID": "widget",
+  "constructorOptions": Object {
+    "directives": Object {
+      "disabled": [Function],
+      "onclick": [Function],
+      "onsubmit": [Function],
+    },
+  },
+  "html": "
+<!--if-->
+<!--ErrorsPanel-->
+<div class=\\"project-create-form\\">
+  <form>
+    <div class=\\"group\\">
+      <input name=\\"name\\" type=\\"text\\" required=\\"\\"><span class=\\"highlight\\"></span><span class=\\"bar\\"></span>
+      <label>Name</label>
+    </div>
+    <div class=\\"group\\">
+      <input name=\\"cwd\\" type=\\"text\\" required=\\"\\"><span class=\\"highlight\\"></span><span class=\\"bar\\"></span>
+      <label>Current Work Directory</label>
+    </div>
+    <div class=\\"group\\">
+      <button type=\\"submit\\" disabled=\\"\\"><span>Create</span></button>
+    </div>
+  </form>
+</div>
+<!--ProjectCreateForm-->
+",
+  "nodes": Array [
+    Object {
+      "ID": undefined,
+      "constructorOptions": null,
+      "html": null,
+      "nodes": null,
+      "options": null,
+    },
+    Object {
+      "ID": undefined,
+      "constructorOptions": null,
+      "html": null,
+      "nodes": null,
+      "options": null,
+    },
+  ],
+  "options": Object {
+    "actionSequence": Array [
+      "render",
+      "bindEvents",
+    ],
+    "dataSaving": true,
+    "directives": Object {
+      "disabled": [Function],
+      "onclick": [Function],
+      "onsubmit": [Function],
+    },
+    "errors": Array [],
+    "renderAsync": false,
+    "renderDependence": Array [],
+    "types": Array [],
+  },
+}
+`;
+
 exports[`renders correctly 1`] = `
 Object {
   "ID": "widget",
