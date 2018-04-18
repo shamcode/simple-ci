@@ -4,8 +4,8 @@ import Store from '../services/store';
 import disabled from '../directives/disabled';
 import EventListenerDirectives from '../directives/event-listener';
 import App from '../widgets/App.sht';
-import ProjectsPage from '../widgets/ProjectsPage';
-import ProjectCreatePage from '../widgets/ProjectCreatePage';
+import ProjectsPage from '../widgets/project-list/page';
+import ProjectCreatePage from '../widgets/project-create/page';
 
 export default function() {
     new Store();

@@ -1,6 +1,6 @@
-import ProjectCreateForm from '../../../src/widgets/ProjectCreateForm';
-import disabled from '../../../src/directives/disabled';
-import directives from '../../../src/directives/event-listener';
+import ProjectCreateForm from '../../../../src/widgets/project-create/ProjectCreateForm';
+import disabled from '../../../../src/directives/disabled';
+import directives from '../../../../src/directives/event-listener';
 import renderer from 'sham-ui-test-helpers';
 
 it( 'renders correctly', () => {

@@ -1,5 +1,5 @@
 import { options, inject } from 'sham-ui';
-import ProjectsPageTemplate from './ProjectsPage.sht';
+import ProjectsPageTemplate from './page.sht';
 
 export default class ProjectsPage extends ProjectsPageTemplate {
     @inject store = 'store';

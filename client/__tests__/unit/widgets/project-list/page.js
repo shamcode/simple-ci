@@ -1,6 +1,6 @@
 import { DI } from 'sham-ui';
-import ProjectsPage from '../../../src/widgets/ProjectsPage';
-import directives from '../../../src/directives/event-listener';
+import ProjectsPage from '../../../../src/widgets/project-list/page';
+import directives from '../../../../src/directives/event-listener';
 import renderer from 'sham-ui-test-helpers';
 
 

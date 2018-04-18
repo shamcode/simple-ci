@@ -1,4 +1,4 @@
-{% import ErrorsPanel from './ErrorsPanel.sht' %}
+{% import ErrorsPanel from '../ErrorsPanel.sht' %}
 {% import ProjectCreateForm from './ProjectCreateForm' %}
 
 <ErrorsPanel errors={{errors}}/>

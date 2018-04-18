@@ -1,7 +1,7 @@
 import { DI } from 'sham-ui';
-import ProjectCreatePage from '../../../src/widgets/ProjectCreatePage';
-import disabled from '../../../src/directives/disabled';
-import directives from '../../../src/directives/event-listener';
+import ProjectCreatePage from '../../../../src/widgets/project-create/page';
+import disabled from '../../../../src/directives/disabled';
+import directives from '../../../../src/directives/event-listener';
 import renderer from 'sham-ui-test-helpers';
 
 afterEach( () => {

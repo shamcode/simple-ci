@@ -1,6 +1,6 @@
 {% import ProjectsList from './ProjectsList' %}
-{% import PageDataLoading from './PageDataLoading.sht' %}
-{% import ErrorsPanel from './ErrorsPanel.sht' %}
+{% import PageDataLoading from '../PageDataLoading.sht' %}
+{% import ErrorsPanel from '../ErrorsPanel.sht' %}
 
 {% if dataLoaded %}
     <ErrorsPanel errors="{{errors}}"/>

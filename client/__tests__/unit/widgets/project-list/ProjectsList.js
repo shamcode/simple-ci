@@ -1,5 +1,5 @@
-import ProjectsList from '../../../src/widgets/ProjectsList.js';
-import directives from '../../../src/directives/event-listener';
+import ProjectsList from '../../../../src/widgets/project-list/ProjectsList';
+import directives from '../../../../src/directives/event-listener';
 import renderer from 'sham-ui-test-helpers';
 
 afterEach( () => {
