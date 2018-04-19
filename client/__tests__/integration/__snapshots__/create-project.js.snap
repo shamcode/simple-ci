@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`main page 1`] = `
+"<header>
+  <a href=\\"\\" class=\\"logo\\">Simple CI</a>
+</header>
+<!--Header-->
+<main>
+  <!--if-->
+  <!--ErrorsPanel-->
+  <div class=\\"project-create-form\\">
+    <form>
+      <div class=\\"group\\">
+        <input name=\\"name\\" type=\\"text\\" required=\\"\\"><span class=\\"highlight\\"></span><span class=\\"bar\\"></span>
+        <label>Name</label>
+      </div>
+      <div class=\\"group\\">
+        <input name=\\"cwd\\" type=\\"text\\" required=\\"\\"><span class=\\"highlight\\"></span><span class=\\"bar\\"></span>
+        <label>Current Work Directory</label>
+      </div>
+      <div class=\\"group\\">
+        <button type=\\"submit\\"><span>Create</span></button>
+      </div>
+    </form>
+  </div>
+  <!--ProjectCreateForm-->
+</main>
+<footer> Sham 2018 </footer>
+<!--Footer-->"
+`;
+
+exports[`main page 2`] = `
+"<header>
+  <a href=\\"\\" class=\\"logo\\">Simple CI</a>
+</header>
+<!--Header-->
+<main>
+  <!--if-->
+  <!--ErrorsPanel-->
+  <div class=\\"project-list\\">
+    <!--for-->
+    <a class=\\"project-card project-card-create\\" href=\\"/projects/create\\">
+      <div class=\\"create-icon\\"></div>
+    </a>
+  </div>
+  <!--ProjectsList-->
+  <!--if-->
+</main>
+<footer> Sham 2018 </footer>
+<!--Footer-->"
+`;
