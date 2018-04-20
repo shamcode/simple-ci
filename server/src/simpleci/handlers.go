@@ -4,16 +4,34 @@ import (
 	"net/http"
 	"encoding/json"
 	"github.com/julienschmidt/httprouter"
+	"strconv"
+	"database/sql"
 )
 
-func optionsHandler(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+func getID(w http.ResponseWriter, ps httprouter.Params) (int, bool) {
+	id, err := strconv.Atoi(ps.ByName("id"))
+	if err != nil {
+		w.WriteHeader(400)
+		return 0, false
+	}
+	return id, true
+}
+
+func setAllowOriginHeader(w http.ResponseWriter) {
 	w.Header().Set("Access-Control-Allow-Origin", "*")
+}
+
+func setJsonContentTypeHeader(w http.ResponseWriter) {
+	w.Header().Set("Content-Type", "application/json; charset=utf-8")
+}
+
+func optionsHandler(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+	setAllowOriginHeader(w)
 	w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Access-Control-Allow-Headers")
 }
 
 func getProjects(w http.ResponseWriter, r *http.Request, db *Db) {
-	w.Header().Set("Content-Type", "application/json; charset=utf-8")
-	w.Header().Set("Access-Control-Allow-Origin", "*")
+	setAllowOriginHeader(w)
 	projects, err := db.GetProjects()
 	if err != nil {
 		w.WriteHeader(500)
@@ -21,12 +39,36 @@ func getProjects(w http.ResponseWriter, r *http.Request, db *Db) {
 	}
 	if err = json.NewEncoder(w).Encode(projects); err != nil {
 		w.WriteHeader(500)
+		return
 	}
+	setJsonContentTypeHeader(w)
+}
+
+func getProjectById(w http.ResponseWriter, r *http.Request, db *Db) {
+	setAllowOriginHeader(w)
+	ps := httprouter.ParamsFromContext(r.Context())
+	id, ok := getID(w, ps)
+	if !ok {
+		return
+	}
+	project, err := db.GetProjectById(id)
+	if err != nil {
+		if err == sql.ErrNoRows {
+			w.WriteHeader(404)
+			return
+		}
+		w.WriteHeader(500)
+		return
+	}
+	if err = json.NewEncoder(w).Encode(project); err != nil {
+		w.WriteHeader(500)
+		return
+	}
+	setJsonContentTypeHeader(w)
 }
 
 func createProject(w http.ResponseWriter, r *http.Request, db *Db) {
-	w.Header().Set("Content-Type", "application/json; charset=utf-8")
-	w.Header().Set("Access-Control-Allow-Origin", "*")
+	setAllowOriginHeader(w)
 	var project Project
 	err := json.NewDecoder(r.Body).Decode(&project)
 	if err != nil || project.Name == "" || project.Cwd == "" {
@@ -37,5 +79,6 @@ func createProject(w http.ResponseWriter, r *http.Request, db *Db) {
 		w.WriteHeader(500)
 		return
 	}
+	setJsonContentTypeHeader(w)
 	w.WriteHeader(201)
 }

@@ -20,6 +20,7 @@ func main() {
 	router := httprouter.New()
 
 	router.Handler("GET", "/api/v1/projects", wrapHandler(getProjects, db))
+	router.Handler("GET", "/api/v1/projects/:id", wrapHandler(getProjectById, db))
 	router.Handler("POST", "/api/v1/projects", wrapHandler(createProject, db))
 
 	router.Handle("OPTIONS", "/*path", optionsHandler)

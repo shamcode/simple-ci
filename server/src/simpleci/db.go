@@ -66,6 +66,12 @@ func (db *Db) GetProjects() ([]Project, error) {
 	return projects, nil
 }
 
+func (db *Db) GetProjectById(id int) (Project, error) {
+	var project Project
+	row := db.connection.QueryRow("SELECT * FROM project WHERE id=$1", id)
+	return project, row.Scan(&project.Id, &project.Name, &project.Cwd)
+}
+
 func (db *Db) CreateProject(name, cwd string) (sql.Result, error) {
 	return db.connection.Exec("INSERT INTO project VALUES (default, $1, $2)",
 		name, cwd)

@@ -4,4 +4,6 @@
 * [x] Create DB tables
 * [x] Get projects
 * [x] Create project
-* Get project by ID
+* [x] Get project by ID
+* Edit project
+* Delete project
