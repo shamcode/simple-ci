@@ -19,6 +19,13 @@ export default class Store {
             .then( ( { data } ) => ( { projects: data } ) );
     }
 
+    getProjectById( id ) {
+        return PRIVATE_MEMBERS
+            .get( this )
+            .get( `/projects/${id}` )
+            .then( ( { data } ) => ( { project: data } ) );
+    }
+
     createProject( data ) {
         return PRIVATE_MEMBERS
             .get( this )

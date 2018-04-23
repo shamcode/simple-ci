@@ -39,7 +39,7 @@ exports[`main page 2`] = `
   <!--ErrorsPanel-->
   <div class=\\"project-list\\">
     <!--for-->
-    <a class=\\"project-card project-card-create\\" href=\\"/projects/create\\">
+    <a class=\\"project-card project-card-create\\" href=\\"projects/create\\">
       <div class=\\"create-icon\\"></div>
     </a>
   </div>

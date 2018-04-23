@@ -26,6 +26,8 @@ it( 'main page', async() => {
         };
     } );
 
+    window.location.href = 'http://simple-ci.example.com';
+
     const body = document.querySelector( 'body' );
 
     DI.bind( 'widget-binder', controller );

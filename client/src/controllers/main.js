@@ -6,14 +6,17 @@ import EventListenerDirectives from '../directives/event-listener';
 import App from '../widgets/App.sht';
 import ProjectsPage from '../widgets/project-list/page';
 import ProjectCreatePage from '../widgets/project-create/page';
+import ProjectDetailPage from '../widgets/project-detail/page';
 
 export default function() {
     new Store();
 
-    const router = new Router();
+    const router = new Router( '/' );
     router
-        .bindPage( '/',                'project-list',   ProjectsPage,      {} )
-        .bindPage( '/projects/create', 'project-create', ProjectCreatePage, {} );
+        .bindPage( 'projects/create', 'project-create', ProjectCreatePage, {} )
+        .bindPage( 'projects/:id',    'project-detail', ProjectDetailPage, {} )
+        .bindPage( '',                'project-list',   ProjectsPage,      {} );
+
 
     const app = new App( 'body', 'app', {
         directives: {

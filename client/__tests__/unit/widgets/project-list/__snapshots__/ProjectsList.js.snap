@@ -109,8 +109,8 @@ Object {
   },
   "html": "
 <div class=\\"project-list\\">
-  <a class=\\"project-card\\" href=\\"#\\"><span class=\\"name\\">Simple CI</span></a>
-  <a class=\\"project-card\\" href=\\"#\\"><span class=\\"name\\">ShamUI</span></a>
+  <a class=\\"project-card\\" href=\\"undefined\\"><span class=\\"name\\">Simple CI</span></a>
+  <a class=\\"project-card\\" href=\\"undefined\\"><span class=\\"name\\">ShamUI</span></a>
   <!--for-->
   <a class=\\"project-card project-card-create\\" href=\\"/\\">
     <div class=\\"create-icon\\"></div>

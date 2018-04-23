@@ -10,8 +10,17 @@ export default class extends ProjectsListTemplate {
         return this.router.generate( 'project-create', {} );
     }
 
+    detailPageUrlForProject( id ) {
+        return this.router.generate( 'project-detail', { id } );
+    }
+
     get createProjectLinkNode() {
         return this.querySelector( '.project-card-create' );
+    }
+
+    _clickToDetailProject( e ) {
+        e.preventDefault();
+        this.router.navigate( e.currentTarget.getAttribute( 'href' ) );
     }
 
     _clickToCreateNewProject( e ) {
