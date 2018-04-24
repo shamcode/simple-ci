@@ -1,0 +1,9 @@
+<div class="project-info">
+    <h3>{{project.name}}</h3>
+    <dl>
+        <dt>{{project.cwd}}</dt>
+        <dd>Current work directory.</dd>
+        <dd>This directory will be used when running tasks.</dd>
+    </dl>
+</div>
+

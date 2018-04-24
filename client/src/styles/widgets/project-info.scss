@@ -1,0 +1,21 @@
+.project-info {
+  padding: 25px;
+  h3 {
+    font-size: 24pt;
+    opacity: 0.87;
+    text-align: center;
+    color: #455A64;
+  }
+  dl {
+    dt {
+      font-weight: bold;
+    }
+    dd {
+      background:none no-repeat left top;
+      padding-left: 50px;
+      color: #455A64;
+      opacity: 0.87;
+      font-size: 14px;
+    }
+  }
+}

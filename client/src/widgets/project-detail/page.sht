@@ -1,8 +1,10 @@
 {% import PageDataLoading from '../PageDataLoading.sht' %}
 {% import ErrorsPanel from '../ErrorsPanel.sht' %}
+{% import Info from './Info.sht' %}
 
 {% if dataLoaded %}
-    <ErrorsPanel errors="{{errors}}"/>
+    <ErrorsPanel errors={{errors}}/>
+    <Info project={{project}}/>
 {% else %}
     <PageDataLoading/>
 {% endif %}
