@@ -19,3 +19,17 @@ it( 'renders correctly', () => {
     expect( storeMock.mock.calls[ 0 ][ 0 ] ).toBe( 1 );
     expect( meta.toJSON() ).toMatchSnapshot();
 } );
+
+it( 'render errors', () => {
+    const storeMock = jest.fn().mockReturnValue( Promise.reject() );
+    DI.bind( 'store', {
+        getProjectById: storeMock
+    } );
+    DI.bind( 'router', {
+        lastRouteResolved: jest.fn().mockReturnValueOnce()
+    } );
+
+    const meta = renderer( Page, {} );
+    expect( meta.toJSON() ).toMatchSnapshot();
+} );
+

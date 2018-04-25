@@ -15,7 +15,8 @@ export default class ProjectDetailPage extends ProjectDetailPageTemplate {
     }
 
     get projectId() {
-        return this.router.lastRouteResolved().params.id;
+        const lastRoute = this.router.lastRouteResolved();
+        return lastRoute !== undefined ? lastRoute.params.id : null;
     }
 
     _loadPageData() {
