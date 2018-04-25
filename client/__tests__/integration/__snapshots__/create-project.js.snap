@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`main page 1`] = `
+exports[`create project 1`] = `
 "<header>
   <a href=\\"\\" class=\\"logo\\">Simple CI</a>
 </header>
@@ -29,7 +29,7 @@ exports[`main page 1`] = `
 <!--Footer-->"
 `;
 
-exports[`main page 2`] = `
+exports[`create project 2`] = `
 "<header>
   <a href=\\"\\" class=\\"logo\\">Simple CI</a>
 </header>

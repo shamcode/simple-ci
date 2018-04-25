@@ -11,7 +11,7 @@ beforeEach( () => {
     jest.clearAllMocks();
 } );
 
-it( 'main page', async() => {
+it( 'create project', async() => {
     expect.assertions( 7 );
 
     const postMock = jest.fn().mockReturnValue( Promise.resolve() );
