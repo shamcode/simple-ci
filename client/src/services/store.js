@@ -1,34 +1,27 @@
 import axios from 'axios';
 import { DI } from 'sham-ui'
 
-const PRIVATE_MEMBERS = new WeakMap();
-
 export default class Store {
     constructor() {
         DI.bind( 'store', this );
-        const axiosInstance = axios.create( {
+        this.axios = axios.create( {
             baseURL: 'http://localhost:3001/api/v1/'
         } );
-        PRIVATE_MEMBERS.set( this, axiosInstance );
     }
 
     getProjects() {
-        return PRIVATE_MEMBERS
-            .get( this )
+        return this.axios
             .get( '/projects' )
             .then( ( { data } ) => ( { projects: data } ) );
     }
 
     getProjectById( id ) {
-        return PRIVATE_MEMBERS
-            .get( this )
+        return this.axios
             .get( `/projects/${id}` )
             .then( ( { data } ) => ( { project: data } ) );
     }
 
     createProject( data ) {
-        return PRIVATE_MEMBERS
-            .get( this )
-            .post( '/projects', data );
+        return this.axios.post( '/projects', data );
     }
 }
