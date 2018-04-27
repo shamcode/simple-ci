@@ -5,5 +5,5 @@
 * [x] Get projects
 * [x] Create project
 * [x] Get project by ID
-* Edit project
+* [x] Edit project
 * Delete project

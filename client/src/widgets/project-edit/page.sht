@@ -1,0 +1,15 @@
+{% import PageDataLoading from '../PageDataLoading.sht' %}
+{% import ErrorsPanel from '../ErrorsPanel.sht' %}
+{% import ProjectCreateForm from '../project-create/ProjectCreateForm' %}
+
+{% if dataLoaded %}
+    <ErrorsPanel errors={{errors}}/>
+        <ProjectCreateForm
+                name={{project.name}}
+                cwd={{project.cwd}}
+                dataSaving={{dataSaving}}
+                onSubmit={{this.updateProject.bind( this )}}
+        />
+{% else %}
+    <PageDataLoading/>
+{% endif %}

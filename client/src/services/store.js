@@ -24,4 +24,8 @@ export default class Store {
     createProject( data ) {
         return this.axios.post( '/projects', data );
     }
+
+    updateProject( id, data ) {
+        return this.axios.put( `/projects/${id}`, data );
+    }
 }

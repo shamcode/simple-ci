@@ -1,13 +1,13 @@
 <div class="project-create-form">
     <form :onsubmit={{this._submitForm.bind(this)}}>
         <div class="group">
-            <input name="name" type="text" required/>
+            <input name="name" type="text" required value={{name}}/>
             <span class="highlight"></span>
             <span class="bar"></span>
             <label>Name</label>
         </div>
         <div class="group">
-            <input name="cwd" type="text" required/>
+            <input name="cwd" type="text" required value={{cwd}}/>
             <span class="highlight"></span>
             <span class="bar"></span>
             <label>Current Work Directory</label>

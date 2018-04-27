@@ -28,6 +28,7 @@ func setJsonContentTypeHeader(w http.ResponseWriter) {
 func optionsHandler(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 	setAllowOriginHeader(w)
 	w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Access-Control-Allow-Headers")
+	w.Header().Set("Access-Control-Allow-Methods", r.Header.Get("Access-Control-Request-Method"))
 }
 
 func getProjects(w http.ResponseWriter, r *http.Request, db *Db) {
@@ -81,4 +82,25 @@ func createProject(w http.ResponseWriter, r *http.Request, db *Db) {
 	}
 	setJsonContentTypeHeader(w)
 	w.WriteHeader(201)
+}
+
+func updateProject(w http.ResponseWriter, r *http.Request, db *Db) {
+	ps := httprouter.ParamsFromContext(r.Context())
+	id, ok := getID(w, ps)
+	if !ok {
+		return
+	}
+	setAllowOriginHeader(w)
+	var project Project
+	err := json.NewDecoder(r.Body).Decode(&project)
+	if err != nil || project.Name == "" || project.Cwd == "" {
+		w.WriteHeader(400)
+		return
+	}
+	if _, err := db.UpdateProject(id, project.Name, project.Cwd); err != nil {
+		w.WriteHeader(500)
+		return
+	}
+	setJsonContentTypeHeader(w)
+	w.WriteHeader(200)
 }

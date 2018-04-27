@@ -2,6 +2,8 @@ import { options } from 'sham-ui';
 import ProjectCreateFormTemplate from './ProjectCreateForm.sht';
 
 export default class ProjectCreateForm extends ProjectCreateFormTemplate {
+    @options get name() { return ''; }
+    @options get cwd() { return ''; }
     @options get dataSaving() { return false; }
     @options onSubmit() {}
 

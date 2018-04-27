@@ -77,6 +77,11 @@ func (db *Db) CreateProject(name, cwd string) (sql.Result, error) {
 		name, cwd)
 }
 
+func (db *Db) UpdateProject(id int, name, cwd string) (sql.Result, error) {
+	return db.connection.Exec("UPDATE project SET \"name\"=$1, cwd=$2 WHERE id=$3",
+		name, cwd, id)
+}
+
 func CreateDatabase(config DataBaseConfig) *Db {
 	return &Db{config, nil}
 }

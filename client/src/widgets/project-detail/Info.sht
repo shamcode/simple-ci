@@ -1,9 +1,18 @@
+{% import LinkTo from 'sham-ui-router/link-to' %}
+
 <div class="project-info">
     <h3>{{project.name}}</h3>
     <dl>
         <dt>{{project.cwd}}</dt>
         <dd>Current work directory.</dd>
         <dd>This directory will be used when running tasks.</dd>
+        <dt>
+            <LinkTo
+                    text="Edit"
+                    path="project-edit"
+                    params={{this._routerParams( project )}}/>
+        </dt>
+        <dd>Edit project name & cwd</dd>
     </dl>
 </div>
 
