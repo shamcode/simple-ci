@@ -23,7 +23,7 @@ exports[`create project 1`] = `
       </div>
     </form>
   </div>
-  <!--ProjectCreateForm-->
+  <!--ProjectForm-->
 </main>
 <footer> Sham 2018 </footer>
 <!--Footer-->"

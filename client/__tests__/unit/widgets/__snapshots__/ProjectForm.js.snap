@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+Object {
+  "ID": "widget",
+  "constructorOptions": Object {
+    "directives": Object {
+      "disabled": [Function],
+      "onclick": [Function],
+      "onsubmit": [Function],
+    },
+  },
+  "html": "
+<div class=\\"project-create-form\\">
+  <form>
+    <div class=\\"group\\">
+      <input name=\\"name\\" type=\\"text\\" required=\\"\\"><span class=\\"highlight\\"></span><span class=\\"bar\\"></span>
+      <label>Name</label>
+    </div>
+    <div class=\\"group\\">
+      <input name=\\"cwd\\" type=\\"text\\" required=\\"\\"><span class=\\"highlight\\"></span><span class=\\"bar\\"></span>
+      <label>Current Work Directory</label>
+    </div>
+    <div class=\\"group\\">
+      <button type=\\"submit\\"><span></span></button>
+    </div>
+  </form>
+</div>
+",
+  "nodes": Array [
+    Object {
+      "ID": undefined,
+      "constructorOptions": null,
+      "html": null,
+      "nodes": null,
+      "options": null,
+    },
+  ],
+  "options": Object {
+    "actionSequence": Array [
+      "render",
+      "bindEvents",
+    ],
+    "cwd": "",
+    "dataSaving": false,
+    "directives": Object {
+      "disabled": [Function],
+      "onclick": [Function],
+      "onsubmit": [Function],
+    },
+    "name": "",
+    "onSubmit": [Function],
+    "renderAsync": false,
+    "renderDependence": Array [],
+    "saveButtonText": "",
+    "types": Array [],
+  },
+}
+`;

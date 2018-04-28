@@ -40,6 +40,10 @@ exports[`project-detail page 2`] = `
       <dt>/tmp/</dt>
       <dd>Current work directory.</dd>
       <dd>This directory will be used when running tasks.</dd>
+      <dt>
+        <a href=\\"projects/1/edit\\" class=\\"\\">Edit</a>
+      </dt>
+      <dd>Edit project name &amp; cwd</dd>
     </dl>
   </div>
   <!--Info-->

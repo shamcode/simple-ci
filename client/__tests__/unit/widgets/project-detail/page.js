@@ -1,3 +1,4 @@
+import { DI } from 'sham-ui';
 import Page from '../../../../src/widgets/project-detail/page';
 import renderer from 'sham-ui-test-helpers';
 
@@ -12,7 +13,8 @@ it( 'renders correctly', () => {
         getProjectById: storeMock
     } );
     DI.bind( 'router', {
-        lastRouteResolved: jest.fn().mockReturnValueOnce( { params: { id: 1 }} )
+        lastRouteResolved: jest.fn().mockReturnValueOnce( { params: { id: 1 }} ),
+        generate: jest.fn().mockReturnValueOnce( '/' )
     } );
 
     const meta = renderer( Page, {} );
@@ -26,7 +28,8 @@ it( 'render errors', () => {
         getProjectById: storeMock
     } );
     DI.bind( 'router', {
-        lastRouteResolved: jest.fn().mockReturnValueOnce()
+        lastRouteResolved: jest.fn().mockReturnValueOnce(),
+        generate: jest.fn().mockReturnValueOnce( '/' )
     } );
 
     const meta = renderer( Page, {} );

@@ -14,17 +14,17 @@ beforeEach( () => {
 it( 'project-detail page', async() => {
     expect.assertions( 2 );
 
+    const projectData = {
+        id: 1,
+        name: 'Test',
+        cwd: '/tmp/'
+    };
+
     axios.create.mockImplementation( () => {
         return {
             get: jest.fn()
-                .mockReturnValueOnce( Promise.resolve( {
-                    data: [
-                        { id: 1, name: 'Test', cwd: '/tmp/' },
-                    ]
-                } ) )
-                .mockReturnValueOnce( Promise.resolve( {
-                    data: { id: 1, name: 'Test', cwd: '/tmp/' }
-                } ) )
+                .mockReturnValueOnce( Promise.resolve( { data: [ projectData ] } ) )
+                .mockReturnValueOnce( Promise.resolve( { data: projectData } ) )
         };
     } );
 

@@ -4,8 +4,12 @@ import disabled from '../../../../src/directives/disabled';
 import directives from '../../../../src/directives/event-listener';
 import renderer from 'sham-ui-test-helpers';
 
+const flushPromises = () => new Promise( resolve => setImmediate( resolve ) );
+
 afterEach( () => {
     DI.bind( 'router', null );
+    jest.resetModules();
+    jest.clearAllMocks();
 } );
 
 it( 'renders correctly', () => {
@@ -46,7 +50,6 @@ it( 'create', () => {
     container.querySelector( '[name="cwd"]' ).value = formData.cwd;
     container.querySelector( '[type="submit"]' ).click();
 
-
     expect( createProjectMock.mock.calls.length ).toBe( 1 );
     expect( createProjectMock.mock.calls[ 0 ].length ).toBe( 1 );
 
@@ -56,7 +59,9 @@ it( 'create', () => {
     expect( data.cwd ).toBe( formData.cwd );
 } );
 
-it( 'create fail', () => {
+it( 'create fail', async () => {
+    expect.assertions( 3 );
+
     DI.bind( 'router', {
         generate: jest.fn().mockReturnValueOnce( '/' ),
         navigate: jest.fn()
@@ -81,6 +86,7 @@ it( 'create fail', () => {
     container.querySelector( '[name="cwd"]' ).value = formData.cwd;
     container.querySelector( '[type="submit"]' ).click();
 
+    await flushPromises();
 
     expect( createProjectMock.mock.calls.length ).toBe( 1 );
     expect( createProjectMock.mock.calls[ 0 ].length ).toBe( 1 );

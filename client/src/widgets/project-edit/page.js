@@ -24,7 +24,7 @@ export default class ProjectEditPage extends LoadProjectMixin( ProjectEditPageTe
 
     _updateProjectFail() {
         this.update( {
-            errors: [ 'Create project fail!' ],
+            errors: [ 'Update project fail!' ],
             dataSaving: false
         } );
     }

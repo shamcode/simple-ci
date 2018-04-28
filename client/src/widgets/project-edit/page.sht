@@ -1,10 +1,11 @@
 {% import PageDataLoading from '../PageDataLoading.sht' %}
 {% import ErrorsPanel from '../ErrorsPanel.sht' %}
-{% import ProjectCreateForm from '../project-create/ProjectCreateForm' %}
+{% import ProjectForm from '../ProjectForm' %}
 
 {% if dataLoaded %}
     <ErrorsPanel errors={{errors}}/>
-        <ProjectCreateForm
+        <ProjectForm
+                saveButtonText="Update"
                 name={{project.name}}
                 cwd={{project.cwd}}
                 dataSaving={{dataSaving}}

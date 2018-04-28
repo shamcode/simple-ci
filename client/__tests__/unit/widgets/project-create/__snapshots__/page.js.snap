@@ -11,6 +11,9 @@ Object {
     },
   },
   "html": "
+<ul class=\\"errors-panel\\">
+  <li>Create project fail!</li>
+</ul>
 <!--if-->
 <!--ErrorsPanel-->
 <div class=\\"project-create-form\\">
@@ -24,11 +27,11 @@ Object {
       <label>Current Work Directory</label>
     </div>
     <div class=\\"group\\">
-      <button type=\\"submit\\" disabled=\\"\\"><span>Create</span></button>
+      <button type=\\"submit\\"><span>Create</span></button>
     </div>
   </form>
 </div>
-<!--ProjectCreateForm-->
+<!--ProjectForm-->
 ",
   "nodes": Array [
     Object {
@@ -51,13 +54,15 @@ Object {
       "render",
       "bindEvents",
     ],
-    "dataSaving": true,
+    "dataSaving": false,
     "directives": Object {
       "disabled": [Function],
       "onclick": [Function],
       "onsubmit": [Function],
     },
-    "errors": Array [],
+    "errors": Array [
+      "Create project fail!",
+    ],
     "renderAsync": false,
     "renderDependence": Array [],
     "types": Array [],
@@ -93,7 +98,7 @@ Object {
     </div>
   </form>
 </div>
-<!--ProjectCreateForm-->
+<!--ProjectForm-->
 ",
   "nodes": Array [
     Object {

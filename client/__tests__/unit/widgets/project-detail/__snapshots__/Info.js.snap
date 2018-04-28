@@ -6,11 +6,15 @@ Object {
   "constructorOptions": Object {},
   "html": "
 <div class=\\"project-info\\">
-  <h3></h3>
+  <h3>null</h3>
   <dl>
-    <dt></dt>
+    <dt>null</dt>
     <dd>Current work directory.</dd>
     <dd>This directory will be used when running tasks.</dd>
+    <dt>
+      <a href=\\"/\\" class=\\"\\">Edit</a>
+    </dt>
+    <dd>Edit project name &amp; cwd</dd>
   </dl>
 </div>
 ",
@@ -28,6 +32,7 @@ Object {
       "render",
       "bindEvents",
     ],
+    "project": Object {},
     "renderAsync": false,
     "renderDependence": Array [],
     "types": Array [],
