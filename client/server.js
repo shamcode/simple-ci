@@ -12,20 +12,20 @@ app.use( webpackDevMiddleware( compiler, { noInfo: true, publicPath: config.outp
 app.use( webpackHotMiddleware( compiler ) );
 
 app.get( '/favicon.ico', function( req, res ) {
-    res.sendFile( __dirname + '/favicon.ico' )
+    res.sendFile( __dirname + '/favicon.ico' );
 } );
 
 app.get( "*", function( req, res ) {
-    res.sendFile( __dirname + '/index.html' )
+    res.sendFile( __dirname + '/index.html' );
 } );
 
 app.listen( port, function( error ) {
     if ( error ) {
-        console.error( error )
+        console.error( error );
     } else {
         console.info(
             'App "client" started.\nOpen up http://localhost:%s/ in your browser.',
             port
-        )
+        );
     }
 } );
