@@ -8,4 +8,5 @@ Thumbs.db
 /coverage/
 /src/
 /__tests__/
+/__mocks__/
 webpack.config.js
