@@ -4,13 +4,13 @@
 
 {% if dataLoaded %}
     <ErrorsPanel errors={{errors}}/>
-        <ProjectForm
-                saveButtonText="Update"
-                name={{project.name}}
-                cwd={{project.cwd}}
-                dataSaving={{dataSaving}}
-                onSubmit={{this.updateProject.bind( this )}}
-        />
+    <ProjectForm
+            saveButtonText="Update"
+            name={{project.name}}
+            cwd={{project.cwd}}
+            dataSaving={{dataSaving}}
+            onSubmit={{this.updateProject.bind( this )}}
+    />
 {% else %}
     <PageDataLoading/>
 {% endif %}

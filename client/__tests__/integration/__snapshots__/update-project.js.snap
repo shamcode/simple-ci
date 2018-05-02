@@ -74,6 +74,10 @@ exports[`update project 3`] = `
         <a href=\\"projects/1/edit\\" class=\\"\\">Edit</a>
       </dt>
       <dd>Edit project name &amp; cwd</dd>
+      <dt>
+        <a href=\\"projects/1/delete\\" class=\\"\\">Delete</a>
+      </dt>
+      <dd>Delete project</dd>
     </dl>
   </div>
   <!--Info-->

@@ -15,6 +15,10 @@ Object {
       <a href=\\"/\\" class=\\"\\">Edit</a>
     </dt>
     <dd>Edit project name &amp; cwd</dd>
+    <dt>
+      <a href=\\"undefined\\" class=\\"\\">Delete</a>
+    </dt>
+    <dd>Delete project</dd>
   </dl>
 </div>
 ",

@@ -13,6 +13,13 @@
                     params={{this._routerParams( project )}}/>
         </dt>
         <dd>Edit project name & cwd</dd>
+        <dt>
+            <LinkTo
+                text="Delete"
+                path="project-delete"
+                params={{this._routerParams( project )}}/>
+        </dt>
+        <dd>Delete project</dd>
     </dl>
 </div>
 
