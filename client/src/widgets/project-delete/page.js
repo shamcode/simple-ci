@@ -10,7 +10,7 @@ export default class ProjecDeletePage extends LoadProjectMixin( ProjectDeletePag
             dataSaving: true,
             errors: []
         } );
-        this.store.deleteProjec( this.projectId ).then(
+        this.store.deleteProject( this.projectId ).then(
             ::this._deleteProjectSuccess,
             ::this._deleteProjectFail
         )
@@ -27,5 +27,11 @@ export default class ProjecDeletePage extends LoadProjectMixin( ProjectDeletePag
             errors: [ 'Delete project fail!' ],
             dataSaving: false
         } );
+    }
+
+    cancelDeleteProject() {
+        this.router.navigate(
+            this.router.generate( 'project-detail', this._routerParams )
+        )
     }
 }

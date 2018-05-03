@@ -28,4 +28,8 @@ export default class Store {
     updateProject( id, data ) {
         return this.axios.put( `/projects/${id}`, data );
     }
+
+    deleteProject( id ) {
+        return this.axios.delete( `/projects/${id}` );
+    }
 }

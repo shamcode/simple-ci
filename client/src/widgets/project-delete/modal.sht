@@ -1,0 +1,16 @@
+<div class="modal">
+    <div class="header">
+        Delete project
+    </div>
+    <div class="body">
+        Do you want delete project "{{project.name}}"?
+    </div>
+    <div class="footer">
+        <button class="ok danger" :onclick={{onOk}} :disabled={{dataSaving}}>
+            Confirm
+        </button>
+        <button class="cancel" :onclick={{onCancel}}>
+            Cancel
+        </button>
+    </div>
+</div>

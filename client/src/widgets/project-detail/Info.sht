@@ -16,6 +16,7 @@
         <dt>
             <LinkTo
                 text="Delete"
+                className="project-delete-link"
                 path="project-delete"
                 params={{this._routerParams( project )}}/>
         </dt>
