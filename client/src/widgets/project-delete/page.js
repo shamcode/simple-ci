@@ -23,10 +23,9 @@ export default class ProjecDeletePage extends LoadProjectMixin( ProjectDeletePag
     }
 
     _deleteProjectFail() {
-        this.update( {
-            errors: [ 'Delete project fail!' ],
-            dataSaving: false
-        } );
+        this.router.navigate(
+            this.router.generate( 'project-detail', this._routerParams )
+        );
     }
 
     cancelDeleteProject() {
