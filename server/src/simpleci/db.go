@@ -1,21 +1,21 @@
 package main
 
 import (
-	_ "github.com/bmizerany/pq"
 	"database/sql"
 	"fmt"
+	_ "github.com/bmizerany/pq"
 	log "github.com/sirupsen/logrus"
 )
 
 type Db struct {
-	config DataBaseConfig
+	config     DataBaseConfig
 	connection *sql.DB
 }
 
 type Project struct {
-	Id    int    `json:"id"`
-	Name  string `json:"name"`
-	Cwd   string `json:"cwd"`
+	Id   int    `json:"id"`
+	Name string `json:"name"`
+	Cwd  string `json:"cwd"`
 }
 
 func (db *Db) Connect() {
@@ -80,6 +80,10 @@ func (db *Db) CreateProject(name, cwd string) (sql.Result, error) {
 func (db *Db) UpdateProject(id int, name, cwd string) (sql.Result, error) {
 	return db.connection.Exec("UPDATE project SET \"name\"=$1, cwd=$2 WHERE id=$3",
 		name, cwd, id)
+}
+
+func (db *Db) DeleteProject(id int) (sql.Result, error) {
+	return db.connection.Exec("DELETE FROM project WHERE id=$1", id)
 }
 
 func CreateDatabase(config DataBaseConfig) *Db {

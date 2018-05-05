@@ -1,10 +1,10 @@
 package main
 
 import (
-	"net/http"
 	"assets"
 	"github.com/julienschmidt/httprouter"
 	log "github.com/sirupsen/logrus"
+	"net/http"
 	"strconv"
 )
 
@@ -22,6 +22,7 @@ func main() {
 	router.Handler("GET", "/api/v1/projects", wrapHandler(getProjects, db))
 	router.Handler("GET", "/api/v1/projects/:id", wrapHandler(getProjectById, db))
 	router.Handler("PUT", "/api/v1/projects/:id", wrapHandler(updateProject, db))
+	router.Handler("DELETE", "/api/v1/projects/:id", wrapHandler(deleteProject, db))
 	router.Handler("POST", "/api/v1/projects", wrapHandler(createProject, db))
 
 	router.Handle("OPTIONS", "/*path", optionsHandler)
@@ -36,6 +37,5 @@ func main() {
 
 	port := strconv.Itoa(cfg.Server.Port)
 	log.Infof("Server start on port :%s", port)
-	log.Fatal(http.ListenAndServe(":" + port, router))
+	log.Fatal(http.ListenAndServe(":"+port, router))
 }
-

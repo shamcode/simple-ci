@@ -1,9 +1,9 @@
 package main
 
 import (
-	"net/http"
-	"log"
 	"github.com/nytimes/gziphandler"
+	"log"
+	"net/http"
 )
 
 func bytesResponseHandler(callbackForBytesResponse func() ([]byte, error), contentType string) http.Handler {

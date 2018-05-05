@@ -1,11 +1,11 @@
 package main
 
 import (
-	"net/http"
+	"database/sql"
 	"encoding/json"
 	"github.com/julienschmidt/httprouter"
+	"net/http"
 	"strconv"
-	"database/sql"
 )
 
 func getID(w http.ResponseWriter, ps httprouter.Params) (int, bool) {
@@ -98,6 +98,21 @@ func updateProject(w http.ResponseWriter, r *http.Request, db *Db) {
 		return
 	}
 	if _, err := db.UpdateProject(id, project.Name, project.Cwd); err != nil {
+		w.WriteHeader(500)
+		return
+	}
+	setJsonContentTypeHeader(w)
+	w.WriteHeader(200)
+}
+
+func deleteProject(w http.ResponseWriter, r *http.Request, db *Db) {
+	ps := httprouter.ParamsFromContext(r.Context())
+	id, ok := getID(w, ps)
+	if !ok {
+		return
+	}
+	setAllowOriginHeader(w)
+	if _, err := db.DeleteProject(id); err != nil {
 		w.WriteHeader(500)
 		return
 	}
