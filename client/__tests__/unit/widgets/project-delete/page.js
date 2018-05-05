@@ -53,3 +53,78 @@ it( 'render errors', async () => {
 
     expect( meta.toJSON() ).toMatchSnapshot();
 } );
+
+it( 'delete fail', async() => {
+    expect.assertions( 4 );
+
+    const deleteProject = jest.fn();
+    DI.bind( 'store', {
+        getProjectById: jest.fn().mockReturnValue( Promise.resolve( {
+            project: {
+                id: 1,
+                name: 'Test',
+                cwd: '/tmp/'
+            }
+        } ) ),
+        deleteProject: deleteProject
+    } );
+    const navigateMock = jest.fn();
+    DI.bind( 'router', {
+        lastRouteResolved: jest.fn().mockReturnValueOnce( { params: { id: 1 } } ),
+        generate: jest.fn().mockReturnValueOnce( '/' ),
+        navigate: navigateMock
+    } );
+
+    const meta = renderer( Page, {
+        directives: {
+            disabled,
+            ...directives
+        }
+    } );
+    const { widget: { container } } = meta;
+    await flushPromises();
+
+    deleteProject.mockReturnValueOnce( Promise.reject() );
+    container.querySelector( '.ok' ).click();
+    await flushPromises();
+
+    expect( deleteProject.mock.calls.length ).toBe( 1 );
+    expect( navigateMock.mock.calls.length ).toBe( 1 );
+    expect( navigateMock.mock.calls[ 0 ][ 0 ] ).toBe( '/' );
+    expect( meta.toJSON() ).toMatchSnapshot();
+} );
+
+it( 'cancel', async() => {
+    expect.assertions( 2 );
+
+    DI.bind( 'store', {
+        getProjectById: jest.fn().mockReturnValue( Promise.resolve( {
+            project: {
+                id: 1,
+                name: 'Test',
+                cwd: '/tmp/'
+            }
+        } ) )
+    } );
+    const navigateMock = jest.fn();
+    DI.bind( 'router', {
+        lastRouteResolved: jest.fn().mockReturnValueOnce( { params: { id: 1 } } ),
+        generate: jest.fn().mockReturnValueOnce( '/' ),
+        navigate: navigateMock
+    } );
+
+    const meta = renderer( Page, {
+        directives: {
+            disabled,
+            ...directives
+        }
+    } );
+    const { widget: { container } } = meta;
+    await flushPromises();
+
+    container.querySelector( '.cancel' ).click();
+    expect( navigateMock.mock.calls.length ).toBe( 1 );
+    expect( navigateMock.mock.calls[ 0 ][ 0 ] ).toBe( '/' );
+
+    await flushPromises();
+} );
