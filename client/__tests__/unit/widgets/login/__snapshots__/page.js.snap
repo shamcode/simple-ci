@@ -11,6 +11,8 @@ Object {
     },
   },
   "html": "
+<!--if-->
+<!--ErrorsPanel-->
 <div class=\\"login-form\\">
   <form>
     <div class=\\"group\\">
@@ -35,6 +37,13 @@ Object {
       "nodes": null,
       "options": null,
     },
+    Object {
+      "ID": undefined,
+      "constructorOptions": null,
+      "html": null,
+      "nodes": null,
+      "options": null,
+    },
   ],
   "options": Object {
     "actionSequence": Array [
@@ -47,6 +56,8 @@ Object {
       "onclick": [Function],
       "onsubmit": [Function],
     },
+    "errors": Array [],
+    "password": "",
     "renderAsync": false,
     "renderDependence": Array [],
     "types": Array [],

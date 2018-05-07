@@ -22,7 +22,12 @@ it( 'main page', async() => {
     } ) );
     axios.create.mockImplementation( () => {
         return {
-            get: getMock
+            get: getMock,
+            interceptors: {
+                response: {
+                    use: () => {}
+                }
+            }
         };
     } );
 

@@ -7,6 +7,30 @@ export default class Store {
         this.axios = axios.create( {
             baseURL: 'http://localhost:3001/api/v1/'
         } );
+        this.axios.interceptors.response.use( ( response ) => {
+            if ( !this.session.checkToken( response.headers[ 'Bearer' ] ) ) {
+                this.session.invalidateSession();
+                return Promise.reject();
+            }
+            return response;
+        }, ( error ) => {
+            if ( error.response && 403 === error.response.status ) {
+                this.session.invalidateSession();
+            }
+            return Promise.reject( error );
+        } )
+    }
+
+    get session() {
+        return DI.resolve( 'session' );
+    }
+
+    setAuthHeaders( token ) {
+        this.axios.defaults.headers[ 'Bearer' ] = token;
+    }
+
+    getToken( username, password ) {
+        return this.axios.post( '/login', { username, password } );
     }
 
     getProjects() {

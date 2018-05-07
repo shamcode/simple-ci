@@ -30,7 +30,12 @@ it( 'delete project', async() => {
     axios.create.mockImplementation( () => {
         return {
             get: getMock,
-            delete: deleteMock
+            delete: deleteMock,
+            interceptors: {
+                response: {
+                    use: () => {}
+                }
+            }
         };
     } );
 

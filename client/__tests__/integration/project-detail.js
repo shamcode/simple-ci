@@ -24,7 +24,12 @@ it( 'project-detail page', async() => {
         return {
             get: jest.fn()
                 .mockReturnValueOnce( Promise.resolve( { data: [ projectData ] } ) )
-                .mockReturnValueOnce( Promise.resolve( { data: projectData } ) )
+                .mockReturnValueOnce( Promise.resolve( { data: projectData } ) ),
+            interceptors: {
+                response: {
+                    use: () => {}
+                }
+            }
         };
     } );
 

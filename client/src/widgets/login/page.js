@@ -1,26 +1,38 @@
-import { options } from 'sham-ui';
+import { options, inject } from 'sham-ui';
 import LoginPageTemplate from './page.sht'
 
 export default class LoginPage extends LoginPageTemplate {
+    @inject session = 'session';
+    @inject router = 'router';
+
+    @options get errors() { return []; }
     @options get dataSaving() { return false; }
+    @options get password() { return ''; }
 
     get formNode() {
-        return this.querySelector( 'form' );
+        return this.container.querySelector( 'form' );
     }
 
     _submitForm( e ) {
         e.preventDefault();
         const formData = new FormData( this.formNode );
-        const data = {};
-        let dataValid = true;
-        [
-            'username',
-            'password'
-        ].forEach(
-            ( key ) => data[ key ] = formData.get( key )
+        this.update( {
+            dataSaving: true,
+            errors: []
+        } );
+        this.session.login(
+            formData.get( 'username' ).trim(),
+            formData.get( 'password' )
+        ).catch(
+            ::this.loginFail
         );
-        if ( dataValid ) {
-            this.options.onSubmit( data );
-        }
+    }
+
+    loginFail() {
+        this.update( {
+            password: '',
+            dataSaving: false,
+            errors: [ 'Login fail' ],
+        } )
     }
 }

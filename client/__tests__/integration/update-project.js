@@ -30,7 +30,12 @@ it( 'update project', async() => {
     axios.create.mockImplementation( () => {
         return {
             get: getMock,
-            put: putMock
+            put: putMock,
+            interceptors: {
+                response: {
+                    use: () => {}
+                }
+            }
         };
     } );
 

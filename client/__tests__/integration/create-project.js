@@ -20,7 +20,12 @@ it( 'create project', async() => {
             get: jest.fn().mockReturnValue( Promise.resolve( {
                 data: []
             } ) ),
-            post: postMock
+            post: postMock,
+            interceptors: {
+                response: {
+                    use: () => {}
+                }
+            }
         };
     } );
 

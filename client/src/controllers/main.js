@@ -1,5 +1,6 @@
 import { DI } from 'sham-ui';
 import Router from 'sham-ui-router';
+import Session from '../services/session';
 import Store from '../services/store';
 import disabled from '../directives/disabled';
 import EventListenerDirectives from '../directives/event-listener';
@@ -12,6 +13,7 @@ import ProjectEditPage from '../widgets/project-edit/page';
 import ProjectDeletePage from '../widgets/project-delete/page';
 
 export default function() {
+    new Session();
     new Store();
 
     const router = new Router( '/' );
