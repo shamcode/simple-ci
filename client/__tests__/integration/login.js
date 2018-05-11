@@ -12,9 +12,10 @@ beforeEach( () => {
     window.requestAnimationFrame = ( cb ) => {
         setImmediate( cb )
     };
+    document.querySelector( 'body' ).innerHTML = '';
 } );
 
-it( 'login', async() => {
+it( 'success login', async() => {
     expect.assertions( 9 );
 
     const interceptors = {};
@@ -74,5 +75,54 @@ it( 'login', async() => {
     await flushPromises();
 
     expect( getMock ).toHaveBeenCalledTimes( 2 );
+    expect( pretty( body.innerHTML ) ).toMatchSnapshot();
+} );
+
+it( 'fail login (invalid header)', async() => {
+    expect.assertions( 2 );
+
+    const interceptors = {};
+    const getMock = jest.fn( () => {
+        return Promise.resolve( { headers: {} } ).then(
+            response => interceptors.success( response )
+        );
+    } );
+    axios.create.mockImplementation( () => {
+        return {
+            defaults: {
+                headers: {}
+            },
+            get: getMock,
+            interceptors: {
+                response: {
+                    use: ( success, fail ) => {
+                        interceptors.success = success;
+                        interceptors.fail = fail;
+                    }
+                }
+            },
+            post: jest.fn().mockReturnValue( Promise.resolve() )
+        };
+    } );
+
+    window.location.href = 'http://simple-ci.example.com/';
+
+    const body = document.querySelector( 'body' );
+
+    DI.bind( 'widget-binder', controller );
+    const UI = new ShamUI();
+    UI.render.FORCE_ALL();
+    await flushPromises();
+    expect( pretty( body.innerHTML ) ).toMatchSnapshot();
+
+    const formData = {
+        username: 'admin',
+        password: 'pass'
+    };
+    body.querySelector( '[name="username"]' ).value = formData.username;
+    body.querySelector( '[name="password"]' ).value = formData.password;
+    body.querySelector( '[type="submit"]' ).click();
+
+    await flushPromises();
     expect( pretty( body.innerHTML ) ).toMatchSnapshot();
 } );

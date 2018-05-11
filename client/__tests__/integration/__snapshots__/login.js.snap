@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`login 1`] = `
+exports[`fail login (invalid header) 1`] = `
 "<header>
   <a href=\\"\\" class=\\"logo\\">Simple CI</a>
 </header>
@@ -28,7 +28,66 @@ exports[`login 1`] = `
 <!--Footer-->"
 `;
 
-exports[`login 2`] = `
+exports[`fail login (invalid header) 2`] = `
+"<header>
+  <a href=\\"\\" class=\\"logo\\">Simple CI</a>
+</header>
+<!--Header-->
+<main>
+  <ul class=\\"errors-panel\\">
+    <li>Login fail</li>
+  </ul>
+  <!--if-->
+  <!--ErrorsPanel-->
+  <div class=\\"login-form\\">
+    <form>
+      <div class=\\"group\\">
+        <input name=\\"username\\" type=\\"text\\" required=\\"\\"><span class=\\"highlight\\"></span><span class=\\"bar\\"></span>
+        <label>Username</label>
+      </div>
+      <div class=\\"group\\">
+        <input name=\\"password\\" type=\\"password\\" required=\\"\\"><span class=\\"highlight\\"></span><span class=\\"bar\\"></span>
+        <label>Password</label>
+      </div>
+      <div class=\\"group\\">
+        <button type=\\"submit\\"><span>Login</span></button>
+      </div>
+    </form>
+  </div>
+</main>
+<footer> Sham 2018 </footer>
+<!--Footer-->"
+`;
+
+exports[`success login 1`] = `
+"<header>
+  <a href=\\"\\" class=\\"logo\\">Simple CI</a>
+</header>
+<!--Header-->
+<main>
+  <!--if-->
+  <!--ErrorsPanel-->
+  <div class=\\"login-form\\">
+    <form>
+      <div class=\\"group\\">
+        <input name=\\"username\\" type=\\"text\\" required=\\"\\"><span class=\\"highlight\\"></span><span class=\\"bar\\"></span>
+        <label>Username</label>
+      </div>
+      <div class=\\"group\\">
+        <input name=\\"password\\" type=\\"password\\" required=\\"\\"><span class=\\"highlight\\"></span><span class=\\"bar\\"></span>
+        <label>Password</label>
+      </div>
+      <div class=\\"group\\">
+        <button type=\\"submit\\"><span>Login</span></button>
+      </div>
+    </form>
+  </div>
+</main>
+<footer> Sham 2018 </footer>
+<!--Footer-->"
+`;
+
+exports[`success login 2`] = `
 "<header>
   <a href=\\"\\" class=\\"logo\\">Simple CI</a>
 </header>
