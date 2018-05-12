@@ -4829,38 +4829,38 @@ shallow-clone@^1.0.0:
     kind-of "^5.0.0"
     mixin-object "^2.0.1"
 
-sham-ui-jest-preprocessor@1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/sham-ui-jest-preprocessor/-/sham-ui-jest-preprocessor-1.0.5.tgz#ce701aec3c664fe5497d5017f130f0f58593f849"
+sham-ui-jest-preprocessor@1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/sham-ui-jest-preprocessor/-/sham-ui-jest-preprocessor-1.0.6.tgz#b629c74e10f9eb39ee9286c8e4bf24392f7d3d18"
   dependencies:
-    sham-ui-templates "0.0.17"
+    sham-ui-templates "0.0.18"
 
-sham-ui-router@^0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/sham-ui-router/-/sham-ui-router-0.0.3.tgz#d7227b5d80898a9e38d5dfa5bbfaa47e79f9cbd5"
+sham-ui-router@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/sham-ui-router/-/sham-ui-router-0.0.4.tgz#ae380945ea7fedeb44995b9e1633cb236c3deed6"
   dependencies:
     navigo "^7.1.1"
     sham-ui "^1.3.5"
 
-sham-ui-templates-loader@^1.0.15:
-  version "1.0.15"
-  resolved "https://registry.yarnpkg.com/sham-ui-templates-loader/-/sham-ui-templates-loader-1.0.15.tgz#48f07c2522c7d4e5263a82ca5be4ae709f17d9fa"
+sham-ui-templates-loader@^1.0.16:
+  version "1.0.16"
+  resolved "https://registry.yarnpkg.com/sham-ui-templates-loader/-/sham-ui-templates-loader-1.0.16.tgz#0d3823ee1efe0f962ba4bf80c8614698f1b94811"
   dependencies:
     loader-utils "^0.2.15"
-    sham-ui-templates "0.0.17"
+    sham-ui-templates "0.0.18"
 
-sham-ui-templates@0.0.17:
-  version "0.0.17"
-  resolved "https://registry.yarnpkg.com/sham-ui-templates/-/sham-ui-templates-0.0.17.tgz#1622d4f28d891fc961c9bd35291a48a1d24d2f11"
+sham-ui-templates@0.0.18:
+  version "0.0.18"
+  resolved "https://registry.yarnpkg.com/sham-ui-templates/-/sham-ui-templates-0.0.18.tgz#dbc42c74a3436f8a7a57e7d0326c1dd9d083f3dd"
   dependencies:
     asciitree "^1.0.2"
     commander "^2.9.0"
     sham-ui "1.3.5"
     source-map "^0.5.6"
 
-sham-ui-test-helpers@^1.7.0:
-  version "1.7.0"
-  resolved "https://registry.yarnpkg.com/sham-ui-test-helpers/-/sham-ui-test-helpers-1.7.0.tgz#1d5d82545bd55f023f56eb4b6741bdee72343bce"
+sham-ui-test-helpers@^1.7.1:
+  version "1.7.1"
+  resolved "https://registry.yarnpkg.com/sham-ui-test-helpers/-/sham-ui-test-helpers-1.7.1.tgz#67d159a6cb580e227da4fee07ff1e65bfb5cdfea"
   dependencies:
     jest "^21.2.1"
     pretty "^2.0.0"
