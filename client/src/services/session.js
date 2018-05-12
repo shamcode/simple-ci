@@ -1,9 +1,15 @@
 import { DI } from 'sham-ui'
 
 export default class Session {
-    _token = null;
-
     constructor() {
+        const token = localStorage.getItem( 'token' );
+        if ( token ) {
+            this._token = token;
+            this.isAuthenticated = true;
+        } else {
+            this._token = null;
+            this.isAuthenticated = false;
+        }
         DI.bind( 'session', this );
     }
 
@@ -17,7 +23,9 @@ export default class Session {
     }
 
     _loginSuccess( { headers } ) {
+        this.isAuthenticated = true;
         this._token = headers[ 'Bearer' ];
+        localStorage.setItem( 'token', this._token );
         this.store.setAuthHeaders( this._token );
         this.router.navigate(
             this.router.generate( 'project-list', {} )
@@ -25,7 +33,9 @@ export default class Session {
     }
 
     invalidateSession() {
+        this.isAuthenticated = false;
         this._token = null;
+        localStorage.removeItem( 'token' );
         requestAnimationFrame(
             ::this._goToLoginPage
         );

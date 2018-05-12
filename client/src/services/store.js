@@ -7,14 +7,25 @@ export default class Store {
         this.axios = axios.create( {
             baseURL: 'http://localhost:3001/api/v1/'
         } );
+        this.axios.interceptors.request.use(
+            ::this._requestAuthInterceptor
+        );
         this.axios.interceptors.response.use(
             ::this._responseSuccessAuthInterceptor,
             ::this._responseFailAuthInterceptor
-        )
+        );
     }
 
     get session() {
         return DI.resolve( 'session' );
+    }
+
+    _requestAuthInterceptor( config ) {
+        if ( !this.session.isAuthenticated && '/login' !== config.url ) {
+            this.session.invalidateSession();
+        } else {
+            return config;
+        }
     }
 
     _responseSuccessAuthInterceptor( response ) {
