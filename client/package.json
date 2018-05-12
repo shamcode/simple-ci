@@ -7,7 +7,7 @@
     "start": "node server.js",
     "test": "jest --coverage",
     "watch": "jest --watchAll",
-    "build": "WEBPACK_ENV=build webpack"
+    "build": "WEBPACK_ENV=build webpack --progress"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -50,7 +50,12 @@
       "transform-class-properties",
       "transform-es2015-modules-umd",
       "transform-function-bind",
-      ["transform-object-rest-spread", { "useBuiltIns": true }]
+      [
+        "transform-object-rest-spread",
+        {
+          "useBuiltIns": true
+        }
+      ]
     ]
   },
   "jest": {
