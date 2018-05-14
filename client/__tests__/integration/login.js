@@ -12,6 +12,12 @@ beforeEach( () => {
     window.requestAnimationFrame = ( cb ) => {
         setImmediate( cb )
     };
+    const storage = {};
+    window.localStorage = {
+        getItem( key ) { return storage[ key ]; },
+        setItem( key, value ) { storage[ key ] = value; },
+        removeItem( key ) { delete storage[ key ]; }
+    };
     document.querySelector( 'body' ).innerHTML = '';
 } );
 
@@ -36,6 +42,9 @@ it( 'success login', async() => {
             },
             get: getMock,
             interceptors: {
+                request: {
+                    use: () => {}
+                },
                 response: {
                     use: ( success, fail ) => {
                         interceptors.success = success;
@@ -94,6 +103,9 @@ it( 'fail login (invalid header)', async() => {
             },
             get: getMock,
             interceptors: {
+                request: {
+                    use: () => {}
+                },
                 response: {
                     use: ( success, fail ) => {
                         interceptors.success = success;

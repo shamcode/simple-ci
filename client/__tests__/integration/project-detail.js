@@ -9,6 +9,15 @@ const flushPromises = () => new Promise( resolve => setImmediate( resolve ) );
 beforeEach( () => {
     jest.resetModules();
     jest.clearAllMocks();
+    window.requestAnimationFrame = ( cb ) => {
+        setImmediate( cb )
+    };
+    const storage = {};
+    window.localStorage = {
+        getItem( key ) { return storage[ key ]; },
+        setItem( key, value ) { storage[ key ] = value; },
+        removeItem( key ) { delete storage[ key ]; }
+    };
 } );
 
 it( 'project-detail page', async() => {
@@ -26,6 +35,9 @@ it( 'project-detail page', async() => {
                 .mockReturnValueOnce( Promise.resolve( { data: [ projectData ] } ) )
                 .mockReturnValueOnce( Promise.resolve( { data: projectData } ) ),
             interceptors: {
+                request: {
+                    use: () => {}
+                },
                 response: {
                     use: () => {}
                 }

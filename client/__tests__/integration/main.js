@@ -9,6 +9,12 @@ const flushPromises = () => new Promise( resolve => setImmediate( resolve ) );
 beforeEach( () => {
     jest.resetModules();
     jest.clearAllMocks();
+    const storage = {};
+    window.localStorage = {
+        getItem( key ) { return storage[ key ]; },
+        setItem( key, value ) { storage[ key ] = value; },
+        removeItem( key ) { delete storage[ key ]; }
+    };
 } );
 
 it( 'main page', async() => {
@@ -24,6 +30,9 @@ it( 'main page', async() => {
         return {
             get: getMock,
             interceptors: {
+                request: {
+                    use: () => {}
+                },
                 response: {
                     use: () => {}
                 }
