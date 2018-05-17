@@ -2,13 +2,8 @@ import { DI } from 'sham-ui'
 
 export default class Session {
     constructor() {
-        const token = localStorage.getItem( 'token' );
-        if ( token ) {
-            this._token = token;
-            this.isAuthenticated = true;
-        } else {
-            this._token = null;
-            this.isAuthenticated = false;
+        if ( !this.isAuthenticated ) {
+            this.invalidateSession();
         }
         DI.bind( 'session', this );
     }
@@ -16,25 +11,28 @@ export default class Session {
     get router() { return DI.resolve( 'router' ); }
     get store() { return DI.resolve( 'store' ); }
 
+    get token() {
+        return localStorage.getItem( 'token' )
+    }
+
+    get isAuthenticated() {
+        return null !== this.token
+    }
+
     login( username, password ) {
         return this.store.getToken( username, password ).then(
             ::this._loginSuccess
         )
     }
 
-    _loginSuccess( { headers } ) {
-        this.isAuthenticated = true;
-        this._token = headers[ 'Bearer' ];
-        localStorage.setItem( 'token', this._token );
-        this.store.setAuthHeaders( this._token );
+    _loginSuccess( { data } ) {
+        localStorage.setItem( 'token', data.token );
         this.router.navigate(
             this.router.generate( 'project-list', {} )
         );
     }
 
     invalidateSession() {
-        this.isAuthenticated = false;
-        this._token = null;
         localStorage.removeItem( 'token' );
         requestAnimationFrame(
             ::this._goToLoginPage
@@ -45,9 +43,5 @@ export default class Session {
         this.router.navigate(
             this.router.generate( 'login', {} )
         )
-    }
-
-    checkToken( token ) {
-        return this._token === token;
     }
 }

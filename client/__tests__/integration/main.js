@@ -11,7 +11,7 @@ beforeEach( () => {
     jest.clearAllMocks();
     const storage = {};
     window.localStorage = {
-        getItem( key ) { return storage[ key ]; },
+        getItem( key ) { return storage[ key ] || null; },
         setItem( key, value ) { storage[ key ] = value; },
         removeItem( key ) { delete storage[ key ]; }
     };
@@ -19,6 +19,8 @@ beforeEach( () => {
 
 it( 'main page', async() => {
     expect.assertions( 3 );
+
+    window.localStorage.setItem( 'token', 'test' );
 
     const getMock = jest.fn().mockReturnValue( Promise.resolve( {
         data: [

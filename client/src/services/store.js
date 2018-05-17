@@ -11,7 +11,7 @@ export default class Store {
             ::this._requestAuthInterceptor
         );
         this.axios.interceptors.response.use(
-            ::this._responseSuccessAuthInterceptor,
+            ( response ) => response,
             ::this._responseFailAuthInterceptor
         );
     }
@@ -20,35 +20,31 @@ export default class Store {
         return DI.resolve( 'session' );
     }
 
-    _requestAuthInterceptor( config ) {
-        if ( !this.session.isAuthenticated && '/login' !== config.url ) {
+    _requestAuthInterceptor( request ) {
+        if ( !this.session.isAuthenticated && this._isGetTokenRequest( request ) ) {
+            return request;
+        }
+        if ( !this.session.isAuthenticated ) {
             this.session.invalidateSession();
         } else {
-            return config;
+            request.headers[ 'Bearer' ] = this.session.token;
+            return request;
         }
-    }
-
-    _responseSuccessAuthInterceptor( response ) {
-        if ( !this.session.checkToken( response.headers[ 'Bearer' ] ) ) {
-            this.session.invalidateSession();
-            return Promise.reject();
-        }
-        return response;
     }
 
     _responseFailAuthInterceptor( error ) {
-        if ( error.response && 403 === error.response.status ) {
+        if ( error.response && 401 === error.response.status ) {
             this.session.invalidateSession();
         }
         return Promise.reject( error );
     }
 
-    setAuthHeaders( token ) {
-        this.axios.defaults.headers[ 'Bearer' ] = token;
-    }
-
     getToken( username, password ) {
         return this.axios.post( '/login', { username, password } );
+    }
+
+    _isGetTokenRequest( request ) {
+        return '/login' === request.url;
     }
 
     getProjects() {

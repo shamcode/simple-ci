@@ -11,7 +11,7 @@ beforeEach( () => {
     jest.clearAllMocks();
     const storage = {};
     window.localStorage = {
-        getItem( key ) { return storage[ key ]; },
+        getItem( key ) { return storage[ key ] || null; },
         setItem( key, value ) { storage[ key ] = value; },
         removeItem( key ) { delete storage[ key ]; }
     };
@@ -19,6 +19,8 @@ beforeEach( () => {
 
 it( 'create project', async() => {
     expect.assertions( 7 );
+
+    window.localStorage.setItem( 'token', 'test' );
 
     const postMock = jest.fn().mockReturnValue( Promise.resolve() );
     axios.create.mockImplementation( () => {

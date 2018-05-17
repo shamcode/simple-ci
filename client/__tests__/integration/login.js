@@ -14,7 +14,7 @@ beforeEach( () => {
     };
     const storage = {};
     window.localStorage = {
-        getItem( key ) { return storage[ key ]; },
+        getItem( key ) { return storage[ key ] || null; },
         setItem( key, value ) { storage[ key ] = value; },
         removeItem( key ) { delete storage[ key ]; }
     };
@@ -31,8 +31,8 @@ it( 'success login', async() => {
         );
     } );
     const postMock = jest.fn().mockReturnValue( Promise.resolve( {
-        headers: {
-            Bearer: 'TOKEN'
+        data: {
+            token: 'TOKEN'
         }
     } ) );
     axios.create.mockImplementation( () => {

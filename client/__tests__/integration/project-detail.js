@@ -14,7 +14,7 @@ beforeEach( () => {
     };
     const storage = {};
     window.localStorage = {
-        getItem( key ) { return storage[ key ]; },
+        getItem( key ) { return storage[ key ] || null; },
         setItem( key, value ) { storage[ key ] = value; },
         removeItem( key ) { delete storage[ key ]; }
     };
@@ -22,6 +22,8 @@ beforeEach( () => {
 
 it( 'project-detail page', async() => {
     expect.assertions( 2 );
+
+    window.localStorage.setItem( 'token', 'test' );
 
     const projectData = {
         id: 1,

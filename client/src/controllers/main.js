@@ -13,8 +13,8 @@ import ProjectEditPage from '../widgets/project-edit/page';
 import ProjectDeletePage from '../widgets/project-delete/page';
 
 export default function() {
-    new Session();
     new Store();
+    new Session();
 
     const router = new Router( '/' );
     router
