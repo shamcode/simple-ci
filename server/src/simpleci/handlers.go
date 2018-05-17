@@ -3,9 +3,12 @@ package main
 import (
 	"database/sql"
 	"encoding/json"
+	jwt "github.com/dgrijalva/jwt-go"
 	"github.com/julienschmidt/httprouter"
+	"github.com/sirupsen/logrus"
 	"net/http"
 	"strconv"
+	"time"
 )
 
 func getID(w http.ResponseWriter, ps httprouter.Params) (int, bool) {
@@ -27,12 +30,56 @@ func setJsonContentTypeHeader(w http.ResponseWriter) {
 
 func optionsHandler(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 	setAllowOriginHeader(w)
-	w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Access-Control-Allow-Headers")
+	w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Access-Control-Allow-Headers, Bearer")
 	w.Header().Set("Access-Control-Allow-Methods", r.Header.Get("Access-Control-Request-Method"))
 }
 
-func getProjects(w http.ResponseWriter, r *http.Request, db *Db) {
+func getToken(w http.ResponseWriter, r *http.Request, db *Db) {
 	setAllowOriginHeader(w)
+	var userData struct {
+		Username string `json:"username"`
+		Password string `json:"password"`
+	}
+	err := json.NewDecoder(r.Body).Decode(&userData)
+	if nil != err {
+		http.Error(w, "Login failed!", http.StatusUnauthorized)
+		return
+	}
+	if userData.Username == "admin" && userData.Password == "passw0rd" {
+		claims := JWTData{
+			StandardClaims: jwt.StandardClaims{
+				ExpiresAt: time.Now().Add(time.Hour).Unix(),
+			},
+			CustomClaims: map[string]string{
+				"id": "1",
+			},
+		}
+
+		token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
+		tokenString, err := token.SignedString([]byte(SECRET))
+		if err != nil {
+			logrus.WithError(err).Error("login failed")
+			http.Error(w, "Login failed!", http.StatusUnauthorized)
+			return
+		}
+
+		err = json.NewEncoder(w).Encode(struct {
+			Token string `json:"token"`
+		}{
+			tokenString,
+		})
+		if err != nil {
+			logrus.WithError(err).Error("login failed")
+			http.Error(w, "Login failed!", http.StatusUnauthorized)
+			return
+		}
+		setJsonContentTypeHeader(w)
+	} else {
+		http.Error(w, "Login failed", http.StatusUnauthorized)
+	}
+}
+
+func getProjects(w http.ResponseWriter, r *http.Request, db *Db) {
 	projects, err := db.GetProjects()
 	if err != nil {
 		w.WriteHeader(500)
@@ -46,7 +93,6 @@ func getProjects(w http.ResponseWriter, r *http.Request, db *Db) {
 }
 
 func getProjectById(w http.ResponseWriter, r *http.Request, db *Db) {
-	setAllowOriginHeader(w)
 	ps := httprouter.ParamsFromContext(r.Context())
 	id, ok := getID(w, ps)
 	if !ok {
@@ -69,7 +115,6 @@ func getProjectById(w http.ResponseWriter, r *http.Request, db *Db) {
 }
 
 func createProject(w http.ResponseWriter, r *http.Request, db *Db) {
-	setAllowOriginHeader(w)
 	var project Project
 	err := json.NewDecoder(r.Body).Decode(&project)
 	if err != nil || project.Name == "" || project.Cwd == "" {
@@ -90,7 +135,6 @@ func updateProject(w http.ResponseWriter, r *http.Request, db *Db) {
 	if !ok {
 		return
 	}
-	setAllowOriginHeader(w)
 	var project Project
 	err := json.NewDecoder(r.Body).Decode(&project)
 	if err != nil || project.Name == "" || project.Cwd == "" {
@@ -111,7 +155,6 @@ func deleteProject(w http.ResponseWriter, r *http.Request, db *Db) {
 	if !ok {
 		return
 	}
-	setAllowOriginHeader(w)
 	if _, err := db.DeleteProject(id); err != nil {
 		w.WriteHeader(500)
 		return

@@ -1,7 +1,10 @@
 package main
 
 import (
+	"errors"
+	"github.com/dgrijalva/jwt-go"
 	"github.com/nytimes/gziphandler"
+	"github.com/sirupsen/logrus"
 	"log"
 	"net/http"
 )
@@ -23,4 +26,34 @@ func wrapHandler(handler func(http.ResponseWriter, *http.Request, *Db), db *Db) 
 		handler(writer, request, db)
 	})
 	return gziphandler.GzipHandler(handlerFunc)
+}
+
+func jwtHandler(handler func(http.ResponseWriter, *http.Request, *Db), db *Db) http.Handler {
+	return wrapHandler(func(w http.ResponseWriter, r *http.Request, db *Db) {
+		setAllowOriginHeader(w)
+		jwtToken := r.Header.Get("Bearer")
+		if 0 == len(jwtToken) {
+			http.Error(w, "Request failed!", http.StatusUnauthorized)
+			return
+		}
+
+		claims, err := jwt.ParseWithClaims(jwtToken, &JWTData{}, func(token *jwt.Token) (interface{}, error) {
+			if jwt.SigningMethodHS256 != token.Method {
+				return nil, errors.New("Invalid signing algorithm")
+			}
+			return []byte(SECRET), nil
+		})
+
+		if err != nil {
+			logrus.WithError(err).Error("Request failed!")
+			http.Error(w, "Request failed!", http.StatusUnauthorized)
+			return
+		}
+
+		data := claims.Claims.(*JWTData)
+
+		userID := data.CustomClaims["id"]
+		logrus.WithField("userID", userID).Info("User session")
+		handler(w, r, db)
+	}, db)
 }

@@ -4,6 +4,10 @@
       "URI": "https://github.com/bmizerany/pq",
       "Ref": "da2b95e392c172df0be322eadc19a90b0f771548"
     },
+    "vendor/src/github.com/dgrijalva/jwt-go": {
+      "URI": "https://github.com/dgrijalva/jwt-go",
+      "Ref": "06ea1031745cb8b3dab3f6a236daf2b0aa468b7e"
+    },
     "vendor/src/github.com/elazarl/go-bindata-assetfs": {
       "URI": "https://github.com/elazarl/go-bindata-assetfs",
       "Ref": "38087fe4dafb822e541b3f7955075cc1c30bd294"
