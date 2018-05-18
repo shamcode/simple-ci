@@ -39,7 +39,10 @@ func (db *Db) Close() {
 
 func (db *Db) CreateStructure() {
 	log.Info("Create DB schema")
-	_, err := db.connection.Exec(`CREATE TABLE IF NOT EXISTS project("id" SERIAL PRIMARY KEY, "name" varchar(50), "cwd" varchar(255));`)
+	_, err := db.connection.Exec(`
+		CREATE TABLE IF NOT EXISTS project("id" SERIAL PRIMARY KEY, "name" varchar(50), "cwd" varchar(255));
+		CREATE TABLE IF NOT EXISTS admin("id" SERIAL PRIMARY KEY, "username" varchar(50), "password" varchar(50));
+	`)
 	if err != nil {
 		log.Fatal(err)
 	}
