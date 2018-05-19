@@ -12,6 +12,12 @@ type Db struct {
 	connection *sql.DB
 }
 
+type Admin struct {
+	Id       int
+	Username string
+	Password string
+}
+
 type Project struct {
 	Id   int    `json:"id"`
 	Name string `json:"name"`
@@ -46,6 +52,19 @@ func (db *Db) CreateStructure() {
 	if err != nil {
 		log.Fatal(err)
 	}
+}
+
+func (db *Db) GetAdmin() (Admin, error) {
+	var admin Admin
+	row := db.connection.QueryRow("SELECT * FROM admin")
+	return admin, row.Scan(&admin.Id, &admin.Username, &admin.Password)
+}
+
+func (db *Db) HasAdmin() bool {
+	var count int
+	row := db.connection.QueryRow("SELECT COUNT(*) as count FROM  table_name")
+	row.Scan(&count)
+	return count > 0
 }
 
 func (db *Db) GetProjects() ([]Project, error) {

@@ -9,6 +9,25 @@ import (
 	"net/http"
 )
 
+const registryUrlPath = "/registry/"
+
+func rootHandler(callbackForBytesResponse func() ([]byte, error), db *Db) http.Handler {
+	bytes, err := callbackForBytesResponse()
+	if err != nil {
+		log.Fatal(err)
+	}
+	handler := http.HandlerFunc(func(writer http.ResponseWriter, request *http.Request) {
+		writer.Header().Set("Content-Type", "text/html")
+		if db.HasAdmin() || registryUrlPath == request.URL.Path {
+			writer.Write(bytes)
+		} else {
+			logrus.Warn("Redirect to registry page")
+			http.Redirect(writer, request, registryUrlPath, http.StatusSeeOther)
+		}
+	})
+	return gziphandler.GzipHandler(handler)
+}
+
 func bytesResponseHandler(callbackForBytesResponse func() ([]byte, error), contentType string) http.Handler {
 	bytes, err := callbackForBytesResponse()
 	if err != nil {

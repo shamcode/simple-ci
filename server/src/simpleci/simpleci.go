@@ -35,7 +35,7 @@ func main() {
 	router.Handler("GET", "/dist/bundle.css", bytesResponseHandler(assets.ClientDistBundleCssBytes, "text/css"))
 	router.Handler("GET", "/dist/bundle.js", bytesResponseHandler(assets.ClientDistBundleJsBytes, "application/javascript"))
 
-	root := bytesResponseHandler(assets.ClientIndexHtmlBytes, "text/html")
+	root := rootHandler(assets.ClientIndexHtmlBytes, db)
 	router.Handler("GET", "/", root)
 	router.NotFound = root
 

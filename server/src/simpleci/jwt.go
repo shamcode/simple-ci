@@ -2,8 +2,8 @@ package main
 
 import (
 	jwt "github.com/dgrijalva/jwt-go"
-	"time"
 	"math/rand"
+	"time"
 )
 
 var SECRET string
