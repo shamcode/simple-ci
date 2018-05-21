@@ -1,8 +1,8 @@
-import { options, inject } from 'sham-ui';
-import LoginPageTemplate from './page.sht'
+import { inject, options } from 'sham-ui';
+import RegistryPageTemplate from './page.sht'
 
-export default class LoginPage extends LoginPageTemplate {
-    @inject session = 'session';
+export default class RegistryPage extends RegistryPageTemplate {
+    @inject store = 'store';
 
     @options get errors() { return []; }
     @options get dataSaving() { return false; }
@@ -19,15 +19,15 @@ export default class LoginPage extends LoginPageTemplate {
             dataSaving: true,
             errors: []
         } );
-        this.session.login(
+        this.store.registry(
             formData.get( 'username' ).trim(),
             formData.get( 'password' )
         ).catch(
-            ::this.loginFail
+            ::this.createFail
         );
     }
 
-    loginFail() {
+    createFail() {
         this.update( {
             password: '',
             dataSaving: false,

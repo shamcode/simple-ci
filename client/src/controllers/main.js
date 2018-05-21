@@ -6,6 +6,7 @@ import disabled from '../directives/disabled';
 import EventListenerDirectives from '../directives/event-listener';
 import App from '../widgets/App.sht';
 import LoginPage from '../widgets/login/page';
+import RegistryPage from '../widgets/registry/page';
 import ProjectsPage from '../widgets/project-list/page';
 import ProjectCreatePage from '../widgets/project-create/page';
 import ProjectDetailPage from '../widgets/project-detail/page';
@@ -18,7 +19,8 @@ export default function() {
 
     const router = new Router( '/' );
     router
-        .bindPage( 'login',               'login',          LoginPage, {} )
+        .bindPage( 'login',               'login',          LoginPage,         {} )
+        .bindPage( 'registry',            'registry',       RegistryPage,      {} )
         .bindPage( 'projects/create',     'project-create', ProjectCreatePage, {} )
         .bindPage( 'projects/:id/edit',   'project-edit',   ProjectEditPage,   {} )
         .bindPage( 'projects/:id/delete', 'project-delete', ProjectDeletePage, {} )
