@@ -21,7 +21,9 @@ export default class Store {
     }
 
     _requestAuthInterceptor( request ) {
-        if ( !this.session.isAuthenticated && this._isGetTokenRequest( request ) ) {
+        if ( !this.session.isAuthenticated && (
+            this._isGetTokenRequest( request ) || this._isRegistryRequest( request )
+        ) ) {
             return request;
         }
         if ( !this.session.isAuthenticated ) {
@@ -45,6 +47,14 @@ export default class Store {
 
     _isGetTokenRequest( request ) {
         return '/login' === request.url;
+    }
+
+    registry( username, password ) {
+        return this.axios.post( '/registry', { username, password } );
+    }
+
+    _isRegistryRequest( request ) {
+        return '/registry' === request.url;
     }
 
     getProjects() {

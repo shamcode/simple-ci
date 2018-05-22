@@ -11,6 +11,7 @@ Object {
     },
   },
   "html": "
+<!--if-->
 <!--ErrorsPanel-->
 <div class=\\"login-form\\">
   <form>
@@ -49,11 +50,14 @@ Object {
       "render",
       "bindEvents",
     ],
+    "dataSaving": false,
     "directives": Object {
       "disabled": [Function],
       "onclick": [Function],
       "onsubmit": [Function],
     },
+    "errors": Array [],
+    "password": "",
     "renderAsync": false,
     "renderDependence": Array [],
     "types": Array [],
