@@ -3,6 +3,7 @@ import RegistryPageTemplate from './page.sht'
 
 export default class RegistryPage extends RegistryPageTemplate {
     @inject store = 'store';
+    @inject router = 'router';
 
     @options get errors() { return []; }
     @options get dataSaving() { return false; }
@@ -22,16 +23,23 @@ export default class RegistryPage extends RegistryPageTemplate {
         this.store.registry(
             formData.get( 'username' ).trim(),
             formData.get( 'password' )
-        ).catch(
-            ::this.createFail
+        ).then(
+            ::this.registrySuccess,
+            ::this.registryFail
         );
     }
 
-    createFail() {
+    registrySuccess() {
+        this.router.navigate(
+            this.router.generate( 'login', {} )
+        )
+    }
+
+    registryFail() {
         this.update( {
             password: '',
             dataSaving: false,
-            errors: [ 'Login fail' ],
+            errors: [ 'Registry fail' ],
         } )
     }
 }

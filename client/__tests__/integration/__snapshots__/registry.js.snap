@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`success registry 1`] = `
+"<header>
+  <a href=\\"\\" class=\\"logo\\">Simple CI</a>
+</header>
+<!--Header-->
+<main>
+  <!--if-->
+  <!--ErrorsPanel-->
+  <div class=\\"login-form\\">
+    <form>
+      <div class=\\"group\\">
+        <input name=\\"username\\" type=\\"text\\" required=\\"\\"><span class=\\"highlight\\"></span><span class=\\"bar\\"></span>
+        <label>Username</label>
+      </div>
+      <div class=\\"group\\">
+        <input name=\\"password\\" type=\\"password\\" required=\\"\\"><span class=\\"highlight\\"></span><span class=\\"bar\\"></span>
+        <label>Password</label>
+      </div>
+      <div class=\\"group\\">
+        <button type=\\"submit\\"><span>Create</span></button>
+      </div>
+    </form>
+  </div>
+</main>
+<footer> Sham 2018 </footer>
+<!--Footer-->"
+`;
