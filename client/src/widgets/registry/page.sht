@@ -2,7 +2,7 @@
 
 <ErrorsPanel errors={{errors}}/>
 
-<div class="login-form">
+<div class="registry-form">
     <form :onsubmit={{this._submitForm.bind(this)}}>
         <div class="group">
             <input name="username" type="text" required>

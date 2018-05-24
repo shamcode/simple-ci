@@ -1,23 +1,14 @@
+import setup, { flushPromises } from './helpers'
 import pretty from 'pretty';
 import axios from 'axios';
 import ShamUI, { DI } from 'sham-ui';
 import controller from '../../src/controllers/main';
 jest.mock( 'axios' );
 
-const flushPromises = () => new Promise( resolve => setImmediate( resolve ) );
-
 beforeEach( () => {
     jest.resetModules();
     jest.clearAllMocks();
-    window.requestAnimationFrame = ( cb ) => {
-        setImmediate( cb )
-    };
-    const storage = {};
-    window.localStorage = {
-        getItem( key ) { return storage[ key ] || null; },
-        setItem( key, value ) { storage[ key ] = value; },
-        removeItem( key ) { delete storage[ key ]; }
-    };
+    setup();
 } );
 
 it( 'project-detail page', async() => {

@@ -66,6 +66,10 @@
     "collectCoverageFrom": [
       "src/**/*.js"
     ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules/",
+      "<rootDir>/__tests__/integration/helpers.js"
+    ],
     "testURL": "http://localhost:3000/"
   }
 }
