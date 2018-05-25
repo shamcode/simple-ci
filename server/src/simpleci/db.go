@@ -47,7 +47,7 @@ func (db *Db) CreateStructure() {
 	log.Info("Create DB schema")
 	_, err := db.connection.Exec(`
 		CREATE TABLE IF NOT EXISTS project("id" SERIAL PRIMARY KEY, "name" varchar(50), "cwd" varchar(255));
-		CREATE TABLE IF NOT EXISTS admin("id" SERIAL PRIMARY KEY, "username" varchar(50), "password" varchar(50));
+		CREATE TABLE IF NOT EXISTS admin("id" SERIAL PRIMARY KEY, "username" varchar(50), "password" text);
 	`)
 	if err != nil {
 		log.Fatal(err)
@@ -62,9 +62,14 @@ func (db *Db) GetAdmin() (Admin, error) {
 
 func (db *Db) HasAdmin() bool {
 	var count int
-	row := db.connection.QueryRow("SELECT COUNT(*) as count FROM  table_name")
+	row := db.connection.QueryRow("SELECT COUNT(*) as count FROM  admin")
 	row.Scan(&count)
 	return count > 0
+}
+
+func (db *Db) CreateAdmin(username, password string) (sql.Result, error) {
+	return db.connection.Exec("INSERT INTO admin VALUES (default, $1, $2)",
+		username, password)
 }
 
 func (db *Db) GetProjects() ([]Project, error) {

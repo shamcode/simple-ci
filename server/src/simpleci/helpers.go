@@ -64,7 +64,7 @@ func jwtHandler(handler func(http.ResponseWriter, *http.Request, *Db), db *Db) h
 		})
 
 		if err != nil {
-			logrus.WithError(err).Error("Request failed!")
+			logrus.WithError(err).Warn("Fail parse jwt")
 			http.Error(w, "Request failed!", http.StatusUnauthorized)
 			return
 		}
@@ -72,7 +72,18 @@ func jwtHandler(handler func(http.ResponseWriter, *http.Request, *Db), db *Db) h
 		data := claims.Claims.(*JWTData)
 
 		userID := data.CustomClaims["id"]
-		logrus.WithField("userID", userID).Info("User session")
+
+		admin, err := db.GetAdmin()
+		if err != nil {
+			http.Error(w, "Request failed!", http.StatusInternalServerError)
+			logrus.WithError(err).Error("Request failed!")
+			return
+		}
+		if userID != string(admin.Id) {
+			logrus.Warn("Invalid claims data")
+			http.Error(w, "Request failed!", http.StatusUnauthorized)
+			return
+		}
 		handler(w, r, db)
 	}, db)
 }

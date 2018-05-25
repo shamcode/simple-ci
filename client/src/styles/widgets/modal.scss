@@ -50,7 +50,6 @@
         background-color: #9cc474;
         color: #455A64;
 
-        transition: background-color .3s;
         &.danger {
           background-color: #7f0000;
           color: white;
@@ -64,32 +63,7 @@
         & > * {
           position: relative;
         }
-        &:before {
-          content: "";
-
-          position: absolute;
-          top: 50%;
-          left: 50%;
-
-          display: block;
-          width: 0;
-          padding-top: 0;
-
-          border-radius: 100%;
-
-          background-color: rgba(236, 240, 241, .3);
-
-          -webkit-transform: translate(-50%, -50%);
-          -moz-transform: translate(-50%, -50%);
-          -ms-transform: translate(-50%, -50%);
-          -o-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-        }
-        &:active:before {
-          width: 120%;
-          padding-top: 120%;
-          transition: width .3s ease-out, padding-top .3s ease-out;
-        }
+        
         span {
           display: block;
           padding: 12px 24px;

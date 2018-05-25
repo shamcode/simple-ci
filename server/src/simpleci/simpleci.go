@@ -21,6 +21,7 @@ func main() {
 
 	router := httprouter.New()
 
+	router.Handler("POST", "/api/v1/registry", wrapHandler(registry, db))
 	router.Handler("POST", "/api/v1/login", wrapHandler(getToken, db))
 
 	router.Handler("GET", "/api/v1/projects", jwtHandler(getProjects, db))

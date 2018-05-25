@@ -1,5 +1,5 @@
 ## TODO
-* JWT-auth
+* [x] JWT-auth
 * [x] Create new project
 * [x] Project detail page
 * [X] Change file structure for widgets: group by page

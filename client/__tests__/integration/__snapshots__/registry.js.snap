@@ -8,7 +8,7 @@ exports[`success registry 1`] = `
 <main>
   <!--if-->
   <!--ErrorsPanel-->
-  <div class=\\"login-form\\">
+  <div class=\\"registry-form\\">
     <form>
       <div class=\\"group\\">
         <input name=\\"username\\" type=\\"text\\" required=\\"\\"><span class=\\"highlight\\"></span><span class=\\"bar\\"></span>

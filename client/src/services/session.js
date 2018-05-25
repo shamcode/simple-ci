@@ -39,9 +39,19 @@ export default class Session {
         );
     }
 
+    _isNonRestrictedPage() {
+        const page = this.router.lastRouteResolved();
+        return undefined !== page && [
+            'registry',
+            'login'
+        ].includes( page.name );
+    }
+
     _goToLoginPage() {
-        this.router.navigate(
-            this.router.generate( 'login', {} )
-        )
+        if ( !this._isNonRestrictedPage() ) {
+            this.router.navigate(
+                this.router.generate( 'login', {} )
+            );
+        }
     }
 }
