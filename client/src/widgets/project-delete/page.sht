@@ -1,4 +1,4 @@
-{% import PageDataLoading from '../PageDataLoading.sht' %}
+{% import FlushPageDataLoading from '../FlushPageDataLoading' %}
 {% import ErrorsPanel from '../ErrorsPanel.sht' %}
 {% import Modal from './modal' %}
 
@@ -13,5 +13,5 @@
         />
     {% endif %}
 {% else %}
-    <PageDataLoading/>
+    <FlushPageDataLoading/>
 {% endif %}

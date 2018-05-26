@@ -1,4 +1,4 @@
-{% import PageDataLoading from '../PageDataLoading.sht' %}
+{% import FlushPageDataLoading from '../FlushPageDataLoading' %}
 {% import ErrorsPanel from '../ErrorsPanel.sht' %}
 {% import Info from './Info' %}
 
@@ -6,5 +6,5 @@
     <ErrorsPanel errors={{errors}}/>
     <Info project={{project}}/>
 {% else %}
-    <PageDataLoading/>
+    <FlushPageDataLoading/>
 {% endif %}

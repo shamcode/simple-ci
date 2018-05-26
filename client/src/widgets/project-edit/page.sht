@@ -1,4 +1,4 @@
-{% import PageDataLoading from '../PageDataLoading.sht' %}
+{% import FlushPageDataLoading from '../FlushPageDataLoading' %}
 {% import ErrorsPanel from '../ErrorsPanel.sht' %}
 {% import ProjectForm from '../ProjectForm' %}
 
@@ -12,5 +12,5 @@
             onSubmit={{this.updateProject.bind( this )}}
     />
 {% else %}
-    <PageDataLoading/>
+    <FlushPageDataLoading/>
 {% endif %}
