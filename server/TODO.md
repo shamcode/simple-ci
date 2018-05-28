@@ -7,3 +7,5 @@
 * [x] Get project by ID
 * [x] Edit project
 * [x] Delete project
+* Create config file if it doesn't exists already
+* Chain

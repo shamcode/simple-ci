@@ -46,8 +46,21 @@ func (db *Db) Close() {
 func (db *Db) CreateStructure() {
 	log.Info("Create DB schema")
 	_, err := db.connection.Exec(`
-		CREATE TABLE IF NOT EXISTS project("id" SERIAL PRIMARY KEY, "name" varchar(50), "cwd" varchar(255));
-		CREATE TABLE IF NOT EXISTS admin("id" SERIAL PRIMARY KEY, "username" varchar(50), "password" text);
+		CREATE TABLE IF NOT EXISTS project(
+			"id" SERIAL PRIMARY KEY, 
+			"name" varchar(50), 
+			"cwd" varchar(255)
+		);
+		CREATE TABLE IF NOT EXISTS admin(
+			"id" SERIAL PRIMARY KEY,
+			"username" varchar(50), 
+			"password" text
+		);
+		CREATE TABLE IF NOT EXISTS chain(
+			"id" SERIAL PRIMARY KEY, 
+			"project_id" INTEGER REFERENCES project(id) ON DELETE CASCADE,  
+			"name" VARCHAR(50)
+		);
 	`)
 	if err != nil {
 		log.Fatal(err)
