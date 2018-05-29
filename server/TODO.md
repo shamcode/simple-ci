@@ -7,5 +7,12 @@
 * [x] Get project by ID
 * [x] Edit project
 * [x] Delete project
-* Create config file if it doesn't exists already
-* Chain
+* [x] Create config file if it doesn't exists already
+* Get chains for project
+* Create chain for project
+* Delete chain
+* Add step to chain
+* Remove step from chain
+* Update step
+* Change step order
+* Run chain
