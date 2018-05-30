@@ -19,9 +19,19 @@ type Admin struct {
 }
 
 type Project struct {
+	Id     int     `json:"id"`
+	Name   string  `json:"name"`
+	Cwd    string  `json:"cwd"`
+}
+
+type ProjectDetail struct {
+	Project
+	Chains []Chain `json:"chains"`
+}
+
+type Chain struct {
 	Id   int    `json:"id"`
 	Name string `json:"name"`
-	Cwd  string `json:"cwd"`
 }
 
 func (db *Db) Connect() {
@@ -106,10 +116,32 @@ func (db *Db) GetProjects() ([]Project, error) {
 	return projects, nil
 }
 
-func (db *Db) GetProjectById(id int) (Project, error) {
-	var project Project
+func (db *Db) GetProjectById(id int) (ProjectDetail, error) {
+	var project ProjectDetail
 	row := db.connection.QueryRow("SELECT * FROM project WHERE id=$1", id)
-	return project, row.Scan(&project.Id, &project.Name, &project.Cwd)
+	err := row.Scan(&project.Id, &project.Name, &project.Cwd)
+	if nil != err {
+		return project, err
+	}
+
+	project.Chains = make([]Chain, 0)
+	rows, err := db.connection.Query("SELECT id, \"name\" FROM chain WHERE project_id=$1", id)
+	if err != nil {
+		return project, err
+	}
+	defer rows.Close()
+
+	var chain Chain
+	for rows.Next() {
+		if err = rows.Scan(&chain.Id, &chain.Name); err != nil {
+			return project, err
+		}
+		project.Chains = append(project.Chains, chain)
+	}
+	if err = rows.Err(); err != nil {
+		return project, err
+	}
+	return project, err
 }
 
 func (db *Db) CreateProject(name, cwd string) (sql.Result, error) {

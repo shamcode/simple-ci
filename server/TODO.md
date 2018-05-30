@@ -8,9 +8,10 @@
 * [x] Edit project
 * [x] Delete project
 * [x] Create config file if it doesn't exists already
-* Get chains for project
+* [x] Get chains for project
 * Create chain for project
 * Delete chain
+* Get chain detail
 * Add step to chain
 * Remove step from chain
 * Update step

@@ -1,10 +1,10 @@
 package main
 
 import (
-	"gopkg.in/gcfg.v1"
-	"os"
 	"github.com/sirupsen/logrus"
+	"gopkg.in/gcfg.v1"
 	"io/ioutil"
+	"os"
 	"strings"
 )
 
@@ -43,7 +43,7 @@ func loadConfiguration() Config {
 	if _, err := os.Stat(configFilename); os.IsNotExist(err) {
 		err := ioutil.WriteFile(configFilename, []byte(strings.TrimSpace(defaultConfig)), 0644)
 		if nil != err {
-			logrus.WithError(err).Fatal("Fail write config",logrus.Fields{"configFilename": configFilename} )
+			logrus.WithError(err).Fatal("Fail write config", logrus.Fields{"configFilename": configFilename})
 		} else {
 			logrus.Info("Create config file")
 		}
