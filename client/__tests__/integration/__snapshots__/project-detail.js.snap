@@ -38,6 +38,10 @@ exports[`project-detail page 2`] = `
       <dd>Delete project</dd>
     </dl>
   </div>
+  <div class=\\"project-chains\\">
+    <button class=\\"project-chain\\" href=\\"#\\">First chain</button>
+    <button class=\\"project-chain\\" href=\\"#\\">Second chain</button>
+  </div>
   <!--Info-->
   <!--if-->
 </main>

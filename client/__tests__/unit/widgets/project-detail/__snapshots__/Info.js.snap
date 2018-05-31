@@ -21,8 +21,16 @@ Object {
     <dd>Delete project</dd>
   </dl>
 </div>
+<div class=\\"project-chains\\"></div>
 ",
   "nodes": Array [
+    Object {
+      "ID": undefined,
+      "constructorOptions": null,
+      "html": null,
+      "nodes": null,
+      "options": null,
+    },
     Object {
       "ID": undefined,
       "constructorOptions": null,
@@ -36,7 +44,9 @@ Object {
       "render",
       "bindEvents",
     ],
-    "project": Object {},
+    "project": Object {
+      "chains": Array [],
+    },
     "renderAsync": false,
     "renderDependence": Array [],
     "types": Array [],

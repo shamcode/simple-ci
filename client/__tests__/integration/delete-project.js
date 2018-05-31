@@ -19,7 +19,8 @@ it( 'delete project', async() => {
     const projectData = {
         id: 1,
         name: 'Test',
-        cwd: '/tmp/'
+        cwd: '/tmp/',
+        chains: []
     };
     const projectsPromise = Promise.resolve( {
         data: [ projectData ]

@@ -24,3 +24,14 @@
     </dl>
 </div>
 
+<div class="project-chains">
+    {% for chain of project.chains %}
+        <button
+            class="project-chain"
+            href="#"
+        >
+            {{chain.name}}
+        </button>
+    {% endfor %}
+</div>
+

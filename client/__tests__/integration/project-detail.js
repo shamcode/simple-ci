@@ -19,7 +19,11 @@ it( 'project-detail page', async() => {
     const projectData = {
         id: 1,
         name: 'Test',
-        cwd: '/tmp/'
+        cwd: '/tmp/',
+        chains: [
+            { id: 1, name: 'First chain' },
+            { id: 2, name: 'Second chain' }
+        ]
     };
 
     axios.create.mockImplementation( () => {
