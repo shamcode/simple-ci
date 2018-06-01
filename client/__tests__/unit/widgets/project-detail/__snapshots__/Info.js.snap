@@ -21,7 +21,10 @@ Object {
     <dd>Delete project</dd>
   </dl>
 </div>
-<div class=\\"project-chains\\"></div>
+<div class=\\"project-chains\\">
+  <h3>Chains</h3>
+  <!--for-->
+</div>
 ",
   "nodes": Array [
     Object {

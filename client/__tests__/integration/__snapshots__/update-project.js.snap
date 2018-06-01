@@ -68,7 +68,10 @@ exports[`update project 3`] = `
       <dd>Delete project</dd>
     </dl>
   </div>
-  <div class=\\"project-chains\\"></div>
+  <div class=\\"project-chains\\">
+    <h3>Chains</h3>
+    <!--for-->
+  </div>
   <!--Info-->
   <!--if-->
 </main>

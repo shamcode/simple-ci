@@ -40,7 +40,7 @@ export default ( superclass ) => class extends superclass {
 
     _loadedPageDataFail() {
         this.update( {
-            project: {},
+            project: { chains: [] },
             dataLoaded: true,
             errors: [ "Load project fail!" ]
         } )

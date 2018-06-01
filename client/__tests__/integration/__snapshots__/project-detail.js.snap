@@ -39,8 +39,10 @@ exports[`project-detail page 2`] = `
     </dl>
   </div>
   <div class=\\"project-chains\\">
+    <h3>Chains</h3>
     <button class=\\"project-chain\\" href=\\"#\\">First chain</button>
     <button class=\\"project-chain\\" href=\\"#\\">Second chain</button>
+    <!--for-->
   </div>
   <!--Info-->
   <!--if-->

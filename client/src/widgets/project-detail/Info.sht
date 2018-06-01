@@ -25,6 +25,7 @@
 </div>
 
 <div class="project-chains">
+    <h3>Chains</h3>
     {% for chain of project.chains %}
         <button
             class="project-chain"

@@ -106,7 +106,9 @@ Object {
     "errors": Array [
       "Load project fail!",
     ],
-    "project": Object {},
+    "project": Object {
+      "chains": Array [],
+    },
     "renderAsync": false,
     "renderDependence": Array [],
     "types": Array [],
