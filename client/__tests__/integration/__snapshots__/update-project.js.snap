@@ -71,6 +71,9 @@ exports[`update project 3`] = `
   <div class=\\"project-chains\\">
     <h3>Chains</h3>
     <!--for-->
+    <button class=\\"project-chain project-chain-create\\" href=\\"#\\">
+      <div class=\\"create-icon\\"></div>
+    </button>
   </div>
   <!--Info-->
   <!--if-->

@@ -10,6 +10,7 @@
 * [x] Create config file if it doesn't exists already
 * [x] Get chains for project
 * Create chain for project
+* Update chain
 * Delete chain
 * Get chain detail
 * Add step to chain

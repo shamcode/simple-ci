@@ -43,6 +43,9 @@ exports[`project-detail page 2`] = `
     <button class=\\"project-chain\\" href=\\"#\\">First chain</button>
     <button class=\\"project-chain\\" href=\\"#\\">Second chain</button>
     <!--for-->
+    <button class=\\"project-chain project-chain-create\\" href=\\"#\\">
+      <div class=\\"create-icon\\"></div>
+    </button>
   </div>
   <!--Info-->
   <!--if-->

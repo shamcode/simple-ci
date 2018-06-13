@@ -34,5 +34,12 @@
             {{chain.name}}
         </button>
     {% endfor %}
+    <button
+            class="project-chain project-chain-create"
+            href="#"
+            :onclick={{this._clickToCreateNewChain.bind(this)}}
+    >
+        <div class="create-icon"></div>
+    </button>
 </div>
 

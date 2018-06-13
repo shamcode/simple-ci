@@ -1,30 +1,4 @@
-@mixin plus($width, $lineWidth, $color) {
-  box-sizing: border-box;
-  transition: transform 0.3s;
-  width: $width;
-  height: $width;
-  position: relative;
-  &::before {
-    content: '';
-    display: block;
-    width: $width;
-    height:0px;
-    border-bottom: solid $lineWidth $color;
-    position: absolute;
-    bottom:$width /2 - $lineWidth/2;
-    transform: rotate(90deg);
-    transition: width 0.3s;
-  }
-  &::after {
-    content: '';
-    display: block;
-    width: $width;
-    height:0px;
-    border-bottom: solid $lineWidth $color;
-    position: absolute;
-    bottom:$width /2 - $lineWidth/2;
-  }
-}
+@import "mixins";
 
 .project-list {
   display: flex;

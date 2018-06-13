@@ -3,7 +3,12 @@
 exports[`renders correctly 1`] = `
 Object {
   "ID": "widget",
-  "constructorOptions": Object {},
+  "constructorOptions": Object {
+    "directives": Object {
+      "onclick": [Function],
+      "onsubmit": [Function],
+    },
+  },
   "html": "
 <div class=\\"project-info\\">
   <h3>null</h3>
@@ -24,6 +29,9 @@ Object {
 <div class=\\"project-chains\\">
   <h3>Chains</h3>
   <!--for-->
+  <button class=\\"project-chain project-chain-create\\" href=\\"#\\">
+    <div class=\\"create-icon\\"></div>
+  </button>
 </div>
 ",
   "nodes": Array [
@@ -47,6 +55,10 @@ Object {
       "render",
       "bindEvents",
     ],
+    "directives": Object {
+      "onclick": [Function],
+      "onsubmit": [Function],
+    },
     "project": Object {
       "chains": Array [],
     },

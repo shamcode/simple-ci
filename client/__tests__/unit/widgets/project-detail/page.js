@@ -1,5 +1,6 @@
 import { DI } from 'sham-ui';
 import Page from '../../../../src/widgets/project-detail/page';
+import directives from '../../../../src/directives/event-listener';
 import renderer from 'sham-ui-test-helpers';
 
 afterEach( () => {
@@ -17,7 +18,9 @@ it( 'renders correctly', () => {
         generate: jest.fn().mockReturnValueOnce( '/' )
     } );
 
-    const meta = renderer( Page, {} );
+    const meta = renderer( Page, {
+        directives
+    } );
     expect( storeMock.mock.calls[ 0 ][ 0 ] ).toBe( 1 );
     expect( meta.toJSON() ).toMatchSnapshot();
 } );
@@ -32,7 +35,9 @@ it( 'render errors', () => {
         generate: jest.fn().mockReturnValueOnce( '/' )
     } );
 
-    const meta = renderer( Page, {} );
+    const meta = renderer( Page, {
+        directives
+    } );
     expect( meta.toJSON() ).toMatchSnapshot();
 } );
 

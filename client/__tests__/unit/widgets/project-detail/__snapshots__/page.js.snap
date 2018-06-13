@@ -3,7 +3,12 @@
 exports[`render errors 1`] = `
 Object {
   "ID": "widget",
-  "constructorOptions": Object {},
+  "constructorOptions": Object {
+    "directives": Object {
+      "onclick": [Function],
+      "onsubmit": [Function],
+    },
+  },
   "html": "
 <!--if-->
 <!--FlushPageDataLoading-->
@@ -25,6 +30,10 @@ Object {
     ],
     "afterRender": [Function],
     "dataLoaded": false,
+    "directives": Object {
+      "onclick": [Function],
+      "onsubmit": [Function],
+    },
     "errors": Array [],
     "project": Object {},
     "renderAsync": false,
@@ -37,7 +46,12 @@ Object {
 exports[`renders correctly 1`] = `
 Object {
   "ID": "widget",
-  "constructorOptions": Object {},
+  "constructorOptions": Object {
+    "directives": Object {
+      "onclick": [Function],
+      "onsubmit": [Function],
+    },
+  },
   "html": "
 <!--if-->
 <!--FlushPageDataLoading-->
@@ -59,6 +73,10 @@ Object {
     ],
     "afterRender": [Function],
     "dataLoaded": false,
+    "directives": Object {
+      "onclick": [Function],
+      "onsubmit": [Function],
+    },
     "errors": Array [],
     "project": Object {},
     "renderAsync": false,
