@@ -1,0 +1,8 @@
+{% import FlushPageDataLoading from '../../../FlushPageDataLoading' %}
+{% import ErrorsPanel from '../../../ErrorsPanel.sht' %}
+
+{% if dataLoaded %}
+    <ErrorsPanel errors={{errors}}/>
+{% else %}
+    <FlushPageDataLoading/>
+{% endif %}

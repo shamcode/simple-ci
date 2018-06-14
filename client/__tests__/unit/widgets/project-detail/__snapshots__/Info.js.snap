@@ -21,7 +21,7 @@ Object {
     </dt>
     <dd>Edit project name &amp; cwd</dd>
     <dt>
-      <a href=\\"undefined\\" class=\\"project-delete-link\\">Delete</a>
+      <a href=\\"/\\" class=\\"project-delete-link\\">Delete</a>
     </dt>
     <dd>Delete project</dd>
   </dl>
@@ -29,9 +29,9 @@ Object {
 <div class=\\"project-chains\\">
   <h3>Chains</h3>
   <!--for-->
-  <button class=\\"project-chain project-chain-create\\" href=\\"#\\">
+  <a class=\\"project-chain project-chain-create\\" href=\\"/\\">
     <div class=\\"create-icon\\"></div>
-  </button>
+  </a>
 </div>
 ",
   "nodes": Array [

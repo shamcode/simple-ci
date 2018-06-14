@@ -8,6 +8,12 @@ export default class Info extends InfoTemplate {
         return DI.resolve( 'router' );
     }
 
+    _createProjectChainURL( project ) {
+        return this.router.generate( 'project-chain-create', {
+            id: project.id
+        } );
+    }
+
     _routerParams( project ) {
         return {
             id: project === undefined ? null : project.id

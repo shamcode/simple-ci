@@ -9,9 +9,18 @@ afterEach( () => {
 } );
 
 it( 'renders correctly', () => {
-    DI.bind( 'router', {
-        generate: jest.fn().mockReturnValueOnce( '/' )
+    DI.bind( 'store', {
+        getProjectById: jest.fn().mockReturnValue(
+            Promise.resolve( {
+                project: { id: 1, chains: [] }
+            } )
+        )
     } );
+    DI.bind( 'router', {
+        lastRouteResolved: jest.fn().mockReturnValueOnce( { params: { id: 1 } } ),
+        generate: jest.fn().mockReturnValue( '/' )
+    } );
+
     const meta = renderer( Info, {
         directives
     } );
