@@ -5,15 +5,19 @@ import (
 	"github.com/julienschmidt/httprouter"
 	log "github.com/sirupsen/logrus"
 	"net/http"
+	"simpleci/auth"
+	"simpleci/config"
+	DB "simpleci/db"
+	"simpleci/handlers"
 	"strconv"
 )
 
 func main() {
-	InitSecretJWT()
+	auth.InitSecretJWT()
 
-	cfg := loadConfiguration()
+	cfg := config.LoadConfiguration()
 
-	db := CreateDatabase(cfg.Database)
+	db := DB.CreateDatabase(cfg.Database)
 	db.Connect()
 	defer db.Close()
 
@@ -21,16 +25,18 @@ func main() {
 
 	router := httprouter.New()
 
-	router.Handler("POST", "/api/v1/registry", wrapHandler(registry, db))
-	router.Handler("POST", "/api/v1/login", wrapHandler(getToken, db))
+	router.Handler("POST", "/api/v1/registry", wrapHandler(handlers.Registry, db))
+	router.Handler("POST", "/api/v1/login", wrapHandler(handlers.GetToken, db))
 
-	router.Handler("GET", "/api/v1/projects", jwtHandler(getProjects, db))
-	router.Handler("GET", "/api/v1/projects/:id", jwtHandler(getProjectById, db))
-	router.Handler("PUT", "/api/v1/projects/:id", jwtHandler(updateProject, db))
-	router.Handler("DELETE", "/api/v1/projects/:id", jwtHandler(deleteProject, db))
-	router.Handler("POST", "/api/v1/projects", jwtHandler(createProject, db))
+	router.Handler("GET", "/api/v1/projects", jwtHandler(handlers.GetProjects, db))
+	router.Handler("GET", "/api/v1/projects/:id", jwtHandler(handlers.GetProjectById, db))
+	router.Handler("PUT", "/api/v1/projects/:id", jwtHandler(handlers.UpdateProject, db))
+	router.Handler("DELETE", "/api/v1/projects/:id", jwtHandler(handlers.DeleteProject, db))
+	router.Handler("POST", "/api/v1/projects", jwtHandler(handlers.CreateProject, db))
 
-	router.Handle("OPTIONS", "/*path", optionsHandler)
+	router.Handler("POST", "/api/v1/chains", jwtHandler(handlers.CreateProjectChain, db))
+
+	router.Handle("OPTIONS", "/*path", handlers.OptionsHandler)
 
 	router.Handler("GET", "/favicon.ico", bytesResponseHandler(assets.ClientFaviconIcoBytes, "image/x-icon"))
 	router.Handler("GET", "/dist/bundle.css", bytesResponseHandler(assets.ClientDistBundleCssBytes, "text/css"))

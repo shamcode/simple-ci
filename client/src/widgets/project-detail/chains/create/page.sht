@@ -1,8 +1,14 @@
 {% import FlushPageDataLoading from '../../../FlushPageDataLoading' %}
 {% import ErrorsPanel from '../../../ErrorsPanel.sht' %}
+{% import ChainForm from '../ChainForm' %}
 
 {% if dataLoaded %}
     <ErrorsPanel errors={{errors}}/>
+    <ChainForm
+            saveButtonText="Create"
+            dataSaving={{dataSaving}}
+            onSubmit={{this.createProjectChain.bind( this )}}
+    />
 {% else %}
     <FlushPageDataLoading/>
 {% endif %}

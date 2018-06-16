@@ -80,4 +80,8 @@ export default class Store {
     deleteProject( id ) {
         return this.axios.delete( `/projects/${id}` );
     }
+
+    createProjectChain( data ) {
+        return this.axios.post( '/chains', data );
+    }
 }

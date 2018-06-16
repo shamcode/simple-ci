@@ -7,11 +7,14 @@ import (
 	"github.com/sirupsen/logrus"
 	"log"
 	"net/http"
+	"simpleci/auth"
+	DB "simpleci/db"
+	"simpleci/handlers"
 )
 
 const registryUrlPath = "/registry/"
 
-func rootHandler(callbackForBytesResponse func() ([]byte, error), db *Db) http.Handler {
+func rootHandler(callbackForBytesResponse func() ([]byte, error), db *DB.Db) http.Handler {
 	bytes, err := callbackForBytesResponse()
 	if err != nil {
 		log.Fatal(err)
@@ -40,27 +43,27 @@ func bytesResponseHandler(callbackForBytesResponse func() ([]byte, error), conte
 	return gziphandler.GzipHandler(handler)
 }
 
-func wrapHandler(handler func(http.ResponseWriter, *http.Request, *Db), db *Db) http.Handler {
+func wrapHandler(handler func(http.ResponseWriter, *http.Request, *DB.Db), db *DB.Db) http.Handler {
 	handlerFunc := http.HandlerFunc(func(writer http.ResponseWriter, request *http.Request) {
 		handler(writer, request, db)
 	})
 	return gziphandler.GzipHandler(handlerFunc)
 }
 
-func jwtHandler(handler func(http.ResponseWriter, *http.Request, *Db), db *Db) http.Handler {
-	return wrapHandler(func(w http.ResponseWriter, r *http.Request, db *Db) {
-		setAllowOriginHeader(w)
+func jwtHandler(handler func(http.ResponseWriter, *http.Request, *DB.Db), db *DB.Db) http.Handler {
+	return wrapHandler(func(w http.ResponseWriter, r *http.Request, db *DB.Db) {
+		handlers.SetAllowOriginHeader(w)
 		jwtToken := r.Header.Get("Bearer")
 		if 0 == len(jwtToken) {
 			http.Error(w, "Request failed!", http.StatusUnauthorized)
 			return
 		}
 
-		claims, err := jwt.ParseWithClaims(jwtToken, &JWTData{}, func(token *jwt.Token) (interface{}, error) {
+		claims, err := jwt.ParseWithClaims(jwtToken, &auth.JWTData{}, func(token *jwt.Token) (interface{}, error) {
 			if jwt.SigningMethodHS256 != token.Method {
 				return nil, errors.New("Invalid signing algorithm")
 			}
-			return []byte(SECRET), nil
+			return []byte(auth.SECRET), nil
 		})
 
 		if err != nil {
@@ -69,7 +72,7 @@ func jwtHandler(handler func(http.ResponseWriter, *http.Request, *Db), db *Db) h
 			return
 		}
 
-		data := claims.Claims.(*JWTData)
+		data := claims.Claims.(*auth.JWTData)
 
 		userID := data.CustomClaims["id"]
 

@@ -1,9 +1,82 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`create fail 1`] = `
+Object {
+  "ID": "widget",
+  "constructorOptions": Object {
+    "directives": Object {
+      "disabled": [Function],
+      "onclick": [Function],
+      "onsubmit": [Function],
+    },
+  },
+  "html": "
+<ul class=\\"errors-panel\\">
+  <li>Create project fail!</li>
+</ul>
+<!--if-->
+<!--ErrorsPanel-->
+<div class=\\"project-chain-form\\">
+  <form>
+    <div class=\\"group\\">
+      <input name=\\"name\\" type=\\"text\\" required=\\"\\"><span class=\\"highlight\\"></span><span class=\\"bar\\"></span>
+      <label>Name</label>
+    </div>
+    <div class=\\"group\\">
+      <button type=\\"submit\\"><span>Create</span></button>
+    </div>
+  </form>
+</div>
+<!--ChainForm-->
+<!--if-->
+",
+  "nodes": Array [
+    Object {
+      "ID": undefined,
+      "constructorOptions": null,
+      "html": null,
+      "nodes": null,
+      "options": null,
+    },
+  ],
+  "options": Object {
+    "actionSequence": Array [
+      "render",
+      "bindEvents",
+    ],
+    "afterRender": [Function],
+    "dataLoaded": true,
+    "dataSaving": false,
+    "directives": Object {
+      "disabled": [Function],
+      "onclick": [Function],
+      "onsubmit": [Function],
+    },
+    "errors": Array [
+      "Create project fail!",
+    ],
+    "project": Object {
+      "cwd": "/tmp/",
+      "id": 1,
+      "name": "Test",
+    },
+    "renderAsync": false,
+    "renderDependence": Array [],
+    "types": Array [],
+  },
+}
+`;
+
 exports[`renders correctly 1`] = `
 Object {
   "ID": "widget",
-  "constructorOptions": Object {},
+  "constructorOptions": Object {
+    "directives": Object {
+      "disabled": [Function],
+      "onclick": [Function],
+      "onsubmit": [Function],
+    },
+  },
   "html": "
 <!--if-->
 <!--FlushPageDataLoading-->
@@ -25,6 +98,12 @@ Object {
     ],
     "afterRender": [Function],
     "dataLoaded": false,
+    "dataSaving": false,
+    "directives": Object {
+      "disabled": [Function],
+      "onclick": [Function],
+      "onsubmit": [Function],
+    },
     "errors": Array [],
     "project": Object {},
     "renderAsync": false,

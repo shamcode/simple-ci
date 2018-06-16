@@ -6,6 +6,6 @@
 * [x] Project edit page
 * [x] Project delete page
 * [x] Display project chains
-* Create chain
+* [x] Create chain
 * Update chain
 * Delete chain

@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`create project chain 1`] = `
+"<header>
+  <a href=\\"\\" class=\\"logo\\">Simple CI</a>
+</header>
+<!--Header-->
+<main>
+  <!--if-->
+  <!--FlushPageDataLoading-->
+  <!--if-->
+</main>
+<footer> Sham 2018 </footer>
+<!--Footer-->"
+`;
+
+exports[`create project chain 2`] = `
+"<header>
+  <a href=\\"\\" class=\\"logo\\">Simple CI</a>
+</header>
+<!--Header-->
+<main>
+  <!--if-->
+  <!--ErrorsPanel-->
+  <div class=\\"project-chain-form\\">
+    <form>
+      <div class=\\"group\\">
+        <input name=\\"name\\" type=\\"text\\" required=\\"\\"><span class=\\"highlight\\"></span><span class=\\"bar\\"></span>
+        <label>Name</label>
+      </div>
+      <div class=\\"group\\">
+        <button type=\\"submit\\"><span>Create</span></button>
+      </div>
+    </form>
+  </div>
+  <!--ChainForm-->
+  <!--if-->
+</main>
+<footer> Sham 2018 </footer>
+<!--Footer-->"
+`;
+
+exports[`create project chain 3`] = `
+"<header>
+  <a href=\\"\\" class=\\"logo\\">Simple CI</a>
+</header>
+<!--Header-->
+<main>
+  <!--if-->
+  <!--ErrorsPanel-->
+  <div class=\\"project-info\\">
+    <h3>Test</h3>
+    <dl>
+      <dt>/tmp/</dt>
+      <dd>Current work directory.</dd>
+      <dd>This directory will be used when running tasks.</dd>
+      <dt>
+        <a href=\\"projects/1/edit\\" class=\\"\\">Edit</a>
+      </dt>
+      <dd>Edit project name &amp; cwd</dd>
+      <dt>
+        <a href=\\"projects/1/delete\\" class=\\"project-delete-link\\">Delete</a>
+      </dt>
+      <dd>Delete project</dd>
+    </dl>
+  </div>
+  <div class=\\"project-chains\\">
+    <h3>Chains</h3>
+    <!--for-->
+    <a class=\\"project-chain project-chain-create\\" href=\\"projects/1/chains/create\\">
+      <div class=\\"create-icon\\"></div>
+    </a>
+  </div>
+  <!--Info-->
+  <!--if-->
+</main>
+<footer> Sham 2018 </footer>
+<!--Footer-->"
+`;
