@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+Object {
+  "ID": "widget",
+  "constructorOptions": Object {
+    "directives": Object {
+      "onclick": [Function],
+      "onsubmit": [Function],
+    },
+  },
+  "html": "
+<button class=\\"project-chain\\">null</button>
+<!--if-->
+",
+  "nodes": Array [
+    Object {
+      "ID": undefined,
+      "constructorOptions": null,
+      "html": null,
+      "nodes": null,
+      "options": null,
+    },
+    Object {
+      "ID": undefined,
+      "constructorOptions": null,
+      "html": null,
+      "nodes": null,
+      "options": null,
+    },
+  ],
+  "options": Object {
+    "actionSequence": Array [
+      "render",
+      "bindEvents",
+    ],
+    "chain": Object {},
+    "directives": Object {
+      "onclick": [Function],
+      "onsubmit": [Function],
+    },
+    "isExpand": false,
+    "project": Object {},
+    "renderAsync": false,
+    "renderDependence": Array [],
+    "types": Array [],
+  },
+}
+`;

@@ -1,0 +1,24 @@
+{% import LinkTo from 'sham-ui-router/link-to' %}
+<button
+        class="project-chain"
+        :onclick={{this._toggleExpand.bind(this)}}
+>
+    {{chain.name}}
+</button>
+
+{% if isExpand %}
+    <dl class="project-chain-actions">
+        <dt>
+            <a href="#">
+                Edit
+            </a>
+        </dt>
+        <dd>Edit chain name & steps</dd>
+        <dt>
+            <a href="#" class="chain-delete">
+                Delete
+            </a>
+        </dt>
+        <dd>Delete project</dd>
+    </dl>
+{% endif %}

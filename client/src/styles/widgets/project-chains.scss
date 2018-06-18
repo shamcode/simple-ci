@@ -18,7 +18,7 @@
     height: 35px;
     cursor: pointer;
     display: block;
-    margin: 30px auto 0;
+    margin: 20px auto 0;
     padding: 0 0 0 15px;
     text-align: left;
 
@@ -46,6 +46,29 @@
         margin-left: auto;
         margin-right: auto;
       }
+    }
+  }
+}
+
+dl.project-chain-actions {
+  margin: 20px 0 0;
+  dt {
+    font-weight: bold;
+    font-size: 14px;
+    .chain-delete {
+      color: #c30000;
+    }
+  }
+  dd {
+    background:none no-repeat left top;
+    padding-left: 20px;
+    margin-top: -14px;
+    margin-bottom: 20px;
+    color: #455A64;
+    opacity: 0.87;
+    font-size: 14px;
+    &:last-child {
+      margin-bottom: 0;
     }
   }
 }

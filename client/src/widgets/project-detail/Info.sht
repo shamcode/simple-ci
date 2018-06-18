@@ -1,4 +1,5 @@
 {% import LinkTo from 'sham-ui-router/link-to' %}
+{% import Chain from './Chain' %}
 
 <div class="project-info">
     <h3>{{project.name}}</h3>
@@ -27,12 +28,10 @@
 <div class="project-chains">
     <h3>Chains</h3>
     {% for chain of project.chains %}
-        <button
-            class="project-chain"
-            href="#"
-        >
-            {{chain.name}}
-        </button>
+       <Chain
+            project={{project}}
+            chain={{chain}}
+       />
     {% endfor %}
     <a
             class="project-chain project-chain-create"
