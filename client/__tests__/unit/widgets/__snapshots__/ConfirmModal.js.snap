@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+Object {
+  "ID": "widget",
+  "constructorOptions": Object {
+    "body": "Body text",
+    "directives": Object {
+      "disabled": [Function],
+      "onclick": [Function],
+      "onsubmit": [Function],
+    },
+    "title": "Title text",
+  },
+  "html": "
+<div class=\\"modal\\">
+  <div class=\\"content\\">
+    <div class=\\"header\\">Title text</div>
+    <div class=\\"body\\">Body text</div>
+    <div class=\\"footer\\">
+      <button class=\\"ok danger\\"><span>Confirm</span></button>
+      <button class=\\"cancel\\"><span>Cancel</span></button>
+    </div>
+  </div>
+</div>
+",
+  "nodes": Array [
+    Object {
+      "ID": undefined,
+      "constructorOptions": null,
+      "html": null,
+      "nodes": null,
+      "options": null,
+    },
+  ],
+  "options": Object {
+    "actionSequence": Array [
+      "render",
+      "bindEvents",
+    ],
+    "body": "Body text",
+    "dataSaving": false,
+    "directives": Object {
+      "disabled": [Function],
+      "onclick": [Function],
+      "onsubmit": [Function],
+    },
+    "onCancel": [Function],
+    "onOk": [Function],
+    "renderAsync": false,
+    "renderDependence": Array [],
+    "title": "Title text",
+    "types": Array [],
+  },
+}
+`;

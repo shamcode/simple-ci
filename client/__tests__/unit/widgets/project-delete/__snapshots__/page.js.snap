@@ -15,15 +15,15 @@ Object {
 <!--ErrorsPanel-->
 <div class=\\"modal\\">
   <div class=\\"content\\">
-    <div class=\\"header\\"> Delete project </div>
-    <div class=\\"body\\"> Do you want delete project \\"Test\\"? </div>
+    <div class=\\"header\\">Delete project</div>
+    <div class=\\"body\\">Do you want delete project \\"Test\\"?</div>
     <div class=\\"footer\\">
       <button class=\\"ok danger\\" disabled=\\"\\"><span>Confirm</span></button>
       <button class=\\"cancel\\"><span>Cancel</span></button>
     </div>
   </div>
 </div>
-<!--Modal-->
+<!--ConfirmModal-->
 <!--if-->
 <!--if-->
 ",

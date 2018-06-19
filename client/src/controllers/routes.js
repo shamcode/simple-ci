@@ -6,7 +6,8 @@ import ProjectCreatePage from '../widgets/project-create/page';
 import ProjectDetailPage from '../widgets/project-detail/page';
 import ProjectEditPage from '../widgets/project-edit/page';
 import ProjectDeletePage from '../widgets/project-delete/page';
-import ProjectChainCreatePage from '../widgets/project-detail/chains/create/page';
+import ChainCreatePage from '../widgets/project-detail/chains/create/page';
+import ChainDeletePage from '../widgets/project-detail/chains/delete/page';
 
 export default function() {
     const router = new Router( '/' );
@@ -26,7 +27,8 @@ export default function() {
     // Project chain CRUD
     const PROJECT = 'projects/:id/chains/';
     router
-        .bindPage( `${PROJECT}create`, 'project-chain-create', ProjectChainCreatePage, {} );
+        .bindPage( `${PROJECT}create`,          'project-chain-create', ChainCreatePage, {} )
+        .bindPage( `${PROJECT}:chainId/delete`, 'project-chain-delete', ChainDeletePage, {} );
 
     // Projects list / root
     router.bindPage( '', 'project-list', ProjectsPage, {} );

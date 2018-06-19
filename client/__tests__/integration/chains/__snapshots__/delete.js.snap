@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`delete project chain 1`] = `
+"<header>
+  <a href=\\"\\" class=\\"logo\\">Simple CI</a>
+</header>
+<!--Header-->
+<main>
+  <!--if-->
+  <!--ErrorsPanel-->
+  <div class=\\"modal\\">
+    <div class=\\"content\\">
+      <div class=\\"header\\">Delete project chain</div>
+      <div class=\\"body\\">Do you want delete chain \\"Test chain\\"?</div>
+      <div class=\\"footer\\">
+        <button class=\\"ok danger\\"><span>Confirm</span></button>
+        <button class=\\"cancel\\"><span>Cancel</span></button>
+      </div>
+    </div>
+  </div>
+  <!--ConfirmModal-->
+  <!--if-->
+  <!--if-->
+</main>
+<footer> Sham 2018 </footer>
+<!--Footer-->"
+`;
+
+exports[`delete project chain 2`] = `
+"<header>
+  <a href=\\"\\" class=\\"logo\\">Simple CI</a>
+</header>
+<!--Header-->
+<main>
+  <!--if-->
+  <!--ErrorsPanel-->
+  <div class=\\"project-info\\">
+    <h3>Test</h3>
+    <dl>
+      <dt>/tmp/</dt>
+      <dd>Current work directory.</dd>
+      <dd>This directory will be used when running tasks.</dd>
+      <dt>
+        <a href=\\"projects/1/edit\\" class=\\"\\">Edit</a>
+      </dt>
+      <dd>Edit project name &amp; cwd</dd>
+      <dt>
+        <a href=\\"projects/1/delete\\" class=\\"project-delete-link\\">Delete</a>
+      </dt>
+      <dd>Delete project</dd>
+    </dl>
+  </div>
+  <div class=\\"project-chains\\">
+    <h3>Chains</h3>
+    <button class=\\"project-chain\\">Test chain</button>
+    <!--if-->
+    <!--Chain-->
+    <!--for-->
+    <a class=\\"project-chain project-chain-create\\" href=\\"projects/1/chains/create\\">
+      <div class=\\"create-icon\\"></div>
+    </a>
+  </div>
+  <!--Info-->
+  <!--if-->
+</main>
+<footer> Sham 2018 </footer>
+<!--Footer-->"
+`;

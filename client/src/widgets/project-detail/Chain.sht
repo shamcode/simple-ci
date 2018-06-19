@@ -15,10 +15,13 @@
         </dt>
         <dd>Edit chain name & steps</dd>
         <dt>
-            <a href="#" class="chain-delete">
-                Delete
-            </a>
+            <LinkTo
+                    text="Delete"
+                    className="chain-delete"
+                    path="project-chain-delete"
+                    params={{this._routerParams( project, chain )}}
+            />
         </dt>
-        <dd>Delete project</dd>
+        <dd>Delete chain</dd>
     </dl>
 {% endif %}

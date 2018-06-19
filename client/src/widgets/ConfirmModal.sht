@@ -1,0 +1,18 @@
+<div class="modal">
+    <div class="content">
+        <div class="header">
+            {{title}}
+        </div>
+        <div class="body">
+            {{body}}
+        </div>
+        <div class="footer">
+            <button class="ok danger" :onclick={{onOk}} :disabled={{dataSaving}}>
+                <span>Confirm</span>
+            </button>
+            <button class="cancel" :onclick={{onCancel}}>
+                <span>Cancel</span>
+            </button>
+        </div>
+    </div>
+</div>

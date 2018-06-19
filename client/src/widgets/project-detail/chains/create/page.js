@@ -2,7 +2,7 @@ import { options, inject } from 'sham-ui';
 import LoadProjectMixin from '../../../../mixins/load-project';
 import ChainCreatePageTemplate from './page.sht';
 
-export default class ProjectDetailPage extends LoadProjectMixin( ChainCreatePageTemplate ) {
+export default class ChainCreatePage extends LoadProjectMixin( ChainCreatePageTemplate ) {
     @inject store = 'store';
     @inject router = 'router';
 

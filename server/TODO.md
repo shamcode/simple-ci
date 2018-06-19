@@ -11,7 +11,7 @@
 * [x] Get chains for project
 * [x] Create chain for project
 * Update chain
-* Delete chain
+* [x] Delete chain
 * Get chain detail
 * Add step to chain
 * Remove step from chain

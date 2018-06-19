@@ -9,4 +9,4 @@
 * [x] Create chain
 * Chain detail page
 * Update chain
-* Delete chain
+* [x] Delete chain

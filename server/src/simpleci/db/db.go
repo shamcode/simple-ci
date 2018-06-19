@@ -159,9 +159,20 @@ func (db *Db) DeleteProject(id int) (sql.Result, error) {
 	return db.connection.Exec("DELETE FROM project WHERE id=$1", id)
 }
 
+func (db *Db) GetProjectChainById(id int) (Chain, error) {
+	var chain Chain
+	row := db.connection.QueryRow("SELECT id, \"name\" FROM chain WHERE id=$1", id)
+	err := row.Scan(&chain.Id, &chain.Name)
+	return chain, err
+}
+
 func (db *Db) CreateProjectChain(projectID int, name string) (sql.Result, error) {
 	return db.connection.Exec("INSERT INTO chain VALUES (default, $1, $2)",
 		projectID, name)
+}
+
+func (db *Db) DeleteProjectChain(id int) (sql.Result, error) {
+	return db.connection.Exec("DELETE FROM chain WHERE id=$1", id)
 }
 
 func CreateDatabase(config config.DataBaseConfig) *Db {

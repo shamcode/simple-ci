@@ -1,12 +1,13 @@
 {% import FlushPageDataLoading from '../FlushPageDataLoading' %}
 {% import ErrorsPanel from '../ErrorsPanel.sht' %}
-{% import Modal from './modal' %}
+{% import ConfirmModal from '../ConfirmModal' %}
 
 {% if dataLoaded %}
     <ErrorsPanel errors={{errors}}/>
     {% if errors.length === 0 %}
-        <Modal
-                project={{project}}
+        <ConfirmModal
+                title="Delete project"
+                body={{this.bodyText( project )}}
                 dataSaving={{dataSaving}}
                 onOk={{this.deleteProject.bind( this )}}
                 onCancel={{this.cancelDeleteProject.bind( this )}}

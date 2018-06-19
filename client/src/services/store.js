@@ -69,6 +69,12 @@ export default class Store {
             .then( ( { data } ) => ( { project: data } ) );
     }
 
+    getProjectChainById( id ) {
+        return this.axios
+            .get( `/chains/${id}` )
+            .then( ( { data } ) => ( { chain: data } ) );
+    }
+
     createProject( data ) {
         return this.axios.post( '/projects', data );
     }
@@ -79,6 +85,10 @@ export default class Store {
 
     deleteProject( id ) {
         return this.axios.delete( `/projects/${id}` );
+    }
+
+    deleteChain( id ) {
+        return this.axios.delete( `/chains/${id}` );
     }
 
     createProjectChain( data ) {
