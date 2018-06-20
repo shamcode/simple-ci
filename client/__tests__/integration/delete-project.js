@@ -1,8 +1,5 @@
-import setup, { flushPromises } from './helpers'
-import pretty from 'pretty';
+import setup, { app } from './helpers'
 import axios from 'axios';
-import ShamUI, { DI } from 'sham-ui';
-import controller from '../../src/controllers/main';
 jest.mock( 'axios' );
 
 beforeEach( () => {
@@ -14,63 +11,21 @@ beforeEach( () => {
 it( 'delete project', async() => {
     expect.assertions( 5 );
 
-    window.localStorage.setItem( 'token', 'test' );
+    axios
+        .useDefaultMocks()
+        .use( 'delete', '/projects/1', null );
 
-    const projectData = {
-        id: 1,
-        name: 'Test',
-        cwd: '/tmp/',
-        chains: []
-    };
-    const projectsPromise = Promise.resolve( {
-        data: [ projectData ]
-    } );
-    const projectPromise = Promise.resolve( {
-        data: projectData
-    } );
-    const getMock = jest.fn();
-    const deleteMock = jest.fn().mockReturnValue( Promise.resolve() );
-    axios.create.mockImplementation( () => {
-        return {
-            get: getMock,
-            delete: deleteMock,
-            interceptors: {
-                request: {
-                    use: () => {}
-                },
-                response: {
-                    use: () => {}
-                }
-            }
-        };
-    } );
+    await app.start();
+    await app.project.open();
 
-    getMock.mockReturnValueOnce( projectsPromise );
-    window.location.href = 'http://simple-ci.example.com';
+    app.click( '[href="projects/1/delete"]' );
+    app.checkBody();
+    await app.waitRendering();
+    app.checkBody();
 
-    DI.bind( 'widget-binder', controller );
-    const UI = new ShamUI();
-    UI.render.FORCE_ALL();
-    await flushPromises();
-
-    getMock.mockReturnValueOnce( projectPromise );
-    const body = document.querySelector( 'body' );
-    body.querySelector( '.project-card' ).click();
-    await flushPromises();
-
-    getMock.mockReturnValueOnce( projectPromise );
-    document.querySelector( '[href="projects/1/delete"]').click();
-    expect( pretty( body.innerHTML ) ).toMatchSnapshot();
-    await flushPromises();
-    expect( pretty( body.innerHTML ) ).toMatchSnapshot();
-
-    getMock.mockReturnValueOnce( projectsPromise );
-    body.querySelector( '.modal .ok' ).click();
-    expect( deleteMock ).toHaveBeenCalledTimes( 1 );
-    expect( deleteMock.mock.calls[ 0 ][ 0 ] ).toBe( '/projects/1' );
-
-    await flushPromises();
-
-    expect( pretty( body.innerHTML ) ).toMatchSnapshot();
+    await app.modal.ok();
+    expect( axios.mocks.delete ).toHaveBeenCalledTimes( 1 );
+    expect( axios.mocks.delete.mock.calls[ 0 ][ 0 ] ).toBe( '/projects/1' );
+    app.checkBody();
 } );
 

@@ -1,14 +1,11 @@
-import setup, { flushPromises } from './helpers'
-import pretty from 'pretty';
+import setup, { app } from './helpers'
 import axios from 'axios';
-import ShamUI, { DI } from 'sham-ui';
-import controller from '../../src/controllers/main';
 jest.mock( 'axios' );
 
 beforeEach( () => {
     jest.resetModules();
     jest.clearAllMocks();
-    setup();
+    setup( { auth: false } );
 } );
 
 it( 'success login', async() => {
@@ -46,15 +43,9 @@ it( 'success login', async() => {
         };
     } );
 
-    window.location.href = 'http://simple-ci.example.com/';
+    await app.start();
+    app.checkBody();
 
-    const body = document.querySelector( 'body' );
-
-    DI.bind( 'widget-binder', controller );
-    const UI = new ShamUI();
-    UI.render.FORCE_ALL();
-    await flushPromises();
-    expect( pretty( body.innerHTML ) ).toMatchSnapshot();
     expect( getMock ).toHaveBeenCalledTimes( 1 );
 
     getMock.mockReturnValue( Promise.resolve( { data: [] } ) );
@@ -62,19 +53,17 @@ it( 'success login', async() => {
         username: 'admin',
         password: 'pass'
     };
-    body.querySelector( '[name="username"]' ).value = formData.username;
-    body.querySelector( '[name="password"]' ).value = formData.password;
-    body.querySelector( '[type="submit"]' ).click();
+    app.form.fill( 'username', formData.username );
+    app.form.fill( 'password', formData.password );
+    await app.form.submit();
     expect( postMock ).toHaveBeenCalledTimes( 1 );
     expect( postMock.mock.calls[ 0 ][ 0 ] ).toBe( '/login' );
     expect( Object.keys( postMock.mock.calls[ 0 ][ 1 ] ) ).toEqual( [ 'username', 'password' ] );
     expect( postMock.mock.calls[ 0 ][ 1 ].username ).toEqual( formData.username );
     expect( postMock.mock.calls[ 0 ][ 1 ].password ).toEqual( formData.password );
 
-    await flushPromises();
-
     expect( getMock ).toHaveBeenCalledTimes( 2 );
-    expect( pretty( body.innerHTML ) ).toMatchSnapshot();
+    app.checkBody();
 } );
 
 it( 'fail login (invalid header)', async() => {
@@ -109,22 +98,10 @@ it( 'fail login (invalid header)', async() => {
 
     window.location.href = 'http://simple-ci.example.com/';
 
-    const body = document.querySelector( 'body' );
-
-    DI.bind( 'widget-binder', controller );
-    const UI = new ShamUI();
-    UI.render.FORCE_ALL();
-    await flushPromises();
-    expect( pretty( body.innerHTML ) ).toMatchSnapshot();
-
-    const formData = {
-        username: 'admin',
-        password: 'pass'
-    };
-    body.querySelector( '[name="username"]' ).value = formData.username;
-    body.querySelector( '[name="password"]' ).value = formData.password;
-    body.querySelector( '[type="submit"]' ).click();
-
-    await flushPromises();
-    expect( pretty( body.innerHTML ) ).toMatchSnapshot();
+    await app.start();
+    app.checkBody();
+    app.form.fill( 'username', 'admin' );
+    app.form.fill( 'password', 'pass' );
+    await app.form.submit();
+    app.checkBody();
 } );

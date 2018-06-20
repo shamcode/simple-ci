@@ -1,8 +1,5 @@
-import setup, { flushPromises } from './helpers'
-import pretty from 'pretty';
+import setup, { app } from './helpers'
 import axios from 'axios';
-import ShamUI, { DI } from 'sham-ui';
-import controller from '../../src/controllers/main';
 jest.mock( 'axios' );
 
 beforeEach( () => {
@@ -12,57 +9,28 @@ beforeEach( () => {
 } );
 
 it( 'success registry', async() => {
-    expect.assertions( 8 );
+    expect.assertions( 5 );
 
-    const getMock = jest.fn();
-    const postMock = jest.fn().mockReturnValue( Promise.resolve( {
-        data: {}
-    } ) );
-    axios.create.mockImplementation( () => {
-        return {
-            defaults: {
-                headers: {}
-            },
-            get: getMock,
-            interceptors: {
-                request: {
-                    use: () => {
-                    }
-                },
-                response: {
-                    use: () => {
-                    }
-                }
-            },
-            post: postMock
-        };
-    } );
+    axios
+        .useDefaultMocks()
+        .use( 'post', '/registry', {} );
 
     window.__NAVIGO_WINDOW_LOCATION_MOCK__ = 'http://simple-ci.example.com/registry/';
 
-    const body = document.querySelector( 'body' );
-
-    DI.bind( 'widget-binder', controller );
-    const UI = new ShamUI();
-    UI.render.FORCE_ALL();
-    await flushPromises();
-    expect( pretty( body.innerHTML ) ).toMatchSnapshot();
-    expect( getMock ).toHaveBeenCalledTimes( 0 );
+    await app.start();
+    app.checkBody();
+    expect( axios.mocks.get ).toHaveBeenCalledTimes( 0 );
 
     window.localStorage.setItem( 'token', 'test' );
     const formData = {
         username: 'admin',
         password: 'pass'
     };
-    body.querySelector( '[name="username"]' ).value = formData.username;
-    body.querySelector( '[name="password"]' ).value = formData.password;
-    body.querySelector( '[type="submit"]' ).click();
-    expect( postMock ).toHaveBeenCalledTimes( 1 );
-    expect( postMock.mock.calls[ 0 ][ 0 ] ).toBe( '/registry' );
-    expect( Object.keys( postMock.mock.calls[ 0 ][ 1 ] ) ).toEqual( [ 'username', 'password' ] );
-    expect( postMock.mock.calls[ 0 ][ 1 ].username ).toEqual( formData.username );
-    expect( postMock.mock.calls[ 0 ][ 1 ].password ).toEqual( formData.password );
+    app.form.fill( 'username', formData.username );
+    app.form.fill( 'password', formData.password );
+    await app.form.submit();
+    expect( axios.mocks.post ).toHaveBeenCalledTimes( 1 );
+    expect( axios.mocks.post.mock.calls[ 0 ][ 1 ] ).toEqual( formData );
 
-    await flushPromises();
     expect( window.location.href ).toBe( 'http://localhost:3000/login' );
 } );

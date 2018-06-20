@@ -1,8 +1,5 @@
-import setup, { flushPromises } from './helpers'
-import pretty from 'pretty';
+import setup, { app } from './helpers'
 import axios from 'axios';
-import ShamUI, { DI } from 'sham-ui';
-import controller from '../../src/controllers/main';
 jest.mock( 'axios' );
 
 beforeEach( () => {
@@ -14,9 +11,7 @@ beforeEach( () => {
 it( 'project-detail page', async() => {
     expect.assertions( 2 );
 
-    window.localStorage.setItem( 'token', 'test' );
-
-    const projectData = {
+    const project = {
         id: 1,
         name: 'Test',
         cwd: '/tmp/',
@@ -26,35 +21,14 @@ it( 'project-detail page', async() => {
         ]
     };
 
-    axios.create.mockImplementation( () => {
-        return {
-            get: jest.fn()
-                .mockReturnValueOnce( Promise.resolve( { data: [ projectData ] } ) )
-                .mockReturnValueOnce( Promise.resolve( { data: projectData } ) ),
-            interceptors: {
-                request: {
-                    use: () => {}
-                },
-                response: {
-                    use: () => {}
-                }
-            }
-        };
-    } );
+    axios
+        .use( 'get', '/projects', [ project ] )
+        .use( 'get', '/projects/1', project );
 
-    window.location.href = 'http://simple-ci.example.com';
-
-    DI.bind( 'widget-binder', controller );
-    const UI = new ShamUI();
-    UI.render.FORCE_ALL();
-    await flushPromises();
-
-    const body = document.querySelector( 'body' );
-    body.querySelector( '.project-card' ).click();
-    expect( pretty( body.innerHTML ) ).toMatchSnapshot();
-
-    await flushPromises();
-
-    expect( pretty( body.innerHTML ) ).toMatchSnapshot();
+    await app.start();
+    await app.click( '.project-card' );
+    app.checkBody();
+    await app.waitRendering();
+    app.checkBody();
 } );
 

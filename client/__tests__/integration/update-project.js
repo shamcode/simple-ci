@@ -1,8 +1,5 @@
-import setup, { flushPromises } from './helpers'
-import pretty from 'pretty';
+import setup, { app } from './helpers'
 import axios from 'axios';
-import ShamUI, { DI } from 'sham-ui';
-import controller from '../../src/controllers/main';
 jest.mock( 'axios' );
 
 beforeEach( () => {
@@ -12,77 +9,32 @@ beforeEach( () => {
 } );
 
 it( 'update project', async() => {
-    expect.assertions( 10 );
+    expect.assertions( 7);
 
-    window.localStorage.setItem( 'token', 'test' );
+    axios
+        .useDefaultMocks()
+        .use( 'put', '/projects/1', null );
 
-    const projectData = {
-        id: 1,
-        name: 'Test',
-        cwd: '/tmp/',
-        chains: []
-    };
-    const projectsPromise = Promise.resolve( {
-        data: [ projectData ]
-    } );
-    const projectPromise = Promise.resolve( {
-        data: projectData
-    } );
-    const getMock = jest.fn();
-    const putMock = jest.fn().mockReturnValue( Promise.resolve() );
-    axios.create.mockImplementation( () => {
-        return {
-            get: getMock,
-            put: putMock,
-            interceptors: {
-                request: {
-                    use: () => {}
-                },
-                response: {
-                    use: () => {}
-                }
-            }
-        };
-    } );
+    await app.start();
+    await app.project.open();
 
-    getMock.mockReturnValueOnce( projectsPromise );
-    window.location.href = 'http://simple-ci.example.com';
+    await app.click( '[href="projects/1/edit"]' );
+    app.checkBody();
+    await app.waitRendering();
+    app.checkBody();
+    expect( document.querySelector( '[name="name"]' ).value ).toBe( axios.defaultMocksData.project.name );
+    expect( document.querySelector( '[name="cwd"]' ).value ).toBe( axios.defaultMocksData.project.cwd );
 
-    DI.bind( 'widget-binder', controller );
-    const UI = new ShamUI();
-    UI.render.FORCE_ALL();
-    await flushPromises();
-
-    getMock.mockReturnValueOnce( projectPromise );
-    const body = document.querySelector( 'body' );
-    body.querySelector( '.project-card' ).click();
-    await flushPromises();
-
-    getMock.mockReturnValueOnce( projectPromise );
-    document.querySelector( '[href="projects/1/edit"]').click();
-    expect( pretty( body.innerHTML ) ).toMatchSnapshot();
-    await flushPromises();
-    expect( pretty( body.innerHTML ) ).toMatchSnapshot();
-    expect( body.querySelector( '[name="name"]' ).value ).toBe( projectData.name );
-    expect( body.querySelector( '[name="cwd"]' ).value ).toBe( projectData.cwd );
-
-
-    getMock.mockReturnValueOnce( projectPromise );
     const formData = {
         name: 'Test name',
         cwd: 'test cwd'
     };
-    body.querySelector( '[name="name"]' ).value = formData.name;
-    body.querySelector( '[name="cwd"]' ).value = formData.cwd;
-    body.querySelector( '[type="submit"]' ).click();
-    expect( putMock ).toHaveBeenCalledTimes( 1 );
-    expect( putMock.mock.calls[ 0 ][ 0 ] ).toBe( '/projects/1' );
-    expect( Object.keys( putMock.mock.calls[ 0 ][ 1 ] ) ).toEqual( [ 'name', 'cwd' ] );
-    expect( putMock.mock.calls[ 0 ][ 1 ].name ).toEqual( formData.name );
-    expect( putMock.mock.calls[ 0 ][ 1 ].cwd ).toEqual( formData.cwd );
+    app.form.fill( 'name', formData.name );
+    app.form.fill( 'cwd', formData.cwd );
+    await app.form.submit();
+    expect( axios.mocks.put ).toHaveBeenCalledTimes( 1 );
+    expect( axios.mocks.put.mock.calls[ 0 ][ 1 ] ).toEqual( formData );
 
-    await flushPromises();
-
-    expect( pretty( body.innerHTML ) ).toMatchSnapshot();
+    app.checkBody();
 } );
 
