@@ -2,10 +2,6 @@ import ShamUI, { DI } from 'sham-ui';
 import pretty from 'pretty';
 import controller from '../../src/controllers/main';
 
-export function flushPromises() {
-    return new Promise( resolve => setImmediate( resolve ) );
-}
-
 export const app = {
     async start( waitRendering = true ) {
         DI.bind( 'widget-binder', controller );
@@ -15,7 +11,7 @@ export const app = {
         }
     },
     async waitRendering() {
-        await flushPromises();
+        await new Promise( resolve => setImmediate( resolve ) );
     },
     click( selector ) {
         document
@@ -56,13 +52,13 @@ export const app = {
     }
 };
 
-export function setupRAF() {
+function setupRAF() {
     window.requestAnimationFrame = ( cb ) => {
         setImmediate( cb )
     };
 }
 
-export function setupLocalStorage(  ) {
+function setupLocalStorage(  ) {
     const storage = {};
     window.localStorage = {
         getItem( key ) { return storage[ key ] || null; },
@@ -71,18 +67,18 @@ export function setupLocalStorage(  ) {
     };
 }
 
-export function clearBody() {
+function clearBody() {
     document.querySelector( 'body' ).innerHTML = '';
 }
 
-export function setupRouter() {
+function setupRouter() {
     window.location.href = 'http://simple-ci.example.com';
     window.location.hash = '';
     delete window.__NAVIGO_WINDOW_LOCATION_MOCK__;
     history.pushState( {}, '', '' );
 }
 
-export function setupAuth() {
+function setupAuth() {
     window.localStorage.setItem( 'token', 'test' );
 }
 
