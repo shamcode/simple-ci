@@ -34,7 +34,6 @@ it( 'create project chain', async() => {
     expect( axios.mocks.post.mock.calls[ 0 ][ 1 ].name ).toEqual( formData.name );
     expect( axios.mocks.post.mock.calls[ 0 ][ 1 ].projectId ).toEqual( axios.defaultMocksData.project.id );
 
-
     app.checkBody();
 } );
 
