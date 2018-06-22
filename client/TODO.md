@@ -10,3 +10,4 @@
 * Chain detail page
 * Update chain
 * [x] Delete chain
+* Breadcrumbs
