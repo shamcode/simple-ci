@@ -9,9 +9,11 @@
 {% if isExpand %}
     <dl class="project-chain-actions">
         <dt>
-            <a href="#">
-                Edit
-            </a>
+            <LinkTo
+                    text="Edit"
+                    path="project-chain-detail"
+                    params={{this._routerParams( project, chain )}}
+            />
         </dt>
         <dd>Edit chain name & steps</dd>
         <dt>

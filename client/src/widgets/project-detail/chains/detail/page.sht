@@ -1,10 +1,11 @@
 {% import FlushPageDataLoading from '../../../FlushPageDataLoading' %}
 {% import ErrorsPanel from '../../../ErrorsPanel.sht' %}
+{% import Info from './Info' %}
 
 {% if dataLoaded %}
     <ErrorsPanel errors={{errors}}/>
     {% if errors.length === 0 %}
-
+        <Info chain={{chain}}/>
     {% endif %}
 {% else %}
     <FlushPageDataLoading/>
