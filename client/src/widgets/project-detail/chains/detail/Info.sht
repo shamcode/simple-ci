@@ -1,3 +1,12 @@
+{% import ChainForm from '../ChainForm' %}
+
 <div class="chain-info">
     <h3>{{chain.name}}</h3>
 </div>
+
+<ChainForm
+        name={{chain.name}}
+        saveButtonText="Save"
+        dataSaving={{dataSaving}}
+        onSubmit={{updateProjectChain}}
+/>

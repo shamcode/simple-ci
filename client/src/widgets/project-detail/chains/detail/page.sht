@@ -5,7 +5,11 @@
 {% if dataLoaded %}
     <ErrorsPanel errors={{errors}}/>
     {% if errors.length === 0 %}
-        <Info chain={{chain}}/>
+        <Info
+                chain={{chain}}
+                dataSaving={{dataSaving}}
+                updateProjectChain={{this.updateProjectChain.bind( this )}}
+        />
     {% endif %}
 {% else %}
     <FlushPageDataLoading/>
