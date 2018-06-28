@@ -11,4 +11,4 @@
 * Update chain
 * [x] Delete chain
 * Breadcrumbs
-* Styling ErrorsPanel
+* [x] Styling ErrorsPanel

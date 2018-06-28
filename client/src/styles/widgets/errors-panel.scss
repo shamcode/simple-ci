@@ -1,0 +1,14 @@
+.errors-panel {
+  padding: 20px;
+  margin: 20px auto 15px;
+  width: 80%;
+  background-color: #c30000;
+  color: white;
+  list-style-position: inside;
+  outline: none;
+  border-radius: 1px;
+  border: 1px solid #830000;
+  &:hover {
+    background-color: #b00000;
+  }
+}
