@@ -171,6 +171,11 @@ func (db *Db) CreateProjectChain(projectID int, name string) (sql.Result, error)
 		projectID, name)
 }
 
+func (db *Db) UpdateProjectChain(id int, name string) (sql.Result, error) {
+	return db.connection.Exec("UPDATE chain SET \"name\"=$1 WHERE id=$2",
+		name, id)
+}
+
 func (db *Db) DeleteProjectChain(id int) (sql.Result, error) {
 	return db.connection.Exec("DELETE FROM chain WHERE id=$1", id)
 }

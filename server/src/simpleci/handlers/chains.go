@@ -73,3 +73,23 @@ func DeleteProjectChain(w http.ResponseWriter, r *http.Request, db *DB.Db) {
 	w.WriteHeader(200)
 }
 
+func UpdateProjectChain(w http.ResponseWriter, r *http.Request, db *DB.Db) {
+	ps := httprouter.ParamsFromContext(r.Context())
+	id, ok := getID(w, ps)
+	if !ok {
+		return
+	}
+	var chain DB.Chain
+	err := json.NewDecoder(r.Body).Decode(&chain)
+	if err != nil || chain.Name == "" {
+		w.WriteHeader(400)
+		return
+	}
+	if _, err := db.UpdateProjectChain(id, chain.Name); err != nil {
+		w.WriteHeader(500)
+		return
+	}
+	setJsonContentTypeHeader(w)
+	w.WriteHeader(200)
+}
+

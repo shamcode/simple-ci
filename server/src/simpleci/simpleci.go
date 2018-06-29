@@ -35,6 +35,7 @@ func main() {
 	router.Handler("POST", "/api/v1/projects", jwtHandler(handlers.CreateProject, db))
 
 	router.Handler("GET", "/api/v1/chains/:id", jwtHandler(handlers.GetProjectChainById, db))
+	router.Handler("PUT", "/api/v1/chains/:id", jwtHandler(handlers.UpdateProjectChain, db))
 	router.Handler("DELETE", "/api/v1/chains/:id", jwtHandler(handlers.DeleteProjectChain, db))
 	router.Handler("POST", "/api/v1/chains", jwtHandler(handlers.CreateProjectChain, db))
 
