@@ -10,7 +10,8 @@ afterEach( () => {
 
 it( 'renders correctly', () => {
     DI.bind( 'store', {
-        getProjectChainById: jest.fn().mockReturnValue( Promise.resolve( { project: { id: 1 } } ) )
+        getProjectChainById: jest.fn().mockReturnValue( Promise.resolve( { project: { id: 1 } } ) ),
+        getProjectById: jest.fn().mockReturnValue( Promise.resolve( { project: { id: 1 } } ) )
     } );
     DI.bind( 'router', {
         lastRouteResolved: jest.fn().mockReturnValueOnce( { params: { id: 1 }} ),

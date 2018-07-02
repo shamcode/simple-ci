@@ -1,6 +1,11 @@
 {% import FlushPageDataLoading from '../FlushPageDataLoading' %}
 {% import ErrorsPanel from '../ErrorsPanel.sht' %}
 {% import ProjectForm from '../ProjectForm' %}
+{% import BreadCrumb from '../BreadCrumb' %}
+
+<BreadCrumb
+        project={{project}}
+        currentPage="Edit"/>
 
 {% if dataLoaded %}
     <ErrorsPanel errors={{errors}}/>

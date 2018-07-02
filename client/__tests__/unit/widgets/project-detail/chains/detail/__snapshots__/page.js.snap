@@ -5,11 +5,27 @@ Object {
   "ID": "widget",
   "constructorOptions": Object {},
   "html": "
+<ul class=\\"breadcrumb\\">
+  <li>
+    <a href=\\"/\\" class=\\"\\">Projects</a>
+  </li>
+  <!--if-->
+  <!--if-->
+  <li></li>
+</ul>
+<!--BreadCrumb-->
 <!--if-->
 <!--FlushPageDataLoading-->
 <!--if-->
 ",
   "nodes": Array [
+    Object {
+      "ID": undefined,
+      "constructorOptions": null,
+      "html": null,
+      "nodes": null,
+      "options": null,
+    },
     Object {
       "ID": undefined,
       "constructorOptions": null,
@@ -28,6 +44,7 @@ Object {
     "dataLoaded": false,
     "dataSaving": false,
     "errors": Array [],
+    "project": Object {},
     "renderAsync": false,
     "renderDependence": Array [],
     "types": Array [],

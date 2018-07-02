@@ -6,6 +6,15 @@ exports[`create project chain 1`] = `
 </header>
 <!--Header-->
 <main>
+  <ul class=\\"breadcrumb\\">
+    <li>
+      <a href=\\"\\" class=\\"\\">Projects</a>
+    </li>
+    <!--if-->
+    <!--if-->
+    <li></li>
+  </ul>
+  <!--BreadCrumb-->
   <!--if-->
   <!--FlushPageDataLoading-->
   <!--if-->
@@ -20,6 +29,18 @@ exports[`create project chain 2`] = `
 </header>
 <!--Header-->
 <main>
+  <ul class=\\"breadcrumb\\">
+    <li>
+      <a href=\\"\\" class=\\"\\">Projects</a>
+    </li>
+    <li>
+      <a href=\\"projects/1\\" class=\\"\\">Test</a>
+    </li>
+    <!--if-->
+    <!--if-->
+    <li>Create project chain</li>
+  </ul>
+  <!--BreadCrumb-->
   <!--if-->
   <!--ErrorsPanel-->
   <div class=\\"project-chain-form\\">
@@ -46,6 +67,15 @@ exports[`create project chain 3`] = `
 </header>
 <!--Header-->
 <main>
+  <ul class=\\"breadcrumb\\">
+    <li>
+      <a href=\\"\\" class=\\"\\">Projects</a>
+    </li>
+    <!--if-->
+    <!--if-->
+    <li>Test</li>
+  </ul>
+  <!--BreadCrumb-->
   <!--if-->
   <!--ErrorsPanel-->
   <div class=\\"project-info\\">

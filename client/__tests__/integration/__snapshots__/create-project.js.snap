@@ -6,6 +6,15 @@ exports[`create project 1`] = `
 </header>
 <!--Header-->
 <main>
+  <ul class=\\"breadcrumb\\">
+    <li>
+      <a href=\\"\\" class=\\"\\">Projects</a>
+    </li>
+    <!--if-->
+    <!--if-->
+    <li>Create project</li>
+  </ul>
+  <!--BreadCrumb-->
   <!--if-->
   <!--ErrorsPanel-->
   <div class=\\"project-create-form\\">

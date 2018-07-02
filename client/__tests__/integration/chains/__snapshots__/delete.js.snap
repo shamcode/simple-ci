@@ -6,6 +6,21 @@ exports[`delete project chain 1`] = `
 </header>
 <!--Header-->
 <main>
+  <ul class=\\"breadcrumb\\">
+    <li>
+      <a href=\\"\\" class=\\"\\">Projects</a>
+    </li>
+    <li>
+      <a href=\\"projects/1\\" class=\\"\\">Test</a>
+    </li>
+    <!--if-->
+    <li>
+      <a href=\\"projects/1/chains/2\\" class=\\"\\">Test chain</a>
+    </li>
+    <!--if-->
+    <li>Delete</li>
+  </ul>
+  <!--BreadCrumb-->
   <!--if-->
   <!--ErrorsPanel-->
   <div class=\\"modal\\">
@@ -32,6 +47,15 @@ exports[`delete project chain 2`] = `
 </header>
 <!--Header-->
 <main>
+  <ul class=\\"breadcrumb\\">
+    <li>
+      <a href=\\"\\" class=\\"\\">Projects</a>
+    </li>
+    <!--if-->
+    <!--if-->
+    <li>Test</li>
+  </ul>
+  <!--BreadCrumb-->
   <!--if-->
   <!--ErrorsPanel-->
   <div class=\\"project-info\\">

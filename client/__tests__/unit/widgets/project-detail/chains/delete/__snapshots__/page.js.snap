@@ -4,8 +4,18 @@ exports[`renders correctly 1`] = `
 Object {
   "ID": "widget",
   "constructorOptions": Object {},
-  "html": "<!--if-->",
+  "html": "
+<!--BreadCrumb-->
+<!--if-->
+",
   "nodes": Array [
+    Object {
+      "ID": undefined,
+      "constructorOptions": null,
+      "html": null,
+      "nodes": null,
+      "options": null,
+    },
     Object {
       "ID": undefined,
       "constructorOptions": null,

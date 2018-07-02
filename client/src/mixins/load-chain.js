@@ -6,6 +6,7 @@ export default ( superclass ) => class extends superclass {
 
     @options get dataLoaded() { return false;  }
     @options get chain() { return {}; }
+    @options get project() { return {}; }
     @options get errors() { return []; }
 
     @options
@@ -29,14 +30,18 @@ export default ( superclass ) => class extends superclass {
     }
 
     _loadPageData() {
-        this.store.getProjectChainById( this.chainId ).then(
+        Promise.all( [
+            this.store.getProjectById( this.projectId ),
+            this.store.getProjectChainById( this.chainId )
+        ] ).then(
             ::this._loadedPageDataSuccess,
             ::this._loadedPageDataFail
         );
     }
 
-    _loadedPageDataSuccess( { chain } ) {
+    _loadedPageDataSuccess( [ { project }, { chain } ] ) {
         this.update( {
+            project,
             chain,
             dataLoaded: true,
             errors: []
@@ -44,6 +49,7 @@ export default ( superclass ) => class extends superclass {
     }
 
     _loadedPageDataFail() {
+        debugger;
         this.update( {
             chain: {},
             dataLoaded: true,

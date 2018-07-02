@@ -70,8 +70,8 @@ it( 'delete fail', async() => {
     } );
     const navigateMock = jest.fn();
     DI.bind( 'router', {
-        lastRouteResolved: jest.fn().mockReturnValueOnce( { params: { id: 1 } } ),
-        generate: jest.fn().mockReturnValueOnce( '/' ),
+        lastRouteResolved: jest.fn().mockReturnValue( { params: { id: 1 } } ),
+        generate: jest.fn().mockReturnValue( '/' ),
         navigate: navigateMock
     } );
 
@@ -108,8 +108,8 @@ it( 'cancel', async() => {
     } );
     const navigateMock = jest.fn();
     DI.bind( 'router', {
-        lastRouteResolved: jest.fn().mockReturnValueOnce( { params: { id: 1 } } ),
-        generate: jest.fn().mockReturnValueOnce( '/' ),
+        lastRouteResolved: jest.fn().mockReturnValue( { params: { id: 1 } } ),
+        generate: jest.fn().mockReturnValue( '/' ),
         navigate: navigateMock
     } );
 

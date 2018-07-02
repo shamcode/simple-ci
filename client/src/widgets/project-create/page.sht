@@ -1,5 +1,8 @@
 {% import ErrorsPanel from '../ErrorsPanel.sht' %}
 {% import ProjectForm from '../ProjectForm' %}
+{% import BreadCrumb from '../BreadCrumb' %}
+
+<BreadCrumb currentPage="Create project"/>
 
 <ErrorsPanel errors={{errors}}/>
 

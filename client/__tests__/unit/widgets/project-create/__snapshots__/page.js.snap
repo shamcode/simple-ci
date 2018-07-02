@@ -11,6 +11,15 @@ Object {
     },
   },
   "html": "
+<ul class=\\"breadcrumb\\">
+  <li>
+    <a href=\\"/\\" class=\\"\\">Projects</a>
+  </li>
+  <!--if-->
+  <!--if-->
+  <li>Create project</li>
+</ul>
+<!--BreadCrumb-->
 <ul class=\\"errors-panel\\">
   <li>Create project fail!</li>
 </ul>
@@ -34,6 +43,13 @@ Object {
 <!--ProjectForm-->
 ",
   "nodes": Array [
+    Object {
+      "ID": undefined,
+      "constructorOptions": null,
+      "html": null,
+      "nodes": null,
+      "options": null,
+    },
     Object {
       "ID": undefined,
       "constructorOptions": null,
@@ -81,6 +97,15 @@ Object {
     },
   },
   "html": "
+<ul class=\\"breadcrumb\\">
+  <li>
+    <a href=\\"/\\" class=\\"\\">Projects</a>
+  </li>
+  <!--if-->
+  <!--if-->
+  <li>Create project</li>
+</ul>
+<!--BreadCrumb-->
 <!--if-->
 <!--ErrorsPanel-->
 <div class=\\"project-create-form\\">
@@ -101,6 +126,13 @@ Object {
 <!--ProjectForm-->
 ",
   "nodes": Array [
+    Object {
+      "ID": undefined,
+      "constructorOptions": null,
+      "html": null,
+      "nodes": null,
+      "options": null,
+    },
     Object {
       "ID": undefined,
       "constructorOptions": null,

@@ -1,6 +1,11 @@
 {% import FlushPageDataLoading from '../FlushPageDataLoading' %}
 {% import ErrorsPanel from '../ErrorsPanel.sht' %}
 {% import ConfirmModal from '../ConfirmModal' %}
+{% import BreadCrumb from '../BreadCrumb' %}
+
+<BreadCrumb
+        project={{project}}
+        currentPage="Delete"/>
 
 {% if dataLoaded %}
     <ErrorsPanel errors={{errors}}/>

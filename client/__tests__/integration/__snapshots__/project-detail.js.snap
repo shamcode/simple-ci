@@ -6,6 +6,15 @@ exports[`project-detail page 1`] = `
 </header>
 <!--Header-->
 <main>
+  <ul class=\\"breadcrumb\\">
+    <li>
+      <a href=\\"\\" class=\\"\\">Projects</a>
+    </li>
+    <!--if-->
+    <!--if-->
+    <li></li>
+  </ul>
+  <!--BreadCrumb-->
   <!--if-->
   <!--FlushPageDataLoading-->
   <!--if-->
@@ -20,6 +29,15 @@ exports[`project-detail page 2`] = `
 </header>
 <!--Header-->
 <main>
+  <ul class=\\"breadcrumb\\">
+    <li>
+      <a href=\\"\\" class=\\"\\">Projects</a>
+    </li>
+    <!--if-->
+    <!--if-->
+    <li>Test</li>
+  </ul>
+  <!--BreadCrumb-->
   <!--if-->
   <!--ErrorsPanel-->
   <div class=\\"project-info\\">
