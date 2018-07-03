@@ -12,9 +12,4 @@
 * [x] Create chain for project
 * [x] Update chain
 * [x] Delete chain
-* Get chain steps
-* Add step to chain
-* Remove step from chain
-* Update step
-* Change step order
 * Run chain
