@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`update project chain 1`] = `
+"<header>
+  <a href=\\"\\" class=\\"logo\\">Simple CI</a>
+</header>
+<!--Header-->
+<main>
+  <ul class=\\"breadcrumb\\">
+    <li>
+      <a href=\\"\\" class=\\"\\">Projects</a>
+    </li>
+    <li>
+      <a href=\\"projects/1\\" class=\\"\\">Test</a>
+    </li>
+    <!--if-->
+    <!--if-->
+    <li>Test chain</li>
+  </ul>
+  <!--BreadCrumb-->
+  <!--if-->
+  <!--ErrorsPanel-->
+  <div class=\\"chain-info\\">
+    <h3>Test chain</h3>
+  </div>
+  <div class=\\"project-chain-form\\">
+    <form>
+      <div class=\\"group\\">
+        <input name=\\"name\\" type=\\"text\\" required=\\"\\"><span class=\\"highlight\\"></span><span class=\\"bar\\"></span>
+        <label>Name</label>
+      </div>
+      <div class=\\"group\\">
+        <button type=\\"submit\\"><span>Save</span></button>
+      </div>
+    </form>
+  </div>
+  <!--ChainForm-->
+  <!--Info-->
+  <!--if-->
+  <!--if-->
+</main>
+<footer> Sham 2018 </footer>
+<!--Footer-->"
+`;
+
+exports[`update project chain 2`] = `
+"<header>
+  <a href=\\"\\" class=\\"logo\\">Simple CI</a>
+</header>
+<!--Header-->
+<main>
+  <ul class=\\"breadcrumb\\">
+    <li>
+      <a href=\\"\\" class=\\"\\">Projects</a>
+    </li>
+    <li>
+      <a href=\\"projects/1\\" class=\\"\\">Test</a>
+    </li>
+    <!--if-->
+    <!--if-->
+    <li>Test chain</li>
+  </ul>
+  <!--BreadCrumb-->
+  <!--if-->
+  <!--ErrorsPanel-->
+  <div class=\\"chain-info\\">
+    <h3>Test chain</h3>
+  </div>
+  <div class=\\"project-chain-form\\">
+    <form>
+      <div class=\\"group\\">
+        <input name=\\"name\\" type=\\"text\\" required=\\"\\"><span class=\\"highlight\\"></span><span class=\\"bar\\"></span>
+        <label>Name</label>
+      </div>
+      <div class=\\"group\\">
+        <button type=\\"submit\\"><span>Save</span></button>
+      </div>
+    </form>
+  </div>
+  <!--ChainForm-->
+  <!--Info-->
+  <!--if-->
+  <!--if-->
+</main>
+<footer> Sham 2018 </footer>
+<!--Footer-->"
+`;

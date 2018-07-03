@@ -45,15 +45,14 @@ export default ( superclass ) => class extends superclass {
             chain,
             dataLoaded: true,
             errors: []
-        } )
+        } );
     }
 
     _loadedPageDataFail() {
-        debugger;
         this.update( {
             chain: {},
             dataLoaded: true,
             errors: [ "Load project chain fail!" ]
-        } )
+        } );
     }
 }

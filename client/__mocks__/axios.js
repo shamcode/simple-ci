@@ -14,8 +14,9 @@ function mockMethodFactory( method ) {
             if ( !FIXTURES[ method ].hasOwnProperty( url ) ) {
                 throw new Error( `Missing fixture for ${method.toUpperCase()} url = "${url}"` );
             }
-            return Promise.resolve( {
-                data: FIXTURES[ method ][ url ]
+            const { success, data } = FIXTURES[ method ][ url ];
+            return Promise[ success ? 'resolve' : 'reject' ]( {
+                data
             } );
         }
     )
@@ -59,11 +60,14 @@ export default {
             }
         }
     } ),
-    use( method, url, data ) {
+    use( method, url, data, success = true ) {
         if ( !METHODS.includes( method ) ) {
             throw new Error( `Unknown method: "${method}"`);
         }
-        FIXTURES[ method ][ url ] = data;
+        FIXTURES[ method ][ url ] = {
+            data,
+            success
+        };
         return this;
     },
     useDefaultMocks() {

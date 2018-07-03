@@ -1,5 +1,75 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`registry fail 1`] = `
+Object {
+  "ID": "widget",
+  "constructorOptions": Object {
+    "directives": Object {
+      "disabled": [Function],
+      "onclick": [Function],
+      "onsubmit": [Function],
+    },
+  },
+  "html": "
+<ul class=\\"errors-panel\\">
+  <li>Registry fail</li>
+</ul>
+<!--if-->
+<!--ErrorsPanel-->
+<div class=\\"registry-form\\">
+  <form>
+    <div class=\\"group\\">
+      <input name=\\"username\\" type=\\"text\\" required=\\"\\"><span class=\\"highlight\\"></span><span class=\\"bar\\"></span>
+      <label>Username</label>
+    </div>
+    <div class=\\"group\\">
+      <input name=\\"password\\" type=\\"password\\" required=\\"\\"><span class=\\"highlight\\"></span><span class=\\"bar\\"></span>
+      <label>Password</label>
+    </div>
+    <div class=\\"group\\">
+      <button type=\\"submit\\"><span>Create</span></button>
+    </div>
+  </form>
+</div>
+",
+  "nodes": Array [
+    Object {
+      "ID": undefined,
+      "constructorOptions": null,
+      "html": null,
+      "nodes": null,
+      "options": null,
+    },
+    Object {
+      "ID": undefined,
+      "constructorOptions": null,
+      "html": null,
+      "nodes": null,
+      "options": null,
+    },
+  ],
+  "options": Object {
+    "actionSequence": Array [
+      "render",
+      "bindEvents",
+    ],
+    "dataSaving": false,
+    "directives": Object {
+      "disabled": [Function],
+      "onclick": [Function],
+      "onsubmit": [Function],
+    },
+    "errors": Array [
+      "Registry fail",
+    ],
+    "password": "",
+    "renderAsync": false,
+    "renderDependence": Array [],
+    "types": Array [],
+  },
+}
+`;
+
 exports[`renders correctly 1`] = `
 Object {
   "ID": "widget",
