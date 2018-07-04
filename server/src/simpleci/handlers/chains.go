@@ -12,6 +12,7 @@ type projectChain struct {
 	Id   int    `json:"id"`
 	ProjectID int `json:"projectId"`
 	Name string `json:"name"`
+	Command string `json:"command"`
 }
 
 func GetProjectChainById(w http.ResponseWriter, r *http.Request, db *DB.Db) {
@@ -50,7 +51,7 @@ func CreateProjectChain(w http.ResponseWriter, r *http.Request, db *DB.Db) {
 		return
 	}
 
-	if _, err := db.CreateProjectChain(chain.ProjectID, chain.Name); err != nil {
+	if _, err := db.CreateProjectChain(chain.ProjectID, chain.Name, chain.Command); err != nil {
 		w.WriteHeader(500)
 		return
 	}
@@ -79,13 +80,13 @@ func UpdateProjectChain(w http.ResponseWriter, r *http.Request, db *DB.Db) {
 	if !ok {
 		return
 	}
-	var chain DB.Chain
+	var chain DB.ChainDetail
 	err := json.NewDecoder(r.Body).Decode(&chain)
 	if err != nil || chain.Name == "" {
 		w.WriteHeader(400)
 		return
 	}
-	if _, err := db.UpdateProjectChain(id, chain.Name); err != nil {
+	if _, err := db.UpdateProjectChain(id, chain.Name, chain.Command); err != nil {
 		w.WriteHeader(500)
 		return
 	}

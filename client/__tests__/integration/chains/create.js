@@ -9,7 +9,7 @@ beforeEach( () => {
 } );
 
 it( 'create project chain', async() => {
-    expect.assertions( 8 );
+    expect.assertions( 9 );
     axios
         .useDefaultMocks()
         .use( 'post', '/chains', null );
@@ -24,14 +24,17 @@ it( 'create project chain', async() => {
 
     const formData = {
         name: 'Test chain name',
+        command: 'echo 1'
     };
     app.form.fill( 'name', formData.name );
+    app.form.fill( 'command', formData.command );
     await app.form.submit();
 
     expect( axios.mocks.post ).toHaveBeenCalledTimes( 1 );
     expect( axios.mocks.post.mock.calls[ 0 ][ 0 ] ).toBe( '/chains' );
-    expect( Object.keys( axios.mocks.post.mock.calls[ 0 ][ 1 ] ) ).toEqual( [ 'name', 'projectId' ] );
+    expect( Object.keys( axios.mocks.post.mock.calls[ 0 ][ 1 ] ) ).toEqual( [ 'name', 'command', 'projectId' ] );
     expect( axios.mocks.post.mock.calls[ 0 ][ 1 ].name ).toEqual( formData.name );
+    expect( axios.mocks.post.mock.calls[ 0 ][ 1 ].command ).toEqual( formData.command );
     expect( axios.mocks.post.mock.calls[ 0 ][ 1 ].projectId ).toEqual( axios.defaultMocksData.project.id );
 
     app.checkBody();

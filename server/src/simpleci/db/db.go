@@ -35,6 +35,11 @@ type Chain struct {
 	Name string `json:"name"`
 }
 
+type ChainDetail struct {
+	Chain
+	Command string `json:"command"`
+}
+
 func (db *Db) Connect() {
 	var err error
 	connectString := fmt.Sprintf("host=%s port=%d dbname=%s user=%s password=%s",
@@ -70,7 +75,8 @@ func (db *Db) CreateStructure() {
 		CREATE TABLE IF NOT EXISTS chain(
 			"id" SERIAL PRIMARY KEY, 
 			"project_id" INTEGER REFERENCES project(id) ON DELETE CASCADE,  
-			"name" VARCHAR(50)
+			"name" VARCHAR(50),
+			"command" text
 		);
 	`)
 	if err != nil {
@@ -159,21 +165,21 @@ func (db *Db) DeleteProject(id int) (sql.Result, error) {
 	return db.connection.Exec("DELETE FROM project WHERE id=$1", id)
 }
 
-func (db *Db) GetProjectChainById(id int) (Chain, error) {
-	var chain Chain
-	row := db.connection.QueryRow("SELECT id, \"name\" FROM chain WHERE id=$1", id)
-	err := row.Scan(&chain.Id, &chain.Name)
+func (db *Db) GetProjectChainById(id int) (ChainDetail, error) {
+	var chain ChainDetail
+	row := db.connection.QueryRow("SELECT id, \"name\", command FROM chain WHERE id=$1", id)
+	err := row.Scan(&chain.Id, &chain.Name, &chain.Command)
 	return chain, err
 }
 
-func (db *Db) CreateProjectChain(projectID int, name string) (sql.Result, error) {
-	return db.connection.Exec("INSERT INTO chain VALUES (default, $1, $2)",
-		projectID, name)
+func (db *Db) CreateProjectChain(projectID int, name, command string) (sql.Result, error) {
+	return db.connection.Exec("INSERT INTO chain VALUES (default, $1, $2, $3)",
+		projectID, name, command)
 }
 
-func (db *Db) UpdateProjectChain(id int, name string) (sql.Result, error) {
-	return db.connection.Exec("UPDATE chain SET \"name\"=$1 WHERE id=$2",
-		name, id)
+func (db *Db) UpdateProjectChain(id int, name, command string) (sql.Result, error) {
+	return db.connection.Exec("UPDATE chain SET \"name\"=$1, command=$2 WHERE id=$3",
+		name, command, id)
 }
 
 func (db *Db) DeleteProjectChain(id int) (sql.Result, error) {

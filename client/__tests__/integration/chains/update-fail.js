@@ -27,7 +27,7 @@ it( 'fail update project chain', async () => {
     await app.form.submit();
     expect( axios.mocks.put ).toHaveBeenCalledTimes( 1 );
     expect( axios.mocks.put.mock.calls[ 0 ][ 0 ] ).toBe( '/chains/2' );
-    expect( Object.keys( axios.mocks.put.mock.calls[ 0 ][ 1 ] ) ).toEqual( [ 'name' ] );
+    expect( Object.keys( axios.mocks.put.mock.calls[ 0 ][ 1 ] ) ).toEqual( [ 'name', 'command' ] );
     app.checkBody();
 } );
 

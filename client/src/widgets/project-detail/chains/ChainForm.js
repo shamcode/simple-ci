@@ -11,6 +11,7 @@ function validateValue( value ) {
 
 export default class ProjectForm extends ChainFormTemplate {
     @options get name() { return ''; }
+    @options get command() { return ''; }
     @options get saveButtonText() { return ''; }
     @options get dataSaving() { return false; }
     @options onSubmit() {}
@@ -34,6 +35,7 @@ export default class ProjectForm extends ChainFormTemplate {
             }
         } );
         if ( dataValid ) {
+            data.command = extractValue( formData.get( 'command' ) );
             this.options.onSubmit( data );
         }
     }

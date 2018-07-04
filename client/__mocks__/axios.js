@@ -33,7 +33,8 @@ const defaultMocksData = ( () => {
     const data = {};
     data.chain = {
         id: 2,
-        name: 'Test chain'
+        name: 'Test chain',
+        command: 'echo 1'
     };
     data.project = {
         id: 1,

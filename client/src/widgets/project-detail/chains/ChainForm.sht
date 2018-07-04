@@ -1,3 +1,5 @@
+{% import CodeFlask from '../../CodeFlask' %}
+
 <div class="project-chain-form">
     <form :onsubmit={{this._submitForm.bind(this)}}>
         <div class="group">
@@ -5,6 +7,15 @@
             <span class="highlight"></span>
             <span class="bar"></span>
             <label>Name</label>
+        </div>
+        <div class="group">
+            <CodeFlask
+                name="command"
+                value={{command}}
+            />
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label>Command</label>
         </div>
         <div class="group">
             <button type="submit" :disabled={{dataSaving}} >

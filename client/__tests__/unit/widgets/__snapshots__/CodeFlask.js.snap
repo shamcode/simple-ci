@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+Object {
+  "ID": "widget",
+  "constructorOptions": Object {},
+  "html": "
+<textarea wrap=\\"off\\" style=\\"display: none\\" name=\\"\\"></textarea>
+<div class=\\"code-flask\\">
+  <div class=\\"codeflask codeflask--has-line-numbers\\">
+    <textarea class=\\"codeflask__textarea codeflask__flatten\\" spellcheck=\\"false\\" autocapitalize=\\"off\\" autocomplete=\\"off\\" autocorrect=\\"off\\"></textarea><pre class=\\"codeflask__pre codeflask__flatten  language-html\\"><code class=\\"codeflask__code  language-html\\"></code></pre>
+    <div class=\\"codeflask__lines\\"><span class=\\"codeflask__lines__line\\">1</span></div>
+  </div>
+</div>
+",
+  "nodes": Array [
+    Object {
+      "ID": undefined,
+      "constructorOptions": null,
+      "html": null,
+      "nodes": null,
+      "options": null,
+    },
+    Object {
+      "ID": undefined,
+      "constructorOptions": null,
+      "html": null,
+      "nodes": null,
+      "options": null,
+    },
+  ],
+  "options": Object {
+    "actionSequence": Array [
+      "render",
+      "bindEvents",
+    ],
+    "afterRender": [Function],
+    "name": "",
+    "renderAsync": false,
+    "renderDependence": Array [],
+    "types": Array [],
+    "value": "",
+  },
+}
+`;

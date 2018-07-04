@@ -27,15 +27,18 @@ it( 'submit form', () => {
 
     const formData = {
         name: 'Test name',
+        command: 'echo 1'
     };
     widget.querySelector( '[name="name"]' ).value = formData.name;
+    widget.querySelector( '[name="command"]' ).value = formData.command;
     widget.querySelector( '[type="submit"]' ).click();
 
     expect( onSubmitMock.mock.calls.length ).toBe( 1 );
     expect( onSubmitMock.mock.calls[ 0 ].length ).toBe( 1 );
     const data = onSubmitMock.mock.calls[ 0 ][ 0 ];
-    expect( Object.keys( data ) ).toEqual( [ 'name' ] );
+    expect( Object.keys( data ) ).toEqual( [ 'name', 'command' ] );
     expect( data.name ).toBe( formData.name );
+    expect( data.command ).toBe( formData.command );
 } );
 
 it( 'form validation (name)', () => {

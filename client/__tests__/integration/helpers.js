@@ -82,11 +82,16 @@ function setupAuth() {
     window.localStorage.setItem( 'token', 'test' );
 }
 
+function mockCSS() {
+    Object.defineProperty(window, 'CSS', {value: () => ({})});
+}
+
 export default function( options = { auth: true } ) {
     setupRAF();
     setupLocalStorage();
     clearBody();
     setupRouter();
+    Object.defineProperty(window, 'CSS', {value: () => ({})});
     if ( options.auth ) {
         setupAuth();
     }

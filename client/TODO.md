@@ -7,8 +7,8 @@
 * [x] Project delete page
 * [x] Display project chains
 * [x] Create chain
-* Chain detail page
-* Update chain
+* [x] Chain detail page
+* [x] Update chain
 * [x] Delete chain
 * [x] Breadcrumbs
 * [x] Styling ErrorsPanel
