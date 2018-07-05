@@ -13,3 +13,4 @@
 * [x] Breadcrumbs
 * [x] Styling ErrorsPanel
 * Run chain
+* WebSocket for running chain

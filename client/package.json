@@ -68,7 +68,8 @@
       "^.+\\.js$": "babel-jest"
     },
     "collectCoverageFrom": [
-      "src/**/*.js"
+      "src/**/*.js",
+      "!src/main.js"
     ],
     "testPathIgnorePatterns": [
       "<rootDir>/node_modules/",

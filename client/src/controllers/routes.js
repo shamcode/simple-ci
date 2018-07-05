@@ -9,6 +9,7 @@ import ProjectDeletePage from '../widgets/project-delete/page';
 import ChainCreatePage from '../widgets/project-detail/chains/create/page';
 import ChainDeletePage from '../widgets/project-detail/chains/delete/page';
 import ChainDetailPage from '../widgets/project-detail/chains/detail/page';
+import ChainRunPage from '../widgets/project-detail/chains/run/page';
 
 export default function() {
     const router = new Router( '/' );
@@ -30,6 +31,7 @@ export default function() {
     router
         .bindPage( `${PROJECT}create`,          'project-chain-create', ChainCreatePage, {} )
         .bindPage( `${PROJECT}:chainId/delete`, 'project-chain-delete', ChainDeletePage, {} )
+        .bindPage( `${PROJECT}:chainId/run`,    'project-chain-run',    ChainRunPage, {} )
         .bindPage( `${PROJECT}:chainId`,        'project-chain-detail', ChainDetailPage, {} );
 
     // Projects list / root

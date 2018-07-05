@@ -10,12 +10,20 @@
     <dl class="project-chain-actions">
         <dt>
             <LinkTo
+                    text="Run"
+                    path="project-chain-run"
+                    params={{this._routerParams( project, chain )}}
+            />
+        </dt>
+        <dd>Execute chain</dd>
+        <dt>
+            <LinkTo
                     text="Edit"
                     path="project-chain-detail"
                     params={{this._routerParams( project, chain )}}
             />
         </dt>
-        <dd>Edit chain name & steps</dd>
+        <dd>Edit chain name</dd>
         <dt>
             <LinkTo
                     text="Delete"

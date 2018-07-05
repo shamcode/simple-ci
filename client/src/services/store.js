@@ -98,4 +98,8 @@ export default class Store {
     updateProjectChain( id, data ) {
         return this.axios.put( `/chains/${id}`, data );
     }
+
+    runProjectChain( id ) {
+        return this.axios.post( `/chains/${id}/run` );
+    }
 }

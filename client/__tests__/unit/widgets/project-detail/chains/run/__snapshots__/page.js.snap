@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+Object {
+  "ID": "widget",
+  "constructorOptions": Object {
+    "directives": Object {
+      "disabled": [Function],
+      "onclick": [Function],
+      "onsubmit": [Function],
+    },
+  },
+  "html": "
+<ul class=\\"breadcrumb\\">
+  <li>
+    <a href=\\"/\\" class=\\"\\">Projects</a>
+  </li>
+  <!--if-->
+  <!--if-->
+  <li></li>
+</ul>
+<!--BreadCrumb-->
+<!--if-->
+<!--FlushPageDataLoading-->
+<!--if-->
+",
+  "nodes": Array [
+    Object {
+      "ID": undefined,
+      "constructorOptions": null,
+      "html": null,
+      "nodes": null,
+      "options": null,
+    },
+    Object {
+      "ID": undefined,
+      "constructorOptions": null,
+      "html": null,
+      "nodes": null,
+      "options": null,
+    },
+  ],
+  "options": Object {
+    "actionSequence": Array [
+      "render",
+      "bindEvents",
+    ],
+    "afterRender": [Function],
+    "chain": Object {},
+    "dataLoaded": false,
+    "dataSaving": false,
+    "directives": Object {
+      "disabled": [Function],
+      "onclick": [Function],
+      "onsubmit": [Function],
+    },
+    "errors": Array [],
+    "project": Object {},
+    "renderAsync": false,
+    "renderDependence": Array [],
+    "types": Array [],
+  },
+}
+`;

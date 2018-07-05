@@ -1,0 +1,21 @@
+{% import FlushPageDataLoading from '../../../FlushPageDataLoading' %}
+{% import ErrorsPanel from '../../../ErrorsPanel.sht' %}
+{% import BreadCrumb from '../../../BreadCrumb' %}
+
+<BreadCrumb
+        project={{project}}
+        chain={{chain}}
+        currentPage="Run chain"/>
+
+{% if dataLoaded %}
+    <ErrorsPanel errors={{errors}}/>
+    <button
+        class="run-project-chain"
+        :onclick={{this.runProjectChain.bind( this )}}
+        :disabled={{dataSaving}}
+    >
+        <span>Run</span>
+    </button>
+{% else %}
+    <FlushPageDataLoading/>
+{% endif %}
