@@ -1,8 +1,11 @@
-import { options } from 'sham-ui';
+import { options, inject } from 'sham-ui';
 import LoadChainMixin from '../../../../mixins/load-chain';
 import ChainRunPageTemplate from './page.sht';
 
 export default class ChainRunPage extends LoadChainMixin( ChainRunPageTemplate ) {
+    /** @type Socket */
+    @inject socket = 'socket';
+
     @options get dataSaving() { return false; }
     @options get errors() { return []; }
 
@@ -11,7 +14,15 @@ export default class ChainRunPage extends LoadChainMixin( ChainRunPageTemplate )
             dataSaving: true,
             errors: []
         } );
-        this.store.runProjectChain( this.options.chain.id ).then(
+        this.socket.connect().then(
+            ::this._runProjectChain
+        );
+    }
+
+    _runProjectChain() {
+        const chainId = this.options.chain.id;
+        this.socket.watch( chainId );
+        this.store.runProjectChain( chainId ).then(
             ::this._runProjectChainSuccess,
             ::this._runProjectChainFail
         )

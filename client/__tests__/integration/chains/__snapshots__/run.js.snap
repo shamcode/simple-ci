@@ -52,7 +52,8 @@ exports[`run project chain 2`] = `
   </ul>
   <!--BreadCrumb-->
   <!--if-->
-  <!--FlushPageDataLoading-->
+  <!--ErrorsPanel-->
+  <button class=\\"run-project-chain\\"><span>Run</span></button>
   <!--if-->
 </main>
 <footer> Sham 2018 </footer>

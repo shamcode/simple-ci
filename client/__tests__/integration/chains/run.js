@@ -8,9 +8,14 @@ beforeEach( () => {
     setup();
 } );
 
-it( 'run project chain', async () => {
-    expect.assertions( 4 );
 
+it( 'run project chain', async () => {
+    expect.assertions( 6 );
+
+    const wsMock = {
+        send: jest.fn()
+    };
+    window.WebSocket = jest.fn( () => wsMock );
     axios
         .useDefaultMocks()
         .use( 'post', '/chains/2/run', null );
@@ -24,7 +29,11 @@ it( 'run project chain', async () => {
     app.checkBody();
 
     await app.click( '.run-project-chain' );
+    wsMock.onopen();
+    await app.waitRendering();
 
+    expect( wsMock.send.mock.calls.length ).toBe( 1 );
+    expect( wsMock.send.mock.calls[ 0 ][ 0 ] ).toBe( '{"chainId":2}' );
     expect( axios.mocks.post ).toHaveBeenCalledTimes( 1 );
     expect( axios.mocks.post.mock.calls[ 0 ][ 0 ] ).toBe( '/chains/2/run' );
     app.checkBody();
