@@ -1,18 +1,18 @@
 package handlers
 
 import (
+	"database/sql"
 	"encoding/json"
+	"github.com/julienschmidt/httprouter"
 	"net/http"
 	DB "simpleci/db"
-	"github.com/julienschmidt/httprouter"
-	"database/sql"
 )
 
 type projectChain struct {
-	Id   int    `json:"id"`
-	ProjectID int `json:"projectId"`
-	Name string `json:"name"`
-	Command string `json:"command"`
+	Id        int    `json:"id"`
+	ProjectID int    `json:"projectId"`
+	Name      string `json:"name"`
+	Command   string `json:"command"`
 }
 
 func GetProjectChainById(w http.ResponseWriter, r *http.Request, db *DB.Db) {
@@ -59,7 +59,6 @@ func CreateProjectChain(w http.ResponseWriter, r *http.Request, db *DB.Db) {
 	w.WriteHeader(201)
 }
 
-
 func DeleteProjectChain(w http.ResponseWriter, r *http.Request, db *DB.Db) {
 	ps := httprouter.ParamsFromContext(r.Context())
 	id, ok := getID(w, ps)
@@ -93,4 +92,3 @@ func UpdateProjectChain(w http.ResponseWriter, r *http.Request, db *DB.Db) {
 	setJsonContentTypeHeader(w)
 	w.WriteHeader(200)
 }
-

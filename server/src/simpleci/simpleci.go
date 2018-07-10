@@ -9,6 +9,7 @@ import (
 	"simpleci/config"
 	DB "simpleci/db"
 	"simpleci/handlers"
+	"simpleci/ws"
 	"strconv"
 )
 
@@ -24,6 +25,8 @@ func main() {
 	db.CreateStructure()
 
 	router := httprouter.New()
+
+	router.Handler("GET", "/ws", ws.NewServer())
 
 	router.Handler("POST", "/api/v1/registry", wrapHandler(handlers.Registry, db))
 	router.Handler("POST", "/api/v1/login", wrapHandler(handlers.GetToken, db))
