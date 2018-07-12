@@ -14,3 +14,4 @@
 * [x] Delete chain
 * Run chain
 * WebSocket server
+* Watch chain over ws (maping chainId -> connection)
