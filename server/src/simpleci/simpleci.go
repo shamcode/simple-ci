@@ -24,6 +24,8 @@ func main() {
 
 	db.CreateStructure()
 
+	ws.InitStore()
+
 	router := httprouter.New()
 
 	router.Handler("GET", "/ws", ws.NewServer())

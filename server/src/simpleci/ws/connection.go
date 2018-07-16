@@ -2,10 +2,10 @@ package ws
 
 import (
 	"github.com/gorilla/websocket"
-	"time"
-	"sync"
-	"net/http"
 	"github.com/matoous/go-nanoid"
+	"net/http"
+	"sync"
+	"time"
 )
 
 type Connection struct {
