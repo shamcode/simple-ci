@@ -5,6 +5,11 @@ export default class Socket {
         DI.bind( 'socket', this );
         this.connection = null;
         this.connectionPromise = null;
+        this.handlers = [];
+    }
+
+    get session() {
+        return DI.resolve( 'session' );
     }
 
     connect() {
@@ -12,7 +17,9 @@ export default class Socket {
             return this.connectionPromise;
         }
         this.connectionPromise = new Promise( resolve => {
-            this.connection = new WebSocket( `ws://${document.location.host}/ws`  );
+            this.connection = new WebSocket(
+                `ws://${document.location.host}/ws/${this.session.token}`
+            );
             this._bindHandlers();
             this.connection.onopen = resolve;
         } );
@@ -36,17 +43,26 @@ export default class Socket {
     _onclose() {
         this.connectionPromise = null;
         this.connection = null;
+        this.handlers = [];
     }
 
     _onmessage( event ) {
-        console.dir( event );
+        this.handlers.forEach( handler => handler( event.data ) );
     }
 
-    watch( chainId ) {
+    watch( chainId, callback ) {
+        this.handlers.push( callback );
         this.connection.send(
             JSON.stringify( {
                 chainId
             } )
         )
+    }
+
+    removeWatcher( callback ) {
+        const index = this.handlers.indexOf( callback );
+        if ( -1 !== index ) {
+            this.handlers.splice( index, 1 );
+        }
     }
 }

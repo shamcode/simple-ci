@@ -28,7 +28,7 @@ func main() {
 
 	router := httprouter.New()
 
-	router.Handler("GET", "/ws", ws.NewServer())
+	router.Handler("GET", "/ws/:token", ws.NewServer(db))
 
 	router.Handler("POST", "/api/v1/registry", wrapHandler(handlers.Registry, db))
 	router.Handler("POST", "/api/v1/login", wrapHandler(handlers.GetToken, db))
@@ -42,6 +42,7 @@ func main() {
 	router.Handler("GET", "/api/v1/chains/:id", jwtHandler(handlers.GetProjectChainById, db))
 	router.Handler("PUT", "/api/v1/chains/:id", jwtHandler(handlers.UpdateProjectChain, db))
 	router.Handler("DELETE", "/api/v1/chains/:id", jwtHandler(handlers.DeleteProjectChain, db))
+	router.Handler("POST", "/api/v1/chains/:id/run", jwtHandler(handlers.RunProjectChain, db))
 	router.Handler("POST", "/api/v1/chains", jwtHandler(handlers.CreateProjectChain, db))
 
 	router.Handle("OPTIONS", "/*path", handlers.OptionsHandler)

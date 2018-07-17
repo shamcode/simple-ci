@@ -47,6 +47,7 @@ Object {
     ],
     "afterRender": [Function],
     "chain": Object {},
+    "commandOutput": "",
     "dataLoaded": false,
     "dataSaving": false,
     "directives": Object {

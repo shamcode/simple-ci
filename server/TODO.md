@@ -12,6 +12,6 @@
 * [x] Create chain for project
 * [x] Update chain
 * [x] Delete chain
-* Run chain
-* WebSocket server
-* Watch chain over ws (maping chainId -> connection)
+* [x] Run chain
+* [x] WebSocket server
+* [x] Watch chain over ws (maping chainId -> connection)

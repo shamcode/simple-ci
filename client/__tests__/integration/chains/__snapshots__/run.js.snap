@@ -23,7 +23,8 @@ exports[`run project chain 1`] = `
   <!--BreadCrumb-->
   <!--if-->
   <!--ErrorsPanel-->
-  <button class=\\"run-project-chain\\"><span>Run</span></button>
+  <button class=\\"run-project-chain\\"><span>Run</span></button><pre class=\\"command-output\\"></pre>
+  <!--CommandOutput-->
   <!--if-->
 </main>
 <footer> Sham 2018 </footer>
@@ -53,7 +54,8 @@ exports[`run project chain 2`] = `
   <!--BreadCrumb-->
   <!--if-->
   <!--ErrorsPanel-->
-  <button class=\\"run-project-chain\\"><span>Run</span></button>
+  <button class=\\"run-project-chain\\"><span>Run</span></button><pre class=\\"command-output\\"></pre>
+  <!--CommandOutput-->
   <!--if-->
 </main>
 <footer> Sham 2018 </footer>

@@ -12,5 +12,6 @@
 * [x] Delete chain
 * [x] Breadcrumbs
 * [x] Styling ErrorsPanel
-* Run chain
-* WebSocket for running chain
+* [x] Run chain
+* [x] WebSocket for running chain
+* [x] Display ran command result 

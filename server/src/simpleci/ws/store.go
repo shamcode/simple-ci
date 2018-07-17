@@ -3,6 +3,7 @@ package ws
 import (
 	log "github.com/sirupsen/logrus"
 )
+
 type chainWatcherStore map[int]map[*Connection]struct{}
 
 type store struct {
@@ -28,6 +29,16 @@ func (store *store) removeConnection(conn *Connection) {
 	log.WithField("connectionID", conn.ID()).Info("remove connection from chain watchers store")
 	for _, connections := range store.chainWatchers {
 		delete(connections, conn)
+	}
+}
+
+func (store *store) Broadcast(chainID int, msg []byte) {
+	watchers, ok := store.chainWatchers[chainID]
+	if ok {
+		for con := range watchers {
+			con.Write(msg)
+		}
+		store.removeChain(chainID)
 	}
 }
 

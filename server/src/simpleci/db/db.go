@@ -40,6 +40,11 @@ type ChainDetail struct {
 	Command string `json:"command"`
 }
 
+type ChainForRun struct {
+	ChainDetail
+	Project Project
+}
+
 func (db *Db) Connect() {
 	var err error
 	connectString := fmt.Sprintf("host=%s port=%d dbname=%s user=%s password=%s",
@@ -184,6 +189,14 @@ func (db *Db) UpdateProjectChain(id int, name, command string) (sql.Result, erro
 
 func (db *Db) DeleteProjectChain(id int) (sql.Result, error) {
 	return db.connection.Exec("DELETE FROM chain WHERE id=$1", id)
+}
+
+func (db *Db) GetProjectChainForRun(id int) (ChainForRun, error) {
+	var chain ChainForRun
+	row := db.connection.QueryRow("SELECT ch.id, ch.\"name\", ch.command, p.id, p.name, p.cwd FROM chain ch JOIN project p ON ch.project_id = p.id WHERE ch.id = $1",
+		id)
+	err := row.Scan(&chain.Id, &chain.Name, &chain.Command, &chain.Project.Id, &chain.Project.Name, &chain.Project.Cwd)
+	return chain, err
 }
 
 func CreateDatabase(config config.DataBaseConfig) *Db {

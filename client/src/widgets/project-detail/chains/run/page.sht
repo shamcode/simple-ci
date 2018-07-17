@@ -1,6 +1,7 @@
 {% import FlushPageDataLoading from '../../../FlushPageDataLoading' %}
 {% import ErrorsPanel from '../../../ErrorsPanel.sht' %}
 {% import BreadCrumb from '../../../BreadCrumb' %}
+{% import CommandOutput from './CommandOutput.sht' %}
 
 <BreadCrumb
         project={{project}}
@@ -16,6 +17,7 @@
     >
         <span>Run</span>
     </button>
+    <CommandOutput output={{commandOutput}}/>
 {% else %}
     <FlushPageDataLoading/>
 {% endif %}

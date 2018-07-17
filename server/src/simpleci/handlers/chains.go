@@ -1,11 +1,17 @@
 package handlers
 
 import (
+	"bytes"
 	"database/sql"
 	"encoding/json"
 	"github.com/julienschmidt/httprouter"
+	log "github.com/sirupsen/logrus"
+	"io/ioutil"
 	"net/http"
+	"os"
+	"os/exec"
 	DB "simpleci/db"
+	WS "simpleci/ws"
 )
 
 type projectChain struct {
@@ -91,4 +97,59 @@ func UpdateProjectChain(w http.ResponseWriter, r *http.Request, db *DB.Db) {
 	}
 	setJsonContentTypeHeader(w)
 	w.WriteHeader(200)
+}
+
+func RunProjectChain(w http.ResponseWriter, r *http.Request, db *DB.Db) {
+	ps := httprouter.ParamsFromContext(r.Context())
+	id, ok := getID(w, ps)
+	if !ok {
+		return
+	}
+	chain, err := db.GetProjectChainForRun(id)
+	if err != nil {
+		if err == sql.ErrNoRows {
+			w.WriteHeader(404)
+			return
+		}
+		w.WriteHeader(500)
+		return
+	}
+	go runChain(chain)
+	setJsonContentTypeHeader(w)
+	w.WriteHeader(200)
+}
+
+func runChain(chain DB.ChainForRun) {
+	log.
+		WithField("id", chain.Id).
+		WithField("name", chain.Name).
+		WithField("project", chain.Project.Name).
+		Info("run project chain")
+	scriptFile, err := ioutil.TempFile("", "_simpleciscript.sh")
+	if nil != err {
+		log.WithError(err).Error("fail create temp file")
+		return
+	}
+	defer os.Remove(scriptFile.Name())
+	scriptFile.WriteString("#!/bin/sh\n")
+	scriptFile.WriteString(chain.Command)
+	cmd := exec.Command("sh", scriptFile.Name())
+	cmd.Dir = chain.Project.Cwd
+	response := []byte{}
+	cmdOut := &bytes.Buffer{}
+	cmdErr := &bytes.Buffer{}
+	cmd.Stdout = cmdOut
+	cmd.Stderr = cmdErr
+	cmd.Start()
+	err = cmd.Wait()
+	response = append(response, cmdOut.Bytes()...)
+	if nil != err {
+		response = append(response, cmdErr.Bytes()...)
+	}
+	log.
+		WithField("id", chain.Id).
+		WithField("name", chain.Name).
+		WithField("project", chain.Project.Name).
+		Info("finish run project chain")
+	WS.Store.Broadcast(chain.Id, response)
 }
