@@ -72,8 +72,9 @@ function clearBody() {
 }
 
 function setupRouter() {
-    window.location.href = 'http://simple-ci.example.com';
-    window.location.hash = '';
+    //global.window = new jsdom.JSDOM('', {
+    //    url: 'http://simple-ci.example.com'
+    //}).window;
     delete window.__NAVIGO_WINDOW_LOCATION_MOCK__;
     history.pushState( {}, '', '' );
 }

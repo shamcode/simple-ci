@@ -32,5 +32,5 @@ it( 'success registry', async() => {
     expect( axios.mocks.post ).toHaveBeenCalledTimes( 1 );
     expect( axios.mocks.post.mock.calls[ 0 ][ 1 ] ).toEqual( formData );
 
-    expect( window.location.href ).toBe( 'http://localhost:3000/login' );
+    expect( window.location.href ).toBe( 'http://simple-ci.example.com/login' );
 } );
