@@ -1,5 +1,5 @@
 import { options, inject } from 'sham-ui';
-import LoginPageTemplate from './page.sht'
+import LoginPageTemplate from './page.sht';
 
 export default class LoginPage extends LoginPageTemplate {
     @inject session = 'session';
@@ -32,6 +32,6 @@ export default class LoginPage extends LoginPageTemplate {
             password: '',
             dataSaving: false,
             errors: [ 'Login fail' ],
-        } )
+        } );
     }
 }

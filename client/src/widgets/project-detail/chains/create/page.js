@@ -21,7 +21,7 @@ export default class ChainCreatePage extends LoadProjectMixin( ChainCreatePageTe
         this.store.createProjectChain( data ).then(
             ::this._createProjectChainSuccess,
             ::this._createProjectChainFail
-        )
+        );
     }
 
     _createProjectChainSuccess() {

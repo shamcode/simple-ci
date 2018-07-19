@@ -1,4 +1,4 @@
-import { DI } from 'sham-ui'
+import { DI } from 'sham-ui';
 
 export default class Socket {
     constructor() {
@@ -36,9 +36,7 @@ export default class Socket {
         } );
     }
 
-    _onerror( event ) {
-        console.error( event );
-    }
+    _onerror() {}
 
     _onclose() {
         this.connectionPromise = null;
@@ -56,7 +54,7 @@ export default class Socket {
             JSON.stringify( {
                 chainId
             } )
-        )
+        );
     }
 
     removeWatcher( callback ) {

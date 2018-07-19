@@ -1,4 +1,4 @@
-import { options, inject } from 'sham-ui'
+import { options, inject } from 'sham-ui';
 
 export default ( superclass ) => class extends superclass {
     @inject store = 'store';
@@ -35,14 +35,14 @@ export default ( superclass ) => class extends superclass {
             project,
             dataLoaded: true,
             errors: []
-        } )
+        } );
     }
 
     _loadedPageDataFail() {
         this.update( {
             project: { chains: [] },
             dataLoaded: true,
-            errors: [ "Load project fail!" ]
-        } )
+            errors: [ 'Load project fail!' ]
+        } );
     }
-}
+};

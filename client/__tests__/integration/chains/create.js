@@ -1,4 +1,4 @@
-import setup, { app, click } from '../helpers'
+import setup, { app } from '../helpers';
 import axios from 'axios';
 jest.mock( 'axios' );
 

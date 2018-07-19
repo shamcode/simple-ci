@@ -1,4 +1,4 @@
-import setup, { app } from '../helpers'
+import setup, { app } from '../helpers';
 import axios from 'axios';
 jest.mock( 'axios' );
 
@@ -32,7 +32,7 @@ it( 'run project chain', async () => {
     wsMock.onopen();
     await app.waitRendering();
 
-    expect( wsMock.send.mock.calls.length ).toBe( 1 );
+    expect( wsMock.send.mock.calls ).toHaveLength( 1 );
     expect( wsMock.send.mock.calls[ 0 ][ 0 ] ).toBe( '{"chainId":2}' );
     expect( axios.mocks.post ).toHaveBeenCalledTimes( 1 );
     expect( axios.mocks.post.mock.calls[ 0 ][ 0 ] ).toBe( '/chains/2/run' );

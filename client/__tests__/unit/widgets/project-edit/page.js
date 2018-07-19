@@ -79,7 +79,7 @@ it( 'update fail', async() => {
 
     updateProjectMock.mockReturnValueOnce( Promise.reject() );
     container.querySelector( '[type="submit"]' ).click();
-    expect( updateProjectMock.mock.calls.length ).toBe( 1 );
+    expect( updateProjectMock.mock.calls ).toHaveLength( 1 );
 
     await flushPromises();
     expect( meta.toJSON() ).toMatchSnapshot();

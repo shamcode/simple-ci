@@ -17,7 +17,7 @@ export default class ProjectDeletePage extends LoadProjectMixin( ProjectDeletePa
         this.store.deleteProject( this.projectId ).then(
             ::this._deleteProjectSuccess,
             ::this._deleteProjectFail
-        )
+        );
     }
 
     _deleteProjectSuccess() {
@@ -35,6 +35,6 @@ export default class ProjectDeletePage extends LoadProjectMixin( ProjectDeletePa
     cancelDeleteProject() {
         this.router.navigate(
             this.router.generate( 'project-detail', this._routerParams )
-        )
+        );
     }
 }

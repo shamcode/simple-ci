@@ -1,4 +1,4 @@
-import { DI } from 'sham-ui'
+import { DI } from 'sham-ui';
 
 export default class Session {
     constructor() {
@@ -12,17 +12,17 @@ export default class Session {
     get store() { return DI.resolve( 'store' ); }
 
     get token() {
-        return localStorage.getItem( 'token' )
+        return localStorage.getItem( 'token' );
     }
 
     get isAuthenticated() {
-        return null !== this.token
+        return null !== this.token;
     }
 
     login( username, password ) {
         return this.store.getToken( username, password ).then(
             ::this._loginSuccess
-        )
+        );
     }
 
     _loginSuccess( { data } ) {

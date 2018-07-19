@@ -14,7 +14,7 @@ export default class ChainDetailPage extends LoadChainMixin( ChainDetailPageTemp
         this.store.updateProjectChain( this.options.chain.id, formData ).then(
             ::this._updateProjectChainSuccess,
             ::this._updateProjectChainFail
-        )
+        );
     }
 
     _updateProjectChainSuccess() {
@@ -22,7 +22,7 @@ export default class ChainDetailPage extends LoadChainMixin( ChainDetailPageTemp
             dataLoaded: false,
             dataSaving: false
         } );
-        this._loadPageData()
+        this._loadPageData();
     }
 
     _updateProjectChainFail() {

@@ -16,7 +16,7 @@ export default class ProjectCreatePage extends ProjectCreatePageTemplate {
         this.store.createProject( data ).then(
             ::this._createProjectSuccess,
             ::this._createProjectFail
-        )
+        );
     }
 
     _createProjectSuccess() {

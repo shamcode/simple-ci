@@ -7,7 +7,7 @@ export default class {
         this.node = node;
     }
 
-    unbind( node ) {
+    unbind() {
         this.node = null;
     }
 

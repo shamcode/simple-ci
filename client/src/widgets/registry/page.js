@@ -1,5 +1,5 @@
 import { inject, options } from 'sham-ui';
-import RegistryPageTemplate from './page.sht'
+import RegistryPageTemplate from './page.sht';
 
 export default class RegistryPage extends RegistryPageTemplate {
     @inject store = 'store';
@@ -32,7 +32,7 @@ export default class RegistryPage extends RegistryPageTemplate {
     registrySuccess() {
         this.router.navigate(
             this.router.generate( 'login', {} )
-        )
+        );
     }
 
     registryFail() {
@@ -40,6 +40,6 @@ export default class RegistryPage extends RegistryPageTemplate {
             password: '',
             dataSaving: false,
             errors: [ 'Registry fail' ],
-        } )
+        } );
     }
 }

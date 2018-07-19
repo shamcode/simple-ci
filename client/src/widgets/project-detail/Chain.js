@@ -3,22 +3,20 @@ import ChainTemplate from './Chain.sht';
 
 export default class Chain extends ChainTemplate {
     @options get chain() { return {}; }
-    @options get project() { return {}; }
     @options get isExpand() { return false; }
-
     @options get project() { return { chains: [] }; }
 
     _routerParams( project, chain ) {
         return {
             id: project === undefined ? null : project.id,
             chainId: chain === undefined ? null : chain.id
-        }
+        };
     }
 
     _toggleExpand( e ) {
         e.preventDefault();
         this.update( {
             isExpand: !this.options.isExpand
-        } )
+        } );
     }
 }

@@ -1,5 +1,5 @@
 import CodeFlask from 'codeflask';
-import CodeFlaskTemplate from './CodeFlask.sht'
+import CodeFlaskTemplate from './CodeFlask.sht';
 import { options } from 'sham-ui';
 
 export default class CodeFlaskWidget extends CodeFlaskTemplate {

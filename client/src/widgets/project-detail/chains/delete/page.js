@@ -10,7 +10,7 @@ export default class ChainDeletePage extends LoadChainMixin( ChainDeletePageTemp
     }
 
     get projectDetailURL() {
-        return this.router.generate( 'project-detail', { id: this.projectId } )
+        return this.router.generate( 'project-detail', { id: this.projectId } );
     }
 
     deleteChain() {
@@ -21,7 +21,7 @@ export default class ChainDeletePage extends LoadChainMixin( ChainDeletePageTemp
         this.store.deleteChain( this.chainId ).then(
             ::this._deleteChainSuccess,
             ::this._deleteChainFail
-        )
+        );
     }
 
     _deleteChainSuccess() {
@@ -33,6 +33,6 @@ export default class ChainDeletePage extends LoadChainMixin( ChainDeletePageTemp
     }
 
     cancelDeleteChain() {
-        this.router.navigate( this.projectDetailURL )
+        this.router.navigate( this.projectDetailURL );
     }
 }

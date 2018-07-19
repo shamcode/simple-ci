@@ -17,7 +17,7 @@ export default class Info extends InfoTemplate {
     _routerParams( project ) {
         return {
             id: project === undefined ? null : project.id
-        }
+        };
     }
 
     get createChainLinkNode() {

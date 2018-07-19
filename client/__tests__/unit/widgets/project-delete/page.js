@@ -88,8 +88,8 @@ it( 'delete fail', async() => {
     container.querySelector( '.ok' ).click();
     await flushPromises();
 
-    expect( deleteProject.mock.calls.length ).toBe( 1 );
-    expect( navigateMock.mock.calls.length ).toBe( 1 );
+    expect( deleteProject.mock.calls ).toHaveLength( 1 );
+    expect( navigateMock.mock.calls ).toHaveLength( 1 );
     expect( navigateMock.mock.calls[ 0 ][ 0 ] ).toBe( '/' );
     expect( meta.toJSON() ).toMatchSnapshot();
 } );
@@ -123,7 +123,7 @@ it( 'cancel', async() => {
     await flushPromises();
 
     container.querySelector( '.cancel' ).click();
-    expect( navigateMock.mock.calls.length ).toBe( 1 );
+    expect( navigateMock.mock.calls ).toHaveLength( 1 );
     expect( navigateMock.mock.calls[ 0 ][ 0 ] ).toBe( '/' );
 
     await flushPromises();

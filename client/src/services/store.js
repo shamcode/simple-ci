@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { DI } from 'sham-ui'
+import { DI } from 'sham-ui';
 
 export default class Store {
     constructor() {

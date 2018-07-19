@@ -26,7 +26,7 @@ export default class ChainRunPage extends LoadChainMixin( ChainRunPageTemplate )
         this.store.runProjectChain( chainId ).then(
             ::this._runProjectChainSuccess,
             ::this._runProjectChainFail
-        )
+        );
     }
 
     _runProjectChainSuccess() {
@@ -34,7 +34,7 @@ export default class ChainRunPage extends LoadChainMixin( ChainRunPageTemplate )
             dataLoaded: false,
             dataSaving: false
         } );
-        this._loadPageData()
+        this._loadPageData();
     }
 
     _runProjectChainFail() {
@@ -55,6 +55,6 @@ export default class ChainRunPage extends LoadChainMixin( ChainRunPageTemplate )
 
     remove() {
         this.socket.removeWatcher( this.updateCommandOutput );
-        super.remove()
+        super.remove();
     }
 }

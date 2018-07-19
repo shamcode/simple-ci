@@ -1,3 +1,4 @@
+import { DI } from 'sham-ui';
 import Page from '../../../../src/widgets/registry/page';
 import renderer from 'sham-ui-test-helpers';
 import disabled from '../../../../src/directives/disabled';
@@ -45,7 +46,7 @@ it( 'registry fail', async () => {
 
     await flushPromises();
 
-    expect( registryMock.mock.calls.length ).toBe( 1 );
-    expect( registryMock.mock.calls[ 0 ].length ).toBe( 2 );
+    expect( registryMock.mock.calls ).toHaveLength( 1 );
+    expect( registryMock.mock.calls[ 0 ] ).toHaveLength( 2 );
     expect( meta.toJSON() ).toMatchSnapshot();
 } );

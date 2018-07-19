@@ -13,7 +13,7 @@ export default class ProjectEditPage extends LoadProjectMixin( ProjectEditPageTe
         this.store.updateProject( this.projectId, data ).then(
             ::this._updateProjectSuccess,
             ::this._updateProjectFail
-        )
+        );
     }
 
     _updateProjectSuccess() {

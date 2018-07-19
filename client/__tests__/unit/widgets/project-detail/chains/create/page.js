@@ -67,7 +67,7 @@ it( 'create fail', async() => {
 
     createProjectChain.mockReturnValueOnce( Promise.reject() );
     container.querySelector( '[type="submit"]' ).click();
-    expect( createProjectChain.mock.calls.length ).toBe( 1 );
+    expect( createProjectChain.mock.calls ).toHaveLength( 1 );
 
     await flushPromises();
     expect( meta.toJSON() ).toMatchSnapshot();

@@ -54,7 +54,7 @@ export const app = {
 
 function setupRAF() {
     window.requestAnimationFrame = ( cb ) => {
-        setImmediate( cb )
+        setImmediate( cb );
     };
 }
 
@@ -72,19 +72,12 @@ function clearBody() {
 }
 
 function setupRouter() {
-    //global.window = new jsdom.JSDOM('', {
-    //    url: 'http://simple-ci.example.com'
-    //}).window;
     delete window.__NAVIGO_WINDOW_LOCATION_MOCK__;
     history.pushState( {}, '', '' );
 }
 
 function setupAuth() {
     window.localStorage.setItem( 'token', 'test' );
-}
-
-function mockCSS() {
-    Object.defineProperty(window, 'CSS', {value: () => ({})});
 }
 
 export default function( options = { auth: true } ) {

@@ -25,14 +25,14 @@ export default class ProjectsPage extends ProjectsPageTemplate {
             projects,
             dataLoaded: true,
             errors: []
-        } )
+        } );
     }
 
     _loadedPageDataFail() {
         this.update( {
             projects: [],
             dataLoaded: true,
-            errors: [ "Fail loaded project!" ]
-        } )
+            errors: [ 'Fail loaded project!' ]
+        } );
     }
 }

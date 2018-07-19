@@ -1,5 +1,5 @@
 import { options } from 'sham-ui';
-import ConfirmModalTemplate from './ConfirmModal.sht'
+import ConfirmModalTemplate from './ConfirmModal.sht';
 
 export default class ProjectDeleteModal extends ConfirmModalTemplate {
     @options onOk() {}

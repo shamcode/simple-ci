@@ -19,7 +19,7 @@ function mockMethodFactory( method ) {
                 data
             } );
         }
-    )
+    );
 }
 
 METHODS.forEach(
@@ -59,7 +59,7 @@ export default {
                     use: () => {}
                 }
             }
-        }
+        };
     } ),
     use( method, url, data, success = true ) {
         if ( !METHODS.includes( method ) ) {

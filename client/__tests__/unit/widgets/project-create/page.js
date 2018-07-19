@@ -50,8 +50,8 @@ it( 'create', () => {
     container.querySelector( '[name="cwd"]' ).value = formData.cwd;
     container.querySelector( '[type="submit"]' ).click();
 
-    expect( createProjectMock.mock.calls.length ).toBe( 1 );
-    expect( createProjectMock.mock.calls[ 0 ].length ).toBe( 1 );
+    expect( createProjectMock.mock.calls ).toHaveLength( 1 );
+    expect( createProjectMock.mock.calls[ 0 ] ).toHaveLength( 1 );
 
     const data = createProjectMock.mock.calls[ 0 ][ 0 ];
     expect( Object.keys( data ) ).toEqual( [ 'name', 'cwd' ] );
@@ -88,7 +88,7 @@ it( 'create fail', async () => {
 
     await flushPromises();
 
-    expect( createProjectMock.mock.calls.length ).toBe( 1 );
-    expect( createProjectMock.mock.calls[ 0 ].length ).toBe( 1 );
+    expect( createProjectMock.mock.calls ).toHaveLength( 1 );
+    expect( createProjectMock.mock.calls[ 0 ] ).toHaveLength( 1 );
     expect( meta.toJSON() ).toMatchSnapshot();
 } );

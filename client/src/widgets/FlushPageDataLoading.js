@@ -18,6 +18,6 @@ export default class FlushPageDataLoading extends FlushPageDataLoadingTemplate {
 
     remove() {
         super.remove( ...arguments );
-        clearTimeout( this._timeoutID )
+        clearTimeout( this._timeoutID );
     }
 }

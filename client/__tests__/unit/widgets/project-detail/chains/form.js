@@ -33,8 +33,8 @@ it( 'submit form', () => {
     widget.querySelector( '[name="command"]' ).value = formData.command;
     widget.querySelector( '[type="submit"]' ).click();
 
-    expect( onSubmitMock.mock.calls.length ).toBe( 1 );
-    expect( onSubmitMock.mock.calls[ 0 ].length ).toBe( 1 );
+    expect( onSubmitMock.mock.calls ).toHaveLength( 1 );
+    expect( onSubmitMock.mock.calls[ 0 ] ).toHaveLength( 1 );
     const data = onSubmitMock.mock.calls[ 0 ][ 0 ];
     expect( Object.keys( data ) ).toEqual( [ 'name', 'command' ] );
     expect( data.name ).toBe( formData.name );
@@ -53,8 +53,8 @@ it( 'form validation (name)', () => {
     } );
 
     widget.querySelector( '[type="submit"]' ).click();
-    expect( onSubmitMock.mock.calls.length ).toBe( 0 );
+    expect( onSubmitMock.mock.calls ).toHaveLength( 0 );
 
     widget.querySelector( '[type="submit"]' ).click();
-    expect( onSubmitMock.mock.calls.length ).toBe( 0 );
+    expect( onSubmitMock.mock.calls ).toHaveLength( 0 );
 } );

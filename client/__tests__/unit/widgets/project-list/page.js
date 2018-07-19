@@ -18,7 +18,7 @@ it( 'renders correctly', () => {
     } );
 
     const meta = renderer( ProjectsPage, { directives } );
-    expect( storeMock.mock.calls.length ).toBe( 1 );
+    expect( storeMock.mock.calls ).toHaveLength( 1 );
     expect( meta.toJSON() ).toMatchSnapshot();
 } );
 
