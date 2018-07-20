@@ -8,7 +8,7 @@ beforeEach( () => {
     setup();
 } );
 
-it( 'delete project chain', async () => {
+it( 'delete project chain', async() => {
     expect.assertions( 4 );
 
     axios

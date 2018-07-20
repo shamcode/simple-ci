@@ -3,8 +3,12 @@ import CodeFlaskTemplate from './CodeFlask.sht';
 import { options } from 'sham-ui';
 
 export default class CodeFlaskWidget extends CodeFlaskTemplate {
-    @options get name() { return ''; }
-    @options get value() { return ''; }
+    @options get name() {
+        return '';
+    }
+    @options get value() {
+        return '';
+    }
 
     @options
     afterRender() {

@@ -2,9 +2,15 @@ import { options } from 'sham-ui';
 import BreadCrumbTemplate from './BreadCrumb.sht';
 
 export default class BreadCrumb extends BreadCrumbTemplate {
-    @options get project() { return null; }
-    @options get chain() { return null; }
-    @options get currentPage() { return ''; }
+    @options get project() {
+        return null;
+    }
+    @options get chain() {
+        return null;
+    }
+    @options get currentPage() {
+        return '';
+    }
 
     routerParamsForProject( project ) {
         return {

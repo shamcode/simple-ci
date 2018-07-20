@@ -6,9 +6,15 @@ export default class ChainRunPage extends LoadChainMixin( ChainRunPageTemplate )
     /** @type Socket */
     @inject socket = 'socket';
 
-    @options get dataSaving() { return false; }
-    @options get errors() { return []; }
-    @options get commandOutput() { return ''; }
+    @options get dataSaving() {
+        return false;
+    }
+    @options get errors() {
+        return [];
+    }
+    @options get commandOutput() {
+        return '';
+    }
 
     runProjectChain() {
         this.update( {

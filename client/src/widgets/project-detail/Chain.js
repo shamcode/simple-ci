@@ -2,9 +2,15 @@ import { options } from 'sham-ui';
 import ChainTemplate from './Chain.sht';
 
 export default class Chain extends ChainTemplate {
-    @options get chain() { return {}; }
-    @options get isExpand() { return false; }
-    @options get project() { return { chains: [] }; }
+    @options get chain() {
+        return {};
+    }
+    @options get isExpand() {
+        return false;
+    }
+    @options get project() {
+        return { chains: [] };
+    }
 
     _routerParams( project, chain ) {
         return {

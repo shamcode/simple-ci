@@ -5,8 +5,12 @@ export default class ProjectCreatePage extends ProjectCreatePageTemplate {
     @inject store = 'store';
     @inject router = 'router';
 
-    @options get errors() { return []; }
-    @options get dataSaving() { return false; }
+    @options get errors() {
+        return [];
+    }
+    @options get dataSaving() {
+        return false;
+    }
 
     createProject( data ) {
         this.update( {

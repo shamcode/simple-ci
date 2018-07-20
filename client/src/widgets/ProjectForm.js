@@ -10,10 +10,18 @@ function validateValue( value ) {
 }
 
 export default class ProjectForm extends ProjectFormTemplate {
-    @options get name() { return ''; }
-    @options get cwd() { return ''; }
-    @options get saveButtonText() { return ''; }
-    @options get dataSaving() { return false; }
+    @options get name() {
+        return '';
+    }
+    @options get cwd() {
+        return '';
+    }
+    @options get saveButtonText() {
+        return '';
+    }
+    @options get dataSaving() {
+        return false;
+    }
     @options onSubmit() {}
 
     get formNode() {

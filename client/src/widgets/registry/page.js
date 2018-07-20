@@ -5,9 +5,15 @@ export default class RegistryPage extends RegistryPageTemplate {
     @inject store = 'store';
     @inject router = 'router';
 
-    @options get errors() { return []; }
-    @options get dataSaving() { return false; }
-    @options get password() { return ''; }
+    @options get errors() {
+        return [];
+    }
+    @options get dataSaving() {
+        return false;
+    }
+    @options get password() {
+        return '';
+    }
 
     get formNode() {
         return this.container.querySelector( 'form' );
@@ -39,7 +45,7 @@ export default class RegistryPage extends RegistryPageTemplate {
         this.update( {
             password: '',
             dataSaving: false,
-            errors: [ 'Registry fail' ],
+            errors: [ 'Registry fail' ]
         } );
     }
 }

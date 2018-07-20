@@ -8,7 +8,7 @@ beforeEach( () => {
     setup();
 } );
 
-it( 'update project chain', async () => {
+it( 'update project chain', async() => {
     expect.assertions( 9 );
 
     axios
@@ -23,8 +23,12 @@ it( 'update project chain', async () => {
     await app.waitRendering();
     app.checkBody();
 
-    expect( document.querySelector( '[name="name"]' ).value ).toBe( axios.defaultMocksData.chain.name );
-    expect( document.querySelector( '[name="command"]' ).value ).toBe( axios.defaultMocksData.chain.command );
+    expect( document.querySelector( '[name="name"]' ).value ).toBe(
+        axios.defaultMocksData.chain.name
+    );
+    expect( document.querySelector( '[name="command"]' ).value ).toBe(
+        axios.defaultMocksData.chain.command
+    );
 
     const formData = {
         name: 'Test chain name',

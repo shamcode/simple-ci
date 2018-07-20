@@ -9,7 +9,7 @@ beforeEach( () => {
 } );
 
 it( 'update project', async() => {
-    expect.assertions( 7);
+    expect.assertions( 7 );
 
     axios
         .useDefaultMocks()
@@ -22,8 +22,12 @@ it( 'update project', async() => {
     app.checkBody();
     await app.waitRendering();
     app.checkBody();
-    expect( document.querySelector( '[name="name"]' ).value ).toBe( axios.defaultMocksData.project.name );
-    expect( document.querySelector( '[name="cwd"]' ).value ).toBe( axios.defaultMocksData.project.cwd );
+    expect( document.querySelector( '[name="name"]' ).value ).toBe(
+        axios.defaultMocksData.project.name
+    );
+    expect( document.querySelector( '[name="cwd"]' ).value ).toBe(
+        axios.defaultMocksData.project.cwd
+    );
 
     const formData = {
         name: 'Test name',

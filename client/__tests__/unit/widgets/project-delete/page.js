@@ -31,7 +31,7 @@ it( 'renders correctly', () => {
     expect( meta.toJSON() ).toMatchSnapshot();
 } );
 
-it( 'render errors', async () => {
+it( 'render errors', async() => {
     expect.assertions( 1 );
 
     const storeMock = jest.fn().mockReturnValue( Promise.reject() );

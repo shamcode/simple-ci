@@ -17,7 +17,7 @@ it( 'renders correctly', () => {
         getProjectById: storeMock
     } );
     DI.bind( 'router', {
-        lastRouteResolved: jest.fn().mockReturnValueOnce( { params: { id: 1 }} ),
+        lastRouteResolved: jest.fn().mockReturnValueOnce( { params: { id: 1 } } ),
         generate: jest.fn().mockReturnValueOnce( '/' )
     } );
 

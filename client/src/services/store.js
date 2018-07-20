@@ -29,7 +29,7 @@ export default class Store {
         if ( !this.session.isAuthenticated ) {
             this.session.invalidateSession();
         } else {
-            request.headers[ 'Bearer' ] = this.session.token;
+            request.headers.Bearer = this.session.token;
             return request;
         }
     }

@@ -3,8 +3,12 @@ import LoadChainMixin from '../../../../mixins/load-chain';
 import ChainDetailPageTemplate from './page.sht';
 
 export default class ChainDetailPage extends LoadChainMixin( ChainDetailPageTemplate ) {
-    @options get dataSaving() { return false; }
-    @options get errors() { return []; }
+    @options get dataSaving() {
+        return false;
+    }
+    @options get errors() {
+        return [];
+    }
 
     updateProjectChain( formData ) {
         this.update( {

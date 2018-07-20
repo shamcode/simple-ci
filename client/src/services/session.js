@@ -8,8 +8,12 @@ export default class Session {
         DI.bind( 'session', this );
     }
 
-    get router() { return DI.resolve( 'router' ); }
-    get store() { return DI.resolve( 'store' ); }
+    get router() {
+        return DI.resolve( 'router' );
+    }
+    get store() {
+        return DI.resolve( 'store' );
+    }
 
     get token() {
         return localStorage.getItem( 'token' );

@@ -61,9 +61,15 @@ function setupRAF() {
 function setupLocalStorage(  ) {
     const storage = {};
     window.localStorage = {
-        getItem( key ) { return storage[ key ] || null; },
-        setItem( key, value ) { storage[ key ] = value; },
-        removeItem( key ) { delete storage[ key ]; }
+        getItem( key ) {
+            return storage[ key ] || null;
+        },
+        setItem( key, value ) {
+            storage[ key ] = value;
+        },
+        removeItem( key ) {
+            delete storage[ key ];
+        }
     };
 }
 
@@ -85,7 +91,7 @@ export default function( options = { auth: true } ) {
     setupLocalStorage();
     clearBody();
     setupRouter();
-    Object.defineProperty(window, 'CSS', {value: () => ({})});
+    Object.defineProperty( window, 'CSS', { value: () => ( {} ) } );
     if ( options.auth ) {
         setupAuth();
     }

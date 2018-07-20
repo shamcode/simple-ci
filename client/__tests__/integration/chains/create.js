@@ -17,7 +17,7 @@ it( 'create project chain', async() => {
     await app.start();
     await app.project.open();
 
-    document.querySelector( '[href="projects/1/chains/create"]').click();
+    document.querySelector( '[href="projects/1/chains/create"]' ).click();
     app.checkBody();
     await app.waitRendering();
     app.checkBody();
@@ -32,10 +32,16 @@ it( 'create project chain', async() => {
 
     expect( axios.mocks.post ).toHaveBeenCalledTimes( 1 );
     expect( axios.mocks.post.mock.calls[ 0 ][ 0 ] ).toBe( '/chains' );
-    expect( Object.keys( axios.mocks.post.mock.calls[ 0 ][ 1 ] ) ).toEqual( [ 'name', 'command', 'projectId' ] );
+    expect( Object.keys( axios.mocks.post.mock.calls[ 0 ][ 1 ] ) ).toEqual( [
+        'name',
+        'command',
+        'projectId'
+    ] );
     expect( axios.mocks.post.mock.calls[ 0 ][ 1 ].name ).toEqual( formData.name );
     expect( axios.mocks.post.mock.calls[ 0 ][ 1 ].command ).toEqual( formData.command );
-    expect( axios.mocks.post.mock.calls[ 0 ][ 1 ].projectId ).toEqual( axios.defaultMocksData.project.id );
+    expect( axios.mocks.post.mock.calls[ 0 ][ 1 ].projectId ).toEqual(
+        axios.defaultMocksData.project.id
+    );
 
     app.checkBody();
 } );

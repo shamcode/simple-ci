@@ -10,10 +10,18 @@ function validateValue( value ) {
 }
 
 export default class ProjectForm extends ChainFormTemplate {
-    @options get name() { return ''; }
-    @options get command() { return ''; }
-    @options get saveButtonText() { return ''; }
-    @options get dataSaving() { return false; }
+    @options get name() {
+        return '';
+    }
+    @options get command() {
+        return '';
+    }
+    @options get saveButtonText() {
+        return '';
+    }
+    @options get dataSaving() {
+        return false;
+    }
     @options onSubmit() {}
 
     get formNode() {
@@ -26,7 +34,7 @@ export default class ProjectForm extends ChainFormTemplate {
         const data = {};
         let dataValid = true;
         [
-            'name',
+            'name'
         ].forEach( ( key ) => {
             const value = extractValue( formData.get( key ) );
             dataValid = dataValid && validateValue( value );

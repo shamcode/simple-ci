@@ -87,7 +87,7 @@ func ClientDistBundleCss() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "../client/dist/bundle.css", size: 14856, mode: os.FileMode(420), modTime: time.Unix(1531926245, 0)}
+	info := bindataFileInfo{name: "../client/dist/bundle.css", size: 14856, mode: os.FileMode(420), modTime: time.Unix(1532003257, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -107,7 +107,7 @@ func ClientDistBundleJs() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "../client/dist/bundle.js", size: 229811, mode: os.FileMode(420), modTime: time.Unix(1531926245, 0)}
+	info := bindataFileInfo{name: "../client/dist/bundle.js", size: 229811, mode: os.FileMode(420), modTime: time.Unix(1532003257, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }

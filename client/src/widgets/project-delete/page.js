@@ -3,7 +3,9 @@ import LoadProjectMixin from '../../mixins/load-project';
 import ProjectDeletePageTemplate from './page.sht';
 
 export default class ProjectDeletePage extends LoadProjectMixin( ProjectDeletePageTemplate ) {
-    @options get dataSaving() { return false; }
+    @options get dataSaving() {
+        return false;
+    }
 
     bodyText( project ) {
         return `Do you want delete project "${project.name}"?`;

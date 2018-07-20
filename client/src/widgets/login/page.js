@@ -4,9 +4,15 @@ import LoginPageTemplate from './page.sht';
 export default class LoginPage extends LoginPageTemplate {
     @inject session = 'session';
 
-    @options get errors() { return []; }
-    @options get dataSaving() { return false; }
-    @options get password() { return ''; }
+    @options get errors() {
+        return [];
+    }
+    @options get dataSaving() {
+        return false;
+    }
+    @options get password() {
+        return '';
+    }
 
     get formNode() {
         return this.container.querySelector( 'form' );
@@ -31,7 +37,7 @@ export default class LoginPage extends LoginPageTemplate {
         this.update( {
             password: '',
             dataSaving: false,
-            errors: [ 'Login fail' ],
+            errors: [ 'Login fail' ]
         } );
     }
 }

@@ -6,8 +6,12 @@ export default class ChainCreatePage extends LoadProjectMixin( ChainCreatePageTe
     @inject store = 'store';
     @inject router = 'router';
 
-    @options get errors() { return []; }
-    @options get dataSaving() { return false; }
+    @options get errors() {
+        return [];
+    }
+    @options get dataSaving() {
+        return false;
+    }
 
     createProjectChain( formData ) {
         this.update( {

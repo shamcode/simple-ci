@@ -63,7 +63,7 @@ export default {
     } ),
     use( method, url, data, success = true ) {
         if ( !METHODS.includes( method ) ) {
-            throw new Error( `Unknown method: "${method}"`);
+            throw new Error( `Unknown method: "${method}"` );
         }
         FIXTURES[ method ][ url ] = {
             data,

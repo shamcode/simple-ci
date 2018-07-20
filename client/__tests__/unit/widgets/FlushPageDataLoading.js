@@ -9,7 +9,7 @@ it( 'renders correctly', () => {
 
 it( 'delay', () => {
     jest.useFakeTimers();
-    const meta = renderer( FlushPageDataLoading, {});
+    const meta = renderer( FlushPageDataLoading, {} );
     jest.runAllTimers();
     expect( meta.toJSON() ).toMatchSnapshot();
 } );

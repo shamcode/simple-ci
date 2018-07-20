@@ -17,7 +17,7 @@ it( 'renders correctly', () => {
 } );
 
 
-it( 'registry fail', async () => {
+it( 'registry fail', async() => {
     expect.assertions( 3 );
 
     DI.bind( 'router', {

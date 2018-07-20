@@ -2,7 +2,9 @@ import { options, DI } from 'sham-ui';
 import InfoTemplate from './Info.sht';
 
 export default class Info extends InfoTemplate {
-    @options get project() { return { chains: [] }; }
+    @options get project() {
+        return { chains: [] };
+    }
 
     get router() {
         return DI.resolve( 'router' );

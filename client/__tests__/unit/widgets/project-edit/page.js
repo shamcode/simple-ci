@@ -13,7 +13,7 @@ afterEach( () => {
     jest.clearAllMocks();
 } );
 
-it( 'renders correctly', async () => {
+it( 'renders correctly', async() => {
     expect.assertions( 5 );
 
     const storeMock = jest.fn().mockReturnValue( Promise.resolve( {

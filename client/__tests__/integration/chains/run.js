@@ -9,7 +9,7 @@ beforeEach( () => {
 } );
 
 
-it( 'run project chain', async () => {
+it( 'run project chain', async() => {
     expect.assertions( 6 );
 
     const wsMock = {

@@ -8,7 +8,7 @@ beforeEach( () => {
     setup();
 } );
 
-it( 'fail update project chain', async () => {
+it( 'fail update project chain', async() => {
     expect.assertions( 5 );
 
     axios

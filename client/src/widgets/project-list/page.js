@@ -4,9 +4,15 @@ import ProjectsPageTemplate from './page.sht';
 export default class ProjectsPage extends ProjectsPageTemplate {
     @inject store = 'store';
 
-    @options get dataLoaded() { return false;  }
-    @options get projects() { return []; }
-    @options get errors() { return []; }
+    @options get dataLoaded() {
+        return false;
+    }
+    @options get projects() {
+        return [];
+    }
+    @options get errors() {
+        return [];
+    }
 
     @options
     afterRender() {

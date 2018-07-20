@@ -59,7 +59,7 @@ it( 'create', () => {
     expect( data.cwd ).toBe( formData.cwd );
 } );
 
-it( 'create fail', async () => {
+it( 'create fail', async() => {
     expect.assertions( 3 );
 
     DI.bind( 'router', {

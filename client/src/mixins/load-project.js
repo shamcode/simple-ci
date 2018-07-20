@@ -4,9 +4,15 @@ export default ( superclass ) => class extends superclass {
     @inject store = 'store';
     @inject router = 'router';
 
-    @options get dataLoaded() { return false;  }
-    @options get project() { return {}; }
-    @options get errors() { return []; }
+    @options get dataLoaded() {
+        return false;
+    }
+    @options get project() {
+        return {};
+    }
+    @options get errors() {
+        return [];
+    }
 
     @options
     afterRender() {

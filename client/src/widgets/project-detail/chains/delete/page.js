@@ -3,7 +3,9 @@ import LoadChainMixin from '../../../../mixins/load-chain';
 import ChainDeletePageTemplate from './page.sht';
 
 export default class ChainDeletePage extends LoadChainMixin( ChainDeletePageTemplate ) {
-    @options get dataSaving() { return false; }
+    @options get dataSaving() {
+        return false;
+    }
 
     bodyText( chain ) {
         return `Do you want delete chain "${chain.name}"?`;
