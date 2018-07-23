@@ -15,3 +15,4 @@
 * [x] Run chain
 * [x] WebSocket server
 * [x] Watch chain over ws (maping chainId -> connection)
+* Deploy instructions
