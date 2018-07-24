@@ -16,3 +16,4 @@
 * [x] WebSocket server
 * [x] Watch chain over ws (maping chainId -> connection)
 * Deploy instructions
+* Proxy buffer to WS
