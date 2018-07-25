@@ -12,6 +12,8 @@ import (
 	"os/exec"
 	DB "simpleci/db"
 	WS "simpleci/ws"
+	"bufio"
+	"fmt"
 )
 
 type projectChain struct {
@@ -135,21 +137,25 @@ func runChain(chain DB.ChainForRun) {
 	scriptFile.WriteString(chain.Command)
 	cmd := exec.Command("sh", scriptFile.Name())
 	cmd.Dir = chain.Project.Cwd
-	response := []byte{}
-	cmdOut := &bytes.Buffer{}
+	stdout, _ := cmd.StdoutPipe()
 	cmdErr := &bytes.Buffer{}
-	cmd.Stdout = cmdOut
 	cmd.Stderr = cmdErr
 	cmd.Start()
-	err = cmd.Wait()
-	response = append(response, cmdOut.Bytes()...)
-	if nil != err {
-		response = append(response, cmdErr.Bytes()...)
+	scanner := bufio.NewScanner(stdout)
+	scanner.Split(bufio.ScanLines)
+	for scanner.Scan() {
+		WS.Store.Broadcast(chain.Id, scanner.Bytes())
 	}
+	err = cmd.Wait()
+
+	if nil != err {
+		WS.Store.Broadcast(chain.Id, cmdErr.Bytes())
+	}
+	WS.Store.Broadcast(chain.Id, []byte(fmt.Sprintf("Finish \"%s\"", chain.Name)))
+	WS.Store.RemoveChain(chain.Id)
 	log.
 		WithField("id", chain.Id).
 		WithField("name", chain.Name).
 		WithField("project", chain.Project.Name).
 		Info("finish run project chain")
-	WS.Store.Broadcast(chain.Id, response)
 }

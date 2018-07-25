@@ -18,9 +18,11 @@ export default class ChainRunPage extends LoadChainMixin( ChainRunPageTemplate )
 
     runProjectChain() {
         this.update( {
+            commandOutput: '',
             dataSaving: true,
             errors: []
         } );
+        this.socket.removeWatcher( this.updateCommandOutput );
         this.socket.connect().then(
             ::this._runProjectChain
         );
@@ -55,7 +57,7 @@ export default class ChainRunPage extends LoadChainMixin( ChainRunPageTemplate )
             return;
         }
         this.update( {
-            commandOutput
+            commandOutput: `${this.options.commandOutput}\n${commandOutput}`
         } );
     };
 

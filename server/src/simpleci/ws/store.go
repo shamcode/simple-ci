@@ -20,7 +20,7 @@ func (store *store) addChainWatcher(chainID int, conn *Connection) {
 	log.WithField("connectionID", conn.ID()).WithField("chainID", chainID).Info("add connection to chain watchers store")
 }
 
-func (store *store) removeChain(chainID int) {
+func (store *store) RemoveChain(chainID int) {
 	log.WithField("chainID", chainID).Info("remove chain from chain watchers store")
 	delete(store.chainWatchers, chainID)
 }
@@ -38,7 +38,6 @@ func (store *store) Broadcast(chainID int, msg []byte) {
 		for con := range watchers {
 			con.Write(msg)
 		}
-		store.removeChain(chainID)
 	}
 }
 
