@@ -1,9 +1,11 @@
 package handlers
 
 import (
+	"bufio"
 	"bytes"
 	"database/sql"
 	"encoding/json"
+	"fmt"
 	"github.com/julienschmidt/httprouter"
 	log "github.com/sirupsen/logrus"
 	"io/ioutil"
@@ -12,8 +14,6 @@ import (
 	"os/exec"
 	DB "simpleci/db"
 	WS "simpleci/ws"
-	"bufio"
-	"fmt"
 )
 
 type projectChain struct {
