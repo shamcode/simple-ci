@@ -5986,9 +5986,9 @@ sham-ui-jest-preprocessor@1.0.6:
   dependencies:
     sham-ui-templates "0.0.18"
 
-sham-ui-router@^0.0.4:
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/sham-ui-router/-/sham-ui-router-0.0.4.tgz#ae380945ea7fedeb44995b9e1633cb236c3deed6"
+sham-ui-router@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/sham-ui-router/-/sham-ui-router-0.0.6.tgz#af89e3dd09ca508f4a2a73c02e36e63b663035eb"
   dependencies:
     navigo "^7.1.1"
     sham-ui "^1.3.5"
