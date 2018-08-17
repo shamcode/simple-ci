@@ -1,7 +1,6 @@
 import { DI } from 'sham-ui';
 import Page from '../../../../../../src/widgets/project-detail/chains/create/page';
-import directives from '../../../../../../src/directives/event-listener';
-import disabled from '../../../../../../src/directives/disabled';
+import directives from 'sham-ui-directives';
 import renderer from 'sham-ui-test-helpers';
 
 const flushPromises = () => new Promise( resolve => setImmediate( resolve ) );
@@ -22,10 +21,7 @@ it( 'renders correctly', () => {
     } );
 
     const meta = renderer( Page, {
-        directives: {
-            disabled,
-            ...directives
-        }
+        directives
     } );
     expect( storeMock.mock.calls[ 0 ][ 0 ] ).toBe( 1 );
     expect( meta.toJSON() ).toMatchSnapshot();
@@ -52,10 +48,7 @@ it( 'create fail', async() => {
     } );
 
     const meta = renderer( Page, {
-        directives: {
-            disabled,
-            ...directives
-        }
+        directives
     } );
     const { widget: { container } } = meta;
     await flushPromises();

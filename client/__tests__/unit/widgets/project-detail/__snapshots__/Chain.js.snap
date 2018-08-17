@@ -5,7 +5,13 @@ Object {
   "ID": "widget",
   "constructorOptions": Object {
     "directives": Object {
+      "disabled": [Function],
       "onclick": [Function],
+      "oninput": [Function],
+      "onload": [Function],
+      "onresize": [Function],
+      "onscroll": [Function],
+      "onselect": [Function],
       "onsubmit": [Function],
     },
   },
@@ -36,7 +42,13 @@ Object {
     ],
     "chain": Object {},
     "directives": Object {
+      "disabled": [Function],
       "onclick": [Function],
+      "oninput": [Function],
+      "onload": [Function],
+      "onresize": [Function],
+      "onscroll": [Function],
+      "onselect": [Function],
       "onsubmit": [Function],
     },
     "isExpand": false,

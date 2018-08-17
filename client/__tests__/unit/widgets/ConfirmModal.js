@@ -1,14 +1,10 @@
 import ConfirmModal from '../../../src/widgets/ConfirmModal';
-import disabled from '../../../src/directives/disabled';
-import directives from '../../../src/directives/event-listener';
+import directives from 'sham-ui-directives';
 import renderer from 'sham-ui-test-helpers';
 
 it( 'renders correctly', () => {
     const meta = renderer( ConfirmModal, {
-        directives: {
-            disabled,
-            ...directives
-        },
+        directives,
         title: 'Title text',
         body: 'Body text'
     } );

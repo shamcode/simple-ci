@@ -1,14 +1,10 @@
 import ProjectForm from '../../../src/widgets/ProjectForm';
-import disabled from '../../../src/directives/disabled';
-import directives from '../../../src/directives/event-listener';
+import directives from 'sham-ui-directives';
 import renderer from 'sham-ui-test-helpers';
 
 it( 'renders correctly', () => {
     const meta = renderer( ProjectForm, {
-        directives: {
-            disabled,
-            ...directives
-        }
+        directives
     } );
     expect( meta.toJSON() ).toMatchSnapshot();
 } );
@@ -17,10 +13,7 @@ it( 'submit form', () => {
     const onSubmitMock = jest.fn();
     const { widget } = renderer( ProjectForm, {
         saveButtonText: 'Create',
-        directives: {
-            disabled,
-            ...directives
-        },
+        directives,
         onSubmit: onSubmitMock
     } );
 
@@ -44,10 +37,7 @@ it( 'form validation (name)', () => {
     const onSubmitMock = jest.fn();
     const { widget } = renderer( ProjectForm, {
         saveButtonText: 'Create',
-        directives: {
-            disabled,
-            ...directives
-        },
+        directives,
         onSubmit: onSubmitMock
     } );
 
@@ -63,10 +53,7 @@ it( 'form validation (cwd)', () => {
     const onSubmitMock = jest.fn();
     const { widget } = renderer( ProjectForm, {
         saveButtonText: 'Create',
-        directives: {
-            disabled,
-            ...directives
-        },
+        directives,
         onSubmit: onSubmitMock
     } );
 

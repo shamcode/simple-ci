@@ -1,7 +1,6 @@
 import { DI } from 'sham-ui';
 import Page from '../../../../../../src/widgets/project-detail/chains/run/page';
-import directives from '../../../../../../src/directives/event-listener';
-import disabled from '../../../../../../src/directives/disabled';
+import directives from 'sham-ui-directives';
 import renderer from 'sham-ui-test-helpers';
 
 afterEach( () => {
@@ -20,10 +19,7 @@ it( 'renders correctly', () => {
         generate: jest.fn().mockReturnValueOnce( '/' )
     } );
     const meta = renderer( Page, {
-        directives: {
-            disabled,
-            ...directives
-        }
+        directives
     } );
     expect( meta.toJSON() ).toMatchSnapshot();
 } );

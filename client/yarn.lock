@@ -5980,6 +5980,12 @@ shallow-clone@^1.0.0:
     kind-of "^5.0.0"
     mixin-object "^2.0.1"
 
+sham-ui-directives@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/sham-ui-directives/-/sham-ui-directives-0.0.1.tgz#cc697eaebaf183300937bceefdac2ddf87c90ce3"
+  dependencies:
+    sham-ui "^1.3.5"
+
 sham-ui-jest-preprocessor@1.0.6:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/sham-ui-jest-preprocessor/-/sham-ui-jest-preprocessor-1.0.6.tgz#b629c74e10f9eb39ee9286c8e4bf24392f7d3d18"

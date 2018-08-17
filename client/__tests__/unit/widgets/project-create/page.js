@@ -1,7 +1,6 @@
 import { DI } from 'sham-ui';
 import ProjectCreatePage from '../../../../src/widgets/project-create/page';
-import disabled from '../../../../src/directives/disabled';
-import directives from '../../../../src/directives/event-listener';
+import directives from 'sham-ui-directives';
 import renderer from 'sham-ui-test-helpers';
 
 const flushPromises = () => new Promise( resolve => setImmediate( resolve ) );
@@ -18,10 +17,7 @@ it( 'renders correctly', () => {
     } );
 
     const meta = renderer( ProjectCreatePage, {
-        directives: {
-            disabled,
-            ...directives
-        }
+        directives
     } );
     expect( meta.toJSON() ).toMatchSnapshot();
 } );
@@ -37,10 +33,7 @@ it( 'create', () => {
     } );
 
     const { widget: { container } } = renderer( ProjectCreatePage, {
-        directives: {
-            disabled,
-            ...directives
-        }
+        directives
     } );
     const formData = {
         name: 'Test name',
@@ -72,10 +65,7 @@ it( 'create fail', async() => {
     } );
 
     const meta = renderer( ProjectCreatePage, {
-        directives: {
-            disabled,
-            ...directives
-        }
+        directives
     } );
     const formData = {
         name: 'Test name',

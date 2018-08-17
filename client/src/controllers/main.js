@@ -3,8 +3,7 @@ import Session from '../services/session';
 import Store from '../services/store';
 import Socket from '../services/socket';
 import startRouter from './routes';
-import disabled from '../directives/disabled';
-import EventListenerDirectives from '../directives/event-listener';
+import directives from 'sham-ui-directives';
 import App from '../widgets/App.sht';
 
 export default function() {
@@ -15,10 +14,7 @@ export default function() {
     startRouter();
 
     const app = new App( 'body', 'app', {
-        directives: {
-            disabled,
-            ...EventListenerDirectives
-        }
+        directives
     } );
 
     DI.bind( 'widgets:app', app );

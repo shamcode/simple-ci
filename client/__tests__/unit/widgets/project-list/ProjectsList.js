@@ -1,6 +1,6 @@
 import { DI } from 'sham-ui';
 import ProjectsList from '../../../../src/widgets/project-list/ProjectsList';
-import directives from '../../../../src/directives/event-listener';
+import directives from 'sham-ui-directives';
 import renderer from 'sham-ui-test-helpers';
 
 afterEach( () => {

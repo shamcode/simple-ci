@@ -1,17 +1,13 @@
 import { DI } from 'sham-ui';
 import Page from '../../../../src/widgets/registry/page';
 import renderer from 'sham-ui-test-helpers';
-import disabled from '../../../../src/directives/disabled';
-import directives from '../../../../src/directives/event-listener';
+import directives from 'sham-ui-directives';
 
 const flushPromises = () => new Promise( resolve => setImmediate( resolve ) );
 
 it( 'renders correctly', () => {
     const meta = renderer( Page, {
-        directives: {
-            disabled,
-            ...directives
-        }
+        directives
     } );
     expect( meta.toJSON() ).toMatchSnapshot();
 } );
@@ -30,10 +26,7 @@ it( 'registry fail', async() => {
     } );
 
     const meta = renderer( Page, {
-        directives: {
-            disabled,
-            ...directives
-        }
+        directives
     } );
     const formData = {
         username: 'admin',

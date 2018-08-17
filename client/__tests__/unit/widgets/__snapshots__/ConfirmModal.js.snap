@@ -8,6 +8,11 @@ Object {
     "directives": Object {
       "disabled": [Function],
       "onclick": [Function],
+      "oninput": [Function],
+      "onload": [Function],
+      "onresize": [Function],
+      "onscroll": [Function],
+      "onselect": [Function],
       "onsubmit": [Function],
     },
     "title": "Title text",
@@ -43,6 +48,11 @@ Object {
     "directives": Object {
       "disabled": [Function],
       "onclick": [Function],
+      "oninput": [Function],
+      "onload": [Function],
+      "onresize": [Function],
+      "onscroll": [Function],
+      "onselect": [Function],
       "onsubmit": [Function],
     },
     "onCancel": [Function],

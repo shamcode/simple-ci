@@ -7,6 +7,11 @@ Object {
     "directives": Object {
       "disabled": [Function],
       "onclick": [Function],
+      "oninput": [Function],
+      "onload": [Function],
+      "onresize": [Function],
+      "onscroll": [Function],
+      "onselect": [Function],
       "onsubmit": [Function],
     },
   },
@@ -80,6 +85,11 @@ Object {
     "directives": Object {
       "disabled": [Function],
       "onclick": [Function],
+      "oninput": [Function],
+      "onload": [Function],
+      "onresize": [Function],
+      "onscroll": [Function],
+      "onselect": [Function],
       "onsubmit": [Function],
     },
     "errors": Array [
@@ -104,6 +114,11 @@ Object {
     "directives": Object {
       "disabled": [Function],
       "onclick": [Function],
+      "oninput": [Function],
+      "onload": [Function],
+      "onresize": [Function],
+      "onscroll": [Function],
+      "onselect": [Function],
       "onsubmit": [Function],
     },
   },
@@ -148,6 +163,11 @@ Object {
     "directives": Object {
       "disabled": [Function],
       "onclick": [Function],
+      "oninput": [Function],
+      "onload": [Function],
+      "onresize": [Function],
+      "onscroll": [Function],
+      "onselect": [Function],
       "onsubmit": [Function],
     },
     "errors": Array [],

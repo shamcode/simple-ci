@@ -1,14 +1,10 @@
 import renderer from 'sham-ui-test-helpers';
 import ChainForm from '../../../../../src/widgets/project-detail/chains/ChainForm';
-import directives from '../../../../../src/directives/event-listener';
-import disabled from '../../../../../src/directives/disabled';
+import directives from 'sham-ui-directives';
 
 it( 'renders correctly', () => {
     const meta = renderer( ChainForm, {
-        directives: {
-            disabled,
-            ...directives
-        }
+        directives
     } );
     expect( meta.toJSON() ).toMatchSnapshot();
 } );
@@ -18,10 +14,7 @@ it( 'submit form', () => {
     const onSubmitMock = jest.fn();
     const { widget } = renderer( ChainForm, {
         saveButtonText: 'Create',
-        directives: {
-            disabled,
-            ...directives
-        },
+        directives,
         onSubmit: onSubmitMock
     } );
 
@@ -45,10 +38,7 @@ it( 'form validation (name)', () => {
     const onSubmitMock = jest.fn();
     const { widget } = renderer( ChainForm, {
         saveButtonText: 'Create',
-        directives: {
-            disabled,
-            ...directives
-        },
+        directives,
         onSubmit: onSubmitMock
     } );
 
