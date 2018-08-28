@@ -1,6 +1,6 @@
 import { DI } from 'sham-ui';
 import ProjectCreatePage from '../../../../src/widgets/project-create/page';
-import directives from 'sham-ui-directives';
+import * as directives from 'sham-ui-directives';
 import renderer from 'sham-ui-test-helpers';
 
 const flushPromises = () => new Promise( resolve => setImmediate( resolve ) );

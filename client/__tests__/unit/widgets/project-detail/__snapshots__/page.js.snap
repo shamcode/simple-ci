@@ -5,6 +5,7 @@ Object {
   "ID": "widget",
   "constructorOptions": Object {
     "directives": Object {
+      "EventListener": [Function],
       "disabled": [Function],
       "onclick": [Function],
       "oninput": [Function],
@@ -53,6 +54,7 @@ Object {
     "afterRender": [Function],
     "dataLoaded": false,
     "directives": Object {
+      "EventListener": [Function],
       "disabled": [Function],
       "onclick": [Function],
       "oninput": [Function],
@@ -76,6 +78,7 @@ Object {
   "ID": "widget",
   "constructorOptions": Object {
     "directives": Object {
+      "EventListener": [Function],
       "disabled": [Function],
       "onclick": [Function],
       "oninput": [Function],
@@ -124,6 +127,7 @@ Object {
     "afterRender": [Function],
     "dataLoaded": false,
     "directives": Object {
+      "EventListener": [Function],
       "disabled": [Function],
       "onclick": [Function],
       "oninput": [Function],

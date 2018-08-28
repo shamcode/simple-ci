@@ -3,7 +3,7 @@ import Session from '../services/session';
 import Store from '../services/store';
 import Socket from '../services/socket';
 import startRouter from './routes';
-import directives from 'sham-ui-directives';
+import * as directives from 'sham-ui-directives';
 import App from '../widgets/App.sht';
 
 export default function() {

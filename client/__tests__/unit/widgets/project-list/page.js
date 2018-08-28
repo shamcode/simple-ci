@@ -1,6 +1,6 @@
 import { DI } from 'sham-ui';
 import ProjectsPage from '../../../../src/widgets/project-list/page';
-import directives from 'sham-ui-directives';
+import * as directives from 'sham-ui-directives';
 import renderer from 'sham-ui-test-helpers';
 
 afterEach( () => {

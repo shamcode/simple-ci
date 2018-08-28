@@ -5,6 +5,7 @@ Object {
   "ID": "widget",
   "constructorOptions": Object {
     "directives": Object {
+      "EventListener": [Function],
       "disabled": [Function],
       "onclick": [Function],
       "oninput": [Function],
@@ -42,6 +43,7 @@ Object {
     ],
     "chain": Object {},
     "directives": Object {
+      "EventListener": [Function],
       "disabled": [Function],
       "onclick": [Function],
       "oninput": [Function],

@@ -1,6 +1,6 @@
 import renderer from 'sham-ui-test-helpers';
 import ChainForm from '../../../../../src/widgets/project-detail/chains/ChainForm';
-import directives from 'sham-ui-directives';
+import * as directives from 'sham-ui-directives';
 
 it( 'renders correctly', () => {
     const meta = renderer( ChainForm, {

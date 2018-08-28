@@ -1,5 +1,5 @@
 import ConfirmModal from '../../../src/widgets/ConfirmModal';
-import directives from 'sham-ui-directives';
+import * as directives from 'sham-ui-directives';
 import renderer from 'sham-ui-test-helpers';
 
 it( 'renders correctly', () => {
