@@ -22,6 +22,13 @@ psql=# grant all privileges on database ci to ci;
 Run `/home/ci/simpleci` for create config.
 Edit config `/home/ci/simpleci/config.cfg`
 
+Enable apache modules:
+```
+a2enmod proxy
+a2enmod proxy_http
+a2enmod proxy_wstunnel
+```
+
 Edit apache config:
 ```
 <VirtualHost 127.0.0.1:80>
@@ -31,6 +38,10 @@ Edit apache config:
     ProxyRequests off
     ProxyPass / http://localhost:3000/
     ProxyPassReverse / http://localhost:3000/
+
+    <Location "/ws">
+        ProxyPass "ws://localhost:3000/ws"
+    </Location>
 
 	ErrorLog /var/log/apache2/error.ci.log
 	CustomLog /var/log/apache2/access.ci.log combined
