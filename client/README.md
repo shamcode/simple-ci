@@ -1,6 +1,6 @@
 # client
 
-> Client fo simple-ci
+> Client for simple-ci
 
 ## Getting started
 

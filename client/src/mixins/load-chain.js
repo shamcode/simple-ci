@@ -1,8 +1,8 @@
 import { options, inject } from 'sham-ui';
 
 export default ( superclass ) => class extends superclass {
-    @inject store = 'store';
-    @inject router = 'router';
+    @inject store;
+    @inject router;
 
     @options get dataLoaded() {
         return false;
@@ -15,11 +15,6 @@ export default ( superclass ) => class extends superclass {
     }
     @options get errors() {
         return [];
-    }
-
-    @options
-    afterRender() {
-        this._loadPageData();
     }
 
     get _routerParams() {
@@ -35,6 +30,11 @@ export default ( superclass ) => class extends superclass {
     get chainId() {
         const params = this._routerParams;
         return params !== null ? params.chainId : null;
+    }
+
+    render() {
+        super.render( ...arguments );
+        this._loadPageData();
     }
 
     _loadPageData() {

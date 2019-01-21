@@ -1,4 +1,3 @@
-import { DI } from 'sham-ui';
 import Session from '../services/session';
 import Store from '../services/store';
 import Socket from '../services/socket';
@@ -13,9 +12,9 @@ export default function() {
 
     startRouter();
 
-    const app = new App( 'body', 'app', {
+    new App( {
+        ID: 'app',
+        containerSelector: 'body',
         directives
     } );
-
-    DI.bind( 'widgets:app', app );
 }

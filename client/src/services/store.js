@@ -1,11 +1,13 @@
 import axios from 'axios';
-import { DI } from 'sham-ui';
+import { DI, inject } from 'sham-ui';
 
 export default class Store {
+    @inject session;
+
     constructor() {
         DI.bind( 'store', this );
         this.axios = axios.create( {
-            baseURL: `${document.location.protocol}//${document.location.host}/api/v1/`
+            baseURL: `${document.location.protocol}//localhost:3001/api/v1/`
         } );
         this.axios.interceptors.request.use(
             ::this._requestAuthInterceptor
@@ -14,10 +16,6 @@ export default class Store {
             ( response ) => response,
             ::this._responseFailAuthInterceptor
         );
-    }
-
-    get session() {
-        return DI.resolve( 'session' );
     }
 
     _requestAuthInterceptor( request ) {

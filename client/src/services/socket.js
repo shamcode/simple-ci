@@ -1,15 +1,13 @@
-import { DI } from 'sham-ui';
+import { DI, inject } from 'sham-ui';
 
 export default class Socket {
+    @inject session;
+
     constructor() {
         DI.bind( 'socket', this );
         this.connection = null;
         this.connectionPromise = null;
         this.handlers = [];
-    }
-
-    get session() {
-        return DI.resolve( 'session' );
     }
 
     connect() {

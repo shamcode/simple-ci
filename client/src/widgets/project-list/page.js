@@ -14,8 +14,8 @@ export default class ProjectsPage extends ProjectsPageTemplate {
         return [];
     }
 
-    @options
-    afterRender() {
+    render() {
+        super.render( ...arguments );
         this._loadPageData();
     }
 

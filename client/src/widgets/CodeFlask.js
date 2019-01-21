@@ -10,8 +10,8 @@ export default class CodeFlaskWidget extends CodeFlaskTemplate {
         return '';
     }
 
-    @options
-    afterRender() {
+    render() {
+        super.render( ...arguments) ;
         this.flask = new CodeFlask( this.querySelector( 'div' ), {
             lineNumbers: true
         } );

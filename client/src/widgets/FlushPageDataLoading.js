@@ -9,8 +9,8 @@ export default class FlushPageDataLoading extends FlushPageDataLoadingTemplate {
         return 100;
     }
 
-    @options
-    afterRender() {
+    render() {
+        super.render( ...arguments );
         this._timeoutID = setTimeout( ::this._timeoutExpired, this.options.delay );
     }
 

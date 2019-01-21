@@ -1,18 +1,14 @@
-import { DI } from 'sham-ui';
+import { DI, inject } from 'sham-ui';
 
 export default class Session {
+    @inject router;
+    @inject store;
+
     constructor() {
         if ( !this.isAuthenticated ) {
             this.invalidateSession();
         }
         DI.bind( 'session', this );
-    }
-
-    get router() {
-        return DI.resolve( 'router' );
-    }
-    get store() {
-        return DI.resolve( 'store' );
     }
 
     get token() {
