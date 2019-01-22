@@ -2,8 +2,12 @@
 
 exports[`create fail 1`] = `
 Object {
-  "ID": "widget",
-  "constructorOptions": Object {
+  "Constructor": "ChainCreatePage",
+  "Options": Object {
+    "ID": "widget",
+    "containerSelector": "body",
+    "dataLoaded": true,
+    "dataSaving": false,
     "directives": Object {
       "EventListener": [Function],
       "disabled": [Function],
@@ -14,15 +18,29 @@ Object {
       "onscroll": [Function],
       "onselect": [Function],
       "onsubmit": [Function],
+      "ref": [Function],
     },
+    "errors": Array [
+      "Create project fail!",
+    ],
+    "project": Object {
+      "cwd": "/tmp/",
+      "id": 1,
+      "name": "Test",
+    },
+    "types": Array [],
   },
   "html": "
 <ul class=\\"breadcrumb\\">
   <li>
-    <a href=\\"/\\" class=\\"\\">Projects</a>
+    <a href=\\"/\\" class=\\"\\">Projects
+      <!--default-->
+    </a>
   </li>
   <li>
-    <a href=\\"undefined\\" class=\\"\\">Test</a>
+    <a href=\\"undefined\\" class=\\"\\">Test
+      <!--default-->
+    </a>
   </li>
   <!--if-->
   <!--if-->
@@ -59,108 +77,15 @@ Object {
 <!--ChainForm-->
 <!--if-->
 ",
-  "nodes": Array [
-    Object {
-      "ID": undefined,
-      "constructorOptions": null,
-      "html": null,
-      "nodes": null,
-      "options": null,
-    },
-    Object {
-      "ID": undefined,
-      "constructorOptions": null,
-      "html": null,
-      "nodes": null,
-      "options": null,
-    },
-  ],
-  "options": Object {
-    "actionSequence": Array [
-      "render",
-      "bindEvents",
-    ],
-    "afterRender": [Function],
-    "dataLoaded": true,
-    "dataSaving": false,
-    "directives": Object {
-      "EventListener": [Function],
-      "disabled": [Function],
-      "onclick": [Function],
-      "oninput": [Function],
-      "onload": [Function],
-      "onresize": [Function],
-      "onscroll": [Function],
-      "onselect": [Function],
-      "onsubmit": [Function],
-    },
-    "errors": Array [
-      "Create project fail!",
-    ],
-    "project": Object {
-      "cwd": "/tmp/",
-      "id": 1,
-      "name": "Test",
-    },
-    "renderAsync": false,
-    "renderDependence": Array [],
-    "types": Array [],
-  },
 }
 `;
 
 exports[`renders correctly 1`] = `
 Object {
-  "ID": "widget",
-  "constructorOptions": Object {
-    "directives": Object {
-      "EventListener": [Function],
-      "disabled": [Function],
-      "onclick": [Function],
-      "oninput": [Function],
-      "onload": [Function],
-      "onresize": [Function],
-      "onscroll": [Function],
-      "onselect": [Function],
-      "onsubmit": [Function],
-    },
-  },
-  "html": "
-<ul class=\\"breadcrumb\\">
-  <li>
-    <a href=\\"/\\" class=\\"\\">Projects</a>
-  </li>
-  <!--if-->
-  <!--if-->
-  <li></li>
-</ul>
-<!--BreadCrumb-->
-<!--if-->
-<!--FlushPageDataLoading-->
-<!--if-->
-",
-  "nodes": Array [
-    Object {
-      "ID": undefined,
-      "constructorOptions": null,
-      "html": null,
-      "nodes": null,
-      "options": null,
-    },
-    Object {
-      "ID": undefined,
-      "constructorOptions": null,
-      "html": null,
-      "nodes": null,
-      "options": null,
-    },
-  ],
-  "options": Object {
-    "actionSequence": Array [
-      "render",
-      "bindEvents",
-    ],
-    "afterRender": [Function],
+  "Constructor": "ChainCreatePage",
+  "Options": Object {
+    "ID": "widget",
+    "containerSelector": "body",
     "dataLoaded": false,
     "dataSaving": false,
     "directives": Object {
@@ -173,12 +98,27 @@ Object {
       "onscroll": [Function],
       "onselect": [Function],
       "onsubmit": [Function],
+      "ref": [Function],
     },
     "errors": Array [],
     "project": Object {},
-    "renderAsync": false,
-    "renderDependence": Array [],
     "types": Array [],
   },
+  "html": "
+<ul class=\\"breadcrumb\\">
+  <li>
+    <a href=\\"/\\" class=\\"\\">Projects
+      <!--default-->
+    </a>
+  </li>
+  <!--if-->
+  <!--if-->
+  <li></li>
+</ul>
+<!--BreadCrumb-->
+<!--if-->
+<!--FlushPageDataLoading-->
+<!--if-->
+",
 }
 `;

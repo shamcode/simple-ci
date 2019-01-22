@@ -8,8 +8,8 @@ beforeEach( () => {
     setup( { auth: false } );
 } );
 
-it( 'success login', async() => {
-    expect.assertions( 9 );
+it( 'fail login (invalid header)', async() => {
+    expect.assertions( 2 );
 
     const interceptors = {};
     const getMock = jest.fn( () => {
@@ -17,11 +17,6 @@ it( 'success login', async() => {
             response => interceptors.success( response )
         );
     } );
-    const postMock = jest.fn().mockReturnValue( Promise.resolve( {
-        data: {
-            token: 'TOKEN'
-        }
-    } ) );
     axios.create.mockImplementation( () => {
         return {
             defaults: {
@@ -39,29 +34,16 @@ it( 'success login', async() => {
                     }
                 }
             },
-            post: postMock
+            post: jest.fn().mockReturnValue( Promise.resolve() )
         };
     } );
 
+    window.location.href = 'http://simple-ci.example.com/';
+
     await app.start();
     app.checkBody();
-
-    expect( getMock ).toHaveBeenCalledTimes( 1 );
-
-    getMock.mockReturnValue( Promise.resolve( { data: [] } ) );
-    const formData = {
-        username: 'admin',
-        password: 'pass'
-    };
-    app.form.fill( 'username', formData.username );
-    app.form.fill( 'password', formData.password );
+    app.form.fill( 'username', 'admin' );
+    app.form.fill( 'password', 'pass' );
     await app.form.submit();
-    expect( postMock ).toHaveBeenCalledTimes( 1 );
-    expect( postMock.mock.calls[ 0 ][ 0 ] ).toBe( '/login' );
-    expect( Object.keys( postMock.mock.calls[ 0 ][ 1 ] ) ).toEqual( [ 'username', 'password' ] );
-    expect( postMock.mock.calls[ 0 ][ 1 ].username ).toEqual( formData.username );
-    expect( postMock.mock.calls[ 0 ][ 1 ].password ).toEqual( formData.password );
-
-    expect( getMock ).toHaveBeenCalledTimes( 2 );
     app.checkBody();
 } );

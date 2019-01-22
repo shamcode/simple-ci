@@ -1,8 +1,8 @@
-const crypto = require( 'crypto' );
+const { randomBytes } = require( 'crypto' );
 
 Object.defineProperty( global.self, 'crypto', {
     value: {
-        getRandomValues: arr => crypto.randomBytes( arr.length )
+        getRandomValues: arr => randomBytes( arr.length )
     }
 } );
 

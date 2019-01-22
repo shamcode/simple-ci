@@ -2,40 +2,10 @@
 
 exports[`render errors 1`] = `
 Object {
-  "ID": "widget",
-  "constructorOptions": Object {
-    "directives": Object {
-      "EventListener": [Function],
-      "disabled": [Function],
-      "onclick": [Function],
-      "oninput": [Function],
-      "onload": [Function],
-      "onresize": [Function],
-      "onscroll": [Function],
-      "onselect": [Function],
-      "onsubmit": [Function],
-    },
-  },
-  "html": "
-<!--if-->
-<!--FlushPageDataLoading-->
-<!--if-->
-",
-  "nodes": Array [
-    Object {
-      "ID": undefined,
-      "constructorOptions": null,
-      "html": null,
-      "nodes": null,
-      "options": null,
-    },
-  ],
-  "options": Object {
-    "actionSequence": Array [
-      "render",
-      "bindEvents",
-    ],
-    "afterRender": [Function],
+  "Constructor": "ProjectsPage",
+  "Options": Object {
+    "ID": "widget",
+    "containerSelector": "body",
     "dataLoaded": false,
     "directives": Object {
       "EventListener": [Function],
@@ -47,52 +17,26 @@ Object {
       "onscroll": [Function],
       "onselect": [Function],
       "onsubmit": [Function],
+      "ref": [Function],
     },
     "errors": Array [],
     "projects": Array [],
-    "renderAsync": false,
-    "renderDependence": Array [],
     "types": Array [],
   },
+  "html": "
+<!--if-->
+<!--FlushPageDataLoading-->
+<!--if-->
+",
 }
 `;
 
 exports[`renders correctly 1`] = `
 Object {
-  "ID": "widget",
-  "constructorOptions": Object {
-    "directives": Object {
-      "EventListener": [Function],
-      "disabled": [Function],
-      "onclick": [Function],
-      "oninput": [Function],
-      "onload": [Function],
-      "onresize": [Function],
-      "onscroll": [Function],
-      "onselect": [Function],
-      "onsubmit": [Function],
-    },
-  },
-  "html": "
-<!--if-->
-<!--FlushPageDataLoading-->
-<!--if-->
-",
-  "nodes": Array [
-    Object {
-      "ID": undefined,
-      "constructorOptions": null,
-      "html": null,
-      "nodes": null,
-      "options": null,
-    },
-  ],
-  "options": Object {
-    "actionSequence": Array [
-      "render",
-      "bindEvents",
-    ],
-    "afterRender": [Function],
+  "Constructor": "ProjectsPage",
+  "Options": Object {
+    "ID": "widget",
+    "containerSelector": "body",
     "dataLoaded": false,
     "directives": Object {
       "EventListener": [Function],
@@ -104,12 +48,16 @@ Object {
       "onscroll": [Function],
       "onselect": [Function],
       "onsubmit": [Function],
+      "ref": [Function],
     },
     "errors": Array [],
     "projects": Array [],
-    "renderAsync": false,
-    "renderDependence": Array [],
     "types": Array [],
   },
+  "html": "
+<!--if-->
+<!--FlushPageDataLoading-->
+<!--if-->
+",
 }
 `;

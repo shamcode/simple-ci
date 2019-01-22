@@ -2,8 +2,11 @@
 
 exports[`go to create page 1`] = `
 Object {
-  "ID": "widget",
-  "constructorOptions": Object {
+  "Constructor": "_default",
+  "Options": Object {
+    "ID": "widget",
+    "containerSelector": "body",
+    "createProjectURL": undefined,
     "directives": Object {
       "EventListener": [Function],
       "disabled": [Function],
@@ -14,7 +17,9 @@ Object {
       "onscroll": [Function],
       "onselect": [Function],
       "onsubmit": [Function],
+      "ref": [Function],
     },
+    "types": Array [],
   },
   "html": "
 <div class=\\"project-list\\">
@@ -24,43 +29,16 @@ Object {
   </a>
 </div>
 ",
-  "nodes": Array [
-    Object {
-      "ID": undefined,
-      "constructorOptions": null,
-      "html": null,
-      "nodes": null,
-      "options": null,
-    },
-  ],
-  "options": Object {
-    "actionSequence": Array [
-      "render",
-      "bindEvents",
-    ],
-    "createProjectURL": "/",
-    "directives": Object {
-      "EventListener": [Function],
-      "disabled": [Function],
-      "onclick": [Function],
-      "oninput": [Function],
-      "onload": [Function],
-      "onresize": [Function],
-      "onscroll": [Function],
-      "onselect": [Function],
-      "onsubmit": [Function],
-    },
-    "renderAsync": false,
-    "renderDependence": Array [],
-    "types": Array [],
-  },
 }
 `;
 
 exports[`renders correctly 1`] = `
 Object {
-  "ID": "widget",
-  "constructorOptions": Object {
+  "Constructor": "_default",
+  "Options": Object {
+    "ID": "widget",
+    "containerSelector": "body",
+    "createProjectURL": undefined,
     "directives": Object {
       "EventListener": [Function],
       "disabled": [Function],
@@ -71,7 +49,9 @@ Object {
       "onscroll": [Function],
       "onselect": [Function],
       "onsubmit": [Function],
+      "ref": [Function],
     },
+    "types": Array [],
   },
   "html": "
 <div class=\\"project-list\\">
@@ -81,43 +61,16 @@ Object {
   </a>
 </div>
 ",
-  "nodes": Array [
-    Object {
-      "ID": undefined,
-      "constructorOptions": null,
-      "html": null,
-      "nodes": null,
-      "options": null,
-    },
-  ],
-  "options": Object {
-    "actionSequence": Array [
-      "render",
-      "bindEvents",
-    ],
-    "createProjectURL": "/",
-    "directives": Object {
-      "EventListener": [Function],
-      "disabled": [Function],
-      "onclick": [Function],
-      "oninput": [Function],
-      "onload": [Function],
-      "onresize": [Function],
-      "onscroll": [Function],
-      "onselect": [Function],
-      "onsubmit": [Function],
-    },
-    "renderAsync": false,
-    "renderDependence": Array [],
-    "types": Array [],
-  },
 }
 `;
 
 exports[`renders list 1`] = `
 Object {
-  "ID": "widget",
-  "constructorOptions": Object {
+  "Constructor": "_default",
+  "Options": Object {
+    "ID": "widget",
+    "containerSelector": "body",
+    "createProjectURL": undefined,
     "directives": Object {
       "EventListener": [Function],
       "disabled": [Function],
@@ -128,6 +81,7 @@ Object {
       "onscroll": [Function],
       "onselect": [Function],
       "onsubmit": [Function],
+      "ref": [Function],
     },
     "projects": Array [
       Object {
@@ -141,6 +95,7 @@ Object {
         "name": "ShamUI",
       },
     ],
+    "types": Array [],
   },
   "html": "
 <div class=\\"project-list\\">
@@ -152,47 +107,5 @@ Object {
   </a>
 </div>
 ",
-  "nodes": Array [
-    Object {
-      "ID": undefined,
-      "constructorOptions": null,
-      "html": null,
-      "nodes": null,
-      "options": null,
-    },
-  ],
-  "options": Object {
-    "actionSequence": Array [
-      "render",
-      "bindEvents",
-    ],
-    "createProjectURL": "/",
-    "directives": Object {
-      "EventListener": [Function],
-      "disabled": [Function],
-      "onclick": [Function],
-      "oninput": [Function],
-      "onload": [Function],
-      "onresize": [Function],
-      "onscroll": [Function],
-      "onselect": [Function],
-      "onsubmit": [Function],
-    },
-    "projects": Array [
-      Object {
-        "cwd": "/tmp/",
-        "id": 1,
-        "name": "Simple CI",
-      },
-      Object {
-        "cwd": "/home/",
-        "id": 1,
-        "name": "ShamUI",
-      },
-    ],
-    "renderAsync": false,
-    "renderDependence": Array [],
-    "types": Array [],
-  },
 }
 `;

@@ -2,38 +2,26 @@
 
 exports[`renders correctly 1`] = `
 Object {
-  "ID": "widget",
-  "constructorOptions": Object {},
+  "Constructor": "BreadCrumb",
+  "Options": Object {
+    "ID": "widget",
+    "chain": null,
+    "containerSelector": "body",
+    "currentPage": "",
+    "project": null,
+    "types": Array [],
+  },
   "html": "
 <ul class=\\"breadcrumb\\">
   <li>
-    <a href=\\"/\\" class=\\"\\">Projects</a>
+    <a href=\\"/\\" class=\\"\\">Projects
+      <!--default-->
+    </a>
   </li>
   <!--if-->
   <!--if-->
   <li></li>
 </ul>
 ",
-  "nodes": Array [
-    Object {
-      "ID": undefined,
-      "constructorOptions": null,
-      "html": null,
-      "nodes": null,
-      "options": null,
-    },
-  ],
-  "options": Object {
-    "actionSequence": Array [
-      "render",
-      "bindEvents",
-    ],
-    "chain": null,
-    "currentPage": "",
-    "project": null,
-    "renderAsync": false,
-    "renderDependence": Array [],
-    "types": Array [],
-  },
 }
 `;

@@ -2,7 +2,9 @@
 
 exports[`success registry 1`] = `
 "<header>
-  <a href=\\"\\" class=\\"logo\\">Simple CI</a>
+  <a href=\\"\\" class=\\"logo\\">Simple CI
+    <!--default-->
+  </a>
 </header>
 <!--Header-->
 <main>

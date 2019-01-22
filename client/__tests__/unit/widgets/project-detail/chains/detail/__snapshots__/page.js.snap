@@ -2,12 +2,23 @@
 
 exports[`renders correctly 1`] = `
 Object {
-  "ID": "widget",
-  "constructorOptions": Object {},
+  "Constructor": "ChainDetailPage",
+  "Options": Object {
+    "ID": "widget",
+    "chain": Object {},
+    "containerSelector": "body",
+    "dataLoaded": false,
+    "dataSaving": false,
+    "errors": Array [],
+    "project": Object {},
+    "types": Array [],
+  },
   "html": "
 <ul class=\\"breadcrumb\\">
   <li>
-    <a href=\\"/\\" class=\\"\\">Projects</a>
+    <a href=\\"/\\" class=\\"\\">Projects
+      <!--default-->
+    </a>
   </li>
   <!--if-->
   <!--if-->
@@ -18,36 +29,5 @@ Object {
 <!--FlushPageDataLoading-->
 <!--if-->
 ",
-  "nodes": Array [
-    Object {
-      "ID": undefined,
-      "constructorOptions": null,
-      "html": null,
-      "nodes": null,
-      "options": null,
-    },
-    Object {
-      "ID": undefined,
-      "constructorOptions": null,
-      "html": null,
-      "nodes": null,
-      "options": null,
-    },
-  ],
-  "options": Object {
-    "actionSequence": Array [
-      "render",
-      "bindEvents",
-    ],
-    "afterRender": [Function],
-    "chain": Object {},
-    "dataLoaded": false,
-    "dataSaving": false,
-    "errors": Array [],
-    "project": Object {},
-    "renderAsync": false,
-    "renderDependence": Array [],
-    "types": Array [],
-  },
 }
 `;

@@ -2,8 +2,12 @@
 
 exports[`renders correctly 1`] = `
 Object {
-  "ID": "widget",
-  "constructorOptions": Object {},
+  "Constructor": "PageDataLoading",
+  "Options": Object {
+    "ID": "widget",
+    "containerSelector": "body",
+    "types": Array [],
+  },
   "html": "
 <div class=\\"page-data-loading\\">
   <div class=\\"sk-cube-grid\\">
@@ -19,23 +23,5 @@ Object {
   </div>
 </div>
 ",
-  "nodes": Array [
-    Object {
-      "ID": undefined,
-      "constructorOptions": null,
-      "html": null,
-      "nodes": null,
-      "options": null,
-    },
-  ],
-  "options": Object {
-    "actionSequence": Array [
-      "render",
-      "bindEvents",
-    ],
-    "renderAsync": false,
-    "renderDependence": Array [],
-    "types": Array [],
-  },
 }
 `;

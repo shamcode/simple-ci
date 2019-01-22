@@ -2,13 +2,17 @@
 
 exports[`project-detail page 1`] = `
 "<header>
-  <a href=\\"\\" class=\\"logo\\">Simple CI</a>
+  <a href=\\"\\" class=\\"logo\\">Simple CI
+    <!--default-->
+  </a>
 </header>
 <!--Header-->
 <main>
   <ul class=\\"breadcrumb\\">
     <li>
-      <a href=\\"\\" class=\\"\\">Projects</a>
+      <a href=\\"\\" class=\\"\\">Projects
+        <!--default-->
+      </a>
     </li>
     <!--if-->
     <!--if-->
@@ -25,13 +29,17 @@ exports[`project-detail page 1`] = `
 
 exports[`project-detail page 2`] = `
 "<header>
-  <a href=\\"\\" class=\\"logo\\">Simple CI</a>
+  <a href=\\"\\" class=\\"logo\\">Simple CI
+    <!--default-->
+  </a>
 </header>
 <!--Header-->
 <main>
   <ul class=\\"breadcrumb\\">
     <li>
-      <a href=\\"\\" class=\\"\\">Projects</a>
+      <a href=\\"\\" class=\\"\\">Projects
+        <!--default-->
+      </a>
     </li>
     <!--if-->
     <!--if-->
@@ -47,11 +55,15 @@ exports[`project-detail page 2`] = `
       <dd>Current work directory.</dd>
       <dd>This directory will be used when running tasks.</dd>
       <dt>
-        <a href=\\"projects/1/edit\\" class=\\"\\">Edit</a>
+        <a href=\\"projects/1/edit\\" class=\\"\\">Edit
+          <!--default-->
+        </a>
       </dt>
       <dd>Edit project name &amp; cwd</dd>
       <dt>
-        <a href=\\"projects/1/delete\\" class=\\"project-delete-link\\">Delete</a>
+        <a href=\\"projects/1/delete\\" class=\\"project-delete-link\\">Delete
+          <!--default-->
+        </a>
       </dt>
       <dd>Delete project</dd>
     </dl>

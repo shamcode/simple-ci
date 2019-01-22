@@ -2,46 +2,11 @@
 
 exports[`renders correctly 1`] = `
 Object {
-  "ID": "widget",
-  "constructorOptions": Object {
-    "directives": Object {
-      "EventListener": [Function],
-      "disabled": [Function],
-      "onclick": [Function],
-      "oninput": [Function],
-      "onload": [Function],
-      "onresize": [Function],
-      "onscroll": [Function],
-      "onselect": [Function],
-      "onsubmit": [Function],
-    },
-  },
-  "html": "
-<button class=\\"project-chain\\">null</button>
-<!--if-->
-",
-  "nodes": Array [
-    Object {
-      "ID": undefined,
-      "constructorOptions": null,
-      "html": null,
-      "nodes": null,
-      "options": null,
-    },
-    Object {
-      "ID": undefined,
-      "constructorOptions": null,
-      "html": null,
-      "nodes": null,
-      "options": null,
-    },
-  ],
-  "options": Object {
-    "actionSequence": Array [
-      "render",
-      "bindEvents",
-    ],
+  "Constructor": "Chain",
+  "Options": Object {
+    "ID": "widget",
     "chain": Object {},
+    "containerSelector": "body",
     "directives": Object {
       "EventListener": [Function],
       "disabled": [Function],
@@ -52,14 +17,17 @@ Object {
       "onscroll": [Function],
       "onselect": [Function],
       "onsubmit": [Function],
+      "ref": [Function],
     },
     "isExpand": false,
     "project": Object {
       "chains": Array [],
     },
-    "renderAsync": false,
-    "renderDependence": Array [],
     "types": Array [],
   },
+  "html": "
+<button class=\\"project-chain\\">null</button>
+<!--if-->
+",
 }
 `;

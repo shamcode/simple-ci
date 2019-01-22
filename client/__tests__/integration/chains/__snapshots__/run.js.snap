@@ -2,20 +2,28 @@
 
 exports[`run project chain 1`] = `
 "<header>
-  <a href=\\"\\" class=\\"logo\\">Simple CI</a>
+  <a href=\\"\\" class=\\"logo\\">Simple CI
+    <!--default-->
+  </a>
 </header>
 <!--Header-->
 <main>
   <ul class=\\"breadcrumb\\">
     <li>
-      <a href=\\"\\" class=\\"\\">Projects</a>
+      <a href=\\"\\" class=\\"\\">Projects
+        <!--default-->
+      </a>
     </li>
     <li>
-      <a href=\\"projects/1\\" class=\\"\\">Test</a>
+      <a href=\\"projects/1\\" class=\\"\\">Test
+        <!--default-->
+      </a>
     </li>
     <!--if-->
     <li>
-      <a href=\\"projects/1/chains/2\\" class=\\"\\">Test chain</a>
+      <a href=\\"projects/1/chains/2\\" class=\\"\\">Test chain
+        <!--default-->
+      </a>
     </li>
     <!--if-->
     <li>Run chain</li>
@@ -33,20 +41,28 @@ exports[`run project chain 1`] = `
 
 exports[`run project chain 2`] = `
 "<header>
-  <a href=\\"\\" class=\\"logo\\">Simple CI</a>
+  <a href=\\"\\" class=\\"logo\\">Simple CI
+    <!--default-->
+  </a>
 </header>
 <!--Header-->
 <main>
   <ul class=\\"breadcrumb\\">
     <li>
-      <a href=\\"\\" class=\\"\\">Projects</a>
+      <a href=\\"\\" class=\\"\\">Projects
+        <!--default-->
+      </a>
     </li>
     <li>
-      <a href=\\"projects/1\\" class=\\"\\">Test</a>
+      <a href=\\"projects/1\\" class=\\"\\">Test
+        <!--default-->
+      </a>
     </li>
     <!--if-->
     <li>
-      <a href=\\"projects/1/chains/2\\" class=\\"\\">Test chain</a>
+      <a href=\\"projects/1/chains/2\\" class=\\"\\">Test chain
+        <!--default-->
+      </a>
     </li>
     <!--if-->
     <li>Run chain</li>

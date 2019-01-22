@@ -5,7 +5,7 @@ import controller from '../../src/controllers/main';
 export const app = {
     async start( waitRendering = true ) {
         DI.bind( 'widget-binder', controller );
-        new ShamUI().render.FORCE_ALL();
+        new ShamUI( true );
         if ( waitRendering ) {
             await this.waitRendering();
         }

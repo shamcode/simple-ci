@@ -69,9 +69,6 @@
     "projects": [
       {
         "displayName": "test",
-        "setupFiles": [
-          "<rootDir>/jest/globals.js"
-        ],
         "transform": {
           "^.+\\.sht$": "sham-ui-jest-preprocessor",
           "^.+\\.js$": "babel-jest"
@@ -80,11 +77,15 @@
           "src/**/*.js",
           "!src/main.js"
         ],
-        "coveragePathIgnorePatterns": [ "^.+\\.sht$" ],
+        "coveragePathIgnorePatterns": [
+          "^.+\\.sht$",
+          "<rootDir>/jest/globals.js"
+        ],
         "testPathIgnorePatterns": [
           "<rootDir>/node_modules/",
           "<rootDir>/__tests__/integration/helpers.js"
         ],
+        "setupTestFrameworkScriptFile": "<rootDir>/jest/globals.js",
         "testURL": "http://simple-ci.example.com"
       },
       {

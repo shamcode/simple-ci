@@ -2,8 +2,14 @@
 
 exports[`delay 1`] = `
 Object {
-  "ID": "widget",
-  "constructorOptions": Object {},
+  "Constructor": "FlushPageDataLoading",
+  "Options": Object {
+    "ID": "widget",
+    "containerSelector": "body",
+    "delay": 100,
+    "showLoader": true,
+    "types": Array [],
+  },
   "html": "
 <div class=\\"page-data-loading\\">
   <div class=\\"sk-cube-grid\\">
@@ -21,55 +27,19 @@ Object {
 <!--PageDataLoading-->
 <!--if-->
 ",
-  "nodes": Array [
-    Object {
-      "ID": undefined,
-      "constructorOptions": null,
-      "html": null,
-      "nodes": null,
-      "options": null,
-    },
-  ],
-  "options": Object {
-    "actionSequence": Array [
-      "render",
-      "bindEvents",
-    ],
-    "afterRender": [Function],
-    "delay": 100,
-    "renderAsync": false,
-    "renderDependence": Array [],
-    "showLoader": true,
-    "types": Array [],
-  },
 }
 `;
 
 exports[`renders correctly 1`] = `
 Object {
-  "ID": "widget",
-  "constructorOptions": Object {},
-  "html": "<!--if-->",
-  "nodes": Array [
-    Object {
-      "ID": undefined,
-      "constructorOptions": null,
-      "html": null,
-      "nodes": null,
-      "options": null,
-    },
-  ],
-  "options": Object {
-    "actionSequence": Array [
-      "render",
-      "bindEvents",
-    ],
-    "afterRender": [Function],
+  "Constructor": "FlushPageDataLoading",
+  "Options": Object {
+    "ID": "widget",
+    "containerSelector": "body",
     "delay": 100,
-    "renderAsync": false,
-    "renderDependence": Array [],
     "showLoader": false,
     "types": Array [],
   },
+  "html": "<!--if-->",
 }
 `;

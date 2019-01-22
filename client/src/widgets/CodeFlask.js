@@ -11,7 +11,7 @@ export default class CodeFlaskWidget extends CodeFlaskTemplate {
     }
 
     render() {
-        super.render( ...arguments) ;
+        super.render( ...arguments );
         this.flask = new CodeFlask( this.querySelector( 'div' ), {
             lineNumbers: true
         } );

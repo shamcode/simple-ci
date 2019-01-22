@@ -2,7 +2,9 @@
 
 exports[`main page 1`] = `
 "<header>
-  <a href=\\"\\" class=\\"logo\\">Simple CI</a>
+  <a href=\\"\\" class=\\"logo\\">Simple CI
+    <!--default-->
+  </a>
 </header>
 <!--Header-->
 <main>
@@ -16,7 +18,9 @@ exports[`main page 1`] = `
 
 exports[`main page 2`] = `
 "<header>
-  <a href=\\"\\" class=\\"logo\\">Simple CI</a>
+  <a href=\\"\\" class=\\"logo\\">Simple CI
+    <!--default-->
+  </a>
 </header>
 <!--Header-->
 <main>

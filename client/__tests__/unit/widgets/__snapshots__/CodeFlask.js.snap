@@ -2,8 +2,14 @@
 
 exports[`renders correctly 1`] = `
 Object {
-  "ID": "widget",
-  "constructorOptions": Object {},
+  "Constructor": "CodeFlaskWidget",
+  "Options": Object {
+    "ID": "widget",
+    "containerSelector": "body",
+    "name": "",
+    "types": Array [],
+    "value": "",
+  },
   "html": "
 <textarea wrap=\\"off\\" style=\\"display: none\\" name=\\"\\"></textarea>
 <div class=\\"code-flask\\">
@@ -13,33 +19,5 @@ Object {
   </div>
 </div>
 ",
-  "nodes": Array [
-    Object {
-      "ID": undefined,
-      "constructorOptions": null,
-      "html": null,
-      "nodes": null,
-      "options": null,
-    },
-    Object {
-      "ID": undefined,
-      "constructorOptions": null,
-      "html": null,
-      "nodes": null,
-      "options": null,
-    },
-  ],
-  "options": Object {
-    "actionSequence": Array [
-      "render",
-      "bindEvents",
-    ],
-    "afterRender": [Function],
-    "name": "",
-    "renderAsync": false,
-    "renderDependence": Array [],
-    "types": Array [],
-    "value": "",
-  },
 }
 `;

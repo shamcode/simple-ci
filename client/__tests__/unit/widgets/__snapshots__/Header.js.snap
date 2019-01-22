@@ -2,30 +2,18 @@
 
 exports[`renders correctly 1`] = `
 Object {
-  "ID": "widget",
-  "constructorOptions": Object {},
-  "html": "
-<header>
-  <a href=\\"/\\" class=\\"logo\\">Simple CI</a>
-</header>
-",
-  "nodes": Array [
-    Object {
-      "ID": undefined,
-      "constructorOptions": null,
-      "html": null,
-      "nodes": null,
-      "options": null,
-    },
-  ],
-  "options": Object {
-    "actionSequence": Array [
-      "render",
-      "bindEvents",
-    ],
-    "renderAsync": false,
-    "renderDependence": Array [],
+  "Constructor": "Header",
+  "Options": Object {
+    "ID": "widget",
+    "containerSelector": "body",
     "types": Array [],
   },
+  "html": "
+<header>
+  <a href=\\"/\\" class=\\"logo\\">Simple CI
+    <!--default-->
+  </a>
+</header>
+",
 }
 `;

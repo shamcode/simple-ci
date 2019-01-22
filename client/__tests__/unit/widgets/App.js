@@ -10,7 +10,8 @@ afterEach( () => {
 it( 'renders correctly', () => {
     DI.bind( 'router', {
         generate: jest.fn().mockReturnValueOnce( '/' ),
-        activePageWidget: DummyPage
+        activePageWidget: DummyPage,
+        lastRouteResolved: jest.fn().mockReturnValueOnce( '/' )
     } );
 
     const meta = renderer( App, {} );

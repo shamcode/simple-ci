@@ -2,26 +2,12 @@
 
 exports[`renders correctly 1`] = `
 Object {
-  "ID": "widget",
-  "constructorOptions": Object {},
-  "html": "<pre class=\\"command-output\\"></pre>",
-  "nodes": Array [
-    Object {
-      "ID": undefined,
-      "constructorOptions": null,
-      "html": null,
-      "nodes": null,
-      "options": null,
-    },
-  ],
-  "options": Object {
-    "actionSequence": Array [
-      "render",
-      "bindEvents",
-    ],
-    "renderAsync": false,
-    "renderDependence": Array [],
+  "Constructor": "CommandOutput",
+  "Options": Object {
+    "ID": "widget",
+    "containerSelector": "body",
     "types": Array [],
   },
+  "html": "<pre class=\\"command-output\\"></pre>",
 }
 `;

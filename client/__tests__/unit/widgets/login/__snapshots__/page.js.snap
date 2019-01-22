@@ -2,8 +2,11 @@
 
 exports[`renders correctly 1`] = `
 Object {
-  "ID": "widget",
-  "constructorOptions": Object {
+  "Constructor": "LoginPage",
+  "Options": Object {
+    "ID": "widget",
+    "containerSelector": "body",
+    "dataSaving": false,
     "directives": Object {
       "EventListener": [Function],
       "disabled": [Function],
@@ -14,7 +17,11 @@ Object {
       "onscroll": [Function],
       "onselect": [Function],
       "onsubmit": [Function],
+      "ref": [Function],
     },
+    "errors": Array [],
+    "password": "",
+    "types": Array [],
   },
   "html": "
 <!--if-->
@@ -35,44 +42,5 @@ Object {
   </form>
 </div>
 ",
-  "nodes": Array [
-    Object {
-      "ID": undefined,
-      "constructorOptions": null,
-      "html": null,
-      "nodes": null,
-      "options": null,
-    },
-    Object {
-      "ID": undefined,
-      "constructorOptions": null,
-      "html": null,
-      "nodes": null,
-      "options": null,
-    },
-  ],
-  "options": Object {
-    "actionSequence": Array [
-      "render",
-      "bindEvents",
-    ],
-    "dataSaving": false,
-    "directives": Object {
-      "EventListener": [Function],
-      "disabled": [Function],
-      "onclick": [Function],
-      "oninput": [Function],
-      "onload": [Function],
-      "onresize": [Function],
-      "onscroll": [Function],
-      "onselect": [Function],
-      "onsubmit": [Function],
-    },
-    "errors": Array [],
-    "password": "",
-    "renderAsync": false,
-    "renderDependence": Array [],
-    "types": Array [],
-  },
 }
 `;

@@ -2,56 +2,10 @@
 
 exports[`render errors 1`] = `
 Object {
-  "ID": "widget",
-  "constructorOptions": Object {
-    "directives": Object {
-      "EventListener": [Function],
-      "disabled": [Function],
-      "onclick": [Function],
-      "oninput": [Function],
-      "onload": [Function],
-      "onresize": [Function],
-      "onscroll": [Function],
-      "onselect": [Function],
-      "onsubmit": [Function],
-    },
-  },
-  "html": "
-<ul class=\\"breadcrumb\\">
-  <li>
-    <a href=\\"/\\" class=\\"\\">Projects</a>
-  </li>
-  <!--if-->
-  <!--if-->
-  <li></li>
-</ul>
-<!--BreadCrumb-->
-<!--if-->
-<!--FlushPageDataLoading-->
-<!--if-->
-",
-  "nodes": Array [
-    Object {
-      "ID": undefined,
-      "constructorOptions": null,
-      "html": null,
-      "nodes": null,
-      "options": null,
-    },
-    Object {
-      "ID": undefined,
-      "constructorOptions": null,
-      "html": null,
-      "nodes": null,
-      "options": null,
-    },
-  ],
-  "options": Object {
-    "actionSequence": Array [
-      "render",
-      "bindEvents",
-    ],
-    "afterRender": [Function],
+  "Constructor": "ProjectDetailPage",
+  "Options": Object {
+    "ID": "widget",
+    "containerSelector": "body",
     "dataLoaded": false,
     "directives": Object {
       "EventListener": [Function],
@@ -63,68 +17,37 @@ Object {
       "onscroll": [Function],
       "onselect": [Function],
       "onsubmit": [Function],
+      "ref": [Function],
     },
     "errors": Array [],
     "project": Object {},
-    "renderAsync": false,
-    "renderDependence": Array [],
     "types": Array [],
   },
+  "html": "
+<ul class=\\"breadcrumb\\">
+  <li>
+    <a href=\\"/\\" class=\\"\\">Projects
+      <!--default-->
+    </a>
+  </li>
+  <!--if-->
+  <!--if-->
+  <li></li>
+</ul>
+<!--BreadCrumb-->
+<!--if-->
+<!--FlushPageDataLoading-->
+<!--if-->
+",
 }
 `;
 
 exports[`renders correctly 1`] = `
 Object {
-  "ID": "widget",
-  "constructorOptions": Object {
-    "directives": Object {
-      "EventListener": [Function],
-      "disabled": [Function],
-      "onclick": [Function],
-      "oninput": [Function],
-      "onload": [Function],
-      "onresize": [Function],
-      "onscroll": [Function],
-      "onselect": [Function],
-      "onsubmit": [Function],
-    },
-  },
-  "html": "
-<ul class=\\"breadcrumb\\">
-  <li>
-    <a href=\\"/\\" class=\\"\\">Projects</a>
-  </li>
-  <!--if-->
-  <!--if-->
-  <li></li>
-</ul>
-<!--BreadCrumb-->
-<!--if-->
-<!--FlushPageDataLoading-->
-<!--if-->
-",
-  "nodes": Array [
-    Object {
-      "ID": undefined,
-      "constructorOptions": null,
-      "html": null,
-      "nodes": null,
-      "options": null,
-    },
-    Object {
-      "ID": undefined,
-      "constructorOptions": null,
-      "html": null,
-      "nodes": null,
-      "options": null,
-    },
-  ],
-  "options": Object {
-    "actionSequence": Array [
-      "render",
-      "bindEvents",
-    ],
-    "afterRender": [Function],
+  "Constructor": "ProjectDetailPage",
+  "Options": Object {
+    "ID": "widget",
+    "containerSelector": "body",
     "dataLoaded": false,
     "directives": Object {
       "EventListener": [Function],
@@ -136,12 +59,27 @@ Object {
       "onscroll": [Function],
       "onselect": [Function],
       "onsubmit": [Function],
+      "ref": [Function],
     },
     "errors": Array [],
     "project": Object {},
-    "renderAsync": false,
-    "renderDependence": Array [],
     "types": Array [],
   },
+  "html": "
+<ul class=\\"breadcrumb\\">
+  <li>
+    <a href=\\"/\\" class=\\"\\">Projects
+      <!--default-->
+    </a>
+  </li>
+  <!--if-->
+  <!--if-->
+  <li></li>
+</ul>
+<!--BreadCrumb-->
+<!--if-->
+<!--FlushPageDataLoading-->
+<!--if-->
+",
 }
 `;

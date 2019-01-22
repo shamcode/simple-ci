@@ -2,13 +2,17 @@
 
 exports[`create project chain 1`] = `
 "<header>
-  <a href=\\"\\" class=\\"logo\\">Simple CI</a>
+  <a href=\\"\\" class=\\"logo\\">Simple CI
+    <!--default-->
+  </a>
 </header>
 <!--Header-->
 <main>
   <ul class=\\"breadcrumb\\">
     <li>
-      <a href=\\"\\" class=\\"\\">Projects</a>
+      <a href=\\"\\" class=\\"\\">Projects
+        <!--default-->
+      </a>
     </li>
     <!--if-->
     <!--if-->
@@ -25,16 +29,22 @@ exports[`create project chain 1`] = `
 
 exports[`create project chain 2`] = `
 "<header>
-  <a href=\\"\\" class=\\"logo\\">Simple CI</a>
+  <a href=\\"\\" class=\\"logo\\">Simple CI
+    <!--default-->
+  </a>
 </header>
 <!--Header-->
 <main>
   <ul class=\\"breadcrumb\\">
     <li>
-      <a href=\\"\\" class=\\"\\">Projects</a>
+      <a href=\\"\\" class=\\"\\">Projects
+        <!--default-->
+      </a>
     </li>
     <li>
-      <a href=\\"projects/1\\" class=\\"\\">Test</a>
+      <a href=\\"projects/1\\" class=\\"\\">Test
+        <!--default-->
+      </a>
     </li>
     <!--if-->
     <!--if-->
@@ -74,13 +84,17 @@ exports[`create project chain 2`] = `
 
 exports[`create project chain 3`] = `
 "<header>
-  <a href=\\"\\" class=\\"logo\\">Simple CI</a>
+  <a href=\\"\\" class=\\"logo\\">Simple CI
+    <!--default-->
+  </a>
 </header>
 <!--Header-->
 <main>
   <ul class=\\"breadcrumb\\">
     <li>
-      <a href=\\"\\" class=\\"\\">Projects</a>
+      <a href=\\"\\" class=\\"\\">Projects
+        <!--default-->
+      </a>
     </li>
     <!--if-->
     <!--if-->
@@ -96,11 +110,15 @@ exports[`create project chain 3`] = `
       <dd>Current work directory.</dd>
       <dd>This directory will be used when running tasks.</dd>
       <dt>
-        <a href=\\"projects/1/edit\\" class=\\"\\">Edit</a>
+        <a href=\\"projects/1/edit\\" class=\\"\\">Edit
+          <!--default-->
+        </a>
       </dt>
       <dd>Edit project name &amp; cwd</dd>
       <dt>
-        <a href=\\"projects/1/delete\\" class=\\"project-delete-link\\">Delete</a>
+        <a href=\\"projects/1/delete\\" class=\\"project-delete-link\\">Delete
+          <!--default-->
+        </a>
       </dt>
       <dd>Delete project</dd>
     </dl>

@@ -2,8 +2,12 @@
 
 exports[`renders correctly 1`] = `
 Object {
-  "ID": "widget",
-  "constructorOptions": Object {
+  "Constructor": "ChainInfo",
+  "Options": Object {
+    "ID": "widget",
+    "chain": Object {},
+    "containerSelector": "body",
+    "dataSaving": false,
     "directives": Object {
       "EventListener": [Function],
       "disabled": [Function],
@@ -14,7 +18,10 @@ Object {
       "onscroll": [Function],
       "onselect": [Function],
       "onsubmit": [Function],
+      "ref": [Function],
     },
+    "types": Array [],
+    "updateProjectChain": [Function],
   },
   "html": "
 <div class=\\"chain-info\\">
@@ -44,44 +51,5 @@ Object {
 </div>
 <!--ChainForm-->
 ",
-  "nodes": Array [
-    Object {
-      "ID": undefined,
-      "constructorOptions": null,
-      "html": null,
-      "nodes": null,
-      "options": null,
-    },
-    Object {
-      "ID": undefined,
-      "constructorOptions": null,
-      "html": null,
-      "nodes": null,
-      "options": null,
-    },
-  ],
-  "options": Object {
-    "actionSequence": Array [
-      "render",
-      "bindEvents",
-    ],
-    "chain": Object {},
-    "dataSaving": false,
-    "directives": Object {
-      "EventListener": [Function],
-      "disabled": [Function],
-      "onclick": [Function],
-      "oninput": [Function],
-      "onload": [Function],
-      "onresize": [Function],
-      "onscroll": [Function],
-      "onselect": [Function],
-      "onsubmit": [Function],
-    },
-    "renderAsync": false,
-    "renderDependence": Array [],
-    "types": Array [],
-    "updateProjectChain": [Function],
-  },
 }
 `;
