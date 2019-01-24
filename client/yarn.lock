@@ -5691,10 +5691,10 @@ sham-ui-jest-preprocessor@^2.0.7:
   dependencies:
     sham-ui-templates "2.0.7"
 
-sham-ui-router@2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/sham-ui-router/-/sham-ui-router-2.0.0.tgz#199c6b3f7cc7ab9c23d33b9ef0ab221f41186578"
-  integrity sha512-b2qBa7nmiq1TIotsKpj470ObSyrojm91oSGlALp/4vt09ftKe0Yw4v9is6vfkrCGyY8Y6nV2GaLw/NgaubRXhA==
+sham-ui-router@2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/sham-ui-router/-/sham-ui-router-2.0.1.tgz#47e8775025862ab5d2c3b1213fedbb511631c706"
+  integrity sha512-q+0quMV3bfgbi4Onb9xZ6FThU3q+Q42iD3wagARaU4I5kaC0AMBFKxQLC6BN58SpP+tObU+ogTvx1tlNXrmWTA==
   dependencies:
     navigo "^7.1.2"
     sham-ui "^2.0.5"

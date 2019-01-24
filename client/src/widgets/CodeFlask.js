@@ -3,16 +3,12 @@ import CodeFlaskTemplate from './CodeFlask.sht';
 import { options } from 'sham-ui';
 
 export default class CodeFlaskWidget extends CodeFlaskTemplate {
-    @options get name() {
-        return '';
-    }
-    @options get value() {
-        return '';
-    }
+    @options name = '';
+    @options value = '';
 
     render() {
         super.render( ...arguments );
-        this.flask = new CodeFlask( this.querySelector( 'div' ), {
+        this.flask = new CodeFlask( this.flaskContainer, {
             lineNumbers: true
         } );
         this.flask.onUpdate( ( code ) => {

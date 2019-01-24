@@ -6,7 +6,6 @@ Object {
   "Options": Object {
     "ID": "widget",
     "containerSelector": "body",
-    "createProjectURL": undefined,
     "directives": Object {
       "EventListener": [Function],
       "disabled": [Function],
@@ -24,9 +23,11 @@ Object {
   "html": "
 <div class=\\"project-list\\">
   <!--for-->
-  <a class=\\"project-card project-card-create\\" href=\\"/\\">
+  <a href=\\"/\\" class=\\"project-card project-card-create\\">
     <div class=\\"create-icon\\"></div>
+    <!--default-->
   </a>
+  <!--LinkTo-->
 </div>
 ",
 }
@@ -38,7 +39,6 @@ Object {
   "Options": Object {
     "ID": "widget",
     "containerSelector": "body",
-    "createProjectURL": undefined,
     "directives": Object {
       "EventListener": [Function],
       "disabled": [Function],
@@ -56,9 +56,11 @@ Object {
   "html": "
 <div class=\\"project-list\\">
   <!--for-->
-  <a class=\\"project-card project-card-create\\" href=\\"/\\">
+  <a href=\\"/\\" class=\\"project-card project-card-create\\">
     <div class=\\"create-icon\\"></div>
+    <!--default-->
   </a>
+  <!--LinkTo-->
 </div>
 ",
 }
@@ -70,7 +72,6 @@ Object {
   "Options": Object {
     "ID": "widget",
     "containerSelector": "body",
-    "createProjectURL": undefined,
     "directives": Object {
       "EventListener": [Function],
       "disabled": [Function],
@@ -99,12 +100,20 @@ Object {
   },
   "html": "
 <div class=\\"project-list\\">
-  <a class=\\"project-card\\" href=\\"undefined\\"><span class=\\"name\\">Simple CI</span></a>
-  <a class=\\"project-card\\" href=\\"undefined\\"><span class=\\"name\\">ShamUI</span></a>
-  <!--for-->
-  <a class=\\"project-card project-card-create\\" href=\\"/\\">
-    <div class=\\"create-icon\\"></div>
+  <a href=\\"undefined\\" class=\\"project-card\\"><span class=\\"name\\">Simple CI</span>
+    <!--default-->
   </a>
+  <!--LinkTo-->
+  <a href=\\"undefined\\" class=\\"project-card\\"><span class=\\"name\\">ShamUI</span>
+    <!--default-->
+  </a>
+  <!--LinkTo-->
+  <!--for-->
+  <a href=\\"/\\" class=\\"project-card project-card-create\\">
+    <div class=\\"create-icon\\"></div>
+    <!--default-->
+  </a>
+  <!--LinkTo-->
 </div>
 ",
 }

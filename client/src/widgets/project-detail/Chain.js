@@ -5,9 +5,7 @@ export default class Chain extends ChainTemplate {
     @options get chain() {
         return {};
     }
-    @options get isExpand() {
-        return false;
-    }
+    @options isExpand = false;
     @options get project() {
         return { chains: [] };
     }

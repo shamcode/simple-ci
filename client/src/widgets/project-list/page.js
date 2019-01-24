@@ -2,11 +2,9 @@ import { options, inject } from 'sham-ui';
 import ProjectsPageTemplate from './page.sht';
 
 export default class ProjectsPage extends ProjectsPageTemplate {
-    @inject store = 'store';
+    @inject store;
 
-    @options get dataLoaded() {
-        return false;
-    }
+    @options dataLoaded = false;
     @options get projects() {
         return [];
     }

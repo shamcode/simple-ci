@@ -42,9 +42,11 @@ exports[`success login 2`] = `
   <!--ErrorsPanel-->
   <div class=\\"project-list\\">
     <!--for-->
-    <a class=\\"project-card project-card-create\\" href=\\"projects/create\\">
+    <a href=\\"projects/create\\" class=\\"project-card project-card-create\\">
       <div class=\\"create-icon\\"></div>
+      <!--default-->
     </a>
+    <!--LinkTo-->
   </div>
   <!--ProjectsList-->
   <!--if-->

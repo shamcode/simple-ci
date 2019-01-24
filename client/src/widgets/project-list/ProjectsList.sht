@@ -1,20 +1,18 @@
+{% import LinkTo from 'sham-ui-router/link-to' %}
+
 <div class="project-list">
     {% for project of projects %}
-        <a
-                class="project-card"
-                href={{this.detailPageUrlForProject(project.id)}}
-                :onclick={{this._clickToDetailProject.bind(this)}}
+        <LinkTo
+                className="project-card"
+                path="project-detail"
+                params={{this.paramsForDetailPage(project)}}
         >
             <span class="name">
                 {{project.name}}
             </span>
-        </a>
+        </LinkTo>
     {% endfor %}
-    <a
-            class="project-card project-card-create"
-            href="{{createProjectURL}}"
-            :onclick={{this._clickToCreateNewProject.bind(this)}}
-    >
+    <LinkTo className="project-card project-card-create" path="project-create">
         <div class="create-icon"></div>
-    </a>
+    </LinkTo>
 </div>

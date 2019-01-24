@@ -33,12 +33,12 @@
             chain={{chain}}
        />
     {% endfor %}
-    <a
-            class="project-chain project-chain-create"
-            href={{this._createProjectChainURL( project )}}
-            :onclick={{this._clickToCreateNewChain.bind(this)}}
+    <LinkTo
+        className="project-chain project-chain-create"
+        path="project-chain-create"
+        params={{this._routerParams( project )}}
     >
         <div class="create-icon"></div>
-    </a>
+    </LinkTo>
 </div>
 

@@ -47,9 +47,11 @@ Object {
 <div class=\\"project-chains\\">
   <h3>Chains</h3>
   <!--for-->
-  <a class=\\"project-chain project-chain-create\\" href=\\"/\\">
+  <a href=\\"/\\" class=\\"project-chain project-chain-create\\">
     <div class=\\"create-icon\\"></div>
+    <!--default-->
   </a>
+  <!--LinkTo-->
 </div>
 ",
 }

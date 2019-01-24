@@ -10,23 +10,11 @@ function validateValue( value ) {
 }
 
 export default class ProjectForm extends ChainFormTemplate {
-    @options get name() {
-        return '';
-    }
-    @options get command() {
-        return '';
-    }
-    @options get saveButtonText() {
-        return '';
-    }
-    @options get dataSaving() {
-        return false;
-    }
+    @options name = '';
+    @options command = '';
+    @options saveButtonText = '';
+    @options dataSaving = false;
     @options onSubmit() {}
-
-    get formNode() {
-        return this.querySelector( 'form' );
-    }
 
     _submitForm( e ) {
         e.preventDefault();

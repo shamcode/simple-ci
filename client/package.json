@@ -2,7 +2,7 @@
   "name": "client",
   "description": "Client fo simple-ci",
   "author": "Eugeny Burnashov <shamcode@gmail.com>",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "start": "node server.js",
     "test:coverage": "jest --coverage",
@@ -46,7 +46,7 @@
     "axios": "^0.18.0",
     "codeflask": "^1.2.1",
     "sham-ui": "^2.0.5",
-    "sham-ui-router": "2.0.0"
+    "sham-ui-router": "2.0.1"
   },
   "babel": {
     "presets": [

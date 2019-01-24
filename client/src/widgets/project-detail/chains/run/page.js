@@ -4,17 +4,13 @@ import ChainRunPageTemplate from './page.sht';
 
 export default class ChainRunPage extends LoadChainMixin( ChainRunPageTemplate ) {
     /** @type Socket */
-    @inject socket = 'socket';
+    @inject socket;
 
-    @options get dataSaving() {
-        return false;
-    }
+    @options dataSaving = false;
     @options get errors() {
         return [];
     }
-    @options get commandOutput() {
-        return '';
-    }
+    @options commandOutput = '';
 
     runProjectChain() {
         this.update( {

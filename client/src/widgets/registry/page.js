@@ -2,22 +2,14 @@ import { inject, options } from 'sham-ui';
 import RegistryPageTemplate from './page.sht';
 
 export default class RegistryPage extends RegistryPageTemplate {
-    @inject store = 'store';
-    @inject router = 'router';
+    @inject store;
+    @inject router;
 
     @options get errors() {
         return [];
     }
-    @options get dataSaving() {
-        return false;
-    }
-    @options get password() {
-        return '';
-    }
-
-    get formNode() {
-        return this.container.querySelector( 'form' );
-    }
+    @options dataSaving = false;
+    @options password = '';
 
     _submitForm( e ) {
         e.preventDefault();

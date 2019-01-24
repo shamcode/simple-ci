@@ -122,9 +122,11 @@ exports[`update project 3`] = `
     <!--if-->
     <!--Chain-->
     <!--for-->
-    <a class=\\"project-chain project-chain-create\\" href=\\"projects/1/chains/create\\">
+    <a href=\\"projects/1/chains/create\\" class=\\"project-chain project-chain-create\\">
       <div class=\\"create-icon\\"></div>
+      <!--default-->
     </a>
+    <!--LinkTo-->
   </div>
   <!--Info-->
   <!--if-->

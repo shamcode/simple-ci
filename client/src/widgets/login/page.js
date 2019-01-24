@@ -7,20 +7,12 @@ export default class LoginPage extends LoginPageTemplate {
     @options get errors() {
         return [];
     }
-    @options get dataSaving() {
-        return false;
-    }
-    @options get password() {
-        return '';
-    }
-
-    get formNode() {
-        return this.container.querySelector( 'form' );
-    }
+    @options dataSaving = false;
+    @options password = '';
 
     _submitForm( e ) {
         e.preventDefault();
-        const formData = new FormData( this.formNode );
+        const formData = new FormData( this.form );
         this.update( {
             dataSaving: true,
             errors: []

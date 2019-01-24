@@ -8,9 +8,7 @@ export default class ProjectCreatePage extends ProjectCreatePageTemplate {
     @options get errors() {
         return [];
     }
-    @options get dataSaving() {
-        return false;
-    }
+    @options dataSaving = false;
 
     createProject( data ) {
         this.update( {

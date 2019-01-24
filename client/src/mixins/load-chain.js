@@ -4,9 +4,7 @@ export default ( superclass ) => class extends superclass {
     @inject store;
     @inject router;
 
-    @options get dataLoaded() {
-        return false;
-    }
+    @options dataLoaded = false;
     @options get chain() {
         return {};
     }

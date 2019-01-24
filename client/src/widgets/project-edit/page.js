@@ -3,9 +3,7 @@ import LoadProjectMixin from '../../mixins/load-project';
 import ProjectEditPageTemplate from './page.sht';
 
 export default class ProjectEditPage extends LoadProjectMixin( ProjectEditPageTemplate ) {
-    @options get dataSaving() {
-        return false;
-    }
+    @options dataSaving = false;
 
     updateProject( data ) {
         this.update( {

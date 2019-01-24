@@ -5,8 +5,6 @@ export default class ChainInfo extends ChainInfoTemplate {
     @options get chain() {
         return {};
     }
-    @options get dataSaving() {
-        return false;
-    }
+    @options dataSaving = false;
     @options updateProjectChain() {}
 }

@@ -9,9 +9,7 @@ export default class ChainCreatePage extends LoadProjectMixin( ChainCreatePageTe
     @options get errors() {
         return [];
     }
-    @options get dataSaving() {
-        return false;
-    }
+    @options dataSaving = false;
 
     createProjectChain( formData ) {
         this.update( {
