@@ -10,6 +10,7 @@ export default class ProjectCreatePage extends ProjectCreatePageTemplate {
     }
     @options dataSaving = false;
 
+    @options
     createProject( data ) {
         this.update( {
             dataSaving: true,

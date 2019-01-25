@@ -5,6 +5,7 @@ import ProjectEditPageTemplate from './page.sht';
 export default class ProjectEditPage extends LoadProjectMixin( ProjectEditPageTemplate ) {
     @options dataSaving = false;
 
+    @options
     updateProject( data ) {
         this.update( {
             dataSaving: true,

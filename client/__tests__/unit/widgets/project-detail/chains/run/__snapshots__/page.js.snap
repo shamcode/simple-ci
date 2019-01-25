@@ -24,6 +24,7 @@ Object {
     },
     "errors": Array [],
     "project": Object {},
+    "runProjectChain": [Function],
     "types": Array [],
   },
   "html": "
@@ -38,9 +39,11 @@ Object {
   <li></li>
 </ul>
 <!--BreadCrumb-->
+<!--breadcrumbs-->
 <!--if-->
 <!--FlushPageDataLoading-->
 <!--if-->
+<!--PageContent-->
 ",
 }
 `;

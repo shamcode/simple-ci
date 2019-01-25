@@ -8,6 +8,7 @@ export default class ChainDetailPage extends LoadChainMixin( ChainDetailPageTemp
         return [];
     }
 
+    @options
     updateProjectChain( formData ) {
         this.update( {
             dataSaving: true,

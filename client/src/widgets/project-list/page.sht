@@ -1,10 +1,10 @@
+{% import PageContent from '../PageContent.sht' %}
 {% import ProjectsList from './ProjectsList' %}
-{% import FlushPageDataLoading from '../FlushPageDataLoading' %}
 {% import ErrorsPanel from '../ErrorsPanel.sht' %}
 
-{% if dataLoaded %}
-    <ErrorsPanel errors="{{errors}}"/>
-    <ProjectsList projects={{projects}}/>
-{% else %}
-    <FlushPageDataLoading/>
-{% endif %}
+<PageContent dataLoaded={{dataLoaded}}>
+    {% block 'content' %}
+        <ErrorsPanel errors={{errors}}/>
+        <ProjectsList projects={{projects}}/>
+    {% endblock %}
+</PageContent>

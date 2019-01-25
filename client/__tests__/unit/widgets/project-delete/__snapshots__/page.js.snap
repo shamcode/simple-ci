@@ -5,9 +5,12 @@ Object {
   "Constructor": "ProjectDeletePage",
   "Options": Object {
     "ID": "widget",
+    "bodyText": [Function],
+    "cancelDeleteProject": [Function],
     "containerSelector": "body",
     "dataLoaded": true,
     "dataSaving": true,
+    "deleteProject": [Function],
     "directives": Object {
       "EventListener": [Function],
       "disabled": [Function],
@@ -45,6 +48,7 @@ Object {
   <li>Delete</li>
 </ul>
 <!--BreadCrumb-->
+<!--breadcrumbs-->
 <!--if-->
 <!--ErrorsPanel-->
 <div class=\\"modal\\">
@@ -59,7 +63,9 @@ Object {
 </div>
 <!--ConfirmModal-->
 <!--if-->
+<!--content-->
 <!--if-->
+<!--PageContent-->
 ",
 }
 `;
@@ -69,9 +75,12 @@ Object {
   "Constructor": "ProjectDeletePage",
   "Options": Object {
     "ID": "widget",
+    "bodyText": [Function],
+    "cancelDeleteProject": [Function],
     "containerSelector": "body",
     "dataLoaded": true,
     "dataSaving": false,
+    "deleteProject": [Function],
     "directives": Object {
       "EventListener": [Function],
       "disabled": [Function],
@@ -104,13 +113,16 @@ Object {
   <li></li>
 </ul>
 <!--BreadCrumb-->
+<!--breadcrumbs-->
 <ul class=\\"errors-panel\\">
   <li>Load project fail!</li>
 </ul>
 <!--if-->
 <!--ErrorsPanel-->
 <!--if-->
+<!--content-->
 <!--if-->
+<!--PageContent-->
 ",
 }
 `;
@@ -120,9 +132,12 @@ Object {
   "Constructor": "ProjectDeletePage",
   "Options": Object {
     "ID": "widget",
+    "bodyText": [Function],
+    "cancelDeleteProject": [Function],
     "containerSelector": "body",
     "dataLoaded": false,
     "dataSaving": false,
+    "deleteProject": [Function],
     "directives": Object {
       "EventListener": [Function],
       "disabled": [Function],
@@ -151,9 +166,11 @@ Object {
   <li></li>
 </ul>
 <!--BreadCrumb-->
+<!--breadcrumbs-->
 <!--if-->
 <!--FlushPageDataLoading-->
 <!--if-->
+<!--PageContent-->
 ",
 }
 `;

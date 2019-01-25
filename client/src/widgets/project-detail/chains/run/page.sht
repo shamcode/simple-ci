@@ -1,23 +1,24 @@
-{% import FlushPageDataLoading from '../../../FlushPageDataLoading' %}
+{% import PageContent from '../../../PageContent.sht' %}
 {% import ErrorsPanel from '../../../ErrorsPanel.sht' %}
 {% import BreadCrumb from '../../../BreadCrumb' %}
 {% import CommandOutput from './CommandOutput.sht' %}
 
-<BreadCrumb
-        project={{project}}
-        chain={{chain}}
-        currentPage="Run chain"/>
-
-{% if dataLoaded %}
-    <ErrorsPanel errors={{errors}}/>
-    <button
-        class="run-project-chain"
-        :onclick={{this.runProjectChain.bind( this )}}
-        :disabled={{dataSaving}}
-    >
-        <span>Run</span>
-    </button>
-    <CommandOutput output={{commandOutput}}/>
-{% else %}
-    <FlushPageDataLoading/>
-{% endif %}
+<PageContent dataLoaded={{dataLoaded}}>
+    {% block 'breadcrumbs' %}
+        <BreadCrumb
+            project={{project}}
+            chain={{chain}}
+            currentPage="Run chain"/>
+    {% endblock %}
+    {% block 'content' %}
+        <ErrorsPanel errors={{errors}}/>
+        <button
+            class="run-project-chain"
+            :onclick={{runProjectChain}}
+            :disabled={{dataSaving}}
+        >
+            <span>Run</span>
+        </button>
+        <CommandOutput output={{commandOutput}}/>
+    {% endblock %}
+</PageContent>

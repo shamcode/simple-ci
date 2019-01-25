@@ -19,9 +19,11 @@ exports[`delete project 1`] = `
     <li></li>
   </ul>
   <!--BreadCrumb-->
+  <!--breadcrumbs-->
   <!--if-->
   <!--FlushPageDataLoading-->
   <!--if-->
+  <!--PageContent-->
 </main>
 <footer> Sham 2018 </footer>
 <!--Footer-->"
@@ -51,6 +53,7 @@ exports[`delete project 2`] = `
     <li>Delete</li>
   </ul>
   <!--BreadCrumb-->
+  <!--breadcrumbs-->
   <!--if-->
   <!--ErrorsPanel-->
   <div class=\\"modal\\">
@@ -65,7 +68,9 @@ exports[`delete project 2`] = `
   </div>
   <!--ConfirmModal-->
   <!--if-->
+  <!--content-->
   <!--if-->
+  <!--PageContent-->
 </main>
 <footer> Sham 2018 </footer>
 <!--Footer-->"
@@ -79,6 +84,7 @@ exports[`delete project 3`] = `
 </header>
 <!--Header-->
 <main>
+  <!--breadcrumbs-->
   <!--if-->
   <!--ErrorsPanel-->
   <div class=\\"project-list\\">
@@ -94,7 +100,9 @@ exports[`delete project 3`] = `
     <!--LinkTo-->
   </div>
   <!--ProjectsList-->
+  <!--content-->
   <!--if-->
+  <!--PageContent-->
 </main>
 <footer> Sham 2018 </footer>
 <!--Footer-->"

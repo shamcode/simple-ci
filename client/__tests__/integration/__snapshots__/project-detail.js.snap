@@ -19,9 +19,11 @@ exports[`project-detail page 1`] = `
     <li></li>
   </ul>
   <!--BreadCrumb-->
+  <!--breadcrumbs-->
   <!--if-->
   <!--FlushPageDataLoading-->
   <!--if-->
+  <!--PageContent-->
 </main>
 <footer> Sham 2018 </footer>
 <!--Footer-->"
@@ -46,6 +48,7 @@ exports[`project-detail page 2`] = `
     <li>Test</li>
   </ul>
   <!--BreadCrumb-->
+  <!--breadcrumbs-->
   <!--if-->
   <!--ErrorsPanel-->
   <div class=\\"project-info\\">
@@ -84,7 +87,9 @@ exports[`project-detail page 2`] = `
     <!--LinkTo-->
   </div>
   <!--Info-->
+  <!--content-->
   <!--if-->
+  <!--PageContent-->
 </main>
 <footer> Sham 2018 </footer>
 <!--Footer-->"

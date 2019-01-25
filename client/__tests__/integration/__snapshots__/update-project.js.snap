@@ -19,9 +19,11 @@ exports[`update project 1`] = `
     <li></li>
   </ul>
   <!--BreadCrumb-->
+  <!--breadcrumbs-->
   <!--if-->
   <!--FlushPageDataLoading-->
   <!--if-->
+  <!--PageContent-->
 </main>
 <footer> Sham 2018 </footer>
 <!--Footer-->"
@@ -51,6 +53,7 @@ exports[`update project 2`] = `
     <li>Edit</li>
   </ul>
   <!--BreadCrumb-->
+  <!--breadcrumbs-->
   <!--if-->
   <!--ErrorsPanel-->
   <div class=\\"project-create-form\\">
@@ -69,7 +72,9 @@ exports[`update project 2`] = `
     </form>
   </div>
   <!--ProjectForm-->
+  <!--content-->
   <!--if-->
+  <!--PageContent-->
 </main>
 <footer> Sham 2018 </footer>
 <!--Footer-->"
@@ -94,6 +99,7 @@ exports[`update project 3`] = `
     <li>Test</li>
   </ul>
   <!--BreadCrumb-->
+  <!--breadcrumbs-->
   <!--if-->
   <!--ErrorsPanel-->
   <div class=\\"project-info\\">
@@ -129,7 +135,9 @@ exports[`update project 3`] = `
     <!--LinkTo-->
   </div>
   <!--Info-->
+  <!--content-->
   <!--if-->
+  <!--PageContent-->
 </main>
 <footer> Sham 2018 </footer>
 <!--Footer-->"

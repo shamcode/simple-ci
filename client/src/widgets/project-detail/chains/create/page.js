@@ -11,6 +11,7 @@ export default class ChainCreatePage extends LoadProjectMixin( ChainCreatePageTe
     }
     @options dataSaving = false;
 
+    @options
     createProjectChain( formData ) {
         this.update( {
             dataSaving: true,

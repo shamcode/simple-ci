@@ -7,7 +7,7 @@ export default class Store {
     constructor() {
         DI.bind( 'store', this );
         this.axios = axios.create( {
-            baseURL: `${document.location.protocol}//localhost:3001/api/v1/`
+            baseURL: `${document.location.protocol}//${document.location.host}/api/v1/`
         } );
         this.axios.interceptors.request.use(
             ::this._requestAuthInterceptor

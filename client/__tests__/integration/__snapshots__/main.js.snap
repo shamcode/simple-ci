@@ -8,9 +8,11 @@ exports[`main page 1`] = `
 </header>
 <!--Header-->
 <main>
+  <!--breadcrumbs-->
   <!--if-->
   <!--FlushPageDataLoading-->
   <!--if-->
+  <!--PageContent-->
 </main>
 <footer> Sham 2018 </footer>
 <!--Footer-->"
@@ -24,6 +26,7 @@ exports[`main page 2`] = `
 </header>
 <!--Header-->
 <main>
+  <!--breadcrumbs-->
   <!--if-->
   <!--ErrorsPanel-->
   <div class=\\"project-list\\">
@@ -43,7 +46,9 @@ exports[`main page 2`] = `
     <!--LinkTo-->
   </div>
   <!--ProjectsList-->
+  <!--content-->
   <!--if-->
+  <!--PageContent-->
 </main>
 <footer> Sham 2018 </footer>
 <!--Footer-->"

@@ -23,6 +23,7 @@ Object {
     "errors": Array [],
     "project": Object {},
     "types": Array [],
+    "updateProject": [Function],
   },
   "html": "
 <ul class=\\"breadcrumb\\">
@@ -36,9 +37,11 @@ Object {
   <li></li>
 </ul>
 <!--BreadCrumb-->
+<!--breadcrumbs-->
 <!--if-->
 <!--FlushPageDataLoading-->
 <!--if-->
+<!--PageContent-->
 ",
 }
 `;
@@ -70,6 +73,7 @@ Object {
       "name": "Test",
     },
     "types": Array [],
+    "updateProject": [Function],
   },
   "html": "
 <ul class=\\"breadcrumb\\">
@@ -88,6 +92,7 @@ Object {
   <li>Edit</li>
 </ul>
 <!--BreadCrumb-->
+<!--breadcrumbs-->
 <!--if-->
 <!--ErrorsPanel-->
 <div class=\\"project-create-form\\">
@@ -106,7 +111,9 @@ Object {
   </form>
 </div>
 <!--ProjectForm-->
+<!--content-->
 <!--if-->
+<!--PageContent-->
 ",
 }
 `;
@@ -140,6 +147,7 @@ Object {
       "name": "Test",
     },
     "types": Array [],
+    "updateProject": [Function],
   },
   "html": "
 <ul class=\\"breadcrumb\\">
@@ -158,6 +166,7 @@ Object {
   <li>Edit</li>
 </ul>
 <!--BreadCrumb-->
+<!--breadcrumbs-->
 <ul class=\\"errors-panel\\">
   <li>Update project fail!</li>
 </ul>
@@ -179,7 +188,9 @@ Object {
   </form>
 </div>
 <!--ProjectForm-->
+<!--content-->
 <!--if-->
+<!--PageContent-->
 ",
 }
 `;

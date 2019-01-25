@@ -1,21 +1,22 @@
-{% import FlushPageDataLoading from '../../../FlushPageDataLoading' %}
+{% import PageContent from '../../../PageContent.sht' %}
 {% import ErrorsPanel from '../../../ErrorsPanel.sht' %}
 {% import Info from './Info' %}
 {% import BreadCrumb from '../../../BreadCrumb' %}
 
-<BreadCrumb
-        project={{project}}
-        currentPage={{chain.name}}/>
-
-{% if dataLoaded %}
-    <ErrorsPanel errors={{errors}}/>
-    {% if errors.length === 0 %}
-        <Info
-                chain={{chain}}
-                dataSaving={{dataSaving}}
-                updateProjectChain={{this.updateProjectChain.bind( this )}}
-        />
-    {% endif %}
-{% else %}
-    <FlushPageDataLoading/>
-{% endif %}
+<PageContent dataLoaded={{dataLoaded}}>
+    {% block 'breadcrumbs' %}
+        <BreadCrumb
+            project={{project}}
+            currentPage={{chain.name}}/>
+    {% endblock %}
+    {% block 'content' %}
+        <ErrorsPanel errors={{errors}}/>
+        {% if errors.length === 0 %}
+            <Info
+                    chain={{chain}}
+                    dataSaving={{dataSaving}}
+                    updateProjectChain={{updateProjectChain}}
+            />
+        {% endif %}
+    {% endblock %}
+</PageContent>

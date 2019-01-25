@@ -8,9 +8,6 @@ Object {
     "containerSelector": "body",
     "types": Array [],
   },
-  "html": "
-<!--BreadCrumb-->
-<!--if-->
-",
+  "html": "<!--PageContent-->",
 }
 `;

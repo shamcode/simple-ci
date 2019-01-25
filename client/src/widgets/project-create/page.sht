@@ -1,13 +1,18 @@
+{% import PageContent from '../PageContent.sht' %}
 {% import ErrorsPanel from '../ErrorsPanel.sht' %}
 {% import ProjectForm from '../ProjectForm' %}
 {% import BreadCrumb from '../BreadCrumb' %}
 
-<BreadCrumb currentPage="Create project"/>
-
-<ErrorsPanel errors={{errors}}/>
-
-<ProjectForm
-        saveButtonText="Create"
-        dataSaving={{dataSaving}}
-        onSubmit={{this.createProject.bind( this )}}
-/>
+<PageContent dataLoaded={{true}}>
+    {% block 'breadcrumbs' %}
+        <BreadCrumb currentPage="Create project"/>
+    {% endblock %}
+    {% block 'content' %}
+        <ErrorsPanel errors={{errors}}/>
+        <ProjectForm
+                saveButtonText="Create"
+                dataSaving={{dataSaving}}
+                onSubmit={{createProject}}
+        />
+    {% endblock %}
+</PageContent>

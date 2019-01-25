@@ -24,9 +24,11 @@ Object {
     "types": Array [],
   },
   "html": "
+<!--breadcrumbs-->
 <!--if-->
 <!--FlushPageDataLoading-->
 <!--if-->
+<!--PageContent-->
 ",
 }
 `;
@@ -55,9 +57,11 @@ Object {
     "types": Array [],
   },
   "html": "
+<!--breadcrumbs-->
 <!--if-->
 <!--FlushPageDataLoading-->
 <!--if-->
+<!--PageContent-->
 ",
 }
 `;

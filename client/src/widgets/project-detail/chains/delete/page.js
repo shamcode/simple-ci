@@ -5,7 +5,7 @@ import ChainDeletePageTemplate from './page.sht';
 export default class ChainDeletePage extends LoadChainMixin( ChainDeletePageTemplate ) {
     @options dataSaving = false;
 
-    bodyText( chain ) {
+    @options bodyText( chain ) {
         return `Do you want delete chain "${chain.name}"?`;
     }
 
@@ -13,6 +13,7 @@ export default class ChainDeletePage extends LoadChainMixin( ChainDeletePageTemp
         return this.router.generate( 'project-detail', { id: this.projectId } );
     }
 
+    @options
     deleteChain() {
         this.update( {
             dataSaving: true,
@@ -32,6 +33,7 @@ export default class ChainDeletePage extends LoadChainMixin( ChainDeletePageTemp
         this.router.navigate( this.projectDetailURL );
     }
 
+    @options
     cancelDeleteChain() {
         this.router.navigate( this.projectDetailURL );
     }

@@ -24,6 +24,7 @@ exports[`fail update project chain 1`] = `
     <li>Test chain</li>
   </ul>
   <!--BreadCrumb-->
+  <!--breadcrumbs-->
   <!--if-->
   <!--ErrorsPanel-->
   <div class=\\"chain-info\\">
@@ -54,7 +55,9 @@ exports[`fail update project chain 1`] = `
   <!--ChainForm-->
   <!--Info-->
   <!--if-->
+  <!--content-->
   <!--if-->
+  <!--PageContent-->
 </main>
 <footer> Sham 2018 </footer>
 <!--Footer-->"
@@ -84,13 +87,16 @@ exports[`fail update project chain 2`] = `
     <li>Test chain</li>
   </ul>
   <!--BreadCrumb-->
+  <!--breadcrumbs-->
   <ul class=\\"errors-panel\\">
     <li>Update project chain fail!</li>
   </ul>
   <!--if-->
   <!--ErrorsPanel-->
   <!--if-->
+  <!--content-->
   <!--if-->
+  <!--PageContent-->
 </main>
 <footer> Sham 2018 </footer>
 <!--Footer-->"

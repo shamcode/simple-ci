@@ -1,23 +1,24 @@
-{% import FlushPageDataLoading from '../FlushPageDataLoading' %}
+{% import PageContent from '../PageContent.sht' %}
 {% import ErrorsPanel from '../ErrorsPanel.sht' %}
 {% import ConfirmModal from '../ConfirmModal' %}
 {% import BreadCrumb from '../BreadCrumb' %}
 
-<BreadCrumb
-        project={{project}}
-        currentPage="Delete"/>
-
-{% if dataLoaded %}
-    <ErrorsPanel errors={{errors}}/>
-    {% if errors.length === 0 %}
-        <ConfirmModal
-                title="Delete project"
-                body={{this.bodyText( project )}}
-                dataSaving={{dataSaving}}
-                onOk={{this.deleteProject.bind( this )}}
-                onCancel={{this.cancelDeleteProject.bind( this )}}
-        />
-    {% endif %}
-{% else %}
-    <FlushPageDataLoading/>
-{% endif %}
+<PageContent dataLoaded={{dataLoaded}}>
+    {% block 'breadcrumbs' %}
+        <BreadCrumb
+            project={{project}}
+            currentPage="Delete"/>
+    {% endblock %}
+    {% block 'content' %}
+        <ErrorsPanel errors={{errors}}/>
+        {% if errors.length === 0 %}
+            <ConfirmModal
+                    title="Delete project"
+                    body={{bodyText( project )}}
+                    dataSaving={{dataSaving}}
+                    onOk={{deleteProject}}
+                    onCancel={{cancelDeleteProject}}
+            />
+        {% endif %}
+    {% endblock %}
+</PageContent>

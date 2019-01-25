@@ -5,10 +5,12 @@ import ProjectDeletePageTemplate from './page.sht';
 export default class ProjectDeletePage extends LoadProjectMixin( ProjectDeletePageTemplate ) {
     @options dataSaving = false;
 
+    @options
     bodyText( project ) {
         return `Do you want delete project "${project.name}"?`;
     }
 
+    @options
     deleteProject() {
         this.update( {
             dataSaving: true,
@@ -32,6 +34,7 @@ export default class ProjectDeletePage extends LoadProjectMixin( ProjectDeletePa
         );
     }
 
+    @options
     cancelDeleteProject() {
         this.router.navigate(
             this.router.generate( 'project-detail', this._routerParams )

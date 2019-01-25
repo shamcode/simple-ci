@@ -12,6 +12,7 @@ export default class ChainRunPage extends LoadChainMixin( ChainRunPageTemplate )
     }
     @options commandOutput = '';
 
+    @options
     runProjectChain() {
         this.update( {
             commandOutput: '',

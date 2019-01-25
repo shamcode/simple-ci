@@ -29,11 +29,14 @@ exports[`run project chain 1`] = `
     <li>Run chain</li>
   </ul>
   <!--BreadCrumb-->
+  <!--breadcrumbs-->
   <!--if-->
   <!--ErrorsPanel-->
-  <button class=\\"run-project-chain\\"><span>Run</span></button><pre class=\\"command-output\\"></pre>
+  <button class=\\"run-project-chain\\"><span>Run</span></button> <pre class=\\"command-output\\"></pre>
   <!--CommandOutput-->
+  <!--content-->
   <!--if-->
+  <!--PageContent-->
 </main>
 <footer> Sham 2018 </footer>
 <!--Footer-->"
@@ -68,11 +71,14 @@ exports[`run project chain 2`] = `
     <li>Run chain</li>
   </ul>
   <!--BreadCrumb-->
+  <!--breadcrumbs-->
   <!--if-->
   <!--ErrorsPanel-->
-  <button class=\\"run-project-chain\\"><span>Run</span></button><pre class=\\"command-output\\"></pre>
+  <button class=\\"run-project-chain\\"><span>Run</span></button> <pre class=\\"command-output\\"></pre>
   <!--CommandOutput-->
+  <!--content-->
   <!--if-->
+  <!--PageContent-->
 </main>
 <footer> Sham 2018 </footer>
 <!--Footer-->"

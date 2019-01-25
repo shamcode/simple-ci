@@ -29,6 +29,7 @@ exports[`delete project chain 1`] = `
     <li>Delete</li>
   </ul>
   <!--BreadCrumb-->
+  <!--breadcrumbs-->
   <!--if-->
   <!--ErrorsPanel-->
   <div class=\\"modal\\">
@@ -43,7 +44,9 @@ exports[`delete project chain 1`] = `
   </div>
   <!--ConfirmModal-->
   <!--if-->
+  <!--content-->
   <!--if-->
+  <!--PageContent-->
 </main>
 <footer> Sham 2018 </footer>
 <!--Footer-->"
@@ -68,6 +71,7 @@ exports[`delete project chain 2`] = `
     <li>Test</li>
   </ul>
   <!--BreadCrumb-->
+  <!--breadcrumbs-->
   <!--if-->
   <!--ErrorsPanel-->
   <div class=\\"project-info\\">
@@ -103,7 +107,9 @@ exports[`delete project chain 2`] = `
     <!--LinkTo-->
   </div>
   <!--Info-->
+  <!--content-->
   <!--if-->
+  <!--PageContent-->
 </main>
 <footer> Sham 2018 </footer>
 <!--Footer-->"

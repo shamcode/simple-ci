@@ -35,9 +35,11 @@ Object {
   <li></li>
 </ul>
 <!--BreadCrumb-->
+<!--breadcrumbs-->
 <!--if-->
 <!--FlushPageDataLoading-->
 <!--if-->
+<!--PageContent-->
 ",
 }
 `;
@@ -77,9 +79,11 @@ Object {
   <li></li>
 </ul>
 <!--BreadCrumb-->
+<!--breadcrumbs-->
 <!--if-->
 <!--FlushPageDataLoading-->
 <!--if-->
+<!--PageContent-->
 ",
 }
 `;

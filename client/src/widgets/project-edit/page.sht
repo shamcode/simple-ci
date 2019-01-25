@@ -1,21 +1,22 @@
-{% import FlushPageDataLoading from '../FlushPageDataLoading' %}
+{% import PageContent from '../PageContent.sht' %}
 {% import ErrorsPanel from '../ErrorsPanel.sht' %}
 {% import ProjectForm from '../ProjectForm' %}
 {% import BreadCrumb from '../BreadCrumb' %}
 
-<BreadCrumb
-        project={{project}}
-        currentPage="Edit"/>
-
-{% if dataLoaded %}
-    <ErrorsPanel errors={{errors}}/>
-    <ProjectForm
-            saveButtonText="Update"
-            name={{project.name}}
-            cwd={{project.cwd}}
-            dataSaving={{dataSaving}}
-            onSubmit={{this.updateProject.bind( this )}}
-    />
-{% else %}
-    <FlushPageDataLoading/>
-{% endif %}
+<PageContent dataLoaded={{dataLoaded}}>
+    {% block 'breadcrumbs' %}
+        <BreadCrumb
+            project={{project}}
+            currentPage="Edit"/>
+    {% endblock %}
+    {% block 'content' %}
+        <ErrorsPanel errors={{errors}}/>
+        <ProjectForm
+                saveButtonText="Update"
+                name={{project.name}}
+                cwd={{project.cwd}}
+                dataSaving={{dataSaving}}
+                onSubmit={{updateProject}}
+        />
+    {% endblock %}
+</PageContent>

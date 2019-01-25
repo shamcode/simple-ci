@@ -19,6 +19,7 @@ exports[`create project 1`] = `
     <li>Create project</li>
   </ul>
   <!--BreadCrumb-->
+  <!--breadcrumbs-->
   <!--if-->
   <!--ErrorsPanel-->
   <div class=\\"project-create-form\\">
@@ -37,6 +38,9 @@ exports[`create project 1`] = `
     </form>
   </div>
   <!--ProjectForm-->
+  <!--content-->
+  <!--if-->
+  <!--PageContent-->
 </main>
 <footer> Sham 2018 </footer>
 <!--Footer-->"
@@ -50,6 +54,7 @@ exports[`create project 2`] = `
 </header>
 <!--Header-->
 <main>
+  <!--breadcrumbs-->
   <!--if-->
   <!--ErrorsPanel-->
   <div class=\\"project-list\\">
@@ -65,7 +70,9 @@ exports[`create project 2`] = `
     <!--LinkTo-->
   </div>
   <!--ProjectsList-->
+  <!--content-->
   <!--if-->
+  <!--PageContent-->
 </main>
 <footer> Sham 2018 </footer>
 <!--Footer-->"

@@ -6,6 +6,7 @@ Object {
   "Options": Object {
     "ID": "widget",
     "containerSelector": "body",
+    "createProjectChain": [Function],
     "dataLoaded": true,
     "dataSaving": false,
     "directives": Object {
@@ -47,6 +48,7 @@ Object {
   <li>Create project chain</li>
 </ul>
 <!--BreadCrumb-->
+<!--breadcrumbs-->
 <ul class=\\"errors-panel\\">
   <li>Create project fail!</li>
 </ul>
@@ -75,7 +77,9 @@ Object {
   </form>
 </div>
 <!--ChainForm-->
+<!--content-->
 <!--if-->
+<!--PageContent-->
 ",
 }
 `;
@@ -86,6 +90,7 @@ Object {
   "Options": Object {
     "ID": "widget",
     "containerSelector": "body",
+    "createProjectChain": [Function],
     "dataLoaded": false,
     "dataSaving": false,
     "directives": Object {
@@ -116,9 +121,11 @@ Object {
   <li></li>
 </ul>
 <!--BreadCrumb-->
+<!--breadcrumbs-->
 <!--if-->
 <!--FlushPageDataLoading-->
 <!--if-->
+<!--PageContent-->
 ",
 }
 `;
