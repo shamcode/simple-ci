@@ -31,7 +31,7 @@
     "node-sass": "^4.9.3",
     "pretty": "^2.0.0",
     "sass-loader": "~7.1.0",
-    "sham-ui-directives": "^2.0.2",
+    "sham-ui-directives": "^2.0.4",
     "sham-ui-jest-preprocessor": "^2.0.7",
     "sham-ui-templates": "^2.0.7",
     "sham-ui-templates-loader": "^2.0.5",
