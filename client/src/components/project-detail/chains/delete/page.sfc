@@ -1,0 +1,69 @@
+<template>
+    {% import PageContent from '../../../PageContent.sht' %}
+    {% import ErrorsPanel from '../../../ErrorsPanel.sht' %}
+    {% import ConfirmModal from '../../../ConfirmModal.sfc' %}
+    {% import BreadCrumb from '../../../BreadCrumb.sfc' %}
+
+    <PageContent dataLoaded={{dataLoaded}}>
+        {% block 'breadcrumbs' %}
+            <BreadCrumb
+                project={{project}}
+                chain={{chain}}
+                currentPage="Delete"/>
+        {% endblock %}
+        {% block 'content' %}
+            <ErrorsPanel errors={{errors}}/>
+            {% if errors.length === 0 %}
+                <ConfirmModal
+                        title="Delete project chain"
+                        body={{bodyText( chain )}}
+                        dataSaving={{dataSaving}}
+                        onOk={{deleteChain}}
+                        onCancel={{cancelDeleteChain}}
+                />
+            {% endif %}
+        {% endblock %}
+    </PageContent>
+</template>
+
+<script>
+    import { options } from 'sham-ui';
+    import LoadChainMixin from '../../../../mixins/load-chain';
+
+    export default class ChainDeletePage extends LoadChainMixin( Template ) {
+        @options dataSaving = false;
+
+        @options bodyText( chain ) {
+            return `Do you want delete chain "${chain.name}"?`;
+        }
+
+        get projectDetailURL() {
+            return this.router.generate( 'project-detail', { id: this.projectId } );
+        }
+
+        @options
+        deleteChain() {
+            this.update( {
+                dataSaving: true,
+                errors: []
+            } );
+            this.store.deleteChain( this.chainId ).then(
+                ::this._deleteChainSuccess,
+                ::this._deleteChainFail
+            );
+        }
+
+        _deleteChainSuccess() {
+            this.router.navigate( this.projectDetailURL );
+        }
+
+        _deleteChainFail() {
+            this.router.navigate( this.projectDetailURL );
+        }
+
+        @options
+        cancelDeleteChain() {
+            this.router.navigate( this.projectDetailURL );
+        }
+    }
+</script>

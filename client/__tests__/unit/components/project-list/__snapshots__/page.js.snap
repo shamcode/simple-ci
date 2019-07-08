@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render errors 1`] = `
+Object {
+  "Constructor": "ProjectsPage",
+  "Options": Object {
+    "ID": "component",
+    "containerSelector": "body",
+    "dataLoaded": false,
+    "directives": Object {
+      "EventListener": [Function],
+      "disabled": [Function],
+      "hrefto": [Function],
+      "onclick": [Function],
+      "oninput": [Function],
+      "onload": [Function],
+      "onresize": [Function],
+      "onscroll": [Function],
+      "onselect": [Function],
+      "onsubmit": [Function],
+      "ref": [Function],
+    },
+    "errors": Array [],
+    "projects": Array [],
+    "types": Array [],
+  },
+  "html": "
+<!--breadcrumbs-->
+<!--if-->
+<!--FlushPageDataLoading-->
+<!--if-->
+<!--PageContent-->
+",
+}
+`;
+
+exports[`renders correctly 1`] = `
+Object {
+  "Constructor": "ProjectsPage",
+  "Options": Object {
+    "ID": "component",
+    "containerSelector": "body",
+    "dataLoaded": false,
+    "directives": Object {
+      "EventListener": [Function],
+      "disabled": [Function],
+      "hrefto": [Function],
+      "onclick": [Function],
+      "oninput": [Function],
+      "onload": [Function],
+      "onresize": [Function],
+      "onscroll": [Function],
+      "onselect": [Function],
+      "onsubmit": [Function],
+      "ref": [Function],
+    },
+    "errors": Array [],
+    "projects": Array [],
+    "types": Array [],
+  },
+  "html": "
+<!--breadcrumbs-->
+<!--if-->
+<!--FlushPageDataLoading-->
+<!--if-->
+<!--PageContent-->
+",
+}
+`;

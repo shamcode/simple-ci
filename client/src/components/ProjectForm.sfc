@@ -1,0 +1,64 @@
+<template>
+    <div class="project-create-form">
+        <form :onsubmit={{::this._submitForm}} :ref="formNode">
+            <div class="group">
+                <input name="name" type="text" required value={{name}}/>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Name</label>
+            </div>
+            <div class="group">
+                <input name="cwd" type="text" required value={{cwd}}/>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Current Work Directory</label>
+            </div>
+            <div class="group">
+                <button type="submit" :disabled={{dataSaving}} >
+                    <span>{{saveButtonText}}</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</template>
+
+<script>
+    import { options } from 'sham-ui';
+
+    function extractValue( value ) {
+        return value.trim();
+    }
+
+    function validateValue( value ) {
+        return value.length > 0;
+    }
+
+    export default class ProjectForm extends Template {
+        @options name = '';
+        @options cwd = '';
+        @options saveButtonText = '';
+        @options dataSaving = false;
+        @options onSubmit() {}
+
+        _submitForm( e ) {
+            e.preventDefault();
+            const formData = new FormData( this.formNode );
+            const data = {};
+            let dataValid = true;
+            [
+                'name',
+                'cwd'
+            ].forEach( ( key ) => {
+                const value = extractValue( formData.get( key ) );
+                dataValid = dataValid && validateValue( value );
+                if ( dataValid ) {
+                    data[ key ] = value;
+                }
+            } );
+            if ( dataValid ) {
+                this.options.onSubmit( data );
+            }
+        }
+    }
+
+</script>

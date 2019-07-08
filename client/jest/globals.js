@@ -12,3 +12,8 @@ Object.defineProperty( window, 'CSS', {
     },
     configurable: true
 } );
+
+Object.defineProperty( window, 'PRODUCTION', {
+    value: true,
+    configurable: true
+} );

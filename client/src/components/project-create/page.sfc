@@ -1,0 +1,59 @@
+<template>
+    {% import PageContent from '../PageContent.sht' %}
+    {% import ErrorsPanel from '../ErrorsPanel.sht' %}
+    {% import ProjectForm from '../ProjectForm.sfc' %}
+    {% import BreadCrumb from '../BreadCrumb.sfc' %}
+
+    <PageContent dataLoaded={{true}}>
+        {% block 'breadcrumbs' %}
+            <BreadCrumb currentPage="Create project"/>
+        {% endblock %}
+        {% block 'content' %}
+            <ErrorsPanel errors={{errors}}/>
+            <ProjectForm
+                    saveButtonText="Create"
+                    dataSaving={{dataSaving}}
+                    onSubmit={{createProject}}
+            />
+        {% endblock %}
+    </PageContent>
+</template>
+
+<script>
+    import { options, inject } from 'sham-ui';
+
+    export default class ProjectCreatePage extends Template {
+        @inject store = 'store';
+        @inject router = 'router';
+
+        @options get errors() {
+            return [];
+        }
+        @options dataSaving = false;
+
+        @options
+        createProject( data ) {
+            this.update( {
+                dataSaving: true,
+                errors: []
+            } );
+            this.store.createProject( data ).then(
+                ::this._createProjectSuccess,
+                ::this._createProjectFail
+            );
+        }
+
+        _createProjectSuccess() {
+            this.router.navigate(
+                this.router.generate( 'project-list', {} )
+            );
+        }
+
+        _createProjectFail() {
+            this.update( {
+                errors: [ 'Create project fail!' ],
+                dataSaving: false
+            } );
+        }
+    }
+</script>

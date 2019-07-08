@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+Object {
+  "Constructor": "ProjectForm",
+  "Options": Object {
+    "ID": "component",
+    "containerSelector": "body",
+    "cwd": "",
+    "dataSaving": false,
+    "directives": Object {
+      "EventListener": [Function],
+      "disabled": [Function],
+      "onclick": [Function],
+      "oninput": [Function],
+      "onload": [Function],
+      "onresize": [Function],
+      "onscroll": [Function],
+      "onselect": [Function],
+      "onsubmit": [Function],
+      "ref": [Function],
+    },
+    "name": "",
+    "onSubmit": [Function],
+    "saveButtonText": "",
+    "types": Array [],
+  },
+  "html": "
+<div class=\\"project-create-form\\">
+  <form>
+    <div class=\\"group\\">
+      <input name=\\"name\\" type=\\"text\\" required=\\"\\"><span class=\\"highlight\\"></span><span class=\\"bar\\"></span>
+      <label>Name</label>
+    </div>
+    <div class=\\"group\\">
+      <input name=\\"cwd\\" type=\\"text\\" required=\\"\\"><span class=\\"highlight\\"></span><span class=\\"bar\\"></span>
+      <label>Current Work Directory</label>
+    </div>
+    <div class=\\"group\\">
+      <button type=\\"submit\\"><span></span></button>
+    </div>
+  </form>
+</div>
+",
+}
+`;

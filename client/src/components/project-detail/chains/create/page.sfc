@@ -1,0 +1,70 @@
+<template>
+    {% import PageContent from '../../../PageContent.sht' %}
+    {% import ErrorsPanel from '../../../ErrorsPanel.sht' %}
+    {% import ChainForm from '../ChainForm.sfc' %}
+    {% import BreadCrumb from '../../../BreadCrumb.sfc' %}
+
+
+    <PageContent dataLoaded={{dataLoaded}}>
+        {% block 'breadcrumbs' %}
+            <BreadCrumb
+                project={{project}}
+                currentPage="Create project chain"/>
+        {% endblock %}
+        {% block 'content' %}
+            <ErrorsPanel errors={{errors}}/>
+            <ChainForm
+                    saveButtonText="Create"
+                    dataSaving={{dataSaving}}
+                    onSubmit={{createProjectChain}}
+            />
+        {% endblock %}
+    </PageContent>
+</template>
+
+<script>
+    import { options, inject } from 'sham-ui';
+    import LoadProjectMixin from '../../../../mixins/load-project';
+
+    export default class ChainCreatePage extends LoadProjectMixin( Template ) {
+        @inject store = 'store';
+        @inject router = 'router';
+
+        @options get errors() {
+            return [];
+        }
+        @options dataSaving = false;
+
+        @options
+        createProjectChain( formData ) {
+            this.update( {
+                dataSaving: true,
+                errors: []
+            } );
+            const data = {
+                ...formData,
+                projectId: this.options.project.id
+            };
+            this.store.createProjectChain( data ).then(
+                ::this._createProjectChainSuccess,
+                ::this._createProjectChainFail
+            );
+        }
+
+        _createProjectChainSuccess() {
+            this.router.navigate(
+                this.router.generate(
+                    'project-detail',
+                    { id: this.options.project.id }
+                )
+            );
+        }
+
+        _createProjectChainFail() {
+            this.update( {
+                errors: [ 'Create project fail!' ],
+                dataSaving: false
+            } );
+        }
+    }
+</script>

@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+Object {
+  "Constructor": "ProjectDeleteModal",
+  "Options": Object {
+    "ID": "component",
+    "body": "Body text",
+    "containerSelector": "body",
+    "dataSaving": false,
+    "directives": Object {
+      "EventListener": [Function],
+      "disabled": [Function],
+      "onclick": [Function],
+      "oninput": [Function],
+      "onload": [Function],
+      "onresize": [Function],
+      "onscroll": [Function],
+      "onselect": [Function],
+      "onsubmit": [Function],
+      "ref": [Function],
+    },
+    "onCancel": [Function],
+    "onOk": [Function],
+    "title": "Title text",
+    "types": Array [],
+  },
+  "html": "
+<div class=\\"modal\\">
+  <div class=\\"content\\">
+    <div class=\\"header\\">Title text</div>
+    <div class=\\"body\\">Body text</div>
+    <div class=\\"footer\\">
+      <button class=\\"ok danger\\"><span>Confirm</span></button>
+      <button class=\\"cancel\\"><span>Cancel</span></button>
+    </div>
+  </div>
+</div>
+",
+}
+`;

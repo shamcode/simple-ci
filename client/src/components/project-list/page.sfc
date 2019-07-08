@@ -1,0 +1,56 @@
+<template>
+    {% import PageContent from '../PageContent.sht' %}
+    {% import ProjectsList from './ProjectsList.sht' %}
+    {% import ErrorsPanel from '../ErrorsPanel.sht' %}
+
+    <PageContent dataLoaded={{dataLoaded}}>
+        {% block 'content' %}
+            <ErrorsPanel errors={{errors}}/>
+            <ProjectsList projects={{projects}}/>
+        {% endblock %}
+    </PageContent>
+</template>
+
+<script>
+    import { options, inject } from 'sham-ui';
+
+    export default class ProjectsPage extends Template {
+        @inject store;
+
+        @options dataLoaded = false;
+        @options get projects() {
+            return [];
+        }
+        @options get errors() {
+            return [];
+        }
+
+        render() {
+            super.render( ...arguments );
+            this._loadPageData();
+        }
+
+        _loadPageData() {
+            this.store.getProjects().then(
+                ::this._loadedPageDataSuccess,
+                ::this._loadedPageDataFail
+            );
+        }
+
+        _loadedPageDataSuccess( { projects } ) {
+            this.update( {
+                projects,
+                dataLoaded: true,
+                errors: []
+            } );
+        }
+
+        _loadedPageDataFail() {
+            this.update( {
+                projects: [],
+                dataLoaded: true,
+                errors: [ 'Fail loaded project!' ]
+            } );
+        }
+    }
+</script>

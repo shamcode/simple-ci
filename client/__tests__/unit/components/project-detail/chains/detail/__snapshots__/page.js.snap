@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+Object {
+  "Constructor": "ChainDetailPage",
+  "Options": Object {
+    "ID": "component",
+    "chain": Object {},
+    "containerSelector": "body",
+    "dataLoaded": false,
+    "dataSaving": false,
+    "directives": Object {
+      "hrefto": [Function],
+    },
+    "errors": Array [],
+    "project": Object {},
+    "types": Array [],
+    "updateProjectChain": [Function],
+  },
+  "html": "
+<ul class=\\"breadcrumb\\">
+  <li>
+    <a href=\\"/\\"> Projects </a>
+  </li>
+  <!--if-->
+  <li></li>
+</ul>
+<!--BreadCrumb-->
+<!--breadcrumbs-->
+<!--if-->
+<!--FlushPageDataLoading-->
+<!--if-->
+<!--PageContent-->
+",
+}
+`;

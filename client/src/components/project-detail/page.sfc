@@ -1,0 +1,24 @@
+<template>
+    {% import PageContent from '../PageContent.sht' %}
+    {% import ErrorsPanel from '../ErrorsPanel.sht' %}
+    {% import Info from './Info.sfc' %}
+    {% import BreadCrumb from '../BreadCrumb.sfc' %}
+
+    <PageContent dataLoaded={{dataLoaded}}>
+        {% block 'breadcrumbs' %}
+            <BreadCrumb currentPage={{project.name}}/>
+        {% endblock %}
+        {% block 'content' %}
+            <ErrorsPanel errors={{errors}}/>
+            <Info project={{project}}/>
+        {% endblock %}
+    </PageContent>
+</template>
+
+<script>
+    import LoadProjectMixin from '../../mixins/load-project';
+
+    export default class ProjectDetailPage extends LoadProjectMixin( Template ) {
+
+    }
+</script>

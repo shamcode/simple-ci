@@ -1,0 +1,32 @@
+<template>
+    {% import PageDataLoading from './PageDataLoading.sht' %}
+
+    {% if showLoader %}
+        <PageDataLoading/>
+    {% endif %}
+</template>
+
+<script>
+    import { options } from 'sham-ui';
+
+    export default class FlushPageDataLoading extends Template {
+        @options showLoader = false;
+        @options delay = 100;
+
+        render() {
+            super.render( ...arguments );
+            this._timeoutID = setTimeout( ::this._timeoutExpired, this.options.delay );
+        }
+
+        _timeoutExpired() {
+            this.update( {
+                showLoader: true
+            } );
+        }
+
+        remove() {
+            super.remove( ...arguments );
+            clearTimeout( this._timeoutID );
+        }
+    }
+</script>

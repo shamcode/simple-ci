@@ -1,0 +1,54 @@
+<template>
+    {% import path from 'sham-ui-router/params' %}
+    {% import Chain from './Chain.sfc' %}
+
+    <div class="project-info">
+        <h3>{{project.name}}</h3>
+        <dl>
+            <dt>{{project.cwd}}</dt>
+            <dd>Current work directory.</dd>
+            <dd>This directory will be used when running tasks.</dd>
+            <dt>
+                <a :hrefto={{path("project-edit").param("id", project.id)}}>
+                    Edit
+                </a>
+            </dt>
+            <dd>Edit project name & cwd</dd>
+            <dt>
+                <a
+                    class="project-delete-link"
+                    :hrefto={{path("project-delete").param("id", project.id)}}
+                >
+                    Delete
+                </a>
+            </dt>
+            <dd>Delete project</dd>
+        </dl>
+    </div>
+
+    <div class="project-chains">
+        <h3>Chains</h3>
+        {% for chain of project.chains %}
+           <Chain
+                project={{project}}
+                chain={{chain}}
+           />
+        {% endfor %}
+        <a
+            class="project-chain project-chain-create"
+            :hrefto={{path("project-chain-create").param("id", project.id)}}
+        >
+            <div class="create-icon"></div>
+        </a>
+    </div>
+</template>
+
+<script>
+    import { options } from 'sham-ui';
+
+    export default class Info extends Template {
+        @options get project() {
+            return { chains: [] };
+        }
+    }
+</script>

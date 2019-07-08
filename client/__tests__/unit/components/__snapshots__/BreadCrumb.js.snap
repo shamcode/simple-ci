@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+Object {
+  "Constructor": "BreadCrumb",
+  "Options": Object {
+    "ID": "component",
+    "chain": null,
+    "containerSelector": "body",
+    "currentPage": "",
+    "directives": Object {
+      "hrefto": [Function],
+    },
+    "project": null,
+    "types": Array [],
+  },
+  "html": "
+<ul class=\\"breadcrumb\\">
+  <li>
+    <a href=\\"/\\"> Projects </a>
+  </li>
+  <!--if-->
+  <li></li>
+</ul>
+",
+}
+`;

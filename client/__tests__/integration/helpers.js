@@ -1,10 +1,10 @@
 import ShamUI, { DI } from 'sham-ui';
 import pretty from 'pretty';
-import controller from '../../src/controllers/main';
+import initializer from '../../src/initializers/main';
 
 export const app = {
     async start( waitRendering = true ) {
-        DI.bind( 'widget-binder', controller );
+        DI.bind( 'component-binder', initializer );
         new ShamUI( true );
         if ( waitRendering ) {
             await this.waitRendering();
@@ -20,7 +20,9 @@ export const app = {
     },
     checkBody() {
         expect(
-            pretty( document.querySelector( 'body' ).innerHTML )
+            pretty( document.querySelector( 'body' ).innerHTML, {
+                inline: [ 'code', 'pre', 'em', 'strong', 'span' ]
+            } ),
         ).toMatchSnapshot();
     },
     project: {

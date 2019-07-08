@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+Object {
+  "Constructor": "Header",
+  "Options": Object {
+    "ID": "component",
+    "containerSelector": "body",
+    "directives": Object {
+      "hrefto": [Function],
+    },
+    "types": Array [],
+  },
+  "html": "
+<header>
+  <a class=\\"logo\\" href=\\"/\\"> Simple CI </a>
+</header>
+",
+}
+`;

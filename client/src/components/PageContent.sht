@@ -1,0 +1,9 @@
+{% import FlushPageDataLoading from './FlushPageDataLoading.sfc' %}
+
+{% defblock 'breadcrumbs' %}
+
+{% if dataLoaded %}
+    {% defblock 'content' %}
+{% else %}
+    <FlushPageDataLoading/>
+{% endif %}

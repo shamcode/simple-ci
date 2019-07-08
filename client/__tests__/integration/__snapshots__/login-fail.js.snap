@@ -2,9 +2,7 @@
 
 exports[`fail login (invalid header) 1`] = `
 "<header>
-  <a href=\\"\\" class=\\"logo\\">Simple CI
-    <!--default-->
-  </a>
+  <a class=\\"logo\\" href=\\"\\"> Simple CI </a>
 </header>
 <!--Header-->
 <main>
@@ -32,9 +30,7 @@ exports[`fail login (invalid header) 1`] = `
 
 exports[`fail login (invalid header) 2`] = `
 "<header>
-  <a href=\\"\\" class=\\"logo\\">Simple CI
-    <!--default-->
-  </a>
+  <a class=\\"logo\\" href=\\"\\"> Simple CI </a>
 </header>
 <!--Header-->
 <main>

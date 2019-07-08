@@ -1,0 +1,72 @@
+<template>
+    {% import ErrorsPanel from '../ErrorsPanel.sht' %}
+
+    <ErrorsPanel errors={{errors}}/>
+
+    <div class="registry-form">
+        <form :onsubmit={{::this._submitForm}} :ref="formNode">
+            <div class="group">
+                <input name="username" type="text" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Username</label>
+            </div>
+            <div class="group">
+                <input name="password" type="password" required value={{password}}/>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Password</label>
+            </div>
+            <div class="group">
+                <button type="submit" :disabled={{dataSaving}} >
+                    <span>Create</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</template>
+
+<script>
+    import { inject, options } from 'sham-ui';
+
+    export default class RegistryPage extends Template {
+        @inject store;
+        @inject router;
+
+        @options get errors() {
+            return [];
+        }
+        @options dataSaving = false;
+        @options password = '';
+
+        _submitForm( e ) {
+            e.preventDefault();
+            const formData = new FormData( this.formNode );
+            this.update( {
+                dataSaving: true,
+                errors: []
+            } );
+            this.store.registry(
+                formData.get( 'username' ).trim(),
+                formData.get( 'password' )
+            ).then(
+                ::this.registrySuccess,
+                ::this.registryFail
+            );
+        }
+
+        registrySuccess() {
+            this.router.navigate(
+                this.router.generate( 'login', {} )
+            );
+        }
+
+        registryFail() {
+            this.update( {
+                password: '',
+                dataSaving: false,
+                errors: [ 'Registry fail' ]
+            } );
+        }
+    }
+</script>

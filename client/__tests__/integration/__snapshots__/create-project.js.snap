@@ -2,19 +2,14 @@
 
 exports[`create project 1`] = `
 "<header>
-  <a href=\\"\\" class=\\"logo\\">Simple CI
-    <!--default-->
-  </a>
+  <a class=\\"logo\\" href=\\"\\"> Simple CI </a>
 </header>
 <!--Header-->
 <main>
   <ul class=\\"breadcrumb\\">
     <li>
-      <a href=\\"\\" class=\\"\\">Projects
-        <!--default-->
-      </a>
+      <a href=\\"\\"> Projects </a>
     </li>
-    <!--if-->
     <!--if-->
     <li>Create project</li>
   </ul>
@@ -48,9 +43,7 @@ exports[`create project 1`] = `
 
 exports[`create project 2`] = `
 "<header>
-  <a href=\\"\\" class=\\"logo\\">Simple CI
-    <!--default-->
-  </a>
+  <a class=\\"logo\\" href=\\"\\"> Simple CI </a>
 </header>
 <!--Header-->
 <main>
@@ -58,16 +51,11 @@ exports[`create project 2`] = `
   <!--if-->
   <!--ErrorsPanel-->
   <div class=\\"project-list\\">
-    <a href=\\"projects/1\\" class=\\"project-card\\"><span class=\\"name\\">Test</span>
-      <!--default-->
-    </a>
-    <!--LinkTo-->
+    <a class=\\"project-card\\" href=\\"projects/1\\"><span class=\\"name\\">Test</span></a>
     <!--for-->
-    <a href=\\"projects/create\\" class=\\"project-card project-card-create\\">
+    <a class=\\"project-card project-card-create\\" href=\\"projects/create\\">
       <div class=\\"create-icon\\"></div>
-      <!--default-->
     </a>
-    <!--LinkTo-->
   </div>
   <!--ProjectsList-->
   <!--content-->

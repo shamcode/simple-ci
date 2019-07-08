@@ -1,0 +1,57 @@
+<template>
+    {% import path from 'sham-ui-router/params' %}
+
+    <button
+            class="project-chain"
+            :onclick={{::this._toggleExpand}}
+    >
+        {{chain.name}}
+    </button>
+
+    {% if isExpand %}
+        <dl class="project-chain-actions">
+            <dt>
+                <a :hrefto={{path("project-chain-run").param("id", project.id).param("chainId", chain.id)}}>
+                    Run
+                </a>
+            </dt>
+            <dd>Execute chain</dd>
+            <dt>
+                <a :hrefto={{path("project-chain-detail").param("id", project.id).param("chainId", chain.id)}}>
+                    Edit
+                </a>
+            </dt>
+            <dd>Edit chain name & command</dd>
+            <dt>
+                <a
+                    :hrefto={{path("project-chain-delete").param("id", project.id).param("chainId", chain.id)}}
+                    class="chain-delete"
+                >
+                    Delete
+                </a>
+            </dt>
+            <dd>Delete chain</dd>
+        </dl>
+    {% endif %}
+</template>
+
+<script>
+    import { options } from 'sham-ui';
+
+    export default class Chain extends Template {
+        @options get chain() {
+            return {};
+        }
+        @options isExpand = false;
+        @options get project() {
+            return { chains: [] };
+        }
+
+        _toggleExpand( e ) {
+            e.preventDefault();
+            this.update( {
+                isExpand: !this.options.isExpand
+            } );
+        }
+    }
+</script>

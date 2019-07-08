@@ -1,0 +1,33 @@
+<template>
+    <textarea name={{name}} wrap="off" style="display: none">{{value}}</textarea>
+    <div class="code-flask" :ref="flaskContainer"></div>
+</template>
+
+<script>
+    import Flask from 'codeflask';
+    import { options } from 'sham-ui';
+
+    export default class CodeFlaskComponent extends Template {
+        @options name = '';
+        @options value = '';
+
+        render() {
+            super.render( ...arguments );
+            this.flask = new Flask( this.flaskContainer, {
+                lineNumbers: true
+            } );
+            this.flask.onUpdate( ( code ) => {
+                this.update( {
+                    value: code
+                } );
+            } );
+        }
+
+        update( data ) {
+            super.update( ...arguments );
+            if ( this.flask && data ) {
+                this.flask.updateCode( data.value );
+            }
+        }
+    }
+</script>

@@ -1,0 +1,64 @@
+<template>
+    {% import ErrorsPanel from '../ErrorsPanel.sht' %}
+
+    <ErrorsPanel errors={{errors}}/>
+
+    <div class="login-form">
+        <form :onsubmit={{::this._submitForm}} :ref="form">
+            <div class="group">
+                <input name="username" type="text" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Username</label>
+            </div>
+            <div class="group">
+                <input name="password" type="password" required value={{password}}/>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Password</label>
+            </div>
+            <div class="group">
+                <button type="submit" :disabled={{dataSaving}} >
+                    <span>Login</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</template>
+
+<script>
+    import { options, inject } from 'sham-ui';
+
+    export default class LoginPage extends Template {
+        @inject session = 'session';
+
+        @options get errors() {
+            return [];
+        }
+        @options dataSaving = false;
+        @options password = '';
+
+        _submitForm( e ) {
+            e.preventDefault();
+            const formData = new FormData( this.form );
+            this.update( {
+                dataSaving: true,
+                errors: []
+            } );
+            this.session.login(
+                formData.get( 'username' ).trim(),
+                formData.get( 'password' )
+            ).catch(
+                ::this.loginFail
+            );
+        }
+
+        loginFail() {
+            this.update( {
+                password: '',
+                dataSaving: false,
+                errors: [ 'Login fail' ]
+            } );
+        }
+    }
+</script>

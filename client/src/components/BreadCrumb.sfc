@@ -1,0 +1,45 @@
+<template>
+    {% import path from 'sham-ui-router/params' %}
+
+    <ul class="breadcrumb">
+        <li>
+            <a :hrefto={{path("project-list")}}>
+                Projects
+            </a>
+        </li>
+        {% if project && project.id %}
+            <li>
+                <a :hrefto={{path("project-detail").param("id", project.id)}}>
+                    {{project.name}}
+                </a>
+            </li>
+            {% if chain && chain.id %}
+                <li>
+                    <a :hrefto={{path("project-chain-detail").param("id", project.id).param("chainId", chain.id)}}>
+                        {{chain.name}}
+                    </a>
+                </li>
+            {% endif %}
+        {% endif %}
+        <li>
+            {% if this.dataReady( project, chain ) %}
+                {{currentPage}}
+            {% endif %}
+        </li>
+    </ul>
+</template>
+
+<script>
+    import { options } from 'sham-ui';
+
+    export default class BreadCrumb extends Template {
+        @options project = null;
+        @options chain = null;
+        @options currentPage = '';
+
+        dataReady( project, chain ) {
+            return ( project === null || project.id ) && ( chain === null || chain.id );
+        }
+    }
+
+</script>

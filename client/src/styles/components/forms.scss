@@ -1,0 +1,179 @@
+$color: #AED581;
+
+form {
+  .group {
+    position: relative;
+    margin-bottom: 45px;
+  }
+  input, .code-flask {
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 300px;
+    border: none;
+    border-bottom: 1px solid #757575;
+  }
+  .code-flask {
+    max-width: 100%;
+    height: 400px;
+    font-size: initial;
+    border: none;
+  }
+
+  input:focus, .code-flask:focus {
+    outline: none;
+  }
+
+  label {
+    color: #999;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+  }
+
+  /* active state */
+  .code-flask ~ label,
+  input:focus ~ label,
+  input:valid ~ label {
+    top: -20px;
+    font-size: 14px;
+    color: #455A64;
+  }
+
+  .bar {
+    position: relative;
+    display: block;
+    width: 315px;
+  }
+  .bar:before, .bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: $color;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+  }
+  .bar:before {
+    left: 50%;
+  }
+  .bar:after {
+    right: 50%;
+  }
+
+  input:focus ~ .bar:before, input:focus ~ .bar:after {
+    width: 50%;
+  }
+
+  .highlight {
+    position: absolute;
+    height: 60%;
+    width: 100px;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  /* active state */
+  input:focus ~ .highlight {
+    -webkit-animation: inputHighlighter 0.3s ease;
+    -moz-animation: inputHighlighter 0.3s ease;
+    animation: inputHighlighter 0.3s ease;
+  }
+
+  /* ANIMATIONS ================ */
+  @-webkit-keyframes inputHighlighter {
+    from {
+      background: $color;
+    }
+    to {
+      width: 0;
+      background: transparent;
+    }
+  }
+  @-moz-keyframes inputHighlighter {
+    from {
+      background: $color;
+    }
+    to {
+      width: 0;
+      background: transparent;
+    }
+  }
+  @keyframes inputHighlighter {
+    from {
+      background: $color;
+    }
+    to {
+      width: 0;
+      background: transparent;
+    }
+  }
+
+  button {
+    position: relative;
+    cursor: pointer;
+
+    display: block;
+    margin: 30px auto;
+    padding: 0;
+
+    overflow: hidden;
+
+    border-width: 0;
+    outline: none;
+    border-radius: 2px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+
+    background-color: $color;
+    color: #455A64;
+
+    transition: background-color .3s;
+    &:hover, &:focus {
+      background-color: #8eb169;
+    }
+    & > * {
+      position: relative;
+    }
+    &:before {
+      content: "";
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      display: block;
+      width: 0;
+      padding-top: 0;
+
+      border-radius: 100%;
+
+      background-color: rgba(236, 240, 241, .3);
+
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+    &:active:before {
+      width: 120%;
+      padding-top: 120%;
+      transition: width .3s ease-out, padding-top .3s ease-out;
+    }
+    span {
+      display: block;
+      padding: 12px 24px;
+      font-size: 18px;
+    }
+  }
+}

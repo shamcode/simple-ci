@@ -2,9 +2,7 @@
 
 exports[`success login 1`] = `
 "<header>
-  <a href=\\"\\" class=\\"logo\\">Simple CI
-    <!--default-->
-  </a>
+  <a class=\\"logo\\" href=\\"\\"> Simple CI </a>
 </header>
 <!--Header-->
 <main>
@@ -32,9 +30,7 @@ exports[`success login 1`] = `
 
 exports[`success login 2`] = `
 "<header>
-  <a href=\\"\\" class=\\"logo\\">Simple CI
-    <!--default-->
-  </a>
+  <a class=\\"logo\\" href=\\"\\"> Simple CI </a>
 </header>
 <!--Header-->
 <main>
@@ -43,11 +39,9 @@ exports[`success login 2`] = `
   <!--ErrorsPanel-->
   <div class=\\"project-list\\">
     <!--for-->
-    <a href=\\"projects/create\\" class=\\"project-card project-card-create\\">
+    <a class=\\"project-card project-card-create\\" href=\\"projects/create\\">
       <div class=\\"create-icon\\"></div>
-      <!--default-->
     </a>
-    <!--LinkTo-->
   </div>
   <!--ProjectsList-->
   <!--content-->

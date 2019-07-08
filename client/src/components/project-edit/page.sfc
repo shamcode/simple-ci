@@ -1,0 +1,58 @@
+<template>
+    {% import PageContent from '../PageContent.sht' %}
+    {% import ErrorsPanel from '../ErrorsPanel.sht' %}
+    {% import ProjectForm from '../ProjectForm.sfc' %}
+    {% import BreadCrumb from '../BreadCrumb.sfc' %}
+
+    <PageContent dataLoaded={{dataLoaded}}>
+        {% block 'breadcrumbs' %}
+            <BreadCrumb
+                project={{project}}
+                currentPage="Edit"/>
+        {% endblock %}
+        {% block 'content' %}
+            <ErrorsPanel errors={{errors}}/>
+            <ProjectForm
+                    saveButtonText="Update"
+                    name={{project.name}}
+                    cwd={{project.cwd}}
+                    dataSaving={{dataSaving}}
+                    onSubmit={{updateProject}}
+            />
+        {% endblock %}
+    </PageContent>
+</template>
+
+<script>
+    import { options } from 'sham-ui';
+    import LoadProjectMixin from '../../mixins/load-project';
+
+    export default class ProjectEditPage extends LoadProjectMixin( Template ) {
+        @options dataSaving = false;
+
+        @options
+        updateProject( data ) {
+            this.update( {
+                dataSaving: true,
+                errors: []
+            } );
+            this.store.updateProject( this.projectId, data ).then(
+                ::this._updateProjectSuccess,
+                ::this._updateProjectFail
+            );
+        }
+
+        _updateProjectSuccess() {
+            this.router.navigate(
+                this.router.generate( 'project-detail', this._routerParams )
+            );
+        }
+
+        _updateProjectFail() {
+            this.update( {
+                errors: [ 'Update project fail!' ],
+                dataSaving: false
+            } );
+        }
+    }
+</script>

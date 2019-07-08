@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`registry fail 1`] = `
+Object {
+  "Constructor": "RegistryPage",
+  "Options": Object {
+    "ID": "component",
+    "containerSelector": "body",
+    "dataSaving": false,
+    "directives": Object {
+      "EventListener": [Function],
+      "disabled": [Function],
+      "onclick": [Function],
+      "oninput": [Function],
+      "onload": [Function],
+      "onresize": [Function],
+      "onscroll": [Function],
+      "onselect": [Function],
+      "onsubmit": [Function],
+      "ref": [Function],
+    },
+    "errors": Array [
+      "Registry fail",
+    ],
+    "password": "",
+    "types": Array [],
+  },
+  "html": "
+<ul class=\\"errors-panel\\">
+  <li>Registry fail</li>
+</ul>
+<!--if-->
+<!--ErrorsPanel-->
+<div class=\\"registry-form\\">
+  <form>
+    <div class=\\"group\\">
+      <input name=\\"username\\" type=\\"text\\" required=\\"\\"><span class=\\"highlight\\"></span><span class=\\"bar\\"></span>
+      <label>Username</label>
+    </div>
+    <div class=\\"group\\">
+      <input name=\\"password\\" type=\\"password\\" required=\\"\\"><span class=\\"highlight\\"></span><span class=\\"bar\\"></span>
+      <label>Password</label>
+    </div>
+    <div class=\\"group\\">
+      <button type=\\"submit\\"><span>Create</span></button>
+    </div>
+  </form>
+</div>
+",
+}
+`;
+
+exports[`renders correctly 1`] = `
+Object {
+  "Constructor": "RegistryPage",
+  "Options": Object {
+    "ID": "component",
+    "containerSelector": "body",
+    "dataSaving": false,
+    "directives": Object {
+      "EventListener": [Function],
+      "disabled": [Function],
+      "onclick": [Function],
+      "oninput": [Function],
+      "onload": [Function],
+      "onresize": [Function],
+      "onscroll": [Function],
+      "onselect": [Function],
+      "onsubmit": [Function],
+      "ref": [Function],
+    },
+    "errors": Array [],
+    "password": "",
+    "types": Array [],
+  },
+  "html": "
+<!--if-->
+<!--ErrorsPanel-->
+<div class=\\"registry-form\\">
+  <form>
+    <div class=\\"group\\">
+      <input name=\\"username\\" type=\\"text\\" required=\\"\\"><span class=\\"highlight\\"></span><span class=\\"bar\\"></span>
+      <label>Username</label>
+    </div>
+    <div class=\\"group\\">
+      <input name=\\"password\\" type=\\"password\\" required=\\"\\"><span class=\\"highlight\\"></span><span class=\\"bar\\"></span>
+      <label>Password</label>
+    </div>
+    <div class=\\"group\\">
+      <button type=\\"submit\\"><span>Create</span></button>
+    </div>
+  </form>
+</div>
+",
+}
+`;

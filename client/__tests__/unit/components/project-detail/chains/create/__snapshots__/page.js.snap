@@ -1,0 +1,126 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`create fail 1`] = `
+Object {
+  "Constructor": "ChainCreatePage",
+  "Options": Object {
+    "ID": "component",
+    "containerSelector": "body",
+    "createProjectChain": [Function],
+    "dataLoaded": true,
+    "dataSaving": false,
+    "directives": Object {
+      "EventListener": [Function],
+      "disabled": [Function],
+      "hrefto": [Function],
+      "onclick": [Function],
+      "oninput": [Function],
+      "onload": [Function],
+      "onresize": [Function],
+      "onscroll": [Function],
+      "onselect": [Function],
+      "onsubmit": [Function],
+      "ref": [Function],
+    },
+    "errors": Array [
+      "Create project fail!",
+    ],
+    "project": Object {
+      "cwd": "/tmp/",
+      "id": 1,
+      "name": "Test",
+    },
+    "types": Array [],
+  },
+  "html": "
+<ul class=\\"breadcrumb\\">
+  <li>
+    <a href=\\"/\\"> Projects </a>
+  </li>
+  <li>
+    <a href=\\"undefined\\">Test</a>
+  </li>
+  <!--if-->
+  <!--if-->
+  <li>Create project chain</li>
+</ul>
+<!--BreadCrumb-->
+<!--breadcrumbs-->
+<ul class=\\"errors-panel\\">
+  <li>Create project fail!</li>
+</ul>
+<!--if-->
+<!--ErrorsPanel-->
+<div class=\\"project-chain-form\\">
+  <form>
+    <div class=\\"group\\">
+      <input name=\\"name\\" type=\\"text\\" required=\\"\\"><span class=\\"highlight\\"></span><span class=\\"bar\\"></span>
+      <label>Name</label>
+    </div>
+    <div class=\\"group\\">
+      <textarea wrap=\\"off\\" style=\\"display: none\\" name=\\"command\\"></textarea>
+      <div class=\\"code-flask\\">
+        <div class=\\"codeflask codeflask--has-line-numbers\\">
+          <textarea class=\\"codeflask__textarea codeflask__flatten\\" spellcheck=\\"false\\" autocapitalize=\\"off\\" autocomplete=\\"off\\" autocorrect=\\"off\\"></textarea><pre class=\\"codeflask__pre codeflask__flatten  language-html\\"><code class=\\"codeflask__code  language-html\\"></code></pre>
+          <div class=\\"codeflask__lines\\"><span class=\\"codeflask__lines__line\\">1</span></div>
+        </div>
+      </div>
+      <!--CodeFlask--><span class=\\"highlight\\"></span><span class=\\"bar\\"></span>
+      <label>Command</label>
+    </div>
+    <div class=\\"group\\">
+      <button type=\\"submit\\"><span>Create</span></button>
+    </div>
+  </form>
+</div>
+<!--ChainForm-->
+<!--content-->
+<!--if-->
+<!--PageContent-->
+",
+}
+`;
+
+exports[`renders correctly 1`] = `
+Object {
+  "Constructor": "ChainCreatePage",
+  "Options": Object {
+    "ID": "component",
+    "containerSelector": "body",
+    "createProjectChain": [Function],
+    "dataLoaded": false,
+    "dataSaving": false,
+    "directives": Object {
+      "EventListener": [Function],
+      "disabled": [Function],
+      "hrefto": [Function],
+      "onclick": [Function],
+      "oninput": [Function],
+      "onload": [Function],
+      "onresize": [Function],
+      "onscroll": [Function],
+      "onselect": [Function],
+      "onsubmit": [Function],
+      "ref": [Function],
+    },
+    "errors": Array [],
+    "project": Object {},
+    "types": Array [],
+  },
+  "html": "
+<ul class=\\"breadcrumb\\">
+  <li>
+    <a href=\\"/\\"> Projects </a>
+  </li>
+  <!--if-->
+  <li></li>
+</ul>
+<!--BreadCrumb-->
+<!--breadcrumbs-->
+<!--if-->
+<!--FlushPageDataLoading-->
+<!--if-->
+<!--PageContent-->
+",
+}
+`;

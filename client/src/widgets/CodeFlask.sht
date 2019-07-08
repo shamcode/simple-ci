@@ -1,2 +1,0 @@
-<textarea name={{name}} wrap="off" style="display: none">{{value}}</textarea>
-<div class="code-flask" :ref="flaskContainer"></div>

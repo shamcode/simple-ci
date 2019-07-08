@@ -2,19 +2,14 @@
 
 exports[`update project 1`] = `
 "<header>
-  <a href=\\"\\" class=\\"logo\\">Simple CI
-    <!--default-->
-  </a>
+  <a class=\\"logo\\" href=\\"\\"> Simple CI </a>
 </header>
 <!--Header-->
 <main>
   <ul class=\\"breadcrumb\\">
     <li>
-      <a href=\\"\\" class=\\"\\">Projects
-        <!--default-->
-      </a>
+      <a href=\\"\\"> Projects </a>
     </li>
-    <!--if-->
     <!--if-->
     <li></li>
   </ul>
@@ -31,22 +26,16 @@ exports[`update project 1`] = `
 
 exports[`update project 2`] = `
 "<header>
-  <a href=\\"\\" class=\\"logo\\">Simple CI
-    <!--default-->
-  </a>
+  <a class=\\"logo\\" href=\\"\\"> Simple CI </a>
 </header>
 <!--Header-->
 <main>
   <ul class=\\"breadcrumb\\">
     <li>
-      <a href=\\"\\" class=\\"\\">Projects
-        <!--default-->
-      </a>
+      <a href=\\"\\"> Projects </a>
     </li>
     <li>
-      <a href=\\"projects/1\\" class=\\"\\">Test
-        <!--default-->
-      </a>
+      <a href=\\"projects/1\\">Test</a>
     </li>
     <!--if-->
     <!--if-->
@@ -82,19 +71,14 @@ exports[`update project 2`] = `
 
 exports[`update project 3`] = `
 "<header>
-  <a href=\\"\\" class=\\"logo\\">Simple CI
-    <!--default-->
-  </a>
+  <a class=\\"logo\\" href=\\"\\"> Simple CI </a>
 </header>
 <!--Header-->
 <main>
   <ul class=\\"breadcrumb\\">
     <li>
-      <a href=\\"\\" class=\\"\\">Projects
-        <!--default-->
-      </a>
+      <a href=\\"\\"> Projects </a>
     </li>
-    <!--if-->
     <!--if-->
     <li>Test</li>
   </ul>
@@ -109,15 +93,11 @@ exports[`update project 3`] = `
       <dd>Current work directory.</dd>
       <dd>This directory will be used when running tasks.</dd>
       <dt>
-        <a href=\\"projects/1/edit\\" class=\\"\\">Edit
-          <!--default-->
-        </a>
+        <a href=\\"projects/1/edit\\"> Edit </a>
       </dt>
       <dd>Edit project name &amp; cwd</dd>
       <dt>
-        <a href=\\"projects/1/delete\\" class=\\"project-delete-link\\">Delete
-          <!--default-->
-        </a>
+        <a class=\\"project-delete-link\\" href=\\"projects/1/delete\\"> Delete </a>
       </dt>
       <dd>Delete project</dd>
     </dl>
@@ -128,11 +108,9 @@ exports[`update project 3`] = `
     <!--if-->
     <!--Chain-->
     <!--for-->
-    <a href=\\"projects/1/chains/create\\" class=\\"project-chain project-chain-create\\">
+    <a class=\\"project-chain project-chain-create\\" href=\\"projects/1/chains/create\\">
       <div class=\\"create-icon\\"></div>
-      <!--default-->
     </a>
-    <!--LinkTo-->
   </div>
   <!--Info-->
   <!--content-->

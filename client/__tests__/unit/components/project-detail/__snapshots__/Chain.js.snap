@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+Object {
+  "Constructor": "Chain",
+  "Options": Object {
+    "ID": "component",
+    "chain": Object {},
+    "containerSelector": "body",
+    "directives": Object {
+      "EventListener": [Function],
+      "disabled": [Function],
+      "hrefto": [Function],
+      "onclick": [Function],
+      "oninput": [Function],
+      "onload": [Function],
+      "onresize": [Function],
+      "onscroll": [Function],
+      "onselect": [Function],
+      "onsubmit": [Function],
+      "ref": [Function],
+    },
+    "isExpand": false,
+    "project": Object {
+      "chains": Array [],
+    },
+    "types": Array [],
+  },
+  "html": "
+<button class=\\"project-chain\\">null</button>
+<!--if-->
+",
+}
+`;

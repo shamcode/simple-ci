@@ -1,0 +1,7 @@
+{% import path from 'sham-ui-router/params' %}
+
+<header>
+    <a :hrefto={{path("project-list")}} class="logo">
+        Simple CI
+    </a>
+</header>

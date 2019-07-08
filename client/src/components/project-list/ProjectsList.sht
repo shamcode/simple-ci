@@ -1,0 +1,20 @@
+{% import path from 'sham-ui-router/params' %}
+
+<div class="project-list">
+    {% for project of projects %}
+        <a
+            class="project-card"
+            :hrefto={{path("project-detail").param("id", project.id)}}
+        >
+            <span class="name">
+                {{project.name}}
+            </span>
+        </a>
+    {% endfor %}
+    <a
+        class="project-card project-card-create"
+        :hrefto={{path("project-create")}}
+    >
+        <div class="create-icon"></div>
+    </a>
+</div>

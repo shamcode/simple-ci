@@ -1,5 +1,0 @@
-{% import PageDataLoading from './PageDataLoading.sht' %}
-
-{% if showLoader %}
-    <PageDataLoading/>
-{% endif %}

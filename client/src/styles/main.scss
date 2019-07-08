@@ -1,15 +1,15 @@
-@import "widgets/login";
-@import "widgets/forms";
-@import "widgets/modal";
-@import "widgets/projects-list";
-@import "widgets/page-data-loading";
-@import "widgets/project-create-form";
-@import "widgets/project-chains";
-@import "widgets/project-chain-form";
-@import "widgets/info";
-@import "widgets/errors-panel";
-@import "widgets/breadcrumb";
-@import "widgets/project-chain-run";
+@import "components/login";
+@import "components/forms";
+@import "components/modal";
+@import "components/projects-list";
+@import "components/page-data-loading";
+@import "components/project-create-form";
+@import "components/project-chains";
+@import "components/project-chain-form";
+@import "components/info";
+@import "components/errors-panel";
+@import "components/breadcrumb";
+@import "components/project-chain-run";
 
 html, body {
   margin: 0;

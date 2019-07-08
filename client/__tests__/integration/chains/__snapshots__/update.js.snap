@@ -2,22 +2,16 @@
 
 exports[`update project chain 1`] = `
 "<header>
-  <a href=\\"\\" class=\\"logo\\">Simple CI
-    <!--default-->
-  </a>
+  <a class=\\"logo\\" href=\\"\\"> Simple CI </a>
 </header>
 <!--Header-->
 <main>
   <ul class=\\"breadcrumb\\">
     <li>
-      <a href=\\"\\" class=\\"\\">Projects
-        <!--default-->
-      </a>
+      <a href=\\"\\"> Projects </a>
     </li>
     <li>
-      <a href=\\"projects/1\\" class=\\"\\">Test
-        <!--default-->
-      </a>
+      <a href=\\"projects/1\\">Test</a>
     </li>
     <!--if-->
     <!--if-->
@@ -65,22 +59,16 @@ exports[`update project chain 1`] = `
 
 exports[`update project chain 2`] = `
 "<header>
-  <a href=\\"\\" class=\\"logo\\">Simple CI
-    <!--default-->
-  </a>
+  <a class=\\"logo\\" href=\\"\\"> Simple CI </a>
 </header>
 <!--Header-->
 <main>
   <ul class=\\"breadcrumb\\">
     <li>
-      <a href=\\"\\" class=\\"\\">Projects
-        <!--default-->
-      </a>
+      <a href=\\"\\"> Projects </a>
     </li>
     <li>
-      <a href=\\"projects/1\\" class=\\"\\">Test
-        <!--default-->
-      </a>
+      <a href=\\"projects/1\\">Test</a>
     </li>
     <!--if-->
     <!--if-->
