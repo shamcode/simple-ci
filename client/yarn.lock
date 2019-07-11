@@ -8063,10 +8063,24 @@ shallow-clone@^1.0.0:
     kind-of "^5.0.0"
     mixin-object "^2.0.1"
 
+sham-ui-cube-animation@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/sham-ui-cube-animation/-/sham-ui-cube-animation-0.0.2.tgz#afceaad8249785aa8637e66080cdff6b3b91bbbc"
+  integrity sha512-5RLrrvn1EhCAiWWiLsNHRT6aq4Qrgk8LHFOacy2zTKpkubsCUTiGEJSRJes5+yrEHVp9EaV5YFb7vkNH74eHUw==
+  dependencies:
+    sham-ui "^3.3.0"
+
 sham-ui-directives@3.0.1, sham-ui-directives@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/sham-ui-directives/-/sham-ui-directives-3.0.1.tgz#a56953b6ec417ec735c7eda71bbe26421e6a0d38"
   integrity sha512-k04wygbMtcOwnWOCy7+zgJ8Vp0bTsG120j07XY5uwk/HQ46KDEL45PDUZ92dcit+AmP0ChP/vudV0mrDvNlsEA==
+  dependencies:
+    sham-ui "^3.3.0"
+
+sham-ui-dynamic-component@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/sham-ui-dynamic-component/-/sham-ui-dynamic-component-0.0.1.tgz#098905aaa3b40b42a832f5b8d47ba1541afdea44"
+  integrity sha512-BDzwrrcmkrd2UkdhV9nnhfol302KAUZrLoaveiNbxN6cfRMHyxhzrev/F9KkMnLHCPLHOhizKNCaA32VBloFaA==
   dependencies:
     sham-ui "^3.3.0"
 
@@ -8116,6 +8130,14 @@ sham-ui-test-helpers@^3.1.4:
     jest "^23.5.0"
     pretty "^2.0.0"
     sham-ui "^3.3.0"
+
+sham-ui-without-flush-loader@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/sham-ui-without-flush-loader/-/sham-ui-without-flush-loader-0.0.2.tgz#4af75ab8029c8423d75a3ab577f8889916929c22"
+  integrity sha512-1H/ekJj11sLyIHm1BFN08ldA5gcjHZkmyN5CFF4YalS2dbyZoKo7r16Sev5aTgimN5V78NhmQKKlvXal917xsA==
+  dependencies:
+    sham-ui "^3.3.0"
+    sham-ui-dynamic-component "^0.0.1"
 
 sham-ui@3.3.0, sham-ui@^3.3.0:
   version "3.3.0"

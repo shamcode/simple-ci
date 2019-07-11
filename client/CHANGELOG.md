@@ -2,6 +2,7 @@
 * Update dependencies
 * Some refactoring 
 * Fix overflow for `.page-data-loading`
+* Extract cube animate & without flush loader to external packages
 
 ## 0.0.2
 * Update dependencies

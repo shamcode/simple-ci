@@ -1,4 +1,4 @@
-import PageDataLoading from '../../../src/components/PageDataLoading.sht';
+import PageDataLoading  from '../../../src/components/PageDataLoading.sht';
 import renderer from 'sham-ui-test-helpers';
 
 it( 'renders correctly', () => {

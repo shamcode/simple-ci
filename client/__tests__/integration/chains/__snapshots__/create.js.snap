@@ -16,7 +16,7 @@ exports[`create project chain 1`] = `
   <!--BreadCrumb-->
   <!--breadcrumbs-->
   <!--if-->
-  <!--FlushPageDataLoading-->
+  <!--WithoutFlushLoader-->
   <!--if-->
   <!--PageContent-->
 </main>

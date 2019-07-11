@@ -1,9 +1,10 @@
-{% import FlushPageDataLoading from './FlushPageDataLoading.sfc' %}
+{% import WithoutFlushLoader from 'sham-ui-without-flush-loader' %}
+{% import PageDataLoading from './PageDataLoading.sht' %}
 
 {% defblock 'breadcrumbs' %}
 
 {% if dataLoaded %}
     {% defblock 'content' %}
 {% else %}
-    <FlushPageDataLoading/>
+    <WithoutFlushLoader loadingComponent={{PageDataLoading}}/>
 {% endif %}

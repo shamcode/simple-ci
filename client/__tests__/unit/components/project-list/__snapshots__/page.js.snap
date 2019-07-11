@@ -27,7 +27,7 @@ Object {
   "html": "
 <!--breadcrumbs-->
 <!--if-->
-<!--FlushPageDataLoading-->
+<!--WithoutFlushLoader-->
 <!--if-->
 <!--PageContent-->
 ",
@@ -61,7 +61,7 @@ Object {
   "html": "
 <!--breadcrumbs-->
 <!--if-->
-<!--FlushPageDataLoading-->
+<!--WithoutFlushLoader-->
 <!--if-->
 <!--PageContent-->
 ",

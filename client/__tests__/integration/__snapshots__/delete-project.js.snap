@@ -16,7 +16,7 @@ exports[`delete project 1`] = `
   <!--BreadCrumb-->
   <!--breadcrumbs-->
   <!--if-->
-  <!--FlushPageDataLoading-->
+  <!--WithoutFlushLoader-->
   <!--if-->
   <!--PageContent-->
 </main>

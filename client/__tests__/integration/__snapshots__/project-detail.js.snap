@@ -16,7 +16,7 @@ exports[`project-detail page 1`] = `
   <!--BreadCrumb-->
   <!--breadcrumbs-->
   <!--if-->
-  <!--FlushPageDataLoading-->
+  <!--WithoutFlushLoader-->
   <!--if-->
   <!--PageContent-->
 </main>
