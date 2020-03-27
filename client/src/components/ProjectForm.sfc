@@ -23,7 +23,7 @@
 </template>
 
 <script>
-    import { options } from 'sham-ui';
+    import { options, mergeWithTemplate } from 'sham-ui-macro/babel.macro';
 
     function extractValue( value ) {
         return value.trim();
@@ -33,7 +33,8 @@
         return value.length > 0;
     }
 
-    export default class ProjectForm extends Template {
+    @mergeWithTemplate
+    class ProjectForm extends Template {
         @options name = '';
         @options cwd = '';
         @options saveButtonText = '';
@@ -61,4 +62,5 @@
         }
     }
 
+    export default ProjectForm;
 </script>

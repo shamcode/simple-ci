@@ -1,29 +1,29 @@
-import { options, inject } from 'sham-ui';
+import { configureOptions } from 'sham-ui';
+import { inject } from 'sham-ui-macro/babel.macro';
 
-export default ( superclass ) => class extends superclass {
+export default ( superclass ) => class LoadProject extends superclass {
     @inject store;
     @inject router;
 
-    @options dataLoaded = false;
-    @options get project() {
-        return {};
-    }
-    @options get errors() {
-        return [];
+    configureOptions() {
+        super.configureOptions( ...arguments );
+        configureOptions( LoadProject.prototype, this, {
+            dataLoaded: false,
+            project: {},
+            errors: []
+        } );
     }
 
     get _routerParams() {
-        const lastRoute = this.router.lastRouteResolved();
-        return lastRoute !== undefined ? lastRoute.params : null;
+        return this.router.storage.params;
     }
 
     get projectId() {
-        const params = this._routerParams;
-        return params !== null ? params.id : null;
+        return this._routerParams.id;
     }
 
-    render() {
-        super.render( ...arguments );
+    didMount() {
+        super.didMount( ...arguments );
         this._loadPageData();
     }
 

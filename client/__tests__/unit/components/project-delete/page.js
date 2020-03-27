@@ -17,7 +17,7 @@ it( 'renders correctly', () => {
         getProjectById: storeMock
     } );
     DI.bind( 'router', {
-        lastRouteResolved: jest.fn().mockReturnValueOnce( { params: { id: 1 } } ),
+        storage: { params: { id: 1 } },
         generate: jest.fn().mockReturnValueOnce( '/' )
     } );
 
@@ -39,7 +39,7 @@ it( 'render errors', async() => {
         getProjectById: storeMock
     } );
     DI.bind( 'router', {
-        lastRouteResolved: jest.fn().mockReturnValueOnce(),
+        storage: { params: {} },
         generate: jest.fn().mockReturnValueOnce( '/' )
     } );
 
@@ -70,7 +70,7 @@ it( 'delete fail', async() => {
     } );
     const navigateMock = jest.fn();
     DI.bind( 'router', {
-        lastRouteResolved: jest.fn().mockReturnValue( { params: { id: 1 } } ),
+        storage: { params: { id: 1 } },
         generate: jest.fn().mockReturnValue( '/' ),
         navigate: navigateMock
     } );
@@ -108,7 +108,7 @@ it( 'cancel', async() => {
     } );
     const navigateMock = jest.fn();
     DI.bind( 'router', {
-        lastRouteResolved: jest.fn().mockReturnValue( { params: { id: 1 } } ),
+        storage: { params: { id: 1 } },
         generate: jest.fn().mockReturnValue( '/' ),
         navigate: navigateMock
     } );

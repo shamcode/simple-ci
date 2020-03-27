@@ -27,7 +27,7 @@ it( 'renders correctly', async() => {
         getProjectById: storeMock
     } );
     DI.bind( 'router', {
-        lastRouteResolved: jest.fn().mockReturnValueOnce( { params: { id: 1 } } ),
+        storage: { params: { id: 1 } },
         generate: jest.fn().mockReturnValueOnce( '/' )
     } );
 
@@ -63,7 +63,7 @@ it( 'update fail', async() => {
         updateProject: updateProjectMock
     } );
     DI.bind( 'router', {
-        lastRouteResolved: jest.fn().mockReturnValueOnce( { params: { id: 1 } } ),
+        storage: { params: { id: 1 } },
         generate: jest.fn().mockReturnValueOnce( '/' )
     } );
 

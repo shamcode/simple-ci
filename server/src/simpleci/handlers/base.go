@@ -25,6 +25,6 @@ func setJsonContentTypeHeader(w http.ResponseWriter) {
 
 func OptionsHandler(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 	SetAllowOriginHeader(w)
-	w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Access-Control-Allow-Headers, Bearer")
+	w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Access-Control-Allow-Headers, Bearer, x-compress")
 	w.Header().Set("Access-Control-Allow-Methods", r.Header.Get("Access-Control-Request-Method"))
 }

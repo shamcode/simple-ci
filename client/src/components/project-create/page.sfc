@@ -20,15 +20,14 @@
 </template>
 
 <script>
-    import { options, inject } from 'sham-ui';
+    import { mergeWithTemplate, options, inject } from 'sham-ui-macro/babel.macro';
 
-    export default class ProjectCreatePage extends Template {
+    @mergeWithTemplate
+    class ProjectCreatePage extends Template {
         @inject store = 'store';
         @inject router = 'router';
 
-        @options get errors() {
-            return [];
-        }
+        @options errors = [];
         @options dataSaving = false;
 
         @options
@@ -56,4 +55,6 @@
             } );
         }
     }
+
+    export default ProjectCreatePage;
 </script>

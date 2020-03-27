@@ -15,13 +15,14 @@
 </template>
 
 <script>
-    import { options } from 'sham-ui';
+    import { mergeWithTemplate, options } from 'sham-ui-macro/babel.macro';
 
-    export default class ChainInfo extends Template {
-        @options get chain() {
-            return {};
-        }
+    @mergeWithTemplate
+    class ChainInfo extends Template {
+        @options chain = {};
         @options dataSaving = false;
         @options updateProjectChain() {}
     }
+
+    export default ChainInfo;
 </script>

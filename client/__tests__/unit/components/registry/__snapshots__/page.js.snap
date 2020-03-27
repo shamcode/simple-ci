@@ -5,7 +5,6 @@ Object {
   "Constructor": "RegistryPage",
   "Options": Object {
     "ID": "component",
-    "containerSelector": "body",
     "dataSaving": false,
     "directives": Object {
       "EventListener": [Function],
@@ -23,7 +22,6 @@ Object {
       "Registry fail",
     ],
     "password": "",
-    "types": Array [],
   },
   "html": "
 <ul class=\\"errors-panel\\">
@@ -55,7 +53,6 @@ Object {
   "Constructor": "RegistryPage",
   "Options": Object {
     "ID": "component",
-    "containerSelector": "body",
     "dataSaving": false,
     "directives": Object {
       "EventListener": [Function],
@@ -71,7 +68,6 @@ Object {
     },
     "errors": Array [],
     "password": "",
-    "types": Array [],
   },
   "html": "
 <!--if-->

@@ -18,7 +18,7 @@ it( 'renders correctly', () => {
         )
     } );
     DI.bind( 'router', {
-        lastRouteResolved: jest.fn().mockReturnValueOnce( { params: { id: 1 } } ),
+        storage: { params: { id: 1 } },
         generate: jest.fn().mockReturnValue( '/' )
     } );
 

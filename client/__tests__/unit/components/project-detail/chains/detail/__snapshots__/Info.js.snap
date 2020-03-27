@@ -9,7 +9,6 @@ Object {
       "command": "ls -la",
       "name": "ls",
     },
-    "containerSelector": "body",
     "dataSaving": false,
     "directives": Object {
       "EventListener": [Function],
@@ -23,7 +22,6 @@ Object {
       "onsubmit": [Function],
       "ref": [Function],
     },
-    "types": Array [],
     "updateProjectChain": [Function],
   },
   "html": "

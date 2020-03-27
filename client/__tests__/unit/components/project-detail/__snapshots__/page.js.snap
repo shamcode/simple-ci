@@ -5,7 +5,6 @@ Object {
   "Constructor": "ProjectDetailPage",
   "Options": Object {
     "ID": "component",
-    "containerSelector": "body",
     "dataLoaded": false,
     "directives": Object {
       "EventListener": [Function],
@@ -22,22 +21,21 @@ Object {
     },
     "errors": Array [],
     "project": Object {},
-    "types": Array [],
   },
   "html": "
-<ul class=\\"breadcrumb\\">
-  <li>
-    <a href=\\"/\\"> Projects </a>
-  </li>
-  <!--if-->
-  <li></li>
-</ul>
-<!--BreadCrumb-->
-<!--breadcrumbs-->
-<!--if-->
-<!--WithoutFlushLoader-->
-<!--if-->
-<!--PageContent-->
+ <ul class=\\"breadcrumb\\">
+   <li>
+     <a href=\\"/\\"> Projects </a>
+   </li>
+   <!--if-->
+   <li></li>
+ </ul>
+ <!--BreadCrumb-->
+ <!--breadcrumbs-->
+ <!--if-->
+ <!--WithoutFlushLoader-->
+ <!--if-->
+ <!--PageContent-->
 ",
 }
 `;
@@ -47,7 +45,6 @@ Object {
   "Constructor": "ProjectDetailPage",
   "Options": Object {
     "ID": "component",
-    "containerSelector": "body",
     "dataLoaded": false,
     "directives": Object {
       "EventListener": [Function],
@@ -64,22 +61,21 @@ Object {
     },
     "errors": Array [],
     "project": Object {},
-    "types": Array [],
   },
   "html": "
-<ul class=\\"breadcrumb\\">
-  <li>
-    <a href=\\"/\\"> Projects </a>
-  </li>
-  <!--if-->
-  <li></li>
-</ul>
-<!--BreadCrumb-->
-<!--breadcrumbs-->
-<!--if-->
-<!--WithoutFlushLoader-->
-<!--if-->
-<!--PageContent-->
+ <ul class=\\"breadcrumb\\">
+   <li>
+     <a href=\\"/\\"> Projects </a>
+   </li>
+   <!--if-->
+   <li></li>
+ </ul>
+ <!--BreadCrumb-->
+ <!--breadcrumbs-->
+ <!--if-->
+ <!--WithoutFlushLoader-->
+ <!--if-->
+ <!--PageContent-->
 ",
 }
 `;

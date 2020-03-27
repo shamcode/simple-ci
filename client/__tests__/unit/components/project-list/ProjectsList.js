@@ -39,7 +39,7 @@ it( 'go to create page', () => {
             hrefto
         }
     } );
-    meta.component.querySelector( '.project-card-create' ).click();
+    meta.component.container.querySelector( '.project-card-create' ).click();
 
     expect( navigateMock.mock.calls ).toHaveLength( 1 );
     expect( meta.toJSON() ).toMatchSnapshot();

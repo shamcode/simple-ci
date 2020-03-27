@@ -15,7 +15,7 @@ it( 'renders correctly', () => {
         getProjectById: storeMock
     } );
     DI.bind( 'router', {
-        lastRouteResolved: jest.fn().mockReturnValueOnce( { params: { id: 1 } } ),
+        storage: { params: { id: 1 } },
         generate: jest.fn().mockReturnValueOnce( '/' )
     } );
 
@@ -35,7 +35,7 @@ it( 'render errors', () => {
         getProjectById: storeMock
     } );
     DI.bind( 'router', {
-        lastRouteResolved: jest.fn().mockReturnValueOnce(),
+        storage: { params: {} },
         generate: jest.fn().mockReturnValueOnce( '/' )
     } );
 

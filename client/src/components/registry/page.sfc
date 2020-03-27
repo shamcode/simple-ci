@@ -27,15 +27,14 @@
 </template>
 
 <script>
-    import { inject, options } from 'sham-ui';
+    import { mergeWithTemplate, options, inject } from 'sham-ui-macro/babel.macro';
 
-    export default class RegistryPage extends Template {
+    @mergeWithTemplate
+    class RegistryPage extends Template {
         @inject store;
         @inject router;
 
-        @options get errors() {
-            return [];
-        }
+        @options errors = [];
         @options dataSaving = false;
         @options password = '';
 
@@ -69,4 +68,6 @@
             } );
         }
     }
+
+    export default RegistryPage;
 </script>

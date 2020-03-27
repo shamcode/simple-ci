@@ -5,8 +5,6 @@ Object {
   "Constructor": "CommandOutput",
   "Options": Object {
     "ID": "component",
-    "containerSelector": "body",
-    "types": Array [],
   },
   "html": "<pre class=\\"command-output\\"></pre>",
 }

@@ -5,11 +5,9 @@ Object {
   "Constructor": "App",
   "Options": Object {
     "ID": "component",
-    "containerSelector": "body",
     "directives": Object {
       "hrefto": [Function],
     },
-    "types": Array [],
   },
   "html": "
 <header>

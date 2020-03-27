@@ -1,4 +1,5 @@
-import { DI, inject } from 'sham-ui';
+import { DI } from 'sham-ui';
+import { inject } from 'sham-ui-macro/babel.macro';
 
 export default class Socket {
     @inject session;
@@ -16,7 +17,9 @@ export default class Socket {
         }
         this.connectionPromise = new Promise( resolve => {
             this.connection = new WebSocket(
-                `ws://${document.location.host}/ws/${this.session.token}`
+                PRODUCTION ?
+                    `ws://${document.location.host}/ws/${this.session.token}` :
+                    `ws://localhost:3001/ws/${this.session.token}`
             );
             this._bindHandlers();
             this.connection.onopen = resolve;

@@ -5,7 +5,6 @@ Object {
   "Constructor": "ProjectForm",
   "Options": Object {
     "ID": "component",
-    "containerSelector": "body",
     "cwd": "",
     "dataSaving": false,
     "directives": Object {
@@ -23,7 +22,6 @@ Object {
     "name": "",
     "onSubmit": [Function],
     "saveButtonText": "",
-    "types": Array [],
   },
   "html": "
 <div class=\\"project-create-form\\">

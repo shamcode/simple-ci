@@ -36,16 +36,13 @@
 </template>
 
 <script>
-    import { options } from 'sham-ui';
+    import { mergeWithTemplate, options } from 'sham-ui-macro/babel.macro';
 
-    export default class Chain extends Template {
-        @options get chain() {
-            return {};
-        }
+    @mergeWithTemplate
+    class Chain extends Template {
+        @options chain = {};
         @options isExpand = false;
-        @options get project() {
-            return { chains: [] };
-        }
+        @options project = { chains: [] };
 
         _toggleExpand( e ) {
             e.preventDefault();
@@ -54,4 +51,6 @@
             } );
         }
     }
+
+    export default Chain;
 </script>

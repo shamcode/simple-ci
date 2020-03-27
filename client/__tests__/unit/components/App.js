@@ -12,7 +12,7 @@ it( 'renders correctly', () => {
     DI.bind( 'router', {
         generate: jest.fn().mockReturnValueOnce( '/' ),
         activePageComponent: DummyPage,
-        lastRouteResolved: jest.fn().mockReturnValueOnce( '/' )
+        storage: {}
     } );
 
     const meta = renderer( App, {

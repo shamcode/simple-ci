@@ -6,7 +6,6 @@ Object {
   "Options": Object {
     "ID": "component",
     "body": "Body text",
-    "containerSelector": "body",
     "dataSaving": false,
     "directives": Object {
       "EventListener": [Function],
@@ -23,7 +22,6 @@ Object {
     "onCancel": [Function],
     "onOk": [Function],
     "title": "Title text",
-    "types": Array [],
   },
   "html": "
 <div class=\\"modal\\">

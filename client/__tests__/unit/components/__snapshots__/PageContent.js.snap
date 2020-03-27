@@ -5,8 +5,6 @@ Object {
   "Constructor": "PageContent",
   "Options": Object {
     "ID": "component",
-    "containerSelector": "body",
-    "types": Array [],
   },
   "html": "
 <!--breadcrumbs-->

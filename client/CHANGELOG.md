@@ -1,3 +1,6 @@
+## master
+* Migrate to `sham-ui` 4.x 
+
 ## 0.0.3
 * Update dependencies
 * Some refactoring 

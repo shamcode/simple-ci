@@ -27,14 +27,13 @@
 </template>
 
 <script>
-    import { options, inject } from 'sham-ui';
+    import { mergeWithTemplate, options, inject } from 'sham-ui-macro/babel.macro';
 
-    export default class LoginPage extends Template {
+    @mergeWithTemplate
+    class LoginPage extends Template {
         @inject session = 'session';
 
-        @options get errors() {
-            return [];
-        }
+        @options errors = [];
         @options dataSaving = false;
         @options password = '';
 
@@ -61,4 +60,6 @@
             } );
         }
     }
+
+    export default LoginPage;
 </script>

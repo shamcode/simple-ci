@@ -1,11 +1,11 @@
-import ShamUI, { DI } from 'sham-ui';
+import { start } from 'sham-ui';
 import pretty from 'pretty';
 import initializer from '../../src/initializers/main';
 
 export const app = {
     async start( waitRendering = true ) {
-        DI.bind( 'component-binder', initializer );
-        new ShamUI( true );
+        initializer();
+        start();
         if ( waitRendering ) {
             await this.waitRendering();
         }

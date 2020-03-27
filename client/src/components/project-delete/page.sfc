@@ -26,7 +26,7 @@
 </template>
 
 <script>
-    import { options } from 'sham-ui';
+    import { options } from 'sham-ui-macro/babel.macro';
     import LoadProjectMixin from '../../mixins/load-project';
 
     export default class ProjectDeletePage extends LoadProjectMixin( Template ) {

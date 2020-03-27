@@ -5,8 +5,6 @@ Object {
   "Constructor": "PageDataLoading",
   "Options": Object {
     "ID": "component",
-    "containerSelector": "body",
-    "types": Array [],
   },
   "html": "
 <div class=\\"page-data-loading\\">

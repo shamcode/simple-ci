@@ -24,7 +24,8 @@ app.listen( port, function( error ) {
         console.error( error );
     } else {
         console.info(
-            'App "client" started.\nOpen up http://localhost:%s/ in your browser.',
+            'App "client" started.\n' +
+            'Open up http://localhost:%s/ in your browser.',
             port
         );
     }

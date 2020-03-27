@@ -1,16 +1,22 @@
 # client
 
+[![Build Status](https://travis-ci.com/shamcode/simple-ci/client.svg?branch=master)](https://travis-ci.com/shamcode/simple-ci/client)
+
 > Client for simple-ci
+
 
 ## Getting started
 
 ``` bash
 # install dependencies
-npm install
+yarn
 
 # run dev server
-npm run start
+yarn start
 
 # build for production with minification
-npm run build
+yarn build
+
+# check size limit
+yarn size
 ```

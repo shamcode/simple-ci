@@ -5,7 +5,6 @@ Object {
   "Constructor": "ProjectCreatePage",
   "Options": Object {
     "ID": "component",
-    "containerSelector": "body",
     "createProject": [Function],
     "dataSaving": false,
     "directives": Object {
@@ -24,42 +23,41 @@ Object {
     "errors": Array [
       "Create project fail!",
     ],
-    "types": Array [],
   },
   "html": "
-<ul class=\\"breadcrumb\\">
-  <li>
-    <a href=\\"/\\"> Projects </a>
-  </li>
-  <!--if-->
-  <li>Create project</li>
-</ul>
-<!--BreadCrumb-->
-<!--breadcrumbs-->
-<ul class=\\"errors-panel\\">
-  <li>Create project fail!</li>
-</ul>
-<!--if-->
-<!--ErrorsPanel-->
-<div class=\\"project-create-form\\">
-  <form>
-    <div class=\\"group\\">
-      <input name=\\"name\\" type=\\"text\\" required=\\"\\"><span class=\\"highlight\\"></span><span class=\\"bar\\"></span>
-      <label>Name</label>
-    </div>
-    <div class=\\"group\\">
-      <input name=\\"cwd\\" type=\\"text\\" required=\\"\\"><span class=\\"highlight\\"></span><span class=\\"bar\\"></span>
-      <label>Current Work Directory</label>
-    </div>
-    <div class=\\"group\\">
-      <button type=\\"submit\\"><span>Create</span></button>
-    </div>
-  </form>
-</div>
-<!--ProjectForm-->
-<!--content-->
-<!--if-->
-<!--PageContent-->
+ <ul class=\\"breadcrumb\\">
+   <li>
+     <a href=\\"/\\"> Projects </a>
+   </li>
+   <!--if-->
+   <li>Create project</li>
+ </ul>
+ <!--BreadCrumb-->
+ <!--breadcrumbs-->
+ <ul class=\\"errors-panel\\">
+   <li>Create project fail!</li>
+ </ul>
+ <!--if-->
+ <!--ErrorsPanel-->
+ <div class=\\"project-create-form\\">
+   <form>
+     <div class=\\"group\\">
+       <input name=\\"name\\" type=\\"text\\" required=\\"\\"><span class=\\"highlight\\"></span><span class=\\"bar\\"></span>
+       <label>Name</label>
+     </div>
+     <div class=\\"group\\">
+       <input name=\\"cwd\\" type=\\"text\\" required=\\"\\"><span class=\\"highlight\\"></span><span class=\\"bar\\"></span>
+       <label>Current Work Directory</label>
+     </div>
+     <div class=\\"group\\">
+       <button type=\\"submit\\"><span>Create</span></button>
+     </div>
+   </form>
+ </div>
+ <!--ProjectForm-->
+ <!--content-->
+ <!--if-->
+ <!--PageContent-->
 ",
 }
 `;
@@ -69,7 +67,6 @@ Object {
   "Constructor": "ProjectCreatePage",
   "Options": Object {
     "ID": "component",
-    "containerSelector": "body",
     "createProject": [Function],
     "dataSaving": false,
     "directives": Object {
@@ -86,39 +83,38 @@ Object {
       "ref": [Function],
     },
     "errors": Array [],
-    "types": Array [],
   },
   "html": "
-<ul class=\\"breadcrumb\\">
-  <li>
-    <a href=\\"/\\"> Projects </a>
-  </li>
-  <!--if-->
-  <li>Create project</li>
-</ul>
-<!--BreadCrumb-->
-<!--breadcrumbs-->
-<!--if-->
-<!--ErrorsPanel-->
-<div class=\\"project-create-form\\">
-  <form>
-    <div class=\\"group\\">
-      <input name=\\"name\\" type=\\"text\\" required=\\"\\"><span class=\\"highlight\\"></span><span class=\\"bar\\"></span>
-      <label>Name</label>
-    </div>
-    <div class=\\"group\\">
-      <input name=\\"cwd\\" type=\\"text\\" required=\\"\\"><span class=\\"highlight\\"></span><span class=\\"bar\\"></span>
-      <label>Current Work Directory</label>
-    </div>
-    <div class=\\"group\\">
-      <button type=\\"submit\\"><span>Create</span></button>
-    </div>
-  </form>
-</div>
-<!--ProjectForm-->
-<!--content-->
-<!--if-->
-<!--PageContent-->
+ <ul class=\\"breadcrumb\\">
+   <li>
+     <a href=\\"/\\"> Projects </a>
+   </li>
+   <!--if-->
+   <li>Create project</li>
+ </ul>
+ <!--BreadCrumb-->
+ <!--breadcrumbs-->
+ <!--if-->
+ <!--ErrorsPanel-->
+ <div class=\\"project-create-form\\">
+   <form>
+     <div class=\\"group\\">
+       <input name=\\"name\\" type=\\"text\\" required=\\"\\"><span class=\\"highlight\\"></span><span class=\\"bar\\"></span>
+       <label>Name</label>
+     </div>
+     <div class=\\"group\\">
+       <input name=\\"cwd\\" type=\\"text\\" required=\\"\\"><span class=\\"highlight\\"></span><span class=\\"bar\\"></span>
+       <label>Current Work Directory</label>
+     </div>
+     <div class=\\"group\\">
+       <button type=\\"submit\\"><span>Create</span></button>
+     </div>
+   </form>
+ </div>
+ <!--ProjectForm-->
+ <!--content-->
+ <!--if-->
+ <!--PageContent-->
 ",
 }
 `;

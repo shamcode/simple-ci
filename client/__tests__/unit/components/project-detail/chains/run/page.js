@@ -16,7 +16,7 @@ it( 'renders correctly', () => {
         getProjectById: jest.fn().mockReturnValue( Promise.resolve( { project: { id: 1 } } ) )
     } );
     DI.bind( 'router', {
-        lastRouteResolved: jest.fn().mockReturnValueOnce( { params: { id: 1 } } ),
+        storage: { params: { id: 1 } },
         generate: jest.fn().mockReturnValueOnce( '/' )
     } );
     const meta = renderer( Page, {

@@ -6,7 +6,6 @@ Object {
   "Options": Object {
     "ID": "component",
     "command": "",
-    "containerSelector": "body",
     "dataSaving": false,
     "directives": Object {
       "EventListener": [Function],
@@ -23,7 +22,6 @@ Object {
     "name": "",
     "onSubmit": [Function],
     "saveButtonText": "",
-    "types": Array [],
   },
   "html": "
 <div class=\\"project-chain-form\\">

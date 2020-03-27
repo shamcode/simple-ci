@@ -6,7 +6,6 @@ Object {
   "Options": Object {
     "ID": "component",
     "chain": Object {},
-    "containerSelector": "body",
     "dataLoaded": false,
     "dataSaving": false,
     "directives": Object {
@@ -14,23 +13,22 @@ Object {
     },
     "errors": Array [],
     "project": Object {},
-    "types": Array [],
     "updateProjectChain": [Function],
   },
   "html": "
-<ul class=\\"breadcrumb\\">
-  <li>
-    <a href=\\"/\\"> Projects </a>
-  </li>
-  <!--if-->
-  <li></li>
-</ul>
-<!--BreadCrumb-->
-<!--breadcrumbs-->
-<!--if-->
-<!--WithoutFlushLoader-->
-<!--if-->
-<!--PageContent-->
+ <ul class=\\"breadcrumb\\">
+   <li>
+     <a href=\\"/\\"> Projects </a>
+   </li>
+   <!--if-->
+   <li></li>
+ </ul>
+ <!--BreadCrumb-->
+ <!--breadcrumbs-->
+ <!--if-->
+ <!--WithoutFlushLoader-->
+ <!--if-->
+ <!--PageContent-->
 ",
 }
 `;

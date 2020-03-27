@@ -7,7 +7,6 @@ Object {
     "ID": "component",
     "bodyText": [Function],
     "cancelDeleteProject": [Function],
-    "containerSelector": "body",
     "dataLoaded": true,
     "dataSaving": true,
     "deleteProject": [Function],
@@ -30,39 +29,38 @@ Object {
       "id": 1,
       "name": "Test",
     },
-    "types": Array [],
   },
   "html": "
-<ul class=\\"breadcrumb\\">
-  <li>
-    <a href=\\"/\\"> Projects </a>
-  </li>
-  <li>
-    <a href=\\"/\\">Test</a>
-  </li>
-  <!--if-->
-  <!--if-->
-  <li>Delete</li>
-</ul>
-<!--BreadCrumb-->
-<!--breadcrumbs-->
-<!--if-->
-<!--ErrorsPanel-->
-<div class=\\"modal\\">
-  <div class=\\"content\\">
-    <div class=\\"header\\">Delete project</div>
-    <div class=\\"body\\">Do you want delete project \\"Test\\"?</div>
-    <div class=\\"footer\\">
-      <button class=\\"ok danger\\" disabled=\\"\\"><span>Confirm</span></button>
-      <button class=\\"cancel\\"><span>Cancel</span></button>
-    </div>
-  </div>
-</div>
-<!--ConfirmModal-->
-<!--if-->
-<!--content-->
-<!--if-->
-<!--PageContent-->
+ <ul class=\\"breadcrumb\\">
+   <li>
+     <a href=\\"/\\"> Projects </a>
+   </li>
+   <li>
+     <a href=\\"/\\">Test</a>
+   </li>
+   <!--if-->
+   <!--if-->
+   <li>Delete</li>
+ </ul>
+ <!--BreadCrumb-->
+ <!--breadcrumbs-->
+ <!--if-->
+ <!--ErrorsPanel-->
+ <div class=\\"modal\\">
+   <div class=\\"content\\">
+     <div class=\\"header\\">Delete project</div>
+     <div class=\\"body\\">Do you want delete project \\"Test\\"?</div>
+     <div class=\\"footer\\">
+       <button class=\\"ok danger\\" disabled=\\"\\"><span>Confirm</span></button>
+       <button class=\\"cancel\\"><span>Cancel</span></button>
+     </div>
+   </div>
+ </div>
+ <!--ConfirmModal-->
+ <!--if-->
+ <!--content-->
+ <!--if-->
+ <!--PageContent-->
 ",
 }
 `;
@@ -74,7 +72,6 @@ Object {
     "ID": "component",
     "bodyText": [Function],
     "cancelDeleteProject": [Function],
-    "containerSelector": "body",
     "dataLoaded": true,
     "dataSaving": false,
     "deleteProject": [Function],
@@ -97,27 +94,26 @@ Object {
     "project": Object {
       "chains": Array [],
     },
-    "types": Array [],
   },
   "html": "
-<ul class=\\"breadcrumb\\">
-  <li>
-    <a href=\\"/\\"> Projects </a>
-  </li>
-  <!--if-->
-  <li></li>
-</ul>
-<!--BreadCrumb-->
-<!--breadcrumbs-->
-<ul class=\\"errors-panel\\">
-  <li>Load project fail!</li>
-</ul>
-<!--if-->
-<!--ErrorsPanel-->
-<!--if-->
-<!--content-->
-<!--if-->
-<!--PageContent-->
+ <ul class=\\"breadcrumb\\">
+   <li>
+     <a href=\\"/\\"> Projects </a>
+   </li>
+   <!--if-->
+   <li></li>
+ </ul>
+ <!--BreadCrumb-->
+ <!--breadcrumbs-->
+ <ul class=\\"errors-panel\\">
+   <li>Load project fail!</li>
+ </ul>
+ <!--if-->
+ <!--ErrorsPanel-->
+ <!--if-->
+ <!--content-->
+ <!--if-->
+ <!--PageContent-->
 ",
 }
 `;
@@ -129,7 +125,6 @@ Object {
     "ID": "component",
     "bodyText": [Function],
     "cancelDeleteProject": [Function],
-    "containerSelector": "body",
     "dataLoaded": false,
     "dataSaving": false,
     "deleteProject": [Function],
@@ -148,22 +143,21 @@ Object {
     },
     "errors": Array [],
     "project": Object {},
-    "types": Array [],
   },
   "html": "
-<ul class=\\"breadcrumb\\">
-  <li>
-    <a href=\\"/\\"> Projects </a>
-  </li>
-  <!--if-->
-  <li></li>
-</ul>
-<!--BreadCrumb-->
-<!--breadcrumbs-->
-<!--if-->
-<!--WithoutFlushLoader-->
-<!--if-->
-<!--PageContent-->
+ <ul class=\\"breadcrumb\\">
+   <li>
+     <a href=\\"/\\"> Projects </a>
+   </li>
+   <!--if-->
+   <li></li>
+ </ul>
+ <!--BreadCrumb-->
+ <!--breadcrumbs-->
+ <!--if-->
+ <!--WithoutFlushLoader-->
+ <!--if-->
+ <!--PageContent-->
 ",
 }
 `;

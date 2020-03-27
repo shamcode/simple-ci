@@ -12,21 +12,18 @@
 </template>
 
 <script>
-    import { options, inject } from 'sham-ui';
+    import { mergeWithTemplate, options, inject } from 'sham-ui-macro/babel.macro';
 
-    export default class ProjectsPage extends Template {
+    @mergeWithTemplate
+    class ProjectsPage extends Template {
         @inject store;
 
         @options dataLoaded = false;
-        @options get projects() {
-            return [];
-        }
-        @options get errors() {
-            return [];
-        }
+        @options projects = [];
+        @options errors = [];
 
-        render() {
-            super.render( ...arguments );
+        didMount() {
+            super.didMount( ...arguments );
             this._loadPageData();
         }
 
@@ -53,4 +50,6 @@
             } );
         }
     }
+
+    export default ProjectsPage;
 </script>

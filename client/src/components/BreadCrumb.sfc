@@ -30,9 +30,10 @@
 </template>
 
 <script>
-    import { options } from 'sham-ui';
+    import { mergeWithTemplate, options } from 'sham-ui-macro/babel.macro';
 
-    export default class BreadCrumb extends Template {
+    @mergeWithTemplate
+    class BreadCrumb extends Template {
         @options project = null;
         @options chain = null;
         @options currentPage = '';
@@ -42,4 +43,5 @@
         }
     }
 
+    export default BreadCrumb;
 </script>

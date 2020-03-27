@@ -44,11 +44,12 @@
 </template>
 
 <script>
-    import { options } from 'sham-ui';
+    import { mergeWithTemplate, options } from 'sham-ui-macro/babel.macro';
 
-    export default class Info extends Template {
-        @options get project() {
-            return { chains: [] };
-        }
+    @mergeWithTemplate
+    class Info extends Template {
+        @options project = { chains: [] };
     }
+
+    export default Info;
 </script>

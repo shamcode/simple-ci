@@ -36,4 +36,6 @@ export default function() {
 
     // Projects list / root
     router.bindPage( '', 'project-list', ProjectsPage, {} );
+
+    router.resolve();
 }

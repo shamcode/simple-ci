@@ -22,9 +22,9 @@ it( 'submit form', () => {
         name: 'Test name',
         command: 'echo 1'
     };
-    component.querySelector( '[name="name"]' ).value = formData.name;
-    component.querySelector( '[name="command"]' ).value = formData.command;
-    component.querySelector( '[type="submit"]' ).click();
+    component.container.querySelector( '[name="name"]' ).value = formData.name;
+    component.container.querySelector( '[name="command"]' ).value = formData.command;
+    component.container.querySelector( '[type="submit"]' ).click();
 
     expect( onSubmitMock.mock.calls ).toHaveLength( 1 );
     expect( onSubmitMock.mock.calls[ 0 ] ).toHaveLength( 1 );
@@ -42,9 +42,9 @@ it( 'form validation (name)', () => {
         onSubmit: onSubmitMock
     } );
 
-    component.querySelector( '[type="submit"]' ).click();
+    component.container.querySelector( '[type="submit"]' ).click();
     expect( onSubmitMock.mock.calls ).toHaveLength( 0 );
 
-    component.querySelector( '[type="submit"]' ).click();
+    component.container.querySelector( '[type="submit"]' ).click();
     expect( onSubmitMock.mock.calls ).toHaveLength( 0 );
 } );

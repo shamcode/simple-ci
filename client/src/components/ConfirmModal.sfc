@@ -20,13 +20,16 @@
 </template>
 
 <script>
-    import { options } from 'sham-ui';
+    import { mergeWithTemplate, options } from 'sham-ui-macro/babel.macro';
 
-    export default class ProjectDeleteModal extends Template {
+    @mergeWithTemplate
+    class ProjectDeleteModal extends Template {
         @options onOk() {}
         @options onCancel() {}
         @options title = '';
         @options body = '';
         @options dataSaving = false;
     }
+
+    export default ProjectDeleteModal;
 </script>

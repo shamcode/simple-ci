@@ -5,7 +5,6 @@ Object {
   "Constructor": "Info",
   "Options": Object {
     "ID": "component",
-    "containerSelector": "body",
     "directives": Object {
       "EventListener": [Function],
       "disabled": [Function],
@@ -22,7 +21,6 @@ Object {
     "project": Object {
       "chains": Array [],
     },
-    "types": Array [],
   },
   "html": "
 <div class=\\"project-info\\">

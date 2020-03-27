@@ -24,14 +24,12 @@
 </template>
 
 <script>
-    import { options } from 'sham-ui';
+    import { options } from 'sham-ui-macro/babel.macro';
     import LoadChainMixin from '../../../../mixins/load-chain';
 
     export default class ChainDetailPage extends LoadChainMixin( Template ) {
         @options dataSaving = false;
-        @options get errors() {
-            return [];
-        }
+        @options errors = [];
 
         @options
         updateProjectChain( formData ) {
