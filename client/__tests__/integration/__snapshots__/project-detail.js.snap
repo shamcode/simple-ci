@@ -20,7 +20,8 @@ exports[`project-detail page 1`] = `
   <!--if-->
   <!--PageContent-->
 </main>
-<footer> Sham 2018 </footer>
+<footer> Sham 2018
+  (v 0.0.4) </footer>
 <!--Footer-->"
 `;
 
@@ -75,6 +76,7 @@ exports[`project-detail page 2`] = `
   <!--if-->
   <!--PageContent-->
 </main>
-<footer> Sham 2018 </footer>
+<footer> Sham 2018
+  (v 0.0.4) </footer>
 <!--Footer-->"
 `;

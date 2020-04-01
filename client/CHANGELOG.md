@@ -1,5 +1,6 @@
-## master
-* Migrate to `sham-ui` 4.x 
+## 0.0.4
+* Migrate to `sham-ui` 4.x
+* Display version
 
 ## 0.0.3
 * Update dependencies

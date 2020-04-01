@@ -19,6 +19,7 @@ export default function() {
         directives: {
             ...directives,
             hrefto
-        }
+        },
+        version: VERSION
     } );
 }

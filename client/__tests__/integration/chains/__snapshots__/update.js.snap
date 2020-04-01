@@ -53,7 +53,8 @@ exports[`update project chain 1`] = `
   <!--if-->
   <!--PageContent-->
 </main>
-<footer> Sham 2018 </footer>
+<footer> Sham 2018
+  (v 0.0.4) </footer>
 <!--Footer-->"
 `;
 
@@ -110,6 +111,7 @@ exports[`update project chain 2`] = `
   <!--if-->
   <!--PageContent-->
 </main>
-<footer> Sham 2018 </footer>
+<footer> Sham 2018
+  (v 0.0.4) </footer>
 <!--Footer-->"
 `;

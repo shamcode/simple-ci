@@ -6,4 +6,6 @@
 <main>
     <ActivePageContainer/>
 </main>
-<Footer/>
+<Footer
+    version={{version}}
+/>

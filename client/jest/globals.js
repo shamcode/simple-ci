@@ -1,4 +1,5 @@
 const { randomBytes } = require( 'crypto' );
+const version = require( '../package.json' ).version;
 
 Object.defineProperty( global.self, 'crypto', {
     value: {
@@ -15,5 +16,10 @@ Object.defineProperty( window, 'CSS', {
 
 Object.defineProperty( window, 'PRODUCTION', {
     value: true,
+    configurable: true
+} );
+
+Object.defineProperty( window, 'VERSION', {
+    value: version,
     configurable: true
 } );

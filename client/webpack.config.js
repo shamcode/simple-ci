@@ -2,6 +2,7 @@ const path = require( 'path' );
 const webpack = require( 'webpack' );
 const ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
 const OptimizeCssAssetsPlugin = require( 'optimize-css-assets-webpack-plugin' );
+const version = require( './package.json' ).version;
 
 function createConfig( isProd ) {
     return {
@@ -21,7 +22,8 @@ function createConfig( isProd ) {
                 filename: 'bundle.css'
             } ),
             new webpack.DefinePlugin( {
-                PRODUCTION: JSON.stringify( isProd )
+                PRODUCTION: JSON.stringify( isProd ),
+                VERSION: JSON.stringify( version )
             } )
         ],
         module: {

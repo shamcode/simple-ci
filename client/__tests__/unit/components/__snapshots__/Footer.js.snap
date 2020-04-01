@@ -6,6 +6,9 @@ Object {
   "Options": Object {
     "ID": "component",
   },
-  "html": "<footer> Sham 2018 </footer>",
+  "html": "
+<footer> Sham 2018
+  (v ) </footer>
+",
 }
 `;

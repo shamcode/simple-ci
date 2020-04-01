@@ -37,7 +37,8 @@ exports[`create project 1`] = `
   <!--if-->
   <!--PageContent-->
 </main>
-<footer> Sham 2018 </footer>
+<footer> Sham 2018
+  (v 0.0.4) </footer>
 <!--Footer-->"
 `;
 
@@ -62,6 +63,7 @@ exports[`create project 2`] = `
   <!--if-->
   <!--PageContent-->
 </main>
-<footer> Sham 2018 </footer>
+<footer> Sham 2018
+  (v 0.0.4) </footer>
 <!--Footer-->"
 `;
