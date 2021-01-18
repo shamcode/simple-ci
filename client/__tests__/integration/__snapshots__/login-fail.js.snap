@@ -25,7 +25,7 @@ exports[`fail login (invalid header) 1`] = `
   </div>
 </main>
 <footer> Sham 2018
-  (v 0.0.4) </footer>
+  (v 0.0.5) </footer>
 <!--Footer-->"
 `;
 
@@ -57,6 +57,6 @@ exports[`fail login (invalid header) 2`] = `
   </div>
 </main>
 <footer> Sham 2018
-  (v 0.0.4) </footer>
+  (v 0.0.5) </footer>
 <!--Footer-->"
 `;

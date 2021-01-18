@@ -21,7 +21,7 @@ exports[`delete project 1`] = `
   <!--PageContent-->
 </main>
 <footer> Sham 2018
-  (v 0.0.4) </footer>
+  (v 0.0.5) </footer>
 <!--Footer-->"
 `;
 
@@ -63,7 +63,7 @@ exports[`delete project 2`] = `
   <!--PageContent-->
 </main>
 <footer> Sham 2018
-  (v 0.0.4) </footer>
+  (v 0.0.5) </footer>
 <!--Footer-->"
 `;
 
@@ -89,6 +89,6 @@ exports[`delete project 3`] = `
   <!--PageContent-->
 </main>
 <footer> Sham 2018
-  (v 0.0.4) </footer>
+  (v 0.0.5) </footer>
 <!--Footer-->"
 `;
