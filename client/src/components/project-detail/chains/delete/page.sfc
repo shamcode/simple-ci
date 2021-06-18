@@ -16,7 +16,7 @@
             {% if errors.length === 0 %}
                 <ConfirmModal
                         title="Delete project chain"
-                        body={{bodyText( chain )}}
+                        body={{"Do you want delete chain \"" + chain.name + "\"?"}}
                         dataSaving={{dataSaving}}
                         onOk={{deleteChain}}
                         onCancel={{cancelDeleteChain}}
@@ -27,43 +27,36 @@
 </template>
 
 <script>
-    import { options } from 'sham-ui-macro/babel.macro';
     import LoadChainMixin from '../../../../mixins/load-chain';
 
-    export default class ChainDeletePage extends LoadChainMixin( Template ) {
-        @options dataSaving = false;
+    function ChainDeletePage( options, update ) {
+        const dataSaving = ref();
+        const errors = ref();
 
-        @options bodyText( chain ) {
-            return `Do you want delete chain "${chain.name}"?`;
-        }
+        const router = this.DI.resolve( 'router' );
 
-        get projectDetailURL() {
-            return this.router.generate( 'project-detail', { id: this.projectId } );
-        }
+        const goToProjectDetailPage = () => router.navigate(
+            router.generate(
+                'project-detail',
+                { id: router.storage.params.id }
+            )
+        );
 
-        @options
-        deleteChain() {
-            this.update( {
-                dataSaving: true,
-                errors: []
-            } );
-            this.store.deleteChain( this.chainId ).then(
-                ::this._deleteChainSuccess,
-                ::this._deleteChainFail
-            );
-        }
-
-        _deleteChainSuccess() {
-            this.router.navigate( this.projectDetailURL );
-        }
-
-        _deleteChainFail() {
-            this.router.navigate( this.projectDetailURL );
-        }
-
-        @options
-        cancelDeleteChain() {
-            this.router.navigate( this.projectDetailURL );
-        }
+        options( {
+            [ dataSaving ]: false,
+            [ ref( 'deleteChain' ) ]: () => {
+                update( {
+                    [ dataSaving ]: true,
+                    [ errors ]: []
+                } );
+                this.DI.resolve( 'store' ).deleteChain( router.storage.params.chainId  ).then(
+                    goToProjectDetailPage,
+                    goToProjectDetailPage,
+                );
+            },
+            [ ref( 'cancelDeleteChain' ) ]: goToProjectDetailPage
+        } );
     }
+
+    export default Component( Template, LoadChainMixin, ChainDeletePage );
 </script>

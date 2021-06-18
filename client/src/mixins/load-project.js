@@ -1,52 +1,33 @@
-import { configureOptions } from 'sham-ui';
-import { inject } from 'sham-ui-macro/babel.macro';
+import { ref } from 'sham-ui-macro/ref.macro';
 
-export default ( superclass ) => class LoadProject extends superclass {
-    @inject store;
-    @inject router;
 
-    configureOptions() {
-        super.configureOptions( ...arguments );
-        configureOptions( LoadProject.prototype, this, {
-            dataLoaded: false,
-            project: {},
-            errors: []
-        } );
-    }
+export default function LoadProject( options, update, didMount ) {
+    const dataLoaded = ref();
+    const project = ref();
+    const errors = ref();
 
-    get _routerParams() {
-        return this.router.storage.params;
-    }
+    options( {
+        [ dataLoaded ]: false,
+        [ project ]: {},
+        [ errors ]: []
+    } );
 
-    get projectId() {
-        return this._routerParams.id;
-    }
+    const store = this.DI.resolve( 'store' );
+    const router = this.DI.resolve( 'router' );
 
-    didMount() {
-        super.didMount( ...arguments );
-        this._loadPageData();
-    }
+    const _loadPageData = ref();
+    this[ _loadPageData ] = () => store.getProjectById( router.storage.params.id ).then(
+        ( data ) => update( {
+            [ project ]: data.project,
+            [ dataLoaded ]: true,
+            [ errors ]: []
+        } ),
+        () => update( {
+            [ project ]: { chains: [] },
+            [ dataLoaded ]: true,
+            [ errors ]: [ 'Load project fail!' ]
+        } )
+    );
 
-    _loadPageData() {
-        this.store.getProjectById( this.projectId ).then(
-            ::this._loadedPageDataSuccess,
-            ::this._loadedPageDataFail
-        );
-    }
-
-    _loadedPageDataSuccess( { project } ) {
-        this.update( {
-            project,
-            dataLoaded: true,
-            errors: []
-        } );
-    }
-
-    _loadedPageDataFail() {
-        this.update( {
-            project: { chains: [] },
-            dataLoaded: true,
-            errors: [ 'Load project fail!' ]
-        } );
-    }
-};
+    didMount( () => this[ _loadPageData ]() );
+}

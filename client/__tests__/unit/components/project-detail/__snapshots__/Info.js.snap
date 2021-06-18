@@ -2,7 +2,6 @@
 
 exports[`renders correctly 1`] = `
 Object {
-  "Constructor": "Info",
   "Options": Object {
     "ID": "component",
     "directives": Object {
@@ -41,7 +40,7 @@ Object {
 </div>
 <div class=\\"project-chains\\">
   <h3>Chains</h3>
-  <!--for-->
+  <!--0-->
   <a class=\\"project-chain project-chain-create\\" href=\\"/\\">
     <div class=\\"create-icon\\"></div>
   </a>

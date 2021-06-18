@@ -1,14 +1,12 @@
-import { DI } from 'sham-ui';
+import { createDI } from 'sham-ui';
 import Page from '../../../../src/components/project-edit/page.sfc';
 import * as directives from 'sham-ui-directives';
-import hrefto from 'sham-ui-router/href-to';
+import hrefto from 'sham-ui-router/lib/href-to';
 import renderer from 'sham-ui-test-helpers';
 
 const flushPromises = () => new Promise( resolve => setImmediate( resolve ) );
 
 afterEach( () => {
-    DI.bind( 'store', null );
-    DI.bind( 'router', null );
     jest.resetModules();
     jest.clearAllMocks();
 } );
@@ -16,6 +14,7 @@ afterEach( () => {
 it( 'renders correctly', async() => {
     expect.assertions( 5 );
 
+    const DI = createDI();
     const storeMock = jest.fn().mockReturnValue( Promise.resolve( {
         project: {
             id: 1,
@@ -32,6 +31,7 @@ it( 'renders correctly', async() => {
     } );
 
     const meta = renderer( Page, {
+        DI,
         directives: {
             ...directives,
             hrefto
@@ -51,6 +51,7 @@ it( 'renders correctly', async() => {
 it( 'update fail', async() => {
     expect.assertions( 2 );
 
+    const DI = createDI();
     const updateProjectMock = jest.fn();
     DI.bind( 'store', {
         getProjectById: jest.fn().mockReturnValue( Promise.resolve( {
@@ -68,6 +69,7 @@ it( 'update fail', async() => {
     } );
 
     const meta = renderer( Page, {
+        DI,
         directives: {
             ...directives,
             hrefto

@@ -15,6 +15,8 @@ module.exports = {
         "sourceType": "module"
     },
     "globals": {
+        "Component": true,
+        "ref": true,
         "Template": true,
         "PRODUCTION": true,
         "VERSION": true

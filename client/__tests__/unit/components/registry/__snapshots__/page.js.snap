@@ -2,7 +2,6 @@
 
 exports[`registry fail 1`] = `
 Object {
-  "Constructor": "RegistryPage",
   "Options": Object {
     "ID": "component",
     "dataSaving": false,
@@ -27,8 +26,8 @@ Object {
 <ul class=\\"errors-panel\\">
   <li>Registry fail</li>
 </ul>
-<!--if-->
-<!--ErrorsPanel-->
+<!--0-->
+<!--0-->
 <div class=\\"registry-form\\">
   <form>
     <div class=\\"group\\">
@@ -50,7 +49,6 @@ Object {
 
 exports[`renders correctly 1`] = `
 Object {
-  "Constructor": "RegistryPage",
   "Options": Object {
     "ID": "component",
     "dataSaving": false,
@@ -70,8 +68,8 @@ Object {
     "password": "",
   },
   "html": "
-<!--if-->
-<!--ErrorsPanel-->
+<!--0-->
+<!--0-->
 <div class=\\"registry-form\\">
   <form>
     <div class=\\"group\\">

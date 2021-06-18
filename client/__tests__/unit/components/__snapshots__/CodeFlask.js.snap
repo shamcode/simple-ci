@@ -2,7 +2,6 @@
 
 exports[`renders correctly 1`] = `
 Object {
-  "Constructor": "CodeFlaskComponent",
   "Options": Object {
     "ID": "component",
     "directives": Object {

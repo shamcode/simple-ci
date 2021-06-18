@@ -4,32 +4,32 @@ exports[`create project chain 1`] = `
 "<header>
   <a class=\\"logo\\" href=\\"\\"> Simple CI </a>
 </header>
-<!--Header-->
+<!--0-->
 <main>
   <ul class=\\"breadcrumb\\">
     <li>
       <a href=\\"\\"> Projects </a>
     </li>
-    <!--if-->
+    <!--0-->
     <li></li>
   </ul>
-  <!--BreadCrumb-->
-  <!--breadcrumbs-->
-  <!--if-->
-  <!--WithoutFlushLoader-->
-  <!--if-->
-  <!--PageContent-->
+  <!--0-->
+  <!--0-->
+  <!--0-->
+  <!--0-->
+  <!--1-->
+  <!--0-->
 </main>
 <footer> Sham 2018
-  (v 0.0.5) </footer>
-<!--Footer-->"
+  (v 0.0.6) </footer>
+<!--1-->"
 `;
 
 exports[`create project chain 2`] = `
 "<header>
   <a class=\\"logo\\" href=\\"\\"> Simple CI </a>
 </header>
-<!--Header-->
+<!--0-->
 <main>
   <ul class=\\"breadcrumb\\">
     <li>
@@ -38,14 +38,14 @@ exports[`create project chain 2`] = `
     <li>
       <a href=\\"projects/1\\">Test</a>
     </li>
-    <!--if-->
-    <!--if-->
+    <!--0-->
+    <!--0-->
     <li>Create project chain</li>
   </ul>
-  <!--BreadCrumb-->
-  <!--breadcrumbs-->
-  <!--if-->
-  <!--ErrorsPanel-->
+  <!--0-->
+  <!--0-->
+  <!--0-->
+  <!--0-->
   <div class=\\"project-chain-form\\">
     <form>
       <div class=\\"group\\">
@@ -60,7 +60,7 @@ exports[`create project chain 2`] = `
             <div class=\\"codeflask__lines\\"><span class=\\"codeflask__lines__line\\">1</span></div>
           </div>
         </div>
-        <!--CodeFlask--><span class=\\"highlight\\"></span><span class=\\"bar\\"></span>
+        <!--0--><span class=\\"highlight\\"></span><span class=\\"bar\\"></span>
         <label>Command</label>
       </div>
       <div class=\\"group\\">
@@ -68,33 +68,33 @@ exports[`create project chain 2`] = `
       </div>
     </form>
   </div>
-  <!--ChainForm-->
-  <!--content-->
-  <!--if-->
-  <!--PageContent-->
+  <!--1-->
+  <!--0-->
+  <!--1-->
+  <!--0-->
 </main>
 <footer> Sham 2018
-  (v 0.0.5) </footer>
-<!--Footer-->"
+  (v 0.0.6) </footer>
+<!--1-->"
 `;
 
 exports[`create project chain 3`] = `
 "<header>
   <a class=\\"logo\\" href=\\"\\"> Simple CI </a>
 </header>
-<!--Header-->
+<!--0-->
 <main>
   <ul class=\\"breadcrumb\\">
     <li>
       <a href=\\"\\"> Projects </a>
     </li>
-    <!--if-->
+    <!--0-->
     <li>Test</li>
   </ul>
-  <!--BreadCrumb-->
-  <!--breadcrumbs-->
-  <!--if-->
-  <!--ErrorsPanel-->
+  <!--0-->
+  <!--0-->
+  <!--0-->
+  <!--0-->
   <div class=\\"project-info\\">
     <h3>Test</h3>
     <dl>
@@ -114,19 +114,20 @@ exports[`create project chain 3`] = `
   <div class=\\"project-chains\\">
     <h3>Chains</h3>
     <button class=\\"project-chain\\">Test chain</button>
-    <!--if-->
-    <!--Chain-->
-    <!--for-->
+    <!--0-->
+    <!--0-->
+    <!--0-->
     <a class=\\"project-chain project-chain-create\\" href=\\"projects/1/chains/create\\">
       <div class=\\"create-icon\\"></div>
     </a>
   </div>
-  <!--Info-->
-  <!--content-->
-  <!--if-->
-  <!--PageContent-->
+  <!--0-->
+  <!--1-->
+  <!--0-->
+  <!--1-->
+  <!--0-->
 </main>
 <footer> Sham 2018
-  (v 0.0.5) </footer>
-<!--Footer-->"
+  (v 0.0.6) </footer>
+<!--1-->"
 `;

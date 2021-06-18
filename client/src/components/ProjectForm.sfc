@@ -1,6 +1,6 @@
 <template>
     <div class="project-create-form">
-        <form :onsubmit={{::this._submitForm}} :ref="formNode">
+        <form :onsubmit={{this[ ref( '_submitForm' ) ]}} :ref="formNode">
             <div class="group">
                 <input name="name" type="text" required value={{name}}/>
                 <span class="highlight"></span>
@@ -23,7 +23,6 @@
 </template>
 
 <script>
-    import { options, mergeWithTemplate } from 'sham-ui-macro/babel.macro';
 
     function extractValue( value ) {
         return value.trim();
@@ -33,15 +32,19 @@
         return value.length > 0;
     }
 
-    @mergeWithTemplate
-    class ProjectForm extends Template {
-        @options name = '';
-        @options cwd = '';
-        @options saveButtonText = '';
-        @options dataSaving = false;
-        @options onSubmit() {}
 
-        _submitForm( e ) {
+    function ProjectForm( options ) {
+        const onSubmit = ref();
+
+        const state = options( {
+            [ onSubmit ]() {},
+            [ ref( 'name' ) ]: '',
+            [ ref( 'cwd' ) ]: '',
+            [ ref( 'saveButtonText' ) ]: '',
+            [ ref( 'dataSaving' ) ]: false
+        } );
+
+        this[ ref( '_submitForm' ) ] = e => {
             e.preventDefault();
             const formData = new FormData( this.formNode );
             const data = {};
@@ -57,10 +60,10 @@
                 }
             } );
             if ( dataValid ) {
-                this.options.onSubmit( data );
+                state[ onSubmit ]( data );
             }
-        }
+        };
     }
 
-    export default ProjectForm;
+    export default Component( Template, ProjectForm );
 </script>

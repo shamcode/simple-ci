@@ -4,7 +4,7 @@
     <ErrorsPanel errors={{errors}}/>
 
     <div class="registry-form">
-        <form :onsubmit={{::this._submitForm}} :ref="formNode">
+        <form :onsubmit={{this[ ref( '_submitForm' ) ]}} :ref="formNode">
             <div class="group">
                 <input name="username" type="text" required>
                 <span class="highlight"></span>
@@ -27,47 +27,43 @@
 </template>
 
 <script>
-    import { mergeWithTemplate, options, inject } from 'sham-ui-macro/babel.macro';
 
-    @mergeWithTemplate
-    class RegistryPage extends Template {
-        @inject store;
-        @inject router;
+    function RegistryPage( options, update ) {
+        const errors = ref();
+        const dataSaving = ref();
+        const password = ref();
 
-        @options errors = [];
-        @options dataSaving = false;
-        @options password = '';
+        options( {
+            [ errors ]: [],
+            [ dataSaving ]: false,
+            [ password ]: ''
+        } );
 
-        _submitForm( e ) {
+        this[ ref( '_submitForm' ) ] = e => {
             e.preventDefault();
             const formData = new FormData( this.formNode );
-            this.update( {
-                dataSaving: true,
-                errors: []
+            update( {
+                [ dataSaving ]: true,
+                [ errors ]: []
             } );
-            this.store.registry(
+            this.DI.resolve( 'store' ).registry(
                 formData.get( 'username' ).trim(),
                 formData.get( 'password' )
             ).then(
-                ::this.registrySuccess,
-                ::this.registryFail
+                () => {
+                    const router = this.DI.resolve( 'router' );
+                    router.navigate(
+                        router.generate( 'login', {} )
+                    );
+                },
+                () => update( {
+                    [ password ]: '',
+                    [ dataSaving ]: false,
+                    [ errors ]: [ 'Registry fail' ]
+                } )
             );
-        }
-
-        registrySuccess() {
-            this.router.navigate(
-                this.router.generate( 'login', {} )
-            );
-        }
-
-        registryFail() {
-            this.update( {
-                password: '',
-                dataSaving: false,
-                errors: [ 'Registry fail' ]
-            } );
-        }
+        };
     }
 
-    export default RegistryPage;
+    export default Component( Template, RegistryPage );
 </script>

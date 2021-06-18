@@ -2,7 +2,6 @@
 
 exports[`renders correctly 1`] = `
 Object {
-  "Constructor": "ChainRunPage",
   "Options": Object {
     "ID": "component",
     "chain": Object {},
@@ -31,15 +30,15 @@ Object {
    <li>
      <a href=\\"/\\"> Projects </a>
    </li>
-   <!--if-->
+   <!--0-->
    <li></li>
  </ul>
- <!--BreadCrumb-->
- <!--breadcrumbs-->
- <!--if-->
- <!--WithoutFlushLoader-->
- <!--if-->
- <!--PageContent-->
+ <!--0-->
+ <!--0-->
+ <!--0-->
+ <!--0-->
+ <!--1-->
+ <!--0-->
 ",
 }
 `;

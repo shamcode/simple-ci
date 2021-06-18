@@ -1,9 +1,9 @@
 <template>
-    {% import path from 'sham-ui-router/params' %}
+    {% import path from 'sham-ui-router/lib/params' %}
 
     <button
             class="project-chain"
-            :onclick={{::this._toggleExpand}}
+            :onclick={{this[ ref( '_toggleExpand' ) ]}}
     >
         {{chain.name}}
     </button>
@@ -36,21 +36,22 @@
 </template>
 
 <script>
-    import { mergeWithTemplate, options } from 'sham-ui-macro/babel.macro';
 
-    @mergeWithTemplate
-    class Chain extends Template {
-        @options chain = {};
-        @options isExpand = false;
-        @options project = { chains: [] };
+    function Chain( options, update ) {
+        const isExpand = ref();
 
-        _toggleExpand( e ) {
+        const state = options( {
+            [ ref( 'chain' ) ]: {},
+            [ ref( 'project' ) ]: { chains: [] }
+        } );
+
+        this[ ref( '_toggleExpand' ) ] = e => {
             e.preventDefault();
-            this.update( {
-                isExpand: !this.options.isExpand
+            update( {
+                [ isExpand ]: !state[ isExpand ]
             } );
-        }
+        };
     }
 
-    export default Chain;
+    export default Component( Template, Chain );
 </script>

@@ -1,23 +1,24 @@
-import { DI } from 'sham-ui';
+import { createDI } from 'sham-ui';
 import ProjectCreatePage from '../../../../src/components/project-create/page.sfc';
 import * as directives from 'sham-ui-directives';
-import hrefto from 'sham-ui-router/href-to';
+import hrefto from 'sham-ui-router/lib/href-to';
 import renderer from 'sham-ui-test-helpers';
 
 const flushPromises = () => new Promise( resolve => setImmediate( resolve ) );
 
 afterEach( () => {
-    DI.bind( 'router', null );
     jest.resetModules();
     jest.clearAllMocks();
 } );
 
 it( 'renders correctly', () => {
+    const DI = createDI();
     DI.bind( 'router', {
         generate: jest.fn().mockReturnValueOnce( '/' )
     } );
 
     const meta = renderer( ProjectCreatePage, {
+        DI,
         directives: {
             ...directives,
             hrefto
@@ -27,6 +28,7 @@ it( 'renders correctly', () => {
 } );
 
 it( 'create', () => {
+    const DI = createDI();
     DI.bind( 'router', {
         generate: jest.fn().mockReturnValueOnce( '/' ),
         navigate: jest.fn()
@@ -37,6 +39,7 @@ it( 'create', () => {
     } );
 
     const { component: { container } } = renderer( ProjectCreatePage, {
+        DI,
         directives: {
             ...directives,
             hrefto
@@ -62,6 +65,7 @@ it( 'create', () => {
 it( 'create fail', async() => {
     expect.assertions( 3 );
 
+    const DI = createDI();
     DI.bind( 'router', {
         generate: jest.fn().mockReturnValueOnce( '/' ),
         navigate: jest.fn()
@@ -72,6 +76,7 @@ it( 'create fail', async() => {
     } );
 
     const meta = renderer( ProjectCreatePage, {
+        DI,
         directives: {
             ...directives,
             hrefto

@@ -2,7 +2,6 @@
 
 exports[`renders correctly 1`] = `
 Object {
-  "Constructor": "ChainInfo",
   "Options": Object {
     "ID": "component",
     "chain": Object {
@@ -42,7 +41,7 @@ Object {
           <div class=\\"codeflask__lines\\"><span class=\\"codeflask__lines__line\\">1</span></div>
         </div>
       </div>
-      <!--CodeFlask--><span class=\\"highlight\\"></span><span class=\\"bar\\"></span>
+      <!--0--><span class=\\"highlight\\"></span><span class=\\"bar\\"></span>
       <label>Command</label>
     </div>
     <div class=\\"group\\">
@@ -50,7 +49,7 @@ Object {
     </div>
   </form>
 </div>
-<!--ChainForm-->
+<!--0-->
 ",
 }
 `;

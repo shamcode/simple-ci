@@ -3,17 +3,18 @@ import Store from '../services/store';
 import Socket from '../services/socket';
 import startRouter from './routes';
 import * as directives from 'sham-ui-directives';
-import hrefto from 'sham-ui-router/href-to';
+import hrefto from 'sham-ui-router/lib/href-to';
 import App from '../components/App.sht';
 
-export default function() {
-    new Store();
-    new Session();
-    new Socket();
+export default function( DI ) {
+    new Store( DI );
+    new Session( DI );
+    new Socket( DI );
 
-    startRouter();
+    startRouter( DI );
 
     new App( {
+        DI,
         ID: 'app',
         container: document.querySelector( 'body' ),
         directives: {

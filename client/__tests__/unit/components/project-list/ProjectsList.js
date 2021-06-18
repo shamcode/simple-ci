@@ -1,20 +1,18 @@
-import { DI } from 'sham-ui';
+import { createDI } from 'sham-ui';
 import ProjectsList from '../../../../src/components/project-list/ProjectsList.sht';
 import * as directives from 'sham-ui-directives';
-import hrefto from 'sham-ui-router/href-to';
+import hrefto from 'sham-ui-router/lib/href-to';
 import renderer from 'sham-ui-test-helpers';
 
-afterEach( () => {
-    DI.bind( 'router', null );
-} );
-
 it( 'renders correctly', () => {
+    const DI = createDI();
     const generateMock = jest.fn().mockReturnValueOnce( '/' );
     DI.bind( 'router', {
         generate: generateMock
     } );
 
     const meta = renderer( ProjectsList, {
+        DI,
         directives: {
             ...directives,
             hrefto
@@ -27,6 +25,7 @@ it( 'renders correctly', () => {
 } );
 
 it( 'go to create page', () => {
+    const DI = createDI();
     const navigateMock = jest.fn();
     DI.bind( 'router', {
         generate: jest.fn().mockReturnValueOnce( '/' ),
@@ -34,6 +33,7 @@ it( 'go to create page', () => {
     } );
 
     const meta = renderer( ProjectsList, {
+        DI,
         directives: {
             ...directives,
             hrefto
@@ -46,11 +46,13 @@ it( 'go to create page', () => {
 } );
 
 it( 'renders list', () => {
+    const DI = createDI();
     DI.bind( 'router', {
         generate: jest.fn().mockReturnValueOnce( '/' )
     } );
 
     const meta = renderer( ProjectsList, {
+        DI,
         directives: {
             ...directives,
             hrefto

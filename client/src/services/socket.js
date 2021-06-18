@@ -1,10 +1,10 @@
-import { DI } from 'sham-ui';
-import { inject } from 'sham-ui-macro/babel.macro';
+import { inject } from 'sham-ui-macro/inject.macro';
 
 export default class Socket {
     @inject session;
 
-    constructor() {
+    constructor( DI ) {
+        this.DI = DI;
         DI.bind( 'socket', this );
         this.connection = null;
         this.connectionPromise = null;

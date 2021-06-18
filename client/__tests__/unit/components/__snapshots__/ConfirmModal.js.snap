@@ -2,7 +2,6 @@
 
 exports[`renders correctly 1`] = `
 Object {
-  "Constructor": "ProjectDeleteModal",
   "Options": Object {
     "ID": "component",
     "body": "Body text",

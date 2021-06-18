@@ -1,16 +1,13 @@
-import { DI } from 'sham-ui';
-import hrefto from 'sham-ui-router/href-to';
-import Page from '../../../../../../src/components/project-detail/chains/detail/page';
+import { onclick, disabled, onsubmit, ref } from 'sham-ui-directives';
+import { createDI } from 'sham-ui';
+import hrefto from 'sham-ui-router/lib/href-to';
+import Page from '../../../../../../src/components/project-detail/chains/detail/page.sfc';
 import renderer from 'sham-ui-test-helpers';
 
-afterEach( () => {
-    DI.bind( 'store', null );
-    DI.bind( 'router', null );
-} );
-
 it( 'renders correctly', () => {
+    const DI = createDI();
     DI.bind( 'store', {
-        getProjectChainById: jest.fn().mockReturnValue( Promise.resolve( { project: { id: 1 } } ) ),
+        getProjectChainById: jest.fn().mockReturnValue( Promise.resolve( { chain: { id: 1 } } ) ),
         getProjectById: jest.fn().mockReturnValue( Promise.resolve( { project: { id: 1 } } ) )
     } );
     DI.bind( 'router', {
@@ -18,7 +15,12 @@ it( 'renders correctly', () => {
         generate: jest.fn().mockReturnValueOnce( '/' )
     } );
     const meta = renderer( Page, {
+        DI,
         directives: {
+            ref,
+            onsubmit,
+            onclick,
+            disabled,
             hrefto
         }
     } );

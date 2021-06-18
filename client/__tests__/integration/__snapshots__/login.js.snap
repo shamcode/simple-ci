@@ -4,10 +4,10 @@ exports[`success login 1`] = `
 "<header>
   <a class=\\"logo\\" href=\\"\\"> Simple CI </a>
 </header>
-<!--Header-->
+<!--0-->
 <main>
-  <!--if-->
-  <!--ErrorsPanel-->
+  <!--0-->
+  <!--0-->
   <div class=\\"login-form\\">
     <form>
       <div class=\\"group\\">
@@ -25,31 +25,31 @@ exports[`success login 1`] = `
   </div>
 </main>
 <footer> Sham 2018
-  (v 0.0.5) </footer>
-<!--Footer-->"
+  (v 0.0.6) </footer>
+<!--1-->"
 `;
 
 exports[`success login 2`] = `
 "<header>
   <a class=\\"logo\\" href=\\"\\"> Simple CI </a>
 </header>
-<!--Header-->
+<!--0-->
 <main>
-  <!--breadcrumbs-->
-  <!--if-->
-  <!--ErrorsPanel-->
+  <!--0-->
+  <!--0-->
+  <!--0-->
   <div class=\\"project-list\\">
-    <!--for-->
+    <!--0-->
     <a class=\\"project-card project-card-create\\" href=\\"projects/create\\">
       <div class=\\"create-icon\\"></div>
     </a>
   </div>
-  <!--ProjectsList-->
-  <!--content-->
-  <!--if-->
-  <!--PageContent-->
+  <!--1-->
+  <!--0-->
+  <!--1-->
+  <!--0-->
 </main>
 <footer> Sham 2018
-  (v 0.0.5) </footer>
-<!--Footer-->"
+  (v 0.0.6) </footer>
+<!--1-->"
 `;

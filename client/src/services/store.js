@@ -1,11 +1,11 @@
 import axios from 'axios';
-import { DI } from 'sham-ui';
-import { inject } from 'sham-ui-macro/babel.macro';
+import { inject } from 'sham-ui-macro/inject.macro';
 
 export default class Store {
     @inject session;
 
-    constructor() {
+    constructor( DI ) {
+        this.DI = DI;
         DI.bind( 'store', this );
         const baseURL = PRODUCTION ?
             `${document.location.protocol}//${document.location.host}/api/v1/` :

@@ -1,18 +1,16 @@
-import { DI } from 'sham-ui';
-import hrefto from 'sham-ui-router/href-to';
+import { createDI } from 'sham-ui';
+import hrefto from 'sham-ui-router/lib/href-to';
 import BreadCrumb from '../../../src/components/BreadCrumb.sfc';
 import renderer from 'sham-ui-test-helpers';
 
-afterEach( () => {
-    DI.bind( 'router', null );
-} );
-
 it( 'renders correctly', () => {
+    const DI = createDI();
     DI.bind( 'router', {
         generate: jest.fn().mockReturnValueOnce( '/' )
     } );
 
     const meta = renderer( BreadCrumb, {
+        DI,
         directives: {
             hrefto
         }

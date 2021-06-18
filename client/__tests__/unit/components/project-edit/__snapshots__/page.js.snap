@@ -2,7 +2,6 @@
 
 exports[`renders correctly 1`] = `
 Object {
-  "Constructor": "ProjectEditPage",
   "Options": Object {
     "ID": "component",
     "dataLoaded": false,
@@ -29,22 +28,21 @@ Object {
    <li>
      <a href=\\"/\\"> Projects </a>
    </li>
-   <!--if-->
+   <!--0-->
    <li></li>
  </ul>
- <!--BreadCrumb-->
- <!--breadcrumbs-->
- <!--if-->
- <!--WithoutFlushLoader-->
- <!--if-->
- <!--PageContent-->
+ <!--0-->
+ <!--0-->
+ <!--0-->
+ <!--0-->
+ <!--1-->
+ <!--0-->
 ",
 }
 `;
 
 exports[`renders correctly 2`] = `
 Object {
-  "Constructor": "ProjectEditPage",
   "Options": Object {
     "ID": "component",
     "dataLoaded": true,
@@ -78,14 +76,14 @@ Object {
    <li>
      <a href=\\"undefined\\">Test</a>
    </li>
-   <!--if-->
-   <!--if-->
+   <!--0-->
+   <!--0-->
    <li>Edit</li>
  </ul>
- <!--BreadCrumb-->
- <!--breadcrumbs-->
- <!--if-->
- <!--ErrorsPanel-->
+ <!--0-->
+ <!--0-->
+ <!--0-->
+ <!--0-->
  <div class=\\"project-create-form\\">
    <form>
      <div class=\\"group\\">
@@ -101,17 +99,16 @@ Object {
      </div>
    </form>
  </div>
- <!--ProjectForm-->
- <!--content-->
- <!--if-->
- <!--PageContent-->
+ <!--1-->
+ <!--0-->
+ <!--1-->
+ <!--0-->
 ",
 }
 `;
 
 exports[`update fail 1`] = `
 Object {
-  "Constructor": "ProjectEditPage",
   "Options": Object {
     "ID": "component",
     "dataLoaded": true,
@@ -147,17 +144,17 @@ Object {
    <li>
      <a href=\\"undefined\\">Test</a>
    </li>
-   <!--if-->
-   <!--if-->
+   <!--0-->
+   <!--0-->
    <li>Edit</li>
  </ul>
- <!--BreadCrumb-->
- <!--breadcrumbs-->
+ <!--0-->
+ <!--0-->
  <ul class=\\"errors-panel\\">
    <li>Update project fail!</li>
  </ul>
- <!--if-->
- <!--ErrorsPanel-->
+ <!--0-->
+ <!--0-->
  <div class=\\"project-create-form\\">
    <form>
      <div class=\\"group\\">
@@ -173,10 +170,10 @@ Object {
      </div>
    </form>
  </div>
- <!--ProjectForm-->
- <!--content-->
- <!--if-->
- <!--PageContent-->
+ <!--1-->
+ <!--0-->
+ <!--1-->
+ <!--0-->
 ",
 }
 `;

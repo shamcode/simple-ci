@@ -2,7 +2,6 @@
 
 exports[`renders correctly 1`] = `
 Object {
-  "Constructor": "ProjectForm",
   "Options": Object {
     "ID": "component",
     "command": "",
@@ -38,7 +37,7 @@ Object {
           <div class=\\"codeflask__lines\\"><span class=\\"codeflask__lines__line\\">1</span></div>
         </div>
       </div>
-      <!--CodeFlask--><span class=\\"highlight\\"></span><span class=\\"bar\\"></span>
+      <!--0--><span class=\\"highlight\\"></span><span class=\\"bar\\"></span>
       <label>Command</label>
     </div>
     <div class=\\"group\\">

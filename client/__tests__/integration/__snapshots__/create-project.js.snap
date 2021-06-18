@@ -4,19 +4,19 @@ exports[`create project 1`] = `
 "<header>
   <a class=\\"logo\\" href=\\"\\"> Simple CI </a>
 </header>
-<!--Header-->
+<!--0-->
 <main>
   <ul class=\\"breadcrumb\\">
     <li>
       <a href=\\"\\"> Projects </a>
     </li>
-    <!--if-->
+    <!--0-->
     <li>Create project</li>
   </ul>
-  <!--BreadCrumb-->
-  <!--breadcrumbs-->
-  <!--if-->
-  <!--ErrorsPanel-->
+  <!--0-->
+  <!--0-->
+  <!--0-->
+  <!--0-->
   <div class=\\"project-create-form\\">
     <form>
       <div class=\\"group\\">
@@ -32,38 +32,38 @@ exports[`create project 1`] = `
       </div>
     </form>
   </div>
-  <!--ProjectForm-->
-  <!--content-->
-  <!--if-->
-  <!--PageContent-->
+  <!--1-->
+  <!--0-->
+  <!--1-->
+  <!--0-->
 </main>
 <footer> Sham 2018
-  (v 0.0.5) </footer>
-<!--Footer-->"
+  (v 0.0.6) </footer>
+<!--1-->"
 `;
 
 exports[`create project 2`] = `
 "<header>
   <a class=\\"logo\\" href=\\"\\"> Simple CI </a>
 </header>
-<!--Header-->
+<!--0-->
 <main>
-  <!--breadcrumbs-->
-  <!--if-->
-  <!--ErrorsPanel-->
+  <!--0-->
+  <!--0-->
+  <!--0-->
   <div class=\\"project-list\\">
     <a class=\\"project-card\\" href=\\"projects/1\\"><span class=\\"name\\">Test</span></a>
-    <!--for-->
+    <!--0-->
     <a class=\\"project-card project-card-create\\" href=\\"projects/create\\">
       <div class=\\"create-icon\\"></div>
     </a>
   </div>
-  <!--ProjectsList-->
-  <!--content-->
-  <!--if-->
-  <!--PageContent-->
+  <!--1-->
+  <!--0-->
+  <!--1-->
+  <!--0-->
 </main>
 <footer> Sham 2018
-  (v 0.0.5) </footer>
-<!--Footer-->"
+  (v 0.0.6) </footer>
+<!--1-->"
 `;

@@ -1,61 +1,38 @@
-import { configureOptions } from 'sham-ui';
-import { inject } from 'sham-ui-macro/babel.macro';
+import { ref } from 'sham-ui-macro/ref.macro';
 
-export default ( superclass ) => class LoadChain extends superclass {
-    @inject store;
-    @inject router;
+export default function LoadChain( options, update, didMount ) {
+    const dataLoaded = ref();
+    const chain = ref();
+    const project = ref();
+    const errors = ref();
 
-    configureOptions() {
-        super.configureOptions( ...arguments );
-        configureOptions( LoadChain.prototype, this, {
-            dataLoaded: false,
-            chain: {},
-            project: {},
-            errors: []
-        } );
-    }
+    options( {
+        [ dataLoaded ]: false,
+        [ chain ]: {},
+        [ project ]: {},
+        [ errors ]: []
+    } );
 
-    get _routerParams() {
-        return this.router.storage.params;
-    }
+    const store = this.DI.resolve( 'store' );
+    const router = this.DI.resolve( 'router' );
 
-    get projectId() {
-        return this._routerParams.id;
-    }
+    const _loadPageData = ref();
+    this[ _loadPageData ] = () => Promise.all( [
+        store.getProjectById( router.storage.params.id ),
+        store.getProjectChainById( router.storage.params.chainId )
+    ] ).then(
+        ( [ pageData, chainData ] ) => update( {
+            [ project ]: pageData.project,
+            [ chain ]: chainData.chain,
+            [ dataLoaded ]: true,
+            [ errors ]: []
+        } ),
+        () => update( {
+            [ chain ]: {},
+            [ dataLoaded ]: true,
+            [ errors ]: [ 'Load project chain fail!' ]
+        } )
+    );
 
-    get chainId() {
-        return this._routerParams.chainId;
-    }
-
-    didMount() {
-        super.didMount( ...arguments );
-        this._loadPageData();
-    }
-
-    _loadPageData() {
-        Promise.all( [
-            this.store.getProjectById( this.projectId ),
-            this.store.getProjectChainById( this.chainId )
-        ] ).then(
-            ::this._loadedPageDataSuccess,
-            ::this._loadedPageDataFail
-        );
-    }
-
-    _loadedPageDataSuccess( [ { project }, { chain } ] ) {
-        this.update( {
-            project,
-            chain,
-            dataLoaded: true,
-            errors: []
-        } );
-    }
-
-    _loadedPageDataFail() {
-        this.update( {
-            chain: {},
-            dataLoaded: true,
-            errors: [ 'Load project chain fail!' ]
-        } );
-    }
-};
+    didMount( () => this[ _loadPageData ]() );
+}

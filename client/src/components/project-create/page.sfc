@@ -20,41 +20,33 @@
 </template>
 
 <script>
-    import { mergeWithTemplate, options, inject } from 'sham-ui-macro/babel.macro';
+    function ProjectCreatePage( options, update ) {
+        const errors = ref();
+        const dataSaving = ref();
+        const createProject = ref();
 
-    @mergeWithTemplate
-    class ProjectCreatePage extends Template {
-        @inject store = 'store';
-        @inject router = 'router';
+        const router = this.DI.resolve( 'router' );
 
-        @options errors = [];
-        @options dataSaving = false;
-
-        @options
-        createProject( data ) {
-            this.update( {
-                dataSaving: true,
-                errors: []
-            } );
-            this.store.createProject( data ).then(
-                ::this._createProjectSuccess,
-                ::this._createProjectFail
-            );
-        }
-
-        _createProjectSuccess() {
-            this.router.navigate(
-                this.router.generate( 'project-list', {} )
-            );
-        }
-
-        _createProjectFail() {
-            this.update( {
-                errors: [ 'Create project fail!' ],
-                dataSaving: false
-            } );
-        }
+        options( {
+            [ errors ]: [],
+            [ dataSaving ]: false,
+            [ createProject ]: ( data ) => {
+                update( {
+                    [ dataSaving ]: true,
+                    [ errors ]: []
+                } );
+                this.DI.resolve( 'store' ).createProject( data ).then(
+                    () => router.navigate(
+                        router.generate( 'project-list', {} )
+                    ),
+                    () => update( {
+                        [ errors ]: [ 'Create project fail!' ],
+                        [ dataSaving ]: false
+                    } )
+                );
+            }
+        } );
     }
 
-    export default ProjectCreatePage;
+    export default Component( Template, ProjectCreatePage );
 </script>

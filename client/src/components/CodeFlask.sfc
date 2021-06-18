@@ -5,27 +5,28 @@
 
 <script>
     import Flask from 'codeflask';
-    import { mergeWithTemplate, options } from 'sham-ui-macro/babel.macro';
 
-    @mergeWithTemplate
-    class CodeFlaskComponent extends Template {
-        @options name = '';
-        @options value = '';
+    function CodeFlaskComponent( options, update, didMount ) {
+        const name = ref();
+        const value = ref();
 
-        didMount() {
-            super.didMount( ...arguments );
-            this.flask = new Flask( this.flaskContainer, {
+        const state = options( {
+            [ name ]: '',
+            [ value ]: ''
+        } );
+
+        didMount( () => {
+            const flask = new Flask( this.flaskContainer, {
                 lineNumbers: true
             } );
-            this.flask.updateCode( this.options.value );
-            this.flask.onUpdate( ( code ) => {
-                this.update( {
-                    value: code
-                } );
-            } );
-
-        }
+            flask.updateCode( state[ value ] );
+            flask.onUpdate(
+                code => update( {
+                    [ value ]: code
+                } )
+            );
+        } );
     }
 
-    export default CodeFlaskComponent;
+    export default Component( Template, CodeFlaskComponent );
 </script>

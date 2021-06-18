@@ -24,37 +24,34 @@
 </template>
 
 <script>
-    import { options } from 'sham-ui-macro/babel.macro';
     import LoadProjectMixin from '../../mixins/load-project';
 
-    class ProjectEditPage extends LoadProjectMixin( Template ) {
-        @options dataSaving = false;
+    function ProjectEditPage( options, update ) {
+        const dataSaving = ref();
+        const errors = ref();
 
-        @options
-        updateProject( data ) {
-            this.update( {
-                dataSaving: true,
-                errors: []
-            } );
-            this.store.updateProject( this.projectId, data ).then(
-                ::this._updateProjectSuccess,
-                ::this._updateProjectFail
-            );
-        }
+        const router = this.DI.resolve( 'router' );
 
-        _updateProjectSuccess() {
-            this.router.navigate(
-                this.router.generate( 'project-detail', this._routerParams )
-            );
-        }
-
-        _updateProjectFail() {
-            this.update( {
-                errors: [ 'Update project fail!' ],
-                dataSaving: false
-            } );
-        }
+        options( {
+            [ dataSaving ]: false,
+            [ errors ]: [],
+            [ ref( 'updateProject' ) ]: ( data ) => {
+                update( {
+                    [ dataSaving ]: true,
+                    [ errors ]: []
+                } );
+                this.DI.resolve( 'store' ).updateProject( router.storage.params.id, data ).then(
+                    () => router.navigate(
+                        router.generate( 'project-detail', router.storage.params )
+                    ),
+                    () => update( {
+                        [ errors ]: [ 'Update project fail!' ],
+                        [ dataSaving ]: false
+                    } )
+                );
+            }
+        } );
     }
 
-    export default ProjectEditPage;
+    export default Component( Template, LoadProjectMixin, ProjectEditPage );
 </script>

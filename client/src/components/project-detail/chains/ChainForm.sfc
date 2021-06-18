@@ -2,7 +2,7 @@
     {% import CodeFlask from '../../CodeFlask.sfc' %}
 
     <div class="project-chain-form">
-        <form :onsubmit={{::this._submitForm}} :ref="formNode">
+        <form :onsubmit={{this[ ref( '_submitForm' ) ]}} :ref="formNode">
             <div class="group">
                 <input name="name" type="text" required value={{name}}/>
                 <span class="highlight"></span>
@@ -28,8 +28,6 @@
 </template>
 
 <script>
-    import { mergeWithTemplate, options } from 'sham-ui-macro/babel.macro';
-
     function extractValue( value ) {
         return value.trim();
     }
@@ -38,15 +36,18 @@
         return value.length > 0;
     }
 
-    @mergeWithTemplate
-    class ProjectForm extends Template {
-        @options name = '';
-        @options command = '';
-        @options saveButtonText = '';
-        @options dataSaving = false;
-        @options onSubmit() {}
+    function ProjectForm( options ) {
+        const onSubmit = ref();
 
-        _submitForm( e ) {
+        const state = options( {
+            [ ref( 'name' ) ]: '',
+            [ ref( 'command' ) ]: '',
+            [ ref( 'saveButtonText' ) ]: '',
+            [ ref( 'dataSaving' ) ]: false,
+            [ onSubmit ]() {}
+        } );
+
+        this[ ref( '_submitForm' ) ] = e => {
             e.preventDefault();
             const formData = new FormData( this.formNode );
             const data = {};
@@ -62,10 +63,10 @@
             } );
             if ( dataValid ) {
                 data.command = extractValue( formData.get( 'command' ) );
-                this.options.onSubmit( data );
+                state[ onSubmit ]( data );
             }
-        }
+        };
     }
 
-    export default ProjectForm;
+    export default Component( Template, ProjectForm );
 </script>

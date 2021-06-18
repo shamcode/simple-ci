@@ -2,7 +2,6 @@
 
 exports[`renders correctly 1`] = `
 Object {
-  "Constructor": "BreadCrumb",
   "Options": Object {
     "ID": "component",
     "chain": null,
@@ -17,7 +16,7 @@ Object {
   <li>
     <a href=\\"/\\"> Projects </a>
   </li>
-  <!--if-->
+  <!--0-->
   <li></li>
 </ul>
 ",

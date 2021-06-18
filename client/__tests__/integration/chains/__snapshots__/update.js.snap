@@ -4,7 +4,7 @@ exports[`update project chain 1`] = `
 "<header>
   <a class=\\"logo\\" href=\\"\\"> Simple CI </a>
 </header>
-<!--Header-->
+<!--0-->
 <main>
   <ul class=\\"breadcrumb\\">
     <li>
@@ -13,14 +13,14 @@ exports[`update project chain 1`] = `
     <li>
       <a href=\\"projects/1\\">Test</a>
     </li>
-    <!--if-->
-    <!--if-->
+    <!--0-->
+    <!--0-->
     <li>Test chain</li>
   </ul>
-  <!--BreadCrumb-->
-  <!--breadcrumbs-->
-  <!--if-->
-  <!--ErrorsPanel-->
+  <!--0-->
+  <!--0-->
+  <!--0-->
+  <!--0-->
   <div class=\\"chain-info\\">
     <h3>Test chain</h3>
   </div>
@@ -38,7 +38,7 @@ exports[`update project chain 1`] = `
             <div class=\\"codeflask__lines\\"><span class=\\"codeflask__lines__line\\">1</span></div>
           </div>
         </div>
-        <!--CodeFlask--><span class=\\"highlight\\"></span><span class=\\"bar\\"></span>
+        <!--0--><span class=\\"highlight\\"></span><span class=\\"bar\\"></span>
         <label>Command</label>
       </div>
       <div class=\\"group\\">
@@ -46,23 +46,23 @@ exports[`update project chain 1`] = `
       </div>
     </form>
   </div>
-  <!--ChainForm-->
-  <!--Info-->
-  <!--if-->
-  <!--content-->
-  <!--if-->
-  <!--PageContent-->
+  <!--0-->
+  <!--0-->
+  <!--1-->
+  <!--0-->
+  <!--1-->
+  <!--0-->
 </main>
 <footer> Sham 2018
-  (v 0.0.5) </footer>
-<!--Footer-->"
+  (v 0.0.6) </footer>
+<!--1-->"
 `;
 
 exports[`update project chain 2`] = `
 "<header>
   <a class=\\"logo\\" href=\\"\\"> Simple CI </a>
 </header>
-<!--Header-->
+<!--0-->
 <main>
   <ul class=\\"breadcrumb\\">
     <li>
@@ -71,14 +71,14 @@ exports[`update project chain 2`] = `
     <li>
       <a href=\\"projects/1\\">Test</a>
     </li>
-    <!--if-->
-    <!--if-->
+    <!--0-->
+    <!--0-->
     <li>Test chain</li>
   </ul>
-  <!--BreadCrumb-->
-  <!--breadcrumbs-->
-  <!--if-->
-  <!--ErrorsPanel-->
+  <!--0-->
+  <!--0-->
+  <!--0-->
+  <!--0-->
   <div class=\\"chain-info\\">
     <h3>Test chain</h3>
   </div>
@@ -96,7 +96,7 @@ exports[`update project chain 2`] = `
             <div class=\\"codeflask__lines\\"><span class=\\"codeflask__lines__line\\">1</span></div>
           </div>
         </div>
-        <!--CodeFlask--><span class=\\"highlight\\"></span><span class=\\"bar\\"></span>
+        <!--0--><span class=\\"highlight\\"></span><span class=\\"bar\\"></span>
         <label>Command</label>
       </div>
       <div class=\\"group\\">
@@ -104,14 +104,14 @@ exports[`update project chain 2`] = `
       </div>
     </form>
   </div>
-  <!--ChainForm-->
-  <!--Info-->
-  <!--if-->
-  <!--content-->
-  <!--if-->
-  <!--PageContent-->
+  <!--0-->
+  <!--0-->
+  <!--1-->
+  <!--0-->
+  <!--1-->
+  <!--0-->
 </main>
 <footer> Sham 2018
-  (v 0.0.5) </footer>
-<!--Footer-->"
+  (v 0.0.6) </footer>
+<!--1-->"
 `;

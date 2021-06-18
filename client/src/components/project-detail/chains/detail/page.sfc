@@ -24,38 +24,39 @@
 </template>
 
 <script>
-    import { options } from 'sham-ui-macro/babel.macro';
     import LoadChainMixin from '../../../../mixins/load-chain';
 
-    export default class ChainDetailPage extends LoadChainMixin( Template ) {
-        @options dataSaving = false;
-        @options errors = [];
+    function ChainDetailPage( options, update ) {
+        const dataSaving = ref();
+        const errors = ref();
 
-        @options
-        updateProjectChain( formData ) {
-            this.update( {
-                dataSaving: true,
-                errors: []
-            } );
-            this.store.updateProjectChain( this.options.chain.id, formData ).then(
-                ::this._updateProjectChainSuccess,
-                ::this._updateProjectChainFail
-            );
-        }
-
-        _updateProjectChainSuccess() {
-            this.update( {
-                dataLoaded: false,
-                dataSaving: false
-            } );
-            this._loadPageData();
-        }
-
-        _updateProjectChainFail() {
-            this.update( {
-                errors: [ 'Update project chain fail!' ],
-                dataSaving: false
-            } );
-        }
+        const state = options( {
+            [ dataSaving ]: false,
+            [ errors ]: [],
+            [ ref( 'updateProjectChain' ) ]: ( formData ) => {
+                update( {
+                    [ dataSaving ]: true,
+                    [ errors ]: []
+                } );
+                this.DI.resolve( 'store' ).updateProjectChain(
+                    state[ ref( 'chain' ) ].id,
+                    formData
+                ).then(
+                    () => {
+                        update( {
+                            [ dataSaving ]: false,
+                            [ ref( 'dataLoaded' ) ]: false
+                        } );
+                        this[ ref( '_loadPageData' ) ]();
+                    },
+                    () => update( {
+                        [ dataSaving ]: false,
+                        [ errors ]: [ 'Update project chain fail!' ]
+                    } )
+                );
+            }
+        } );
     }
+
+    export default Component( Template, LoadChainMixin, ChainDetailPage );
 </script>

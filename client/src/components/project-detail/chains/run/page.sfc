@@ -26,66 +26,57 @@
 </template>
 
 <script>
-    import { inject, options } from 'sham-ui-macro/babel.macro';
     import LoadChainMixin from '../../../../mixins/load-chain';
 
-    export default class ChainRunPage extends LoadChainMixin( Template ) {
+    function ChainRunPage( options, update, didMount, onRemove ) {
+        const dataSaving = ref();
+        const errors = ref();
+        const commandOutput = ref();
+
         /** @type Socket */
-        @inject socket;
+        const socket = this.DI.resolve( 'socket' );
 
-        @options dataSaving = false;
-        @options errors = [];
-        @options commandOutput = '';
-
-        @options
-        runProjectChain() {
-            this.update( {
-                commandOutput: '',
-                dataSaving: true,
-                errors: []
-            } );
-            this.socket.removeWatcher( this.updateCommandOutput );
-            this.socket.connect().then(
-                ::this._runProjectChain
-            );
-        }
-
-        _runProjectChain() {
-            const chainId = this.options.chain.id;
-            this.socket.watch( chainId, this.updateCommandOutput );
-            this.store.runProjectChain( chainId ).then(
-                ::this._runProjectChainSuccess,
-                ::this._runProjectChainFail
-            );
-        }
-
-        _runProjectChainSuccess() {
-            this.update( {
-                dataLoaded: false,
-                dataSaving: false
-            } );
-            this._loadPageData();
-        }
-
-        _runProjectChainFail() {
-            this.update( {
-                errors: [ 'Run project chain fail!' ],
-                dataSaving: false
-            } );
-        }
-
-        updateCommandOutput = ( commandOutput ) => {
-            if ( undefined === this ) {
-                return;
+        const state = options( {
+            [ dataSaving ]: false,
+            [ errors ]: [],
+            [ commandOutput ]: '',
+            [ ref( 'runProjectChain' ) ]: () => {
+                update( {
+                    [ commandOutput ]: '',
+                    [ dataSaving ]: true,
+                    [ errors ]: []
+                } );
+                socket.removeWatcher( updateCommandOutput );
+                socket.connect().then( runProject );
             }
-            this.update( {
-                commandOutput: `${this.options.commandOutput}\n${commandOutput}`
+        } );
+
+        const updateCommandOutput = () => ( output ) => {
+            update( {
+                [ commandOutput ]: `${state[ commandOutput ]}\n${output}`
             } );
         };
 
-        remove() {
-            this.socket.removeWatcher( this.updateCommandOutput );
-            super.remove();
-        }
+        const runProject = () => {
+            const chainId = state[ ref( 'chain' ) ].id;
+            socket.watch( chainId, updateCommandOutput );
+            this.DI.resolve( 'store' ).runProjectChain( chainId ).then(
+                () => {
+                    update( {
+                        [ ref( 'dataLoaded' ) ]: false,
+                        [ dataSaving ]: false
+                    } );
+                    this[ ref( '_loadPageData' ) ]();
+                },
+                () => update( {
+                    [ errors ]: [ 'Run project chain fail!' ],
+                    [ dataSaving ]: false
+                } )
+            );
+        };
+
+        onRemove( () => socket.removeWatcher( updateCommandOutput ) );
     }
+
+    export default Component( Template, LoadChainMixin, ChainRunPage );
 </script>

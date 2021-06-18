@@ -2,13 +2,12 @@
 
 exports[`renders correctly 1`] = `
 Object {
-  "Constructor": "PageContent",
   "Options": Object {
     "ID": "component",
   },
   "html": "
-<!--breadcrumbs-->
-<!--if-->
+<!--0-->
+<!--1-->
 ",
 }
 `;

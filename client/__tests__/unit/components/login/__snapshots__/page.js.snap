@@ -2,7 +2,6 @@
 
 exports[`renders correctly 1`] = `
 Object {
-  "Constructor": "LoginPage",
   "Options": Object {
     "ID": "component",
     "dataSaving": false,
@@ -22,8 +21,8 @@ Object {
     "password": "",
   },
   "html": "
-<!--if-->
-<!--ErrorsPanel-->
+<!--0-->
+<!--0-->
 <div class=\\"login-form\\">
   <form>
     <div class=\\"group\\">

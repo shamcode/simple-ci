@@ -2,7 +2,6 @@
 
 exports[`renders correctly 1`] = `
 Object {
-  "Constructor": "App",
   "Options": Object {
     "ID": "component",
     "directives": Object {
@@ -13,9 +12,9 @@ Object {
 <header>
   <a class=\\"logo\\" href=\\"/\\"> Simple CI </a>
 </header>
-<!--Header-->
+<!--0-->
 <main></main>
-<!--Footer-->
+<!--1-->
 ",
 }
 `;

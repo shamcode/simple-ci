@@ -1,11 +1,11 @@
-import { DI } from 'sham-ui';
-import { inject } from 'sham-ui-macro/babel.macro';
+import { inject } from 'sham-ui-macro/inject.macro';
 
 export default class Session {
     @inject router;
     @inject store;
 
-    constructor() {
+    constructor( DI ) {
+        this.DI = DI;
         if ( !this.isAuthenticated ) {
             this.invalidateSession();
         }

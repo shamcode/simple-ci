@@ -2,7 +2,6 @@
 
 exports[`renders correctly 1`] = `
 Object {
-  "Constructor": "Chain",
   "Options": Object {
     "ID": "component",
     "chain": Object {},
@@ -19,14 +18,13 @@ Object {
       "onsubmit": [Function],
       "ref": [Function],
     },
-    "isExpand": false,
     "project": Object {
       "chains": Array [],
     },
   },
   "html": "
 <button class=\\"project-chain\\">null</button>
-<!--if-->
+<!--0-->
 ",
 }
 `;

@@ -2,17 +2,17 @@
 
 exports[`renders correctly 1`] = `
 Object {
-  "Constructor": "ChainDeletePage",
   "Options": Object {
     "ID": "component",
-    "bodyText": [Function],
     "cancelDeleteChain": [Function],
     "chain": Object {},
     "dataLoaded": false,
     "dataSaving": false,
     "deleteChain": [Function],
     "directives": Object {
+      "disabled": [Function],
       "hrefto": [Function],
+      "onclick": [Function],
     },
     "errors": Array [],
     "project": Object {},
@@ -22,15 +22,15 @@ Object {
    <li>
      <a href=\\"/\\"> Projects </a>
    </li>
-   <!--if-->
+   <!--0-->
    <li></li>
  </ul>
- <!--BreadCrumb-->
- <!--breadcrumbs-->
- <!--if-->
- <!--WithoutFlushLoader-->
- <!--if-->
- <!--PageContent-->
+ <!--0-->
+ <!--0-->
+ <!--0-->
+ <!--0-->
+ <!--1-->
+ <!--0-->
 ",
 }
 `;

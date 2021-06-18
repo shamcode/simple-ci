@@ -10,7 +10,9 @@
         {% endblock %}
         {% block 'content' %}
             <ErrorsPanel errors={{errors}}/>
-            <Info project={{project}}/>
+             {% if errors.length == 0 %}
+                <Info project={{project}}/>
+             {% endif %}
         {% endblock %}
     </PageContent>
 </template>
@@ -18,7 +20,5 @@
 <script>
     import LoadProjectMixin from '../../mixins/load-project';
 
-    export default class ProjectDetailPage extends LoadProjectMixin( Template ) {
-
-    }
+    export default Component( Template, LoadProjectMixin );
 </script>

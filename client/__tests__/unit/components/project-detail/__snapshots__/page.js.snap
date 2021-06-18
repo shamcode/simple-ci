@@ -2,7 +2,6 @@
 
 exports[`render errors 1`] = `
 Object {
-  "Constructor": "ProjectDetailPage",
   "Options": Object {
     "ID": "component",
     "dataLoaded": false,
@@ -27,22 +26,21 @@ Object {
    <li>
      <a href=\\"/\\"> Projects </a>
    </li>
-   <!--if-->
+   <!--0-->
    <li></li>
  </ul>
- <!--BreadCrumb-->
- <!--breadcrumbs-->
- <!--if-->
- <!--WithoutFlushLoader-->
- <!--if-->
- <!--PageContent-->
+ <!--0-->
+ <!--0-->
+ <!--0-->
+ <!--0-->
+ <!--1-->
+ <!--0-->
 ",
 }
 `;
 
 exports[`renders correctly 1`] = `
 Object {
-  "Constructor": "ProjectDetailPage",
   "Options": Object {
     "ID": "component",
     "dataLoaded": false,
@@ -67,15 +65,15 @@ Object {
    <li>
      <a href=\\"/\\"> Projects </a>
    </li>
-   <!--if-->
+   <!--0-->
    <li></li>
  </ul>
- <!--BreadCrumb-->
- <!--breadcrumbs-->
- <!--if-->
- <!--WithoutFlushLoader-->
- <!--if-->
- <!--PageContent-->
+ <!--0-->
+ <!--0-->
+ <!--0-->
+ <!--0-->
+ <!--1-->
+ <!--0-->
 ",
 }
 `;

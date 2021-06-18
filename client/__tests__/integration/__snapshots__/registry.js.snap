@@ -4,10 +4,10 @@ exports[`success registry 1`] = `
 "<header>
   <a class=\\"logo\\" href=\\"\\"> Simple CI </a>
 </header>
-<!--Header-->
+<!--0-->
 <main>
-  <!--if-->
-  <!--ErrorsPanel-->
+  <!--0-->
+  <!--0-->
   <div class=\\"registry-form\\">
     <form>
       <div class=\\"group\\">
@@ -25,6 +25,6 @@ exports[`success registry 1`] = `
   </div>
 </main>
 <footer> Sham 2018
-  (v 0.0.5) </footer>
-<!--Footer-->"
+  (v 0.0.6) </footer>
+<!--1-->"
 `;

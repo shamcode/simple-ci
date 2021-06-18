@@ -4,32 +4,32 @@ exports[`update project 1`] = `
 "<header>
   <a class=\\"logo\\" href=\\"\\"> Simple CI </a>
 </header>
-<!--Header-->
+<!--0-->
 <main>
   <ul class=\\"breadcrumb\\">
     <li>
       <a href=\\"\\"> Projects </a>
     </li>
-    <!--if-->
+    <!--0-->
     <li></li>
   </ul>
-  <!--BreadCrumb-->
-  <!--breadcrumbs-->
-  <!--if-->
-  <!--WithoutFlushLoader-->
-  <!--if-->
-  <!--PageContent-->
+  <!--0-->
+  <!--0-->
+  <!--0-->
+  <!--0-->
+  <!--1-->
+  <!--0-->
 </main>
 <footer> Sham 2018
-  (v 0.0.5) </footer>
-<!--Footer-->"
+  (v 0.0.6) </footer>
+<!--1-->"
 `;
 
 exports[`update project 2`] = `
 "<header>
   <a class=\\"logo\\" href=\\"\\"> Simple CI </a>
 </header>
-<!--Header-->
+<!--0-->
 <main>
   <ul class=\\"breadcrumb\\">
     <li>
@@ -38,14 +38,14 @@ exports[`update project 2`] = `
     <li>
       <a href=\\"projects/1\\">Test</a>
     </li>
-    <!--if-->
-    <!--if-->
+    <!--0-->
+    <!--0-->
     <li>Edit</li>
   </ul>
-  <!--BreadCrumb-->
-  <!--breadcrumbs-->
-  <!--if-->
-  <!--ErrorsPanel-->
+  <!--0-->
+  <!--0-->
+  <!--0-->
+  <!--0-->
   <div class=\\"project-create-form\\">
     <form>
       <div class=\\"group\\">
@@ -61,33 +61,33 @@ exports[`update project 2`] = `
       </div>
     </form>
   </div>
-  <!--ProjectForm-->
-  <!--content-->
-  <!--if-->
-  <!--PageContent-->
+  <!--1-->
+  <!--0-->
+  <!--1-->
+  <!--0-->
 </main>
 <footer> Sham 2018
-  (v 0.0.5) </footer>
-<!--Footer-->"
+  (v 0.0.6) </footer>
+<!--1-->"
 `;
 
 exports[`update project 3`] = `
 "<header>
   <a class=\\"logo\\" href=\\"\\"> Simple CI </a>
 </header>
-<!--Header-->
+<!--0-->
 <main>
   <ul class=\\"breadcrumb\\">
     <li>
       <a href=\\"\\"> Projects </a>
     </li>
-    <!--if-->
+    <!--0-->
     <li>Test</li>
   </ul>
-  <!--BreadCrumb-->
-  <!--breadcrumbs-->
-  <!--if-->
-  <!--ErrorsPanel-->
+  <!--0-->
+  <!--0-->
+  <!--0-->
+  <!--0-->
   <div class=\\"project-info\\">
     <h3>Test</h3>
     <dl>
@@ -107,19 +107,20 @@ exports[`update project 3`] = `
   <div class=\\"project-chains\\">
     <h3>Chains</h3>
     <button class=\\"project-chain\\">Test chain</button>
-    <!--if-->
-    <!--Chain-->
-    <!--for-->
+    <!--0-->
+    <!--0-->
+    <!--0-->
     <a class=\\"project-chain project-chain-create\\" href=\\"projects/1/chains/create\\">
       <div class=\\"create-icon\\"></div>
     </a>
   </div>
-  <!--Info-->
-  <!--content-->
-  <!--if-->
-  <!--PageContent-->
+  <!--0-->
+  <!--1-->
+  <!--0-->
+  <!--1-->
+  <!--0-->
 </main>
 <footer> Sham 2018
-  (v 0.0.5) </footer>
-<!--Footer-->"
+  (v 0.0.6) </footer>
+<!--1-->"
 `;

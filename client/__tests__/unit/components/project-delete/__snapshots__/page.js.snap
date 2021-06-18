@@ -2,7 +2,6 @@
 
 exports[`delete fail 1`] = `
 Object {
-  "Constructor": "ProjectDeletePage",
   "Options": Object {
     "ID": "component",
     "bodyText": [Function],
@@ -38,14 +37,14 @@ Object {
    <li>
      <a href=\\"/\\">Test</a>
    </li>
-   <!--if-->
-   <!--if-->
+   <!--0-->
+   <!--0-->
    <li>Delete</li>
  </ul>
- <!--BreadCrumb-->
- <!--breadcrumbs-->
- <!--if-->
- <!--ErrorsPanel-->
+ <!--0-->
+ <!--0-->
+ <!--0-->
+ <!--0-->
  <div class=\\"modal\\">
    <div class=\\"content\\">
      <div class=\\"header\\">Delete project</div>
@@ -56,18 +55,17 @@ Object {
      </div>
    </div>
  </div>
- <!--ConfirmModal-->
- <!--if-->
- <!--content-->
- <!--if-->
- <!--PageContent-->
+ <!--0-->
+ <!--1-->
+ <!--0-->
+ <!--1-->
+ <!--0-->
 ",
 }
 `;
 
 exports[`render errors 1`] = `
 Object {
-  "Constructor": "ProjectDeletePage",
   "Options": Object {
     "ID": "component",
     "bodyText": [Function],
@@ -100,27 +98,26 @@ Object {
    <li>
      <a href=\\"/\\"> Projects </a>
    </li>
-   <!--if-->
+   <!--0-->
    <li></li>
  </ul>
- <!--BreadCrumb-->
- <!--breadcrumbs-->
+ <!--0-->
+ <!--0-->
  <ul class=\\"errors-panel\\">
    <li>Load project fail!</li>
  </ul>
- <!--if-->
- <!--ErrorsPanel-->
- <!--if-->
- <!--content-->
- <!--if-->
- <!--PageContent-->
+ <!--0-->
+ <!--0-->
+ <!--1-->
+ <!--0-->
+ <!--1-->
+ <!--0-->
 ",
 }
 `;
 
 exports[`renders correctly 1`] = `
 Object {
-  "Constructor": "ProjectDeletePage",
   "Options": Object {
     "ID": "component",
     "bodyText": [Function],
@@ -149,15 +146,15 @@ Object {
    <li>
      <a href=\\"/\\"> Projects </a>
    </li>
-   <!--if-->
+   <!--0-->
    <li></li>
  </ul>
- <!--BreadCrumb-->
- <!--breadcrumbs-->
- <!--if-->
- <!--WithoutFlushLoader-->
- <!--if-->
- <!--PageContent-->
+ <!--0-->
+ <!--0-->
+ <!--0-->
+ <!--0-->
+ <!--1-->
+ <!--0-->
 ",
 }
 `;

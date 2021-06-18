@@ -11,8 +11,8 @@ import ChainDeletePage from '../components/project-detail/chains/delete/page.sfc
 import ChainDetailPage from '../components/project-detail/chains/detail/page.sfc';
 import ChainRunPage from '../components/project-detail/chains/run/page.sfc';
 
-export default function() {
-    const router = new Router( '/' );
+export default function( DI ) {
+    const router = new Router( DI, '/' );
 
     // Auth
     router

@@ -2,7 +2,6 @@
 
 exports[`renders correctly 1`] = `
 Object {
-  "Constructor": "ProjectForm",
   "Options": Object {
     "ID": "component",
     "cwd": "",

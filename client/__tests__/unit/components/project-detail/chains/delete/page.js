@@ -1,16 +1,13 @@
-import { DI } from 'sham-ui';
-import hrefto from 'sham-ui-router/href-to';
+import { onclick, disabled } from 'sham-ui-directives';
+import { createDI } from 'sham-ui';
+import hrefto from 'sham-ui-router/lib/href-to';
 import Page from '../../../../../../src/components/project-detail/chains/delete/page.sfc';
 import renderer from 'sham-ui-test-helpers';
 
-afterEach( () => {
-    DI.bind( 'store', null );
-    DI.bind( 'router', null );
-} );
-
 it( 'renders correctly', () => {
+    const DI = createDI();
     DI.bind( 'store', {
-        getProjectChainById: jest.fn().mockReturnValue( Promise.resolve( { project: { id: 1 } } ) ),
+        getProjectChainById: jest.fn().mockReturnValue( Promise.resolve( { chain: { id: 1 } } ) ),
         getProjectById: jest.fn().mockReturnValue( Promise.resolve( { project: { id: 1 } } ) )
     } );
     DI.bind( 'router', {
@@ -19,7 +16,10 @@ it( 'renders correctly', () => {
     } );
 
     const meta = renderer( Page, {
+        DI,
         directives: {
+            disabled,
+            onclick,
             hrefto
         }
     } );

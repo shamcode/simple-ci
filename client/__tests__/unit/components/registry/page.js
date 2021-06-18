@@ -1,4 +1,4 @@
-import { DI } from 'sham-ui';
+import { createDI } from 'sham-ui';
 import Page from '../../../../src/components/registry/page.sfc';
 import renderer from 'sham-ui-test-helpers';
 import * as directives from 'sham-ui-directives';
@@ -16,6 +16,7 @@ it( 'renders correctly', () => {
 it( 'registry fail', async() => {
     expect.assertions( 3 );
 
+    const DI = createDI();
     DI.bind( 'router', {
         generate: jest.fn().mockReturnValueOnce( '/' ),
         navigate: jest.fn()
@@ -26,6 +27,7 @@ it( 'registry fail', async() => {
     } );
 
     const meta = renderer( Page, {
+        DI,
         directives
     } );
     const formData = {

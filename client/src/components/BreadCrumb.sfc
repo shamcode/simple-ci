@@ -1,5 +1,5 @@
 <template>
-    {% import path from 'sham-ui-router/params' %}
+    {% import path from 'sham-ui-router/lib/params' %}
 
     <ul class="breadcrumb">
         <li>
@@ -22,7 +22,7 @@
             {% endif %}
         {% endif %}
         <li>
-            {% if this.dataReady( project, chain ) %}
+            {% if this[ ref( 'dataReady' ) ]( project, chain ) %}
                 {{currentPage}}
             {% endif %}
         </li>
@@ -30,18 +30,22 @@
 </template>
 
 <script>
-    import { mergeWithTemplate, options } from 'sham-ui-macro/babel.macro';
+    function BreadCrumb( options ) {
+        const project = ref();
+        const chain = ref();
+        const currentPage = ref();
 
-    @mergeWithTemplate
-    class BreadCrumb extends Template {
-        @options project = null;
-        @options chain = null;
-        @options currentPage = '';
+        options( {
+            [ project ]: null,
+            [ chain ]: null,
+            [ currentPage ]: ''
+        } );
 
-        dataReady( project, chain ) {
-            return ( project === null || project.id ) && ( chain === null || chain.id );
-        }
+        this[ ref( 'dataReady' ) ] = ( project, chain ) => (
+            ( project === null || project.id ) &&
+            ( chain === null || chain.id )
+        );
     }
 
-    export default BreadCrumb;
+    export default Component( Template, BreadCrumb );
 </script>

@@ -4,7 +4,7 @@ exports[`run project chain 1`] = `
 "<header>
   <a class=\\"logo\\" href=\\"\\"> Simple CI </a>
 </header>
-<!--Header-->
+<!--0-->
 <main>
   <ul class=\\"breadcrumb\\">
     <li>
@@ -16,30 +16,30 @@ exports[`run project chain 1`] = `
     <li>
       <a href=\\"projects/1/chains/2\\">Test chain</a>
     </li>
-    <!--if-->
-    <!--if-->
+    <!--0-->
+    <!--0-->
     <li>Run chain</li>
   </ul>
-  <!--BreadCrumb-->
-  <!--breadcrumbs-->
-  <!--if-->
-  <!--ErrorsPanel-->
+  <!--0-->
+  <!--0-->
+  <!--0-->
+  <!--0-->
   <button class=\\"run-project-chain\\"><span>Run</span></button> <pre class=\\"command-output\\"></pre>
-  <!--CommandOutput-->
-  <!--content-->
-  <!--if-->
-  <!--PageContent-->
+  <!--1-->
+  <!--0-->
+  <!--1-->
+  <!--0-->
 </main>
 <footer> Sham 2018
-  (v 0.0.5) </footer>
-<!--Footer-->"
+  (v 0.0.6) </footer>
+<!--1-->"
 `;
 
 exports[`run project chain 2`] = `
 "<header>
   <a class=\\"logo\\" href=\\"\\"> Simple CI </a>
 </header>
-<!--Header-->
+<!--0-->
 <main>
   <ul class=\\"breadcrumb\\">
     <li>
@@ -51,21 +51,21 @@ exports[`run project chain 2`] = `
     <li>
       <a href=\\"projects/1/chains/2\\">Test chain</a>
     </li>
-    <!--if-->
-    <!--if-->
+    <!--0-->
+    <!--0-->
     <li>Run chain</li>
   </ul>
-  <!--BreadCrumb-->
-  <!--breadcrumbs-->
-  <!--if-->
-  <!--ErrorsPanel-->
+  <!--0-->
+  <!--0-->
+  <!--0-->
+  <!--0-->
   <button class=\\"run-project-chain\\"><span>Run</span></button> <pre class=\\"command-output\\"></pre>
-  <!--CommandOutput-->
-  <!--content-->
-  <!--if-->
-  <!--PageContent-->
+  <!--1-->
+  <!--0-->
+  <!--1-->
+  <!--0-->
 </main>
 <footer> Sham 2018
-  (v 0.0.5) </footer>
-<!--Footer-->"
+  (v 0.0.6) </footer>
+<!--1-->"
 `;

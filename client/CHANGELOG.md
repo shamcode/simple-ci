@@ -1,3 +1,6 @@
+## 0.0.6
+* Migrate to `sham-ui` 5.x
+
 ## 0.0.5
 * Update dependencies
 * Fix `CodeFlask` component (`style` attribute)

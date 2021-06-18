@@ -4,7 +4,7 @@
     <ErrorsPanel errors={{errors}}/>
 
     <div class="login-form">
-        <form :onsubmit={{::this._submitForm}} :ref="form">
+        <form :onsubmit={{this[ ref( '_submitForm' ) ]}} :ref="form">
             <div class="group">
                 <input name="username" type="text" required>
                 <span class="highlight"></span>
@@ -27,39 +27,36 @@
 </template>
 
 <script>
-    import { mergeWithTemplate, options, inject } from 'sham-ui-macro/babel.macro';
+    function LoginPage( options, update ) {
+        const errors = ref();
+        const dataSaving = ref();
+        const password = ref();
 
-    @mergeWithTemplate
-    class LoginPage extends Template {
-        @inject session = 'session';
+        options( {
+            [ errors ]: [],
+            [ dataSaving ]: false,
+            [ password ]: ''
+        } );
 
-        @options errors = [];
-        @options dataSaving = false;
-        @options password = '';
-
-        _submitForm( e ) {
+        this[ ref( '_submitForm' ) ] = ( e ) => {
             e.preventDefault();
             const formData = new FormData( this.form );
-            this.update( {
-                dataSaving: true,
-                errors: []
+            update( {
+                [ dataSaving ]: true,
+                [ errors ]: []
             } );
-            this.session.login(
+            this.DI.resolve( 'session' ).login(
                 formData.get( 'username' ).trim(),
                 formData.get( 'password' )
             ).catch(
-                ::this.loginFail
+                () => update( {
+                    [ password ]: '',
+                    [ dataSaving ]: false,
+                    [ errors ]: [ 'Login fail' ]
+                } )
             );
-        }
-
-        loginFail() {
-            this.update( {
-                password: '',
-                dataSaving: false,
-                errors: [ 'Login fail' ]
-            } );
-        }
+        };
     }
 
-    export default LoginPage;
+    export default Component( Template, LoginPage );
 </script>

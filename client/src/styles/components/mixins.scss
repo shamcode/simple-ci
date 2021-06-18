@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @mixin plus($width, $lineWidth, $color) {
   box-sizing: border-box;
   transition: transform 0.3s;
@@ -11,7 +13,7 @@
     height:0px;
     border-bottom: solid $lineWidth $color;
     position: absolute;
-    bottom:$width /2 - $lineWidth/2;
+    bottom: math.div( $width, 2 ) - math.div( $lineWidth, 2 );
     transform: rotate(90deg);
     transition: width 0.3s;
   }
@@ -22,6 +24,6 @@
     height:0px;
     border-bottom: solid $lineWidth $color;
     position: absolute;
-    bottom:$width /2 - $lineWidth/2;
+    bottom: math.div( $width, 2 ) - math.div( $lineWidth, 2 );
   }
 }

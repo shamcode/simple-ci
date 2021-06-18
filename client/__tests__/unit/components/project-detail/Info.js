@@ -1,15 +1,11 @@
-import { DI } from 'sham-ui';
+import { createDI } from 'sham-ui';
 import Info from '../../../../src/components/project-detail/Info';
 import * as directives from 'sham-ui-directives';
-import hrefto from 'sham-ui-router/href-to';
+import hrefto from 'sham-ui-router/lib/href-to';
 import renderer from 'sham-ui-test-helpers';
 
-afterEach( () => {
-    DI.bind( 'store', null );
-    DI.bind( 'router', null );
-} );
-
 it( 'renders correctly', () => {
+    const DI = createDI();
     DI.bind( 'store', {
         getProjectById: jest.fn().mockReturnValue(
             Promise.resolve( {
@@ -23,6 +19,7 @@ it( 'renders correctly', () => {
     } );
 
     const meta = renderer( Info, {
+        DI,
         directives: {
             ...directives,
             hrefto

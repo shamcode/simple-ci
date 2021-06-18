@@ -2,7 +2,6 @@
 
 exports[`create fail 1`] = `
 Object {
-  "Constructor": "ProjectCreatePage",
   "Options": Object {
     "ID": "component",
     "createProject": [Function],
@@ -29,16 +28,16 @@ Object {
    <li>
      <a href=\\"/\\"> Projects </a>
    </li>
-   <!--if-->
+   <!--0-->
    <li>Create project</li>
  </ul>
- <!--BreadCrumb-->
- <!--breadcrumbs-->
+ <!--0-->
+ <!--0-->
  <ul class=\\"errors-panel\\">
    <li>Create project fail!</li>
  </ul>
- <!--if-->
- <!--ErrorsPanel-->
+ <!--0-->
+ <!--0-->
  <div class=\\"project-create-form\\">
    <form>
      <div class=\\"group\\">
@@ -54,17 +53,16 @@ Object {
      </div>
    </form>
  </div>
- <!--ProjectForm-->
- <!--content-->
- <!--if-->
- <!--PageContent-->
+ <!--1-->
+ <!--0-->
+ <!--1-->
+ <!--0-->
 ",
 }
 `;
 
 exports[`renders correctly 1`] = `
 Object {
-  "Constructor": "ProjectCreatePage",
   "Options": Object {
     "ID": "component",
     "createProject": [Function],
@@ -89,13 +87,13 @@ Object {
    <li>
      <a href=\\"/\\"> Projects </a>
    </li>
-   <!--if-->
+   <!--0-->
    <li>Create project</li>
  </ul>
- <!--BreadCrumb-->
- <!--breadcrumbs-->
- <!--if-->
- <!--ErrorsPanel-->
+ <!--0-->
+ <!--0-->
+ <!--0-->
+ <!--0-->
  <div class=\\"project-create-form\\">
    <form>
      <div class=\\"group\\">
@@ -111,10 +109,10 @@ Object {
      </div>
    </form>
  </div>
- <!--ProjectForm-->
- <!--content-->
- <!--if-->
- <!--PageContent-->
+ <!--1-->
+ <!--0-->
+ <!--1-->
+ <!--0-->
 ",
 }
 `;

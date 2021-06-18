@@ -1,16 +1,20 @@
-import { DI } from 'sham-ui';
-import Page from '../../../../src/components/project-detail/page';
+import { createDI } from 'sham-ui';
+import Page from '../../../../src/components/project-detail/page.sfc';
 import * as directives from 'sham-ui-directives';
-import hrefto from 'sham-ui-router/href-to';
+import hrefto from 'sham-ui-router/lib/href-to';
 import renderer from 'sham-ui-test-helpers';
 
-afterEach( () => {
-    DI.bind( 'store', null );
-    DI.bind( 'router', null );
-} );
-
 it( 'renders correctly', () => {
-    const storeMock = jest.fn().mockReturnValue( Promise.resolve( { project: { id: 1 } } ) );
+    const DI = createDI();
+    const storeMock = jest.fn().mockReturnValue(
+        Promise.resolve( {
+            project: {
+                id: 1,
+                name: '',
+                chains: []
+            }
+        } )
+    );
     DI.bind( 'store', {
         getProjectById: storeMock
     } );
@@ -20,6 +24,7 @@ it( 'renders correctly', () => {
     } );
 
     const meta = renderer( Page, {
+        DI,
         directives: {
             ...directives,
             hrefto
@@ -30,6 +35,7 @@ it( 'renders correctly', () => {
 } );
 
 it( 'render errors', () => {
+    const DI = createDI();
     const storeMock = jest.fn().mockReturnValue( Promise.reject() );
     DI.bind( 'store', {
         getProjectById: storeMock
@@ -40,6 +46,7 @@ it( 'render errors', () => {
     } );
 
     const meta = renderer( Page, {
+        DI,
         directives: {
             ...directives,
             hrefto

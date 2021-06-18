@@ -4,7 +4,7 @@ exports[`delete project chain 1`] = `
 "<header>
   <a class=\\"logo\\" href=\\"\\"> Simple CI </a>
 </header>
-<!--Header-->
+<!--0-->
 <main>
   <ul class=\\"breadcrumb\\">
     <li>
@@ -16,14 +16,14 @@ exports[`delete project chain 1`] = `
     <li>
       <a href=\\"projects/1/chains/2\\">Test chain</a>
     </li>
-    <!--if-->
-    <!--if-->
+    <!--0-->
+    <!--0-->
     <li>Delete</li>
   </ul>
-  <!--BreadCrumb-->
-  <!--breadcrumbs-->
-  <!--if-->
-  <!--ErrorsPanel-->
+  <!--0-->
+  <!--0-->
+  <!--0-->
+  <!--0-->
   <div class=\\"modal\\">
     <div class=\\"content\\">
       <div class=\\"header\\">Delete project chain</div>
@@ -34,34 +34,34 @@ exports[`delete project chain 1`] = `
       </div>
     </div>
   </div>
-  <!--ConfirmModal-->
-  <!--if-->
-  <!--content-->
-  <!--if-->
-  <!--PageContent-->
+  <!--0-->
+  <!--1-->
+  <!--0-->
+  <!--1-->
+  <!--0-->
 </main>
 <footer> Sham 2018
-  (v 0.0.5) </footer>
-<!--Footer-->"
+  (v 0.0.6) </footer>
+<!--1-->"
 `;
 
 exports[`delete project chain 2`] = `
 "<header>
   <a class=\\"logo\\" href=\\"\\"> Simple CI </a>
 </header>
-<!--Header-->
+<!--0-->
 <main>
   <ul class=\\"breadcrumb\\">
     <li>
       <a href=\\"\\"> Projects </a>
     </li>
-    <!--if-->
+    <!--0-->
     <li>Test</li>
   </ul>
-  <!--BreadCrumb-->
-  <!--breadcrumbs-->
-  <!--if-->
-  <!--ErrorsPanel-->
+  <!--0-->
+  <!--0-->
+  <!--0-->
+  <!--0-->
   <div class=\\"project-info\\">
     <h3>Test</h3>
     <dl>
@@ -81,19 +81,20 @@ exports[`delete project chain 2`] = `
   <div class=\\"project-chains\\">
     <h3>Chains</h3>
     <button class=\\"project-chain\\">Test chain</button>
-    <!--if-->
-    <!--Chain-->
-    <!--for-->
+    <!--0-->
+    <!--0-->
+    <!--0-->
     <a class=\\"project-chain project-chain-create\\" href=\\"projects/1/chains/create\\">
       <div class=\\"create-icon\\"></div>
     </a>
   </div>
-  <!--Info-->
-  <!--content-->
-  <!--if-->
-  <!--PageContent-->
+  <!--0-->
+  <!--1-->
+  <!--0-->
+  <!--1-->
+  <!--0-->
 </main>
 <footer> Sham 2018
-  (v 0.0.5) </footer>
-<!--Footer-->"
+  (v 0.0.6) </footer>
+<!--1-->"
 `;

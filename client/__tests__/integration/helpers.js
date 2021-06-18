@@ -1,11 +1,12 @@
-import { start } from 'sham-ui';
+import { start, createDI } from 'sham-ui';
 import pretty from 'pretty';
 import initializer from '../../src/initializers/main';
 
 export const app = {
     async start( waitRendering = true ) {
-        initializer();
-        start();
+        const DI = createDI();
+        initializer( DI );
+        start( DI );
         if ( waitRendering ) {
             await this.waitRendering();
         }

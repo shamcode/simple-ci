@@ -26,46 +26,36 @@
 </template>
 
 <script>
-    import { options } from 'sham-ui-macro/babel.macro';
     import LoadProjectMixin from '../../mixins/load-project';
 
-    export default class ProjectDeletePage extends LoadProjectMixin( Template ) {
-        @options dataSaving = false;
+    function ProjectDeletePage( options, update ) {
+        const dataSaving = ref();
+        const errors = ref();
 
-        @options
-        bodyText( project ) {
-            return `Do you want delete project "${project.name}"?`;
-        }
+        const router = this.DI.resolve( 'router' );
 
-        @options
-        deleteProject() {
-            this.update( {
-                dataSaving: true,
-                errors: []
-            } );
-            this.store.deleteProject( this.projectId ).then(
-                ::this._deleteProjectSuccess,
-                ::this._deleteProjectFail
-            );
-        }
-
-        _deleteProjectSuccess() {
-            this.router.navigate(
-                this.router.generate( 'project-list', {} )
-            );
-        }
-
-        _deleteProjectFail() {
-            this.router.navigate(
-                this.router.generate( 'project-detail', this._routerParams )
-            );
-        }
-
-        @options
-        cancelDeleteProject() {
-            this.router.navigate(
-                this.router.generate( 'project-detail', this._routerParams )
-            );
-        }
+        options( {
+            [ dataSaving ]: false,
+            [ ref( 'bodyText' ) ]: project => `Do you want delete project "${project.name}"?`,
+            [ ref( 'deleteProject' ) ]: () => {
+                update( {
+                    [ dataSaving ]: true,
+                    [ errors ]: []
+                } );
+                this.DI.resolve( 'store' ).deleteProject( router.storage.params.id ).then(
+                    () => router.navigate(
+                        router.generate( 'project-list', {} )
+                    ),
+                    () => router.navigate(
+                        router.generate( 'project-detail', router.storage.params )
+                    )
+                );
+            },
+            [ ref( 'cancelDeleteProject' ) ]: () => router.navigate(
+                router.generate( 'project-detail', router.storage.params )
+            )
+        } );
     }
+
+    export default Component( Template, LoadProjectMixin, ProjectDeletePage );
 </script>

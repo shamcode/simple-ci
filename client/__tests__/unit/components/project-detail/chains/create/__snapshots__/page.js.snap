@@ -2,7 +2,6 @@
 
 exports[`create fail 1`] = `
 Object {
-  "Constructor": "ChainCreatePage",
   "Options": Object {
     "ID": "component",
     "createProjectChain": [Function],
@@ -38,17 +37,17 @@ Object {
    <li>
      <a href=\\"undefined\\">Test</a>
    </li>
-   <!--if-->
-   <!--if-->
+   <!--0-->
+   <!--0-->
    <li>Create project chain</li>
  </ul>
- <!--BreadCrumb-->
- <!--breadcrumbs-->
+ <!--0-->
+ <!--0-->
  <ul class=\\"errors-panel\\">
    <li>Create project fail!</li>
  </ul>
- <!--if-->
- <!--ErrorsPanel-->
+ <!--0-->
+ <!--0-->
  <div class=\\"project-chain-form\\">
    <form>
      <div class=\\"group\\">
@@ -63,7 +62,7 @@ Object {
            <div class=\\"codeflask__lines\\"><span class=\\"codeflask__lines__line\\">1</span></div>
          </div>
        </div>
-       <!--CodeFlask--><span class=\\"highlight\\"></span><span class=\\"bar\\"></span>
+       <!--0--><span class=\\"highlight\\"></span><span class=\\"bar\\"></span>
        <label>Command</label>
      </div>
      <div class=\\"group\\">
@@ -71,17 +70,16 @@ Object {
      </div>
    </form>
  </div>
- <!--ChainForm-->
- <!--content-->
- <!--if-->
- <!--PageContent-->
+ <!--1-->
+ <!--0-->
+ <!--1-->
+ <!--0-->
 ",
 }
 `;
 
 exports[`renders correctly 1`] = `
 Object {
-  "Constructor": "ChainCreatePage",
   "Options": Object {
     "ID": "component",
     "createProjectChain": [Function],
@@ -108,15 +106,15 @@ Object {
    <li>
      <a href=\\"/\\"> Projects </a>
    </li>
-   <!--if-->
+   <!--0-->
    <li></li>
  </ul>
- <!--BreadCrumb-->
- <!--breadcrumbs-->
- <!--if-->
- <!--WithoutFlushLoader-->
- <!--if-->
- <!--PageContent-->
+ <!--0-->
+ <!--0-->
+ <!--0-->
+ <!--0-->
+ <!--1-->
+ <!--0-->
 ",
 }
 `;

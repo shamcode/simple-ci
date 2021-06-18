@@ -2,7 +2,6 @@
 
 exports[`go to create page 1`] = `
 Object {
-  "Constructor": "ProjectsList",
   "Options": Object {
     "ID": "component",
     "directives": Object {
@@ -21,7 +20,7 @@ Object {
   },
   "html": "
 <div class=\\"project-list\\">
-  <!--for-->
+  <!--0-->
   <a class=\\"project-card project-card-create\\" href=\\"/\\">
     <div class=\\"create-icon\\"></div>
   </a>
@@ -32,7 +31,6 @@ Object {
 
 exports[`renders correctly 1`] = `
 Object {
-  "Constructor": "ProjectsList",
   "Options": Object {
     "ID": "component",
     "directives": Object {
@@ -51,7 +49,7 @@ Object {
   },
   "html": "
 <div class=\\"project-list\\">
-  <!--for-->
+  <!--0-->
   <a class=\\"project-card project-card-create\\" href=\\"/\\">
     <div class=\\"create-icon\\"></div>
   </a>
@@ -62,7 +60,6 @@ Object {
 
 exports[`renders list 1`] = `
 Object {
-  "Constructor": "ProjectsList",
   "Options": Object {
     "ID": "component",
     "directives": Object {
@@ -95,7 +92,7 @@ Object {
 <div class=\\"project-list\\">
   <a class=\\"project-card\\" href=\\"undefined\\"><span class=\\"name\\">Simple CI</span></a>
   <a class=\\"project-card\\" href=\\"undefined\\"><span class=\\"name\\">ShamUI</span></a>
-  <!--for-->
+  <!--0-->
   <a class=\\"project-card project-card-create\\" href=\\"/\\">
     <div class=\\"create-icon\\"></div>
   </a>

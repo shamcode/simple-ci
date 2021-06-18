@@ -2,10 +2,9 @@
 
 exports[`render errors 1`] = `
 Object {
-  "Constructor": "ProjectsPage",
   "Options": Object {
     "ID": "component",
-    "dataLoaded": false,
+    "dataLoaded": true,
     "directives": Object {
       "EventListener": [Function],
       "disabled": [Function],
@@ -23,21 +22,28 @@ Object {
     "projects": Array [],
   },
   "html": "
-<!--breadcrumbs-->
-<!--if-->
-<!--WithoutFlushLoader-->
-<!--if-->
-<!--PageContent-->
+<!--0-->
+<!--0-->
+<!--0-->
+<div class=\\"project-list\\">
+  <!--0-->
+  <a class=\\"project-card project-card-create\\" href=\\"/\\">
+    <div class=\\"create-icon\\"></div>
+  </a>
+</div>
+<!--1-->
+<!--0-->
+<!--1-->
+<!--0-->
 ",
 }
 `;
 
 exports[`renders correctly 1`] = `
 Object {
-  "Constructor": "ProjectsPage",
   "Options": Object {
     "ID": "component",
-    "dataLoaded": false,
+    "dataLoaded": true,
     "directives": Object {
       "EventListener": [Function],
       "disabled": [Function],
@@ -55,11 +61,19 @@ Object {
     "projects": Array [],
   },
   "html": "
-<!--breadcrumbs-->
-<!--if-->
-<!--WithoutFlushLoader-->
-<!--if-->
-<!--PageContent-->
+<!--0-->
+<!--0-->
+<!--0-->
+<div class=\\"project-list\\">
+  <!--0-->
+  <a class=\\"project-card project-card-create\\" href=\\"/\\">
+    <div class=\\"create-icon\\"></div>
+  </a>
+</div>
+<!--1-->
+<!--0-->
+<!--1-->
+<!--0-->
 ",
 }
 `;

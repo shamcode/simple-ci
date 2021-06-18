@@ -1,17 +1,13 @@
-import { DI } from 'sham-ui';
+import { createDI } from 'sham-ui';
 import Page from '../../../../src/components/project-delete/page.sfc';
 import * as directives from 'sham-ui-directives';
-import hrefto from 'sham-ui-router/href-to';
+import hrefto from 'sham-ui-router/lib/href-to';
 import renderer from 'sham-ui-test-helpers';
 
 const flushPromises = () => new Promise( resolve => setImmediate( resolve ) );
 
-afterEach( () => {
-    DI.bind( 'store', null );
-    DI.bind( 'router', null );
-} );
-
 it( 'renders correctly', () => {
+    const DI = createDI();
     const storeMock = jest.fn().mockReturnValue( Promise.resolve( { project: { id: 1 } } ) );
     DI.bind( 'store', {
         getProjectById: storeMock
@@ -22,6 +18,7 @@ it( 'renders correctly', () => {
     } );
 
     const meta = renderer( Page, {
+        DI,
         directives: {
             ...directives,
             hrefto
@@ -33,6 +30,7 @@ it( 'renders correctly', () => {
 
 it( 'render errors', async() => {
     expect.assertions( 1 );
+    const DI = createDI();
 
     const storeMock = jest.fn().mockReturnValue( Promise.reject() );
     DI.bind( 'store', {
@@ -44,6 +42,7 @@ it( 'render errors', async() => {
     } );
 
     const meta = renderer( Page, {
+        DI,
         directives: {
             ...directives,
             hrefto
@@ -57,6 +56,7 @@ it( 'render errors', async() => {
 it( 'delete fail', async() => {
     expect.assertions( 4 );
 
+    const DI = createDI();
     const deleteProject = jest.fn();
     DI.bind( 'store', {
         getProjectById: jest.fn().mockReturnValue( Promise.resolve( {
@@ -76,6 +76,7 @@ it( 'delete fail', async() => {
     } );
 
     const meta = renderer( Page, {
+        DI,
         directives: {
             ...directives,
             hrefto
@@ -97,6 +98,7 @@ it( 'delete fail', async() => {
 it( 'cancel', async() => {
     expect.assertions( 2 );
 
+    const DI = createDI();
     DI.bind( 'store', {
         getProjectById: jest.fn().mockReturnValue( Promise.resolve( {
             project: {
@@ -114,6 +116,7 @@ it( 'cancel', async() => {
     } );
 
     const meta = renderer( Page, {
+        DI,
         directives: {
             ...directives,
             hrefto
