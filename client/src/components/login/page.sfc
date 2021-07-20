@@ -4,7 +4,7 @@
     <ErrorsPanel errors={{errors}}/>
 
     <div class="login-form">
-        <form :onsubmit={{this[ ref( '_submitForm' ) ]}} :ref="form">
+        <form :onsubmit={{this$._submitForm}} :ref="form">
             <div class="group">
                 <input name="username" type="text" required>
                 <span class="highlight"></span>
@@ -28,9 +28,9 @@
 
 <script>
     function LoginPage( options, update ) {
-        const errors = ref();
-        const dataSaving = ref();
-        const password = ref();
+        const errors = $();
+        const dataSaving = $();
+        const password = $();
 
         options( {
             [ errors ]: [],
@@ -38,7 +38,7 @@
             [ password ]: ''
         } );
 
-        this[ ref( '_submitForm' ) ] = ( e ) => {
+        this$._submitForm = ( e ) => {
             e.preventDefault();
             const formData = new FormData( this.form );
             update( {

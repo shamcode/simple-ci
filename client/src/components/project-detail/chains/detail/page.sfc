@@ -27,27 +27,27 @@
     import LoadChainMixin from '../../../../mixins/load-chain';
 
     function ChainDetailPage( options, update ) {
-        const dataSaving = ref();
-        const errors = ref();
+        const dataSaving = $();
+        const errors = $();
 
         const state = options( {
             [ dataSaving ]: false,
             [ errors ]: [],
-            [ ref( 'updateProjectChain' ) ]: ( formData ) => {
+            [ $.updateProjectChain ]: ( formData ) => {
                 update( {
                     [ dataSaving ]: true,
                     [ errors ]: []
                 } );
                 this.DI.resolve( 'store' ).updateProjectChain(
-                    state[ ref( 'chain' ) ].id,
+                    state[ $.chain ].id,
                     formData
                 ).then(
                     () => {
                         update( {
                             [ dataSaving ]: false,
-                            [ ref( 'dataLoaded' ) ]: false
+                            [ $.dataLoaded ]: false
                         } );
-                        this[ ref( '_loadPageData' ) ]();
+                        this$._loadPageData();
                     },
                     () => update( {
                         [ dataSaving ]: false,

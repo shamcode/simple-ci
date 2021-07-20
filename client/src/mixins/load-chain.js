@@ -1,10 +1,10 @@
-import { ref } from 'sham-ui-macro/ref.macro';
+import { $ } from 'sham-ui-macro/ref.macro';
 
 export default function LoadChain( options, update, didMount ) {
-    const dataLoaded = ref();
-    const chain = ref();
-    const project = ref();
-    const errors = ref();
+    const dataLoaded = $();
+    const chain = $();
+    const project = $();
+    const errors = $();
 
     options( {
         [ dataLoaded ]: false,
@@ -16,7 +16,7 @@ export default function LoadChain( options, update, didMount ) {
     const store = this.DI.resolve( 'store' );
     const router = this.DI.resolve( 'router' );
 
-    const _loadPageData = ref();
+    const _loadPageData = $();
     this[ _loadPageData ] = () => Promise.all( [
         store.getProjectById( router.storage.params.id ),
         store.getProjectChainById( router.storage.params.chainId )

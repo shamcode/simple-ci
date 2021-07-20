@@ -4,7 +4,7 @@
     <ErrorsPanel errors={{errors}}/>
 
     <div class="registry-form">
-        <form :onsubmit={{this[ ref( '_submitForm' ) ]}} :ref="formNode">
+        <form :onsubmit={{this$._submitForm}} :ref="formNode">
             <div class="group">
                 <input name="username" type="text" required>
                 <span class="highlight"></span>
@@ -29,9 +29,9 @@
 <script>
 
     function RegistryPage( options, update ) {
-        const errors = ref();
-        const dataSaving = ref();
-        const password = ref();
+        const errors = $();
+        const dataSaving = $();
+        const password = $();
 
         options( {
             [ errors ]: [],
@@ -39,7 +39,7 @@
             [ password ]: ''
         } );
 
-        this[ ref( '_submitForm' ) ] = e => {
+        this$._submitForm = e => {
             e.preventDefault();
             const formData = new FormData( this.formNode );
             update( {

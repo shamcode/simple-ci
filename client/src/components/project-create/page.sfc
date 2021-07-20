@@ -21,9 +21,9 @@
 
 <script>
     function ProjectCreatePage( options, update ) {
-        const errors = ref();
-        const dataSaving = ref();
-        const createProject = ref();
+        const errors = $();
+        const dataSaving = $();
+        const createProject = $();
 
         const router = this.DI.resolve( 'router' );
 

@@ -27,15 +27,15 @@
     import LoadProjectMixin from '../../mixins/load-project';
 
     function ProjectEditPage( options, update ) {
-        const dataSaving = ref();
-        const errors = ref();
+        const dataSaving = $();
+        const errors = $();
 
         const router = this.DI.resolve( 'router' );
 
         options( {
             [ dataSaving ]: false,
             [ errors ]: [],
-            [ ref( 'updateProject' ) ]: ( data ) => {
+            [ $.updateProject ]: ( data ) => {
                 update( {
                     [ dataSaving ]: true,
                     [ errors ]: []

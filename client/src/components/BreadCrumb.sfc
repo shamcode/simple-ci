@@ -22,7 +22,7 @@
             {% endif %}
         {% endif %}
         <li>
-            {% if this[ ref( 'dataReady' ) ]( project, chain ) %}
+            {% if this$.dataReady( project, chain ) %}
                 {{currentPage}}
             {% endif %}
         </li>
@@ -31,9 +31,9 @@
 
 <script>
     function BreadCrumb( options ) {
-        const project = ref();
-        const chain = ref();
-        const currentPage = ref();
+        const project = $();
+        const chain = $();
+        const currentPage = $();
 
         options( {
             [ project ]: null,
@@ -41,7 +41,7 @@
             [ currentPage ]: ''
         } );
 
-        this[ ref( 'dataReady' ) ] = ( project, chain ) => (
+        this$.dataReady = ( project, chain ) => (
             ( project === null || project.id ) &&
             ( chain === null || chain.id )
         );

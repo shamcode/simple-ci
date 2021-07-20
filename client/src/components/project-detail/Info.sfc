@@ -46,7 +46,7 @@
 <script>
     function Info( options ) {
         options( {
-            [ ref( 'project' ) ]: { chains: [] }
+            [ $.project ]: { chains: [] }
         } );
     }
 

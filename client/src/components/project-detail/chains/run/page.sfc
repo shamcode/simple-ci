@@ -29,9 +29,9 @@
     import LoadChainMixin from '../../../../mixins/load-chain';
 
     function ChainRunPage( options, update, didMount, onRemove ) {
-        const dataSaving = ref();
-        const errors = ref();
-        const commandOutput = ref();
+        const dataSaving = $();
+        const errors = $();
+        const commandOutput = $();
 
         /** @type Socket */
         const socket = this.DI.resolve( 'socket' );
@@ -40,7 +40,7 @@
             [ dataSaving ]: false,
             [ errors ]: [],
             [ commandOutput ]: '',
-            [ ref( 'runProjectChain' ) ]: () => {
+            [ $.runProjectChain ]: () => {
                 update( {
                     [ commandOutput ]: '',
                     [ dataSaving ]: true,
@@ -51,22 +51,22 @@
             }
         } );
 
-        const updateCommandOutput = () => ( output ) => {
+        const updateCommandOutput = ( output ) => {
             update( {
                 [ commandOutput ]: `${state[ commandOutput ]}\n${output}`
             } );
         };
 
         const runProject = () => {
-            const chainId = state[ ref( 'chain' ) ].id;
+            const chainId = state[ $.chain ].id;
             socket.watch( chainId, updateCommandOutput );
             this.DI.resolve( 'store' ).runProjectChain( chainId ).then(
                 () => {
                     update( {
-                        [ ref( 'dataLoaded' ) ]: false,
+                        [ $.dataLoaded ]: false,
                         [ dataSaving ]: false
                     } );
-                    this[ ref( '_loadPageData' ) ]();
+                    this$._loadPageData();
                 },
                 () => update( {
                     [ errors ]: [ 'Run project chain fail!' ],

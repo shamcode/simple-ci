@@ -1,3 +1,4 @@
+import { $ } from 'sham-ui-macro/ref.macro';
 import Session from '../services/session';
 import Store from '../services/store';
 import Socket from '../services/socket';
@@ -21,6 +22,6 @@ export default function( DI ) {
             ...directives,
             hrefto
         },
-        version: VERSION
+        [ $.version ]: VERSION
     } );
 }

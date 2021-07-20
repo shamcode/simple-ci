@@ -2,7 +2,7 @@
     {% import CodeFlask from '../../CodeFlask.sfc' %}
 
     <div class="project-chain-form">
-        <form :onsubmit={{this[ ref( '_submitForm' ) ]}} :ref="formNode">
+        <form :onsubmit={{this$._submitForm}} :ref="formNode">
             <div class="group">
                 <input name="name" type="text" required value={{name}}/>
                 <span class="highlight"></span>
@@ -37,17 +37,17 @@
     }
 
     function ProjectForm( options ) {
-        const onSubmit = ref();
+        const onSubmit = $();
 
         const state = options( {
-            [ ref( 'name' ) ]: '',
-            [ ref( 'command' ) ]: '',
-            [ ref( 'saveButtonText' ) ]: '',
-            [ ref( 'dataSaving' ) ]: false,
+            [ $.name ]: '',
+            [ $.command ]: '',
+            [ $.saveButtonText ]: '',
+            [ $.dataSaving ]: false,
             [ onSubmit ]() {}
         } );
 
-        this[ ref( '_submitForm' ) ] = e => {
+        this$._submitForm = e => {
             e.preventDefault();
             const formData = new FormData( this.formNode );
             const data = {};

@@ -30,8 +30,8 @@
     import LoadChainMixin from '../../../../mixins/load-chain';
 
     function ChainDeletePage( options, update ) {
-        const dataSaving = ref();
-        const errors = ref();
+        const dataSaving = $();
+        const errors = $();
 
         const router = this.DI.resolve( 'router' );
 
@@ -44,7 +44,7 @@
 
         options( {
             [ dataSaving ]: false,
-            [ ref( 'deleteChain' ) ]: () => {
+            [ $.deleteChain ]: () => {
                 update( {
                     [ dataSaving ]: true,
                     [ errors ]: []
@@ -54,7 +54,7 @@
                     goToProjectDetailPage,
                 );
             },
-            [ ref( 'cancelDeleteChain' ) ]: goToProjectDetailPage
+            [ $.cancelDeleteChain ]: goToProjectDetailPage
         } );
     }
 

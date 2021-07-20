@@ -7,8 +7,8 @@
     import Flask from 'codeflask';
 
     function CodeFlaskComponent( options, update, didMount ) {
-        const name = ref();
-        const value = ref();
+        const name = $();
+        const value = $();
 
         const state = options( {
             [ name ]: '',

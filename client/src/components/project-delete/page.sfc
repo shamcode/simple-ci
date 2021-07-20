@@ -29,15 +29,15 @@
     import LoadProjectMixin from '../../mixins/load-project';
 
     function ProjectDeletePage( options, update ) {
-        const dataSaving = ref();
-        const errors = ref();
+        const dataSaving = $();
+        const errors = $();
 
         const router = this.DI.resolve( 'router' );
 
         options( {
             [ dataSaving ]: false,
-            [ ref( 'bodyText' ) ]: project => `Do you want delete project "${project.name}"?`,
-            [ ref( 'deleteProject' ) ]: () => {
+            [ $.bodyText ]: project => `Do you want delete project "${project.name}"?`,
+            [ $.deleteProject ]: () => {
                 update( {
                     [ dataSaving ]: true,
                     [ errors ]: []
@@ -51,7 +51,7 @@
                     )
                 );
             },
-            [ ref( 'cancelDeleteProject' ) ]: () => router.navigate(
+            [ $.cancelDeleteProject ]: () => router.navigate(
                 router.generate( 'project-detail', router.storage.params )
             )
         } );

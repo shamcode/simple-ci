@@ -13,9 +13,9 @@
 
 <script>
     function ProjectsPage( options, update, didMount ) {
-        const dataLoaded = ref();
-        const projects = ref();
-        const errors = ref();
+        const dataLoaded = $();
+        const projects = $();
+        const errors = $();
 
         options( {
             [ dataLoaded ]: false,

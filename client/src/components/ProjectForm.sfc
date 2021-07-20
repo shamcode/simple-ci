@@ -1,6 +1,6 @@
 <template>
     <div class="project-create-form">
-        <form :onsubmit={{this[ ref( '_submitForm' ) ]}} :ref="formNode">
+        <form :onsubmit={{this$._submitForm}} :ref="formNode">
             <div class="group">
                 <input name="name" type="text" required value={{name}}/>
                 <span class="highlight"></span>
@@ -34,17 +34,17 @@
 
 
     function ProjectForm( options ) {
-        const onSubmit = ref();
+        const onSubmit = $();
 
         const state = options( {
             [ onSubmit ]() {},
-            [ ref( 'name' ) ]: '',
-            [ ref( 'cwd' ) ]: '',
-            [ ref( 'saveButtonText' ) ]: '',
-            [ ref( 'dataSaving' ) ]: false
+            [ $.name ]: '',
+            [ $.cwd ]: '',
+            [ $.saveButtonText ]: '',
+            [ $.dataSaving ]: false
         } );
 
-        this[ ref( '_submitForm' ) ] = e => {
+        this$._submitForm = e => {
             e.preventDefault();
             const formData = new FormData( this.formNode );
             const data = {};

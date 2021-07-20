@@ -22,11 +22,11 @@
 <script>
     function ProjectDeleteModal( options ) {
         options( {
-            [ ref( 'onOk' ) ]() {},
-            [ ref( 'onCancel' ) ]() {},
-            [ ref( 'title' ) ]: '',
-            [ ref( 'body' ) ]: '',
-            [ ref( 'dataSaving' ) ]: false
+            [ $.onOk ]() {},
+            [ $.onCancel ]() {},
+            [ $.title ]: '',
+            [ $.body ]: '',
+            [ $.dataSaving ]: false
         } );
     }
 

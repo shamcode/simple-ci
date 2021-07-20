@@ -17,9 +17,9 @@
 <script>
     function ChainInfo( options ) {
         options( {
-            [ ref( 'chain' ) ]: {},
-            [ ref( 'dataSaving' ) ]: false,
-            [ ref( 'updateProjectChain' ) ]() {}
+            [ $.chain ]: {},
+            [ $.dataSaving ]: false,
+            [ $.updateProjectChain ]() {}
         } );
     }
 

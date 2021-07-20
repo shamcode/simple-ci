@@ -3,7 +3,7 @@
 
     <button
             class="project-chain"
-            :onclick={{this[ ref( '_toggleExpand' ) ]}}
+            :onclick={{this$._toggleExpand}}
     >
         {{chain.name}}
     </button>
@@ -38,14 +38,14 @@
 <script>
 
     function Chain( options, update ) {
-        const isExpand = ref();
+        const isExpand = $();
 
         const state = options( {
-            [ ref( 'chain' ) ]: {},
-            [ ref( 'project' ) ]: { chains: [] }
+            [ $.chain ]: {},
+            [ $.project ]: { chains: [] }
         } );
 
-        this[ ref( '_toggleExpand' ) ] = e => {
+        this$._toggleExpand = e => {
             e.preventDefault();
             update( {
                 [ isExpand ]: !state[ isExpand ]

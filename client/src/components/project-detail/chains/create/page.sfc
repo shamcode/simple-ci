@@ -26,14 +26,14 @@
     import LoadProjectMixin from '../../../../mixins/load-project';
 
     function ChainCreatePage( options, update ) {
-        const errors = ref();
-        const dataSaving = ref();
-        const project = ref();
+        const errors = $();
+        const dataSaving = $();
+        const project = $();
 
         const state = options( {
             [ errors ]: [],
             [ dataSaving ]: false,
-            [ ref( 'createProjectChain' ) ]: ( formData ) => {
+            [ $.createProjectChain ]: ( formData ) => {
                 const data = {
                     ...formData,
                     projectId: state[ project ].id
