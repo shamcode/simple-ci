@@ -7,8 +7,11 @@ Object {
     "chain": Object {},
     "directives": Object {
       "EventListener": [Function],
+      "UpdateOnEvent": [Function],
       "disabled": [Function],
       "hrefto": [Function],
+      "onChangeUpdate": [Function],
+      "onInputUpdate": [Function],
       "onclick": [Function],
       "oninput": [Function],
       "onload": [Function],

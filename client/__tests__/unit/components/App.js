@@ -7,7 +7,7 @@ import DummyPage from './DummyPage.sht';
 it( 'renders correctly', () => {
     const DI = createDI();
     DI.bind( 'router', {
-        generate: jest.fn().mockReturnValueOnce( '/' ),
+        generate: jest.fn().mockReturnValue( '/' ),
         activePageComponent: DummyPage,
         storage: {}
     } );

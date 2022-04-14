@@ -18,7 +18,7 @@ it( 'registry fail', async() => {
 
     const DI = createDI();
     DI.bind( 'router', {
-        generate: jest.fn().mockReturnValueOnce( '/' ),
+        generate: jest.fn().mockReturnValue( '/' ),
         navigate: jest.fn()
     } );
     const registryMock = jest.fn();

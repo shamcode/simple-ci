@@ -6,7 +6,7 @@ import renderer from 'sham-ui-test-helpers';
 
 it( 'renders correctly', () => {
     const DI = createDI();
-    const generateMock = jest.fn().mockReturnValueOnce( '/' );
+    const generateMock = jest.fn().mockReturnValue( '/' );
     DI.bind( 'router', {
         generate: generateMock
     } );
@@ -28,7 +28,7 @@ it( 'go to create page', () => {
     const DI = createDI();
     const navigateMock = jest.fn();
     DI.bind( 'router', {
-        generate: jest.fn().mockReturnValueOnce( '/' ),
+        generate: jest.fn().mockReturnValue( '/' ),
         navigate: navigateMock
     } );
 
@@ -48,7 +48,7 @@ it( 'go to create page', () => {
 it( 'renders list', () => {
     const DI = createDI();
     DI.bind( 'router', {
-        generate: jest.fn().mockReturnValueOnce( '/' )
+        generate: jest.fn().mockReturnValue( '/' )
     } );
 
     const meta = renderer( ProjectsList, {

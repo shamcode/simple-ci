@@ -7,8 +7,11 @@ Object {
     "dataLoaded": true,
     "directives": Object {
       "EventListener": [Function],
+      "UpdateOnEvent": [Function],
       "disabled": [Function],
       "hrefto": [Function],
+      "onChangeUpdate": [Function],
+      "onInputUpdate": [Function],
       "onclick": [Function],
       "oninput": [Function],
       "onload": [Function],
@@ -46,8 +49,11 @@ Object {
     "dataLoaded": true,
     "directives": Object {
       "EventListener": [Function],
+      "UpdateOnEvent": [Function],
       "disabled": [Function],
       "hrefto": [Function],
+      "onChangeUpdate": [Function],
+      "onInputUpdate": [Function],
       "onclick": [Function],
       "oninput": [Function],
       "onload": [Function],

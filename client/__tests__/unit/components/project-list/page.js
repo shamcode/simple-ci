@@ -11,7 +11,7 @@ it( 'renders correctly', () => {
         getProjects: storeMock
     } );
     DI.bind( 'router', {
-        generate: jest.fn().mockReturnValueOnce( '/' )
+        generate: jest.fn().mockReturnValue( '/' )
     } );
 
     const meta = renderer( ProjectsPage, {
@@ -32,7 +32,7 @@ it( 'render errors', () => {
         getProjects: storeMock
     } );
     DI.bind( 'router', {
-        generate: jest.fn().mockReturnValueOnce( '/' )
+        generate: jest.fn().mockReturnValue( '/' )
     } );
 
     const meta = renderer( ProjectsPage, {

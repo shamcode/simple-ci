@@ -8,7 +8,10 @@ Object {
     "dataSaving": false,
     "directives": Object {
       "EventListener": [Function],
+      "UpdateOnEvent": [Function],
       "disabled": [Function],
+      "onChangeUpdate": [Function],
+      "onInputUpdate": [Function],
       "onclick": [Function],
       "oninput": [Function],
       "onload": [Function],

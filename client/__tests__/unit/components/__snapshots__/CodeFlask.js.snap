@@ -6,7 +6,10 @@ Object {
     "ID": "component",
     "directives": Object {
       "EventListener": [Function],
+      "UpdateOnEvent": [Function],
       "disabled": [Function],
+      "onChangeUpdate": [Function],
+      "onInputUpdate": [Function],
       "onclick": [Function],
       "oninput": [Function],
       "onload": [Function],

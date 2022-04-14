@@ -41,7 +41,7 @@ exports[`delete project chain 1`] = `
   <!--0-->
 </main>
 <footer> Sham 2018
-  (v 0.0.6) </footer>
+  (v 0.0.7) </footer>
 <!--1-->"
 `;
 
@@ -95,6 +95,6 @@ exports[`delete project chain 2`] = `
   <!--0-->
 </main>
 <footer> Sham 2018
-  (v 0.0.6) </footer>
+  (v 0.0.7) </footer>
 <!--1-->"
 `;

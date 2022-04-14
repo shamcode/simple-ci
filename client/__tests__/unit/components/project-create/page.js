@@ -14,7 +14,7 @@ afterEach( () => {
 it( 'renders correctly', () => {
     const DI = createDI();
     DI.bind( 'router', {
-        generate: jest.fn().mockReturnValueOnce( '/' )
+        generate: jest.fn().mockReturnValue( '/' )
     } );
 
     const meta = renderer( ProjectCreatePage, {
@@ -30,7 +30,7 @@ it( 'renders correctly', () => {
 it( 'create', () => {
     const DI = createDI();
     DI.bind( 'router', {
-        generate: jest.fn().mockReturnValueOnce( '/' ),
+        generate: jest.fn().mockReturnValue( '/' ),
         navigate: jest.fn()
     } );
     const createProjectMock = jest.fn();
@@ -67,7 +67,7 @@ it( 'create fail', async() => {
 
     const DI = createDI();
     DI.bind( 'router', {
-        generate: jest.fn().mockReturnValueOnce( '/' ),
+        generate: jest.fn().mockReturnValue( '/' ),
         navigate: jest.fn()
     } );
     const createProjectMock = jest.fn();

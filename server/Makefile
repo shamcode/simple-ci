@@ -1,5 +1,5 @@
 set_gvm:
-	/bin/bash $(GVM_ROOT)/scripts/env/use go1.8
+	/bin/bash $(GVM_ROOT)/scripts/env/use go1.9
 
 install: set_gvm
 	wgo restore

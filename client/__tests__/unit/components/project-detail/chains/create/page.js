@@ -14,7 +14,7 @@ it( 'renders correctly', () => {
     } );
     DI.bind( 'router', {
         storage: { params: { id: 1 } },
-        generate: jest.fn().mockReturnValueOnce( '/' )
+        generate: jest.fn().mockReturnValue( '/' )
     } );
 
     const meta = renderer( Page, {
@@ -46,7 +46,7 @@ it( 'create fail', async() => {
     } );
     DI.bind( 'router', {
         storage: { params: { id: 1 } },
-        generate: jest.fn().mockReturnValueOnce( '/' )
+        generate: jest.fn().mockReturnValue( '/' )
     } );
 
     const meta = renderer( Page, {
