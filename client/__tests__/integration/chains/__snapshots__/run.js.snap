@@ -31,7 +31,7 @@ exports[`run project chain 1`] = `
   <!--0-->
 </main>
 <footer> Sham 2018
-  (v 0.0.7) </footer>
+  (v 0.0.8) </footer>
 <!--1-->"
 `;
 
@@ -66,6 +66,6 @@ exports[`run project chain 2`] = `
   <!--0-->
 </main>
 <footer> Sham 2018
-  (v 0.0.7) </footer>
+  (v 0.0.8) </footer>
 <!--1-->"
 `;
