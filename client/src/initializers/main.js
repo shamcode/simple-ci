@@ -1,4 +1,5 @@
 import { $ } from 'sham-ui-macro/ref.macro';
+import { createRootContext } from 'sham-ui';
 import Session from '../services/session';
 import Store from '../services/store';
 import Socket from '../services/socket';
@@ -14,14 +15,16 @@ export default function( DI ) {
 
     startRouter( DI );
 
-    new App( {
-        DI,
-        ID: 'app',
-        container: document.querySelector( 'body' ),
-        directives: {
-            ...directives,
-            hrefto
-        },
-        [ $.version ]: VERSION
-    } );
+    new App(
+        createRootContext( {
+            DI,
+            ID: 'app',
+            container: document.querySelector( 'body' ),
+            directives: {
+                ...directives,
+                hrefto
+            },
+            [ $.version ]: VERSION
+        } )
+    );
 }
