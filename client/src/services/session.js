@@ -28,9 +28,7 @@ export default class Session {
 
     _loginSuccess( { data } ) {
         localStorage.setItem( 'token', data.token );
-        this.router.navigate(
-            this.router.generate( 'project-list', {} )
-        );
+        this.router.navigateToRoute( 'project-list' );
     }
 
     invalidateSession() {
@@ -49,9 +47,7 @@ export default class Session {
 
     _goToLoginPage() {
         if ( !this._isNonRestrictedPage() ) {
-            this.router.navigate(
-                this.router.generate( 'login', {} )
-            );
+            this.router.navigateToRoute( 'login' );
         }
     }
 }

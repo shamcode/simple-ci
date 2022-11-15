@@ -24,7 +24,8 @@ export default class Store {
 
     _requestAuthInterceptor( request ) {
         if ( !this.session.isAuthenticated && (
-            this._isGetTokenRequest( request ) || this._isRegistryRequest( request )
+            this._isGetTokenRequest( request ) ||
+            this._isRegistryRequest( request )
         ) ) {
             return request;
         }

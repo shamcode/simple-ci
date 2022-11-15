@@ -27,12 +27,12 @@
 </template>
 
 <script>
-    function LoginPage( options, update ) {
+    function LoginPage( options ) {
         const errors = $();
         const dataSaving = $();
         const password = $();
 
-        options( {
+        const state = options( {
             [ errors ]: [],
             [ dataSaving ]: false,
             [ password ]: ''
@@ -41,7 +41,7 @@
         this$._submitForm = ( e ) => {
             e.preventDefault();
             const formData = new FormData( this.form );
-            update( {
+            state( {
                 [ dataSaving ]: true,
                 [ errors ]: []
             } );
@@ -49,7 +49,7 @@
                 formData.get( 'username' ).trim(),
                 formData.get( 'password' )
             ).catch(
-                () => update( {
+                () => state( {
                     [ password ]: '',
                     [ dataSaving ]: false,
                     [ errors ]: [ 'Login fail' ]

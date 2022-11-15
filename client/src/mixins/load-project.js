@@ -1,12 +1,12 @@
-import { $ } from 'sham-ui-macro/ref.macro';
+import { $, this$ } from 'sham-ui-macro/ref.macro';
 
 
-export default function LoadProject( options, update, didMount ) {
+export default function LoadProject( options, didMount ) {
     const dataLoaded = $();
     const project = $();
     const errors = $();
 
-    options( {
+    const state = options( {
         [ dataLoaded ]: false,
         [ project ]: {},
         [ errors ]: []
@@ -15,19 +15,18 @@ export default function LoadProject( options, update, didMount ) {
     const store = this.DI.resolve( 'store' );
     const router = this.DI.resolve( 'router' );
 
-    const _loadPageData = $();
-    this[ _loadPageData ] = () => store.getProjectById( router.storage.params.id ).then(
-        ( data ) => update( {
+    this$._loadPageData = () => store.getProjectById( router.storage.params.id ).then(
+        ( data ) => state( {
             [ project ]: data.project,
             [ dataLoaded ]: true,
             [ errors ]: []
         } ),
-        () => update( {
+        () => state( {
             [ project ]: { chains: [] },
             [ dataLoaded ]: true,
             [ errors ]: [ 'Load project fail!' ]
         } )
     );
 
-    didMount( () => this[ _loadPageData ]() );
+    didMount( () => this$._loadPageData() );
 }
