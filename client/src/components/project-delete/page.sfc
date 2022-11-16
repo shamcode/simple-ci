@@ -8,17 +8,18 @@
         {% block 'breadcrumbs' %}
             <BreadCrumb
                 project={{project}}
-                currentPage="Delete"/>
+                currentPage="Delete"
+            />
         {% endblock %}
         {% block 'content' %}
             <ErrorsPanel errors={{errors}}/>
             {% if errors.length === 0 %}
                 <ConfirmModal
-                        title="Delete project"
-                        body={{bodyText( project )}}
-                        dataSaving={{dataSaving}}
-                        onOk={{deleteProject}}
-                        onCancel={{cancelDeleteProject}}
+                    title="Delete project"
+                    body={{bodyText( project )}}
+                    dataSaving={{dataSaving}}
+                    onOk={{this$.deleteProject}}
+                    onCancel={{this$.cancelDeleteProject}}
                 />
             {% endif %}
         {% endblock %}
@@ -28,33 +29,32 @@
 <script>
     import LoadProjectMixin from '../../mixins/load-project';
 
-    function ProjectDeletePage( options, update ) {
+    function ProjectDeletePage( options ) {
         const dataSaving = $();
         const errors = $();
 
         const router = this.DI.resolve( 'router' );
 
-        options( {
+        const state = options( {
             [ dataSaving ]: false,
-            [ $.bodyText ]: project => `Do you want delete project "${project.name}"?`,
-            [ $.deleteProject ]: () => {
-                update( {
-                    [ dataSaving ]: true,
-                    [ errors ]: []
-                } );
-                this.DI.resolve( 'store' ).deleteProject( router.storage.params.id ).then(
-                    () => router.navigate(
-                        router.generate( 'project-list', {} )
-                    ),
-                    () => router.navigate(
-                        router.generate( 'project-detail', router.storage.params )
-                    )
-                );
-            },
-            [ $.cancelDeleteProject ]: () => router.navigate(
-                router.generate( 'project-detail', router.storage.params )
-            )
+            [ $.bodyText ]: project => `Do you want delete project "${project.name}"?`
         } );
+
+        this$.deleteProject = () => {
+            state( {
+                [ dataSaving ]: true,
+                [ errors ]: []
+            } );
+            this.DI.resolve( 'store' ).deleteProject( router.storage.params.id ).then(
+                () => router.navigateToRoute( 'project-list' ),
+                () => router.navigateToRoute( 'project-detail', router.storage.params )
+            );
+        };
+
+        this$.cancelDeleteProject = () => router.navigateToRoute(
+            'project-detail',
+            router.storage.params
+        );
     }
 
     export default Component( Template, LoadProjectMixin, ProjectDeletePage );

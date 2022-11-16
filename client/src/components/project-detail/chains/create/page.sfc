@@ -9,14 +9,15 @@
         {% block 'breadcrumbs' %}
             <BreadCrumb
                 project={{project}}
-                currentPage="Create project chain"/>
+                currentPage="Create project chain"
+            />
         {% endblock %}
         {% block 'content' %}
             <ErrorsPanel errors={{errors}}/>
             <ChainForm
-                    saveButtonText="Create"
-                    dataSaving={{dataSaving}}
-                    onSubmit={{createProjectChain}}
+                saveButtonText="Create"
+                dataSaving={{dataSaving}}
+                onSubmit={{this$.createProjectChain}}
             />
         {% endblock %}
     </PageContent>
@@ -25,40 +26,36 @@
 <script>
     import LoadProjectMixin from '../../../../mixins/load-project';
 
-    function ChainCreatePage( options, update ) {
+    function ChainCreatePage( options ) {
         const errors = $();
         const dataSaving = $();
         const project = $();
 
         const state = options( {
             [ errors ]: [],
-            [ dataSaving ]: false,
-            [ $.createProjectChain ]: ( formData ) => {
-                const data = {
-                    ...formData,
-                    projectId: state[ project ].id
-                };
-                update( {
-                    [ dataSaving ]: true,
-                    [ errors ]: []
-                } );
-                this.DI.resolve( 'store' ).createProjectChain( data ).then(
-                    () => {
-                        const router = this.DI.resolve( 'router' );
-                        router.navigate(
-                            router.generate(
-                                'project-detail',
-                                { id: state[ project ].id }
-                            )
-                        );
-                    },
-                    () => update( {
-                        [ errors ]: [ 'Create project fail!' ],
-                        [ dataSaving ]: false
-                    } )
-                );
-            }
+            [ dataSaving ]: false
         } );
+
+        this$.createProjectChain = ( formData ) => {
+            const data = {
+                ...formData,
+                projectId: state[ project ].id
+            };
+            state( {
+                [ dataSaving ]: true,
+                [ errors ]: []
+            } );
+            this.DI.resolve( 'store' ).createProjectChain( data ).then(
+                () => this.DI.resolve( 'router' ).navigateToRoute(
+                    'project-detail',
+                    { id: state[ project ].id }
+                ),
+                () => state( {
+                    [ errors ]: [ 'Create project fail!' ],
+                    [ dataSaving ]: false
+                } )
+            );
+        };
     }
 
     export default Component( Template, LoadProjectMixin, ChainCreatePage );

@@ -8,44 +8,41 @@
         {% block 'breadcrumbs' %}
             <BreadCrumb currentPage="Create project"/>
         {% endblock %}
+
         {% block 'content' %}
             <ErrorsPanel errors={{errors}}/>
             <ProjectForm
-                    saveButtonText="Create"
-                    dataSaving={{dataSaving}}
-                    onSubmit={{createProject}}
+                saveButtonText="Create"
+                dataSaving={{dataSaving}}
+                onSubmit={{this$.createProject}}
             />
         {% endblock %}
     </PageContent>
 </template>
 
 <script>
-    function ProjectCreatePage( options, update ) {
+    function ProjectCreatePage( options ) {
         const errors = $();
         const dataSaving = $();
-        const createProject = $();
 
-        const router = this.DI.resolve( 'router' );
-
-        options( {
+        const state = options( {
             [ errors ]: [],
-            [ dataSaving ]: false,
-            [ createProject ]: ( data ) => {
-                update( {
-                    [ dataSaving ]: true,
-                    [ errors ]: []
-                } );
-                this.DI.resolve( 'store' ).createProject( data ).then(
-                    () => router.navigate(
-                        router.generate( 'project-list', {} )
-                    ),
-                    () => update( {
-                        [ errors ]: [ 'Create project fail!' ],
-                        [ dataSaving ]: false
-                    } )
-                );
-            }
+            [ dataSaving ]: false
         } );
+
+        this$.createProject = ( data ) => {
+            state( {
+                [ dataSaving ]: true,
+                [ errors ]: []
+            } );
+            this.DI.resolve( 'store' ).createProject( data ).then(
+                () => this.DI.resolve( 'router' ).navigateToRoute( 'project-list' ),
+                () => state( {
+                    [ errors ]: [ 'Create project fail!' ],
+                    [ dataSaving ]: false
+                } )
+            );
+        };
     }
 
     export default Component( Template, ProjectCreatePage );
