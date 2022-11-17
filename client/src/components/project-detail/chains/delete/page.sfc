@@ -9,17 +9,18 @@
             <BreadCrumb
                 project={{project}}
                 chain={{chain}}
-                currentPage="Delete"/>
+                currentPage="Delete"
+            />
         {% endblock %}
         {% block 'content' %}
             <ErrorsPanel errors={{errors}}/>
             {% if errors.length === 0 %}
                 <ConfirmModal
-                        title="Delete project chain"
-                        body={{"Do you want delete chain \"" + chain.name + "\"?"}}
-                        dataSaving={{dataSaving}}
-                        onOk={{deleteChain}}
-                        onCancel={{cancelDeleteChain}}
+                    title="Delete project chain"
+                    body={{"Do you want delete chain \"" + chain.name + "\"?"}}
+                    dataSaving={{dataSaving}}
+                    onOk={{this$.deleteChain}}
+                    onCancel={{this$.cancelDeleteChain}}
                 />
             {% endif %}
         {% endblock %}
@@ -29,33 +30,33 @@
 <script>
     import LoadChainMixin from '../../../../mixins/load-chain';
 
-    function ChainDeletePage( options, update ) {
+    function ChainDeletePage( options ) {
         const dataSaving = $();
         const errors = $();
 
+        const state = options( {
+            [ dataSaving ]: false,
+        } );
+
         const router = this.DI.resolve( 'router' );
 
-        const goToProjectDetailPage = () => router.navigate(
-            router.generate(
-                'project-detail',
-                { id: router.storage.params.id }
-            )
+        const goToProjectDetailPage = () => router.navigateToRoute(
+            'project-detail',
+            { id: router.storage.params.id }
         );
 
-        options( {
-            [ dataSaving ]: false,
-            [ $.deleteChain ]: () => {
-                update( {
-                    [ dataSaving ]: true,
-                    [ errors ]: []
-                } );
-                this.DI.resolve( 'store' ).deleteChain( router.storage.params.chainId  ).then(
-                    goToProjectDetailPage,
-                    goToProjectDetailPage,
-                );
-            },
-            [ $.cancelDeleteChain ]: goToProjectDetailPage
-        } );
+        this$.deleteChain = () => {
+            state( {
+                [ dataSaving ]: true,
+                [ errors ]: []
+            } );
+            this.DI.resolve( 'store' ).deleteChain( router.storage.params.chainId  ).then(
+                goToProjectDetailPage,
+                goToProjectDetailPage,
+            );
+        };
+
+        this$.cancelDeleteChain = goToProjectDetailPage
     }
 
     export default Component( Template, LoadChainMixin, ChainDeletePage );

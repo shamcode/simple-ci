@@ -8,15 +8,16 @@
         {% block 'breadcrumbs' %}
             <BreadCrumb
                 project={{project}}
-                currentPage={{chain.name}}/>
+                currentPage={{chain.name}}
+            />
         {% endblock %}
         {% block 'content' %}
             <ErrorsPanel errors={{errors}}/>
             {% if errors.length === 0 %}
                 <Info
-                        chain={{chain}}
-                        dataSaving={{dataSaving}}
-                        updateProjectChain={{updateProjectChain}}
+                    chain={{chain}}
+                    dataSaving={{dataSaving}}
+                    updateProjectChain={{this$.updateProjectChain}}
                 />
             {% endif %}
         {% endblock %}
@@ -26,36 +27,37 @@
 <script>
     import LoadChainMixin from '../../../../mixins/load-chain';
 
-    function ChainDetailPage( options, update ) {
+    function ChainDetailPage( options ) {
         const dataSaving = $();
         const errors = $();
 
         const state = options( {
             [ dataSaving ]: false,
-            [ errors ]: [],
-            [ $.updateProjectChain ]: ( formData ) => {
-                update( {
-                    [ dataSaving ]: true,
-                    [ errors ]: []
-                } );
-                this.DI.resolve( 'store' ).updateProjectChain(
-                    state[ $.chain ].id,
-                    formData
-                ).then(
-                    () => {
-                        update( {
-                            [ dataSaving ]: false,
-                            [ $.dataLoaded ]: false
-                        } );
-                        this$._loadPageData();
-                    },
-                    () => update( {
-                        [ dataSaving ]: false,
-                        [ errors ]: [ 'Update project chain fail!' ]
-                    } )
-                );
-            }
+            [ errors ]: []
         } );
+
+        this$.updateProjectChain = ( formData ) => {
+            state( {
+                [ dataSaving ]: true,
+                [ errors ]: []
+            } );
+            this.DI.resolve( 'store' ).updateProjectChain(
+                state[ $.chain ].id,
+                formData
+            ).then(
+                () => {
+                    state( {
+                        [ dataSaving ]: false,
+                        [ $.dataLoaded ]: false
+                    } );
+                    this$._loadPageData();
+                },
+                () => state( {
+                    [ dataSaving ]: false,
+                    [ errors ]: [ 'Update project chain fail!' ]
+                } )
+            );
+        };
     }
 
     export default Component( Template, LoadChainMixin, ChainDetailPage );
