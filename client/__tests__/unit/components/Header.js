@@ -9,7 +9,7 @@ it( 'renders correctly', () => {
         generate: jest.fn().mockReturnValue( '/' )
     } );
 
-    const meta = renderer( Header, {
+    const meta = renderer( Header, {}, {
         DI,
         directives: {
             hrefto

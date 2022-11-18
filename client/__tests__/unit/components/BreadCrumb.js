@@ -9,7 +9,7 @@ it( 'renders correctly', () => {
         generate: jest.fn().mockReturnValue( '/' )
     } );
 
-    const meta = renderer( BreadCrumb, {
+    const meta = renderer( BreadCrumb, {}, {
         DI,
         directives: {
             hrefto

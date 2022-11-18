@@ -17,7 +17,7 @@ it( 'renders correctly', () => {
         generate: jest.fn().mockReturnValue( '/' )
     } );
 
-    const meta = renderer( ProjectCreatePage, {
+    const meta = renderer( ProjectCreatePage, {}, {
         DI,
         directives: {
             ...directives,
@@ -38,7 +38,7 @@ it( 'create', () => {
         createProject: createProjectMock.mockReturnValueOnce( Promise.resolve() )
     } );
 
-    const { component: { container } } = renderer( ProjectCreatePage, {
+    const { ctx: { container } } = renderer( ProjectCreatePage, {}, {
         DI,
         directives: {
             ...directives,
@@ -75,7 +75,7 @@ it( 'create fail', async() => {
         createProject: createProjectMock.mockReturnValueOnce( Promise.reject() )
     } );
 
-    const meta = renderer( ProjectCreatePage, {
+    const meta = renderer( ProjectCreatePage, {}, {
         DI,
         directives: {
             ...directives,
@@ -86,7 +86,7 @@ it( 'create fail', async() => {
         name: 'Test name',
         cwd: 'test cwd'
     };
-    const { component: { container } } = meta;
+    const { ctx: { container } } = meta;
     container.querySelector( '[name="name"]' ).value = formData.name;
     container.querySelector( '[name="cwd"]' ).value = formData.cwd;
     container.querySelector( '[type="submit"]' ).click();

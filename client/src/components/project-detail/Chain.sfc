@@ -37,7 +37,7 @@
 
 <script>
 
-    function Chain( options, update ) {
+    function Chain( options ) {
         const isExpand = $();
 
         const state = options( {
@@ -47,9 +47,7 @@
 
         this$._toggleExpand = e => {
             e.preventDefault();
-            update( {
-                [ isExpand ]: !state[ isExpand ]
-            } );
+            state[ isExpand ] = !state[ isExpand ];
         };
     }
 

@@ -28,12 +28,12 @@
 
 <script>
 
-    function RegistryPage( options, update ) {
+    function RegistryPage( options ) {
         const errors = $();
         const dataSaving = $();
         const password = $();
 
-        options( {
+        const state = options( {
             [ errors ]: [],
             [ dataSaving ]: false,
             [ password ]: ''
@@ -42,7 +42,7 @@
         this$._submitForm = e => {
             e.preventDefault();
             const formData = new FormData( this.formNode );
-            update( {
+            state( {
                 [ dataSaving ]: true,
                 [ errors ]: []
             } );
@@ -50,13 +50,8 @@
                 formData.get( 'username' ).trim(),
                 formData.get( 'password' )
             ).then(
-                () => {
-                    const router = this.DI.resolve( 'router' );
-                    router.navigate(
-                        router.generate( 'login', {} )
-                    );
-                },
-                () => update( {
+                () => this.DI.resolve( 'router' ).navigateToRoute( 'login' ),
+                () => state( {
                     [ password ]: '',
                     [ dataSaving ]: false,
                     [ errors ]: [ 'Registry fail' ]

@@ -13,8 +13,9 @@ it( 'submit form', () => {
     const onSubmitMock = jest.fn();
     const { component } = renderer( ProjectForm, {
         saveButtonText: 'Create',
-        directives,
         onSubmit: onSubmitMock
+    }, {
+        directives
     } );
 
     const formData = {
@@ -37,8 +38,9 @@ it( 'form validation (name)', () => {
     const onSubmitMock = jest.fn();
     const { component } = renderer( ProjectForm, {
         saveButtonText: 'Create',
-        directives,
         onSubmit: onSubmitMock
+    }, {
+        directives
     } );
 
     component.container.querySelector( '[type="submit"]' ).click();
@@ -53,8 +55,9 @@ it( 'form validation (cwd)', () => {
     const onSubmitMock = jest.fn();
     const { component } = renderer( ProjectForm, {
         saveButtonText: 'Create',
-        directives,
         onSubmit: onSubmitMock
+    }, {
+        directives
     } );
 
     component.container.querySelector( '[type="submit"]' ).click();

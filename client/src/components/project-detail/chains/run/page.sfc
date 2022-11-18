@@ -15,7 +15,7 @@
             <ErrorsPanel errors={{errors}}/>
             <button
                 class="run-project-chain"
-                :onclick={{runProjectChain}}
+                :onclick={{this$.runProjectChain}}
                 :disabled={{dataSaving}}
             >
                 <span>Run</span>
@@ -28,7 +28,7 @@
 <script>
     import LoadChainMixin from '../../../../mixins/load-chain';
 
-    function ChainRunPage( options, update, didMount, onRemove ) {
+    function ChainRunPage( options, didMount ) {
         const dataSaving = $();
         const errors = $();
         const commandOutput = $();
@@ -39,22 +39,21 @@
         const state = options( {
             [ dataSaving ]: false,
             [ errors ]: [],
-            [ commandOutput ]: '',
-            [ $.runProjectChain ]: () => {
-                update( {
-                    [ commandOutput ]: '',
-                    [ dataSaving ]: true,
-                    [ errors ]: []
-                } );
-                socket.removeWatcher( updateCommandOutput );
-                socket.connect().then( runProject );
-            }
+            [ commandOutput ]: ''
         } );
 
-        const updateCommandOutput = ( output ) => {
-            update( {
-                [ commandOutput ]: `${state[ commandOutput ]}\n${output}`
+        this$.runProjectChain = () => {
+            state( {
+                [ commandOutput ]: '',
+                [ dataSaving ]: true,
+                [ errors ]: []
             } );
+            socket.removeWatcher( updateCommandOutput );
+            socket.connect().then( runProject );
+        };
+
+        const updateCommandOutput = ( output ) => {
+            state[ commandOutput ] = `${state[ commandOutput ]}\n${output}`;
         };
 
         const runProject = () => {
@@ -62,20 +61,22 @@
             socket.watch( chainId, updateCommandOutput );
             this.DI.resolve( 'store' ).runProjectChain( chainId ).then(
                 () => {
-                    update( {
+                    state( {
                         [ $.dataLoaded ]: false,
                         [ dataSaving ]: false
                     } );
                     this$._loadPageData();
                 },
-                () => update( {
+                () => state( {
                     [ errors ]: [ 'Run project chain fail!' ],
                     [ dataSaving ]: false
                 } )
             );
         };
 
-        onRemove( () => socket.removeWatcher( updateCommandOutput ) );
+        didMount( () => {
+            return () => socket.removeWatcher( updateCommandOutput );
+        } );
     }
 
     export default Component( Template, LoadChainMixin, ChainRunPage );

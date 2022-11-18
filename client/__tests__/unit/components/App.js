@@ -12,7 +12,7 @@ it( 'renders correctly', () => {
         storage: {}
     } );
 
-    const meta = renderer( App, {
+    const meta = renderer( App, {}, {
         DI,
         directives: {
             hrefto

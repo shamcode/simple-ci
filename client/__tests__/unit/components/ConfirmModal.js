@@ -4,9 +4,10 @@ import renderer from 'sham-ui-test-helpers';
 
 it( 'renders correctly', () => {
     const meta = renderer( ConfirmModal, {
-        directives,
         title: 'Title text',
         body: 'Body text'
+    }, {
+        directives
     } );
     expect( meta.toJSON() ).toMatchSnapshot();
 } );

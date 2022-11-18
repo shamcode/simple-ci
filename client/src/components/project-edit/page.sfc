@@ -13,11 +13,11 @@
         {% block 'content' %}
             <ErrorsPanel errors={{errors}}/>
             <ProjectForm
-                    saveButtonText="Update"
-                    name={{project.name}}
-                    cwd={{project.cwd}}
-                    dataSaving={{dataSaving}}
-                    onSubmit={{updateProject}}
+                saveButtonText="Update"
+                name={{project.name}}
+                cwd={{project.cwd}}
+                dataSaving={{dataSaving}}
+                onSubmit={{this$.updateProject}}
             />
         {% endblock %}
     </PageContent>
@@ -26,31 +26,33 @@
 <script>
     import LoadProjectMixin from '../../mixins/load-project';
 
-    function ProjectEditPage( options, update ) {
+    function ProjectEditPage( options ) {
         const dataSaving = $();
         const errors = $();
 
         const router = this.DI.resolve( 'router' );
 
-        options( {
+        const state = options( {
             [ dataSaving ]: false,
-            [ errors ]: [],
-            [ $.updateProject ]: ( data ) => {
-                update( {
-                    [ dataSaving ]: true,
-                    [ errors ]: []
-                } );
-                this.DI.resolve( 'store' ).updateProject( router.storage.params.id, data ).then(
-                    () => router.navigate(
-                        router.generate( 'project-detail', router.storage.params )
-                    ),
-                    () => update( {
-                        [ errors ]: [ 'Update project fail!' ],
-                        [ dataSaving ]: false
-                    } )
-                );
-            }
+            [ errors ]: []
         } );
+
+        this$.updateProject = ( data ) => {
+            state( {
+                [ dataSaving ]: true,
+                [ errors ]: []
+            } );
+            this.DI.resolve( 'store' ).updateProject( router.storage.params.id, data ).then(
+                () => router.navigateToRoute(
+                    'project-detail',
+                    router.storage.params
+                ),
+                () => state( {
+                    [ errors ]: [ 'Update project fail!' ],
+                    [ dataSaving ]: false
+                } )
+            );
+        };
     }
 
     export default Component( Template, LoadProjectMixin, ProjectEditPage );

@@ -6,7 +6,7 @@
 <script>
     import Flask from 'codeflask';
 
-    function CodeFlaskComponent( options, update, didMount ) {
+    function CodeFlaskComponent( options, didMount ) {
         const name = $();
         const value = $();
 
@@ -21,9 +21,7 @@
             } );
             flask.updateCode( state[ value ] );
             flask.onUpdate(
-                code => update( {
-                    [ value ]: code
-                } )
+                code => state[ value ] = code
             );
         } );
     }

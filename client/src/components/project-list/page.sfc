@@ -12,29 +12,29 @@
 </template>
 
 <script>
-    function ProjectsPage( options, update, didMount ) {
+    function ProjectsPage( options, didMount ) {
         const dataLoaded = $();
         const projects = $();
         const errors = $();
 
-        options( {
+        const state = options( {
             [ dataLoaded ]: false,
             [ projects ]: [],
             [ errors ]: []
         } );
 
         didMount( () => {
-            update( {
+            state( {
                 [ dataLoaded ]: true,
                 [ errors ]: []
             } );
             this.DI.resolve( 'store' ).getProjects().then(
-                data => update( {
+                data => state( {
                     [ projects ]: data.projects,
                     [ dataLoaded ]: true,
                     [ errors ]: []
                 } ),
-                () => update( {
+                () => state( {
                     [ projects ]: [],
                     [ dataLoaded ]: true,
                     [ errors ]: [ 'Fail loaded project!' ]

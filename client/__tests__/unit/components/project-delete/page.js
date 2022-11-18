@@ -17,7 +17,7 @@ it( 'renders correctly', () => {
         generate: jest.fn().mockReturnValue( '/' )
     } );
 
-    const meta = renderer( Page, {
+    const meta = renderer( Page, {}, {
         DI,
         directives: {
             ...directives,
@@ -41,7 +41,7 @@ it( 'render errors', async() => {
         generate: jest.fn().mockReturnValue( '/' )
     } );
 
-    const meta = renderer( Page, {
+    const meta = renderer( Page, {}, {
         DI,
         directives: {
             ...directives,
@@ -75,14 +75,14 @@ it( 'delete fail', async() => {
         navigate: navigateMock
     } );
 
-    const meta = renderer( Page, {
+    const meta = renderer( Page, {}, {
         DI,
         directives: {
             ...directives,
             hrefto
         }
     } );
-    const { component: { container } } = meta;
+    const { ctx: { container } } = meta;
     await flushPromises();
 
     deleteProject.mockReturnValueOnce( Promise.reject() );
@@ -115,14 +115,14 @@ it( 'cancel', async() => {
         navigate: navigateMock
     } );
 
-    const meta = renderer( Page, {
+    const meta = renderer( Page, {}, {
         DI,
         directives: {
             ...directives,
             hrefto
         }
     } );
-    const { component: { container } } = meta;
+    const { ctx: { container } } = meta;
     await flushPromises();
 
     container.querySelector( '.cancel' ).click();
