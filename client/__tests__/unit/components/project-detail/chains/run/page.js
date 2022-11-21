@@ -14,7 +14,7 @@ it( 'renders correctly', () => {
         storage: { params: { id: 1 } },
         generate: jest.fn().mockReturnValue( '/' )
     } );
-    const meta = renderer( Page, {
+    const meta = renderer( Page, {}, {
         DI,
         directives: {
             ...directives,

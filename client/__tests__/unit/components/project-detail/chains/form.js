@@ -12,19 +12,20 @@ it( 'renders correctly', () => {
 
 it( 'submit form', () => {
     const onSubmitMock = jest.fn();
-    const { component } = renderer( ChainForm, {
+    const { ctx } = renderer( ChainForm, {
         saveButtonText: 'Create',
-        directives,
         onSubmit: onSubmitMock
+    }, {
+        directives
     } );
 
     const formData = {
         name: 'Test name',
         command: 'echo 1'
     };
-    component.container.querySelector( '[name="name"]' ).value = formData.name;
-    component.container.querySelector( '[name="command"]' ).value = formData.command;
-    component.container.querySelector( '[type="submit"]' ).click();
+    ctx.container.querySelector( '[name="name"]' ).value = formData.name;
+    ctx.container.querySelector( '[name="command"]' ).value = formData.command;
+    ctx.container.querySelector( '[type="submit"]' ).click();
 
     expect( onSubmitMock.mock.calls ).toHaveLength( 1 );
     expect( onSubmitMock.mock.calls[ 0 ] ).toHaveLength( 1 );
@@ -36,15 +37,16 @@ it( 'submit form', () => {
 
 it( 'form validation (name)', () => {
     const onSubmitMock = jest.fn();
-    const { component } = renderer( ChainForm, {
+    const { ctx } = renderer( ChainForm, {
         saveButtonText: 'Create',
-        directives,
         onSubmit: onSubmitMock
+    }, {
+        directives
     } );
 
-    component.container.querySelector( '[type="submit"]' ).click();
+    ctx.container.querySelector( '[type="submit"]' ).click();
     expect( onSubmitMock.mock.calls ).toHaveLength( 0 );
 
-    component.container.querySelector( '[type="submit"]' ).click();
+    ctx.container.querySelector( '[type="submit"]' ).click();
     expect( onSubmitMock.mock.calls ).toHaveLength( 0 );
 } );

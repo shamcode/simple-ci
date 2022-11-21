@@ -4,7 +4,7 @@ import hrefto from 'sham-ui-router/lib/href-to';
 import renderer from 'sham-ui-test-helpers';
 
 it( 'renders correctly', () => {
-    const meta = renderer( Chain, {
+    const meta = renderer( Chain, {}, {
         directives: {
             ...directives,
             hrefto

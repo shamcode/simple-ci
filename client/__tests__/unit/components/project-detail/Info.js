@@ -18,7 +18,7 @@ it( 'renders correctly', () => {
         generate: jest.fn().mockReturnValue( '/' )
     } );
 
-    const meta = renderer( Info, {
+    const meta = renderer( Info, {}, {
         DI,
         directives: {
             ...directives,

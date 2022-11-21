@@ -17,7 +17,7 @@ it( 'renders correctly', () => {
         generate: jest.fn().mockReturnValue( '/' )
     } );
 
-    const meta = renderer( Page, {
+    const meta = renderer( Page, {}, {
         DI,
         directives: {
             ...directives,
@@ -56,7 +56,7 @@ it( 'create fail', async() => {
             hrefto
         }
     } );
-    const { component: { container } } = meta;
+    const { ctx: { container } } = meta;
     await flushPromises();
 
     const formData = {

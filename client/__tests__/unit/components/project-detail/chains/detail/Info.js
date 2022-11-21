@@ -3,7 +3,7 @@ import * as directives from 'sham-ui-directives';
 import renderer from 'sham-ui-test-helpers';
 
 it( 'renders correctly', () => {
-    const meta = renderer( Info, {
+    const meta = renderer( Info, {}, {
         directives,
         chain: {
             name: 'ls',
