@@ -6,7 +6,7 @@ import * as directives from 'sham-ui-directives';
 const flushPromises = () => new Promise( resolve => setImmediate( resolve ) );
 
 it( 'renders correctly', () => {
-    const meta = renderer( Page, {
+    const meta = renderer( Page, {}, {
         directives
     } );
     expect( meta.toJSON() ).toMatchSnapshot();
@@ -26,7 +26,7 @@ it( 'registry fail', async() => {
         registry: registryMock.mockReturnValueOnce( Promise.reject() )
     } );
 
-    const meta = renderer( Page, {
+    const meta = renderer( Page, {}, {
         DI,
         directives
     } );
@@ -34,7 +34,7 @@ it( 'registry fail', async() => {
         username: 'admin',
         password: 'passw0rd'
     };
-    const { component: { container } } = meta;
+    const { ctx: { container } } = meta;
     container.querySelector( '[name="username"]' ).value = formData.username;
     container.querySelector( '[name="password"]' ).value = formData.password;
     container.querySelector( '[type="submit"]' ).click();

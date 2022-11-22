@@ -11,7 +11,7 @@ it( 'renders correctly', () => {
 
 it( 'submit form', () => {
     const onSubmitMock = jest.fn();
-    const { component } = renderer( ProjectForm, {
+    const { ctx } = renderer( ProjectForm, {
         saveButtonText: 'Create',
         onSubmit: onSubmitMock
     }, {
@@ -22,9 +22,9 @@ it( 'submit form', () => {
         name: 'Test name',
         cwd: 'test cwd'
     };
-    component.container.querySelector( '[name="name"]' ).value = formData.name;
-    component.container.querySelector( '[name="cwd"]' ).value = formData.cwd;
-    component.container.querySelector( '[type="submit"]' ).click();
+    ctx.container.querySelector( '[name="name"]' ).value = formData.name;
+    ctx.container.querySelector( '[name="cwd"]' ).value = formData.cwd;
+    ctx.container.querySelector( '[type="submit"]' ).click();
 
     expect( onSubmitMock.mock.calls ).toHaveLength( 1 );
     expect( onSubmitMock.mock.calls[ 0 ] ).toHaveLength( 1 );
@@ -36,34 +36,34 @@ it( 'submit form', () => {
 
 it( 'form validation (name)', () => {
     const onSubmitMock = jest.fn();
-    const { component } = renderer( ProjectForm, {
+    const { ctx } = renderer( ProjectForm, {
         saveButtonText: 'Create',
         onSubmit: onSubmitMock
     }, {
         directives
     } );
 
-    component.container.querySelector( '[type="submit"]' ).click();
+    ctx.container.querySelector( '[type="submit"]' ).click();
     expect( onSubmitMock.mock.calls ).toHaveLength( 0 );
 
-    component.container.querySelector( '[name="cwd"]' ).value = 'test';
-    component.container.querySelector( '[type="submit"]' ).click();
+    ctx.container.querySelector( '[name="cwd"]' ).value = 'test';
+    ctx.container.querySelector( '[type="submit"]' ).click();
     expect( onSubmitMock.mock.calls ).toHaveLength( 0 );
 } );
 
 it( 'form validation (cwd)', () => {
     const onSubmitMock = jest.fn();
-    const { component } = renderer( ProjectForm, {
+    const { ctx } = renderer( ProjectForm, {
         saveButtonText: 'Create',
         onSubmit: onSubmitMock
     }, {
         directives
     } );
 
-    component.container.querySelector( '[type="submit"]' ).click();
+    ctx.container.querySelector( '[type="submit"]' ).click();
     expect( onSubmitMock.mock.calls ).toHaveLength( 0 );
 
-    component.container.querySelector( '[name="name"]' ).value = 'test';
-    component.container.querySelector( '[type="submit"]' ).click();
+    ctx.container.querySelector( '[name="name"]' ).value = 'test';
+    ctx.container.querySelector( '[type="submit"]' ).click();
     expect( onSubmitMock.mock.calls ).toHaveLength( 0 );
 } );

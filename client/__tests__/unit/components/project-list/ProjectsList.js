@@ -11,7 +11,7 @@ it( 'renders correctly', () => {
         generate: generateMock
     } );
 
-    const meta = renderer( ProjectsList, {
+    const meta = renderer( ProjectsList, {}, {
         DI,
         directives: {
             ...directives,
@@ -32,14 +32,14 @@ it( 'go to create page', () => {
         navigate: navigateMock
     } );
 
-    const meta = renderer( ProjectsList, {
+    const meta = renderer( ProjectsList, {}, {
         DI,
         directives: {
             ...directives,
             hrefto
         }
     } );
-    meta.component.container.querySelector( '.project-card-create' ).click();
+    meta.ctx.container.querySelector( '.project-card-create' ).click();
 
     expect( navigateMock.mock.calls ).toHaveLength( 1 );
     expect( meta.toJSON() ).toMatchSnapshot();
@@ -52,15 +52,16 @@ it( 'renders list', () => {
     } );
 
     const meta = renderer( ProjectsList, {
-        DI,
-        directives: {
-            ...directives,
-            hrefto
-        },
         projects: [
             { id: 1, name: 'Simple CI', cwd: '/tmp/' },
             { id: 1, name: 'ShamUI', cwd: '/home/' }
         ]
+    }, {
+        DI,
+        directives: {
+            ...directives,
+            hrefto
+        }
     } );
     expect( meta.toJSON() ).toMatchSnapshot();
 } );

@@ -14,7 +14,7 @@ it( 'renders correctly', () => {
         generate: jest.fn().mockReturnValue( '/' )
     } );
 
-    const meta = renderer( ProjectsPage, {
+    const meta = renderer( ProjectsPage, {}, {
         DI,
         directives: {
             ...directives,
@@ -35,7 +35,7 @@ it( 'render errors', () => {
         generate: jest.fn().mockReturnValue( '/' )
     } );
 
-    const meta = renderer( ProjectsPage, {
+    const meta = renderer( ProjectsPage, {}, {
         DI,
         directives: {
             ...directives,

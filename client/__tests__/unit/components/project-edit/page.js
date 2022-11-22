@@ -30,14 +30,14 @@ it( 'renders correctly', async() => {
         generate: jest.fn().mockReturnValue( '/' )
     } );
 
-    const meta = renderer( Page, {
+    const meta = renderer( Page, {}, {
         DI,
         directives: {
             ...directives,
             hrefto
         }
     } );
-    const { component: { container } } = meta;
+    const { ctx: { container } } = meta;
     expect( storeMock.mock.calls[ 0 ][ 0 ] ).toBe( 1 );
     expect( meta.toJSON() ).toMatchSnapshot();
 
@@ -68,14 +68,14 @@ it( 'update fail', async() => {
         generate: jest.fn().mockReturnValue( '/' )
     } );
 
-    const meta = renderer( Page, {
+    const meta = renderer( Page, {}, {
         DI,
         directives: {
             ...directives,
             hrefto
         }
     } );
-    const { component: { container } } = meta;
+    const { ctx: { container } } = meta;
     await flushPromises();
 
 
