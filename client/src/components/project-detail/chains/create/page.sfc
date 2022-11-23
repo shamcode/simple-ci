@@ -45,8 +45,8 @@
                 [ dataSaving ]: true,
                 [ errors ]: []
             } );
-            this.DI.resolve( 'store' ).createProjectChain( data ).then(
-                () => this.DI.resolve( 'router' ).navigateToRoute(
+            this.ctx.DI.resolve( 'store' ).createProjectChain( data ).then(
+                () => this.ctx.DI.resolve( 'router' ).navigateToRoute(
                     'project-detail',
                     { id: state[ project ].id }
                 ),

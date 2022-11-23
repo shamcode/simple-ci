@@ -34,7 +34,7 @@
         const commandOutput = $();
 
         /** @type Socket */
-        const socket = this.DI.resolve( 'socket' );
+        const socket = this.ctx.DI.resolve( 'socket' );
 
         const state = options( {
             [ dataSaving ]: false,
@@ -59,7 +59,7 @@
         const runProject = () => {
             const chainId = state[ $.chain ].id;
             socket.watch( chainId, updateCommandOutput );
-            this.DI.resolve( 'store' ).runProjectChain( chainId ).then(
+            this.ctx.DI.resolve( 'store' ).runProjectChain( chainId ).then(
                 () => {
                     state( {
                         [ $.dataLoaded ]: false,

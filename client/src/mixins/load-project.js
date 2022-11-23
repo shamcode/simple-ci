@@ -12,8 +12,8 @@ export default function LoadProject( options, didMount ) {
         [ errors ]: []
     } );
 
-    const store = this.DI.resolve( 'store' );
-    const router = this.DI.resolve( 'router' );
+    const store = this.ctx.DI.resolve( 'store' );
+    const router = this.ctx.DI.resolve( 'router' );
 
     this$._loadPageData = () => store.getProjectById( router.storage.params.id ).then(
         ( data ) => state( {
@@ -28,5 +28,7 @@ export default function LoadProject( options, didMount ) {
         } )
     );
 
-    didMount( () => this$._loadPageData() );
+    didMount( () => {
+        this$._loadPageData();
+    } );
 }

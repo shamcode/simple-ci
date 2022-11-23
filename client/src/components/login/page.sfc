@@ -45,7 +45,7 @@
                 [ dataSaving ]: true,
                 [ errors ]: []
             } );
-            this.DI.resolve( 'session' ).login(
+            this.ctx.DI.resolve( 'session' ).login(
                 formData.get( 'username' ).trim(),
                 formData.get( 'password' )
             ).catch(

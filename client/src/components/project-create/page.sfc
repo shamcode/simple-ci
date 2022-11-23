@@ -35,8 +35,8 @@
                 [ dataSaving ]: true,
                 [ errors ]: []
             } );
-            this.DI.resolve( 'store' ).createProject( data ).then(
-                () => this.DI.resolve( 'router' ).navigateToRoute( 'project-list' ),
+            this.ctx.DI.resolve( 'store' ).createProject( data ).then(
+                () => this.ctx.DI.resolve( 'router' ).navigateToRoute( 'project-list' ),
                 () => state( {
                     [ errors ]: [ 'Create project fail!' ],
                     [ dataSaving ]: false

@@ -13,8 +13,8 @@ export default function LoadChain( options, didMount ) {
         [ errors ]: []
     } );
 
-    const store = this.DI.resolve( 'store' );
-    const router = this.DI.resolve( 'router' );
+    const store = this.ctx.DI.resolve( 'store' );
+    const router = this.ctx.DI.resolve( 'router' );
 
     this$._loadPageData = () => Promise.all( [
         store.getProjectById( router.storage.params.id ),
@@ -33,5 +33,7 @@ export default function LoadChain( options, didMount ) {
         } )
     );
 
-    didMount( () => this$._loadPageData() );
+    didMount( () => {
+        this$._loadPageData();
+    } );
 }

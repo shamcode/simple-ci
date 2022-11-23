@@ -28,7 +28,7 @@
                 [ dataLoaded ]: true,
                 [ errors ]: []
             } );
-            this.DI.resolve( 'store' ).getProjects().then(
+            this.ctx.DI.resolve( 'store' ).getProjects().then(
                 data => state( {
                     [ projects ]: data.projects,
                     [ dataLoaded ]: true,

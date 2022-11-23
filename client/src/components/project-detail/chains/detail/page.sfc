@@ -41,7 +41,7 @@
                 [ dataSaving ]: true,
                 [ errors ]: []
             } );
-            this.DI.resolve( 'store' ).updateProjectChain(
+            this.ctx.DI.resolve( 'store' ).updateProjectChain(
                 state[ $.chain ].id,
                 formData
             ).then(

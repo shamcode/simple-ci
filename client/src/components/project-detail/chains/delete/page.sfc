@@ -35,10 +35,10 @@
         const errors = $();
 
         const state = options( {
-            [ dataSaving ]: false,
+            [ dataSaving ]: false
         } );
 
-        const router = this.DI.resolve( 'router' );
+        const router = this.ctx.DI.resolve( 'router' );
 
         const goToProjectDetailPage = () => router.navigateToRoute(
             'project-detail',
@@ -50,7 +50,7 @@
                 [ dataSaving ]: true,
                 [ errors ]: []
             } );
-            this.DI.resolve( 'store' ).deleteChain( router.storage.params.chainId  ).then(
+            this.ctx.DI.resolve( 'store' ).deleteChain( router.storage.params.chainId  ).then(
                 goToProjectDetailPage,
                 goToProjectDetailPage,
             );

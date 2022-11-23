@@ -46,11 +46,11 @@
                 [ dataSaving ]: true,
                 [ errors ]: []
             } );
-            this.DI.resolve( 'store' ).registry(
+            this.ctx.DI.resolve( 'store' ).registry(
                 formData.get( 'username' ).trim(),
                 formData.get( 'password' )
             ).then(
-                () => this.DI.resolve( 'router' ).navigateToRoute( 'login' ),
+                () => this.ctx.DI.resolve( 'router' ).navigateToRoute( 'login' ),
                 () => state( {
                     [ password ]: '',
                     [ dataSaving ]: false,

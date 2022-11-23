@@ -33,7 +33,7 @@
         const dataSaving = $();
         const errors = $();
 
-        const router = this.DI.resolve( 'router' );
+        const router = this.ctx.DI.resolve( 'router' );
 
         const state = options( {
             [ dataSaving ]: false,
@@ -45,7 +45,7 @@
                 [ dataSaving ]: true,
                 [ errors ]: []
             } );
-            this.DI.resolve( 'store' ).deleteProject( router.storage.params.id ).then(
+            this.ctx.DI.resolve( 'store' ).deleteProject( router.storage.params.id ).then(
                 () => router.navigateToRoute( 'project-list' ),
                 () => router.navigateToRoute( 'project-detail', router.storage.params )
             );
