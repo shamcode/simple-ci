@@ -3,12 +3,8 @@
 exports[`renders correctly 1`] = `
 Object {
   "Options": Object {
-    "ID": "component",
     "chain": null,
     "currentPage": "",
-    "directives": Object {
-      "hrefto": [Function],
-    },
     "project": null,
   },
   "html": "

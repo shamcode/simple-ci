@@ -70,28 +70,9 @@ Object {
 exports[`render errors 1`] = `
 Object {
   "Options": Object {
-    "ID": "component",
     "bodyText": [Function],
-    "cancelDeleteProject": [Function],
     "dataLoaded": true,
     "dataSaving": false,
-    "deleteProject": [Function],
-    "directives": Object {
-      "EventListener": [Function],
-      "UpdateOnEvent": [Function],
-      "disabled": [Function],
-      "hrefto": [Function],
-      "onChangeUpdate": [Function],
-      "onInputUpdate": [Function],
-      "onclick": [Function],
-      "oninput": [Function],
-      "onload": [Function],
-      "onresize": [Function],
-      "onscroll": [Function],
-      "onselect": [Function],
-      "onsubmit": [Function],
-      "ref": [Function],
-    },
     "errors": Array [
       "Load project fail!",
     ],
@@ -125,28 +106,9 @@ Object {
 exports[`renders correctly 1`] = `
 Object {
   "Options": Object {
-    "ID": "component",
     "bodyText": [Function],
-    "cancelDeleteProject": [Function],
     "dataLoaded": false,
     "dataSaving": false,
-    "deleteProject": [Function],
-    "directives": Object {
-      "EventListener": [Function],
-      "UpdateOnEvent": [Function],
-      "disabled": [Function],
-      "hrefto": [Function],
-      "onChangeUpdate": [Function],
-      "onInputUpdate": [Function],
-      "onclick": [Function],
-      "oninput": [Function],
-      "onload": [Function],
-      "onresize": [Function],
-      "onscroll": [Function],
-      "onselect": [Function],
-      "onsubmit": [Function],
-      "ref": [Function],
-    },
     "errors": Array [],
     "project": Object {},
   },

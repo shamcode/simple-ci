@@ -3,17 +3,9 @@
 exports[`renders correctly 1`] = `
 Object {
   "Options": Object {
-    "ID": "component",
-    "cancelDeleteChain": [Function],
     "chain": Object {},
     "dataLoaded": false,
     "dataSaving": false,
-    "deleteChain": [Function],
-    "directives": Object {
-      "disabled": [Function],
-      "hrefto": [Function],
-      "onclick": [Function],
-    },
     "errors": Array [],
     "project": Object {},
   },

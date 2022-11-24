@@ -3,28 +3,10 @@
 exports[`renders correctly 1`] = `
 Object {
   "Options": Object {
-    "ID": "component",
     "dataLoaded": false,
     "dataSaving": false,
-    "directives": Object {
-      "EventListener": [Function],
-      "UpdateOnEvent": [Function],
-      "disabled": [Function],
-      "hrefto": [Function],
-      "onChangeUpdate": [Function],
-      "onInputUpdate": [Function],
-      "onclick": [Function],
-      "oninput": [Function],
-      "onload": [Function],
-      "onresize": [Function],
-      "onscroll": [Function],
-      "onselect": [Function],
-      "onsubmit": [Function],
-      "ref": [Function],
-    },
     "errors": Array [],
     "project": Object {},
-    "updateProject": [Function],
   },
   "html": "
  <ul class=\\"breadcrumb\\">
@@ -47,32 +29,14 @@ Object {
 exports[`renders correctly 2`] = `
 Object {
   "Options": Object {
-    "ID": "component",
     "dataLoaded": true,
     "dataSaving": false,
-    "directives": Object {
-      "EventListener": [Function],
-      "UpdateOnEvent": [Function],
-      "disabled": [Function],
-      "hrefto": [Function],
-      "onChangeUpdate": [Function],
-      "onInputUpdate": [Function],
-      "onclick": [Function],
-      "oninput": [Function],
-      "onload": [Function],
-      "onresize": [Function],
-      "onscroll": [Function],
-      "onselect": [Function],
-      "onsubmit": [Function],
-      "ref": [Function],
-    },
     "errors": Array [],
     "project": Object {
       "cwd": "/tmp/",
       "id": 1,
       "name": "Test",
     },
-    "updateProject": [Function],
   },
   "html": "
  <ul class=\\"breadcrumb\\">
@@ -116,25 +80,8 @@ Object {
 exports[`update fail 1`] = `
 Object {
   "Options": Object {
-    "ID": "component",
     "dataLoaded": true,
     "dataSaving": false,
-    "directives": Object {
-      "EventListener": [Function],
-      "UpdateOnEvent": [Function],
-      "disabled": [Function],
-      "hrefto": [Function],
-      "onChangeUpdate": [Function],
-      "onInputUpdate": [Function],
-      "onclick": [Function],
-      "oninput": [Function],
-      "onload": [Function],
-      "onresize": [Function],
-      "onscroll": [Function],
-      "onselect": [Function],
-      "onsubmit": [Function],
-      "ref": [Function],
-    },
     "errors": Array [
       "Update project fail!",
     ],
@@ -143,7 +90,6 @@ Object {
       "id": 1,
       "name": "Test",
     },
-    "updateProject": [Function],
   },
   "html": "
  <ul class=\\"breadcrumb\\">

@@ -2,25 +2,7 @@
 
 exports[`go to create page 1`] = `
 Object {
-  "Options": Object {
-    "ID": "component",
-    "directives": Object {
-      "EventListener": [Function],
-      "UpdateOnEvent": [Function],
-      "disabled": [Function],
-      "hrefto": [Function],
-      "onChangeUpdate": [Function],
-      "onInputUpdate": [Function],
-      "onclick": [Function],
-      "oninput": [Function],
-      "onload": [Function],
-      "onresize": [Function],
-      "onscroll": [Function],
-      "onselect": [Function],
-      "onsubmit": [Function],
-      "ref": [Function],
-    },
-  },
+  "Options": Object {},
   "html": "
 <div class=\\"project-list\\">
   <!--0-->
@@ -34,25 +16,7 @@ Object {
 
 exports[`renders correctly 1`] = `
 Object {
-  "Options": Object {
-    "ID": "component",
-    "directives": Object {
-      "EventListener": [Function],
-      "UpdateOnEvent": [Function],
-      "disabled": [Function],
-      "hrefto": [Function],
-      "onChangeUpdate": [Function],
-      "onInputUpdate": [Function],
-      "onclick": [Function],
-      "oninput": [Function],
-      "onload": [Function],
-      "onresize": [Function],
-      "onscroll": [Function],
-      "onselect": [Function],
-      "onsubmit": [Function],
-      "ref": [Function],
-    },
-  },
+  "Options": Object {},
   "html": "
 <div class=\\"project-list\\">
   <!--0-->
@@ -67,23 +31,6 @@ Object {
 exports[`renders list 1`] = `
 Object {
   "Options": Object {
-    "ID": "component",
-    "directives": Object {
-      "EventListener": [Function],
-      "UpdateOnEvent": [Function],
-      "disabled": [Function],
-      "hrefto": [Function],
-      "onChangeUpdate": [Function],
-      "onInputUpdate": [Function],
-      "onclick": [Function],
-      "oninput": [Function],
-      "onload": [Function],
-      "onresize": [Function],
-      "onscroll": [Function],
-      "onselect": [Function],
-      "onsubmit": [Function],
-      "ref": [Function],
-    },
     "projects": Array [
       Object {
         "cwd": "/tmp/",

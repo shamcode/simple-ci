@@ -23,8 +23,10 @@ export default function( DI ) {
             directives: {
                 ...directives,
                 hrefto
-            },
+            }
+        } ),
+        {
             [ $.version ]: VERSION
-        } )
+        }
     );
 }

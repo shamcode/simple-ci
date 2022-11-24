@@ -3,20 +3,11 @@
 exports[`renders correctly 1`] = `
 Object {
   "Options": Object {
-    "ID": "component",
     "chain": Object {},
     "dataLoaded": false,
     "dataSaving": false,
-    "directives": Object {
-      "disabled": [Function],
-      "hrefto": [Function],
-      "onclick": [Function],
-      "onsubmit": [Function],
-      "ref": [Function],
-    },
     "errors": Array [],
     "project": Object {},
-    "updateProjectChain": [Function],
   },
   "html": "
  <ul class=\\"breadcrumb\\">

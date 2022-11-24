@@ -56,7 +56,7 @@
             );
         };
 
-        this$.cancelDeleteChain = goToProjectDetailPage
+        this$.cancelDeleteChain = goToProjectDetailPage;
     }
 
     export default Component( Template, LoadChainMixin, ChainDeletePage );
