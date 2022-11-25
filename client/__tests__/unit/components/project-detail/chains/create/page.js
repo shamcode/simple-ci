@@ -49,7 +49,7 @@ it( 'create fail', async() => {
         generate: jest.fn().mockReturnValue( '/' )
     } );
 
-    const meta = renderer( Page, {
+    const meta = renderer( Page, {}, {
         DI,
         directives: {
             ...directives,

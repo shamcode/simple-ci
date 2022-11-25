@@ -3,7 +3,7 @@ import * as directives from 'sham-ui-directives';
 import renderer from 'sham-ui-test-helpers';
 
 it( 'renders correctly', () => {
-    const meta = renderer( ProjectForm, {
+    const meta = renderer( ProjectForm, {}, {
         directives
     } );
     expect( meta.toJSON() ).toMatchSnapshot();

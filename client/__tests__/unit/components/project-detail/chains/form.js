@@ -3,7 +3,7 @@ import ChainForm from '../../../../../src/components/project-detail/chains/Chain
 import * as directives from 'sham-ui-directives';
 
 it( 'renders correctly', () => {
-    const meta = renderer( ChainForm, {
+    const meta = renderer( ChainForm, {}, {
         directives
     } );
     expect( meta.toJSON() ).toMatchSnapshot();

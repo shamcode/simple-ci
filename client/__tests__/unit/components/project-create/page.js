@@ -31,7 +31,7 @@ it( 'create', () => {
     const DI = createDI();
     DI.bind( 'router', {
         generate: jest.fn().mockReturnValue( '/' ),
-        navigate: jest.fn()
+        navigateToRoute: jest.fn()
     } );
     const createProjectMock = jest.fn();
     DI.bind( 'store', {
@@ -68,7 +68,7 @@ it( 'create fail', async() => {
     const DI = createDI();
     DI.bind( 'router', {
         generate: jest.fn().mockReturnValue( '/' ),
-        navigate: jest.fn()
+        navigateToRoute: jest.fn()
     } );
     const createProjectMock = jest.fn();
     DI.bind( 'store', {

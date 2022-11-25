@@ -72,7 +72,7 @@ it( 'delete fail', async() => {
     DI.bind( 'router', {
         storage: { params: { id: 1 } },
         generate: jest.fn().mockReturnValue( '/' ),
-        navigate: navigateMock
+        navigateToRoute: navigateMock
     } );
 
     const meta = renderer( Page, {}, {
@@ -91,7 +91,7 @@ it( 'delete fail', async() => {
 
     expect( deleteProject.mock.calls ).toHaveLength( 1 );
     expect( navigateMock.mock.calls ).toHaveLength( 1 );
-    expect( navigateMock.mock.calls[ 0 ][ 0 ] ).toBe( '/' );
+    expect( navigateMock.mock.calls[ 0 ][ 0 ] ).toBe( 'project-detail' );
     expect( meta.toJSON() ).toMatchSnapshot();
 } );
 
@@ -112,7 +112,7 @@ it( 'cancel', async() => {
     DI.bind( 'router', {
         storage: { params: { id: 1 } },
         generate: jest.fn().mockReturnValue( '/' ),
-        navigate: navigateMock
+        navigateToRoute: navigateMock
     } );
 
     const meta = renderer( Page, {}, {
@@ -127,7 +127,7 @@ it( 'cancel', async() => {
 
     container.querySelector( '.cancel' ).click();
     expect( navigateMock.mock.calls ).toHaveLength( 1 );
-    expect( navigateMock.mock.calls[ 0 ][ 0 ] ).toBe( '/' );
+    expect( navigateMock.mock.calls[ 0 ][ 0 ] ).toBe( 'project-detail' );
 
     await flushPromises();
 } );
