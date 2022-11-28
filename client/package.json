@@ -2,7 +2,7 @@
   "name": "client",
   "description": "Client fo simple-ci",
   "author": "Eugeny Burnashov <shamcode@gmail.com>",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "scripts": {
     "start": "MACRO_REF_REPLACE=enabled rollup -w -c",
     "test:clear-cache": "jest --clearCache",
