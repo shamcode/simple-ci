@@ -25,6 +25,6 @@ exports[`success registry 1`] = `
   </div>
 </main>
 <footer> Sham 2018
-  (v 0.0.8) </footer>
+  (v 0.0.10) </footer>
 <!--1-->"
 `;
