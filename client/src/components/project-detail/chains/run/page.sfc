@@ -5,13 +5,13 @@
     {% import CommandOutput from './CommandOutput.sht' %}
 
     <PageContent dataLoaded={{dataLoaded}}>
-        {% block 'breadcrumbs' %}
+        {% breadcrumbs %}
             <BreadCrumb
                 project={{project}}
                 chain={{chain}}
                 currentPage="Run chain"/>
-        {% endblock %}
-        {% block 'content' %}
+        {% end breadcrumbs %}
+        {% content %}
             <ErrorsPanel errors={{errors}}/>
             <button
                 class="run-project-chain"
@@ -21,7 +21,7 @@
                 <span>Run</span>
             </button>
             <CommandOutput output={{commandOutput}}/>
-        {% endblock %}
+        {% end content %}
     </PageContent>
 </template>
 

@@ -47,7 +47,7 @@ type ChainForRun struct {
 
 func (db *Db) Connect() {
 	var err error
-	connectString := fmt.Sprintf("host=%s port=%d dbname=%s user=%s password=%s",
+	connectString := fmt.Sprintf("host=%s port=%d dbname=%s user=%s password=%s sslmode=disable",
 		db.config.Host,
 		db.config.Port,
 		db.config.Name,

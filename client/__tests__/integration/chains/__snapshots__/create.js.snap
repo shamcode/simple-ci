@@ -21,7 +21,7 @@ exports[`create project chain 1`] = `
   <!--0-->
 </main>
 <footer> Sham 2018
-  (v 0.0.10) </footer>
+  (v 0.0.11) </footer>
 <!--1-->"
 `;
 
@@ -74,7 +74,7 @@ exports[`create project chain 2`] = `
   <!--0-->
 </main>
 <footer> Sham 2018
-  (v 0.0.10) </footer>
+  (v 0.0.11) </footer>
 <!--1-->"
 `;
 
@@ -128,6 +128,6 @@ exports[`create project chain 3`] = `
   <!--0-->
 </main>
 <footer> Sham 2018
-  (v 0.0.10) </footer>
+  (v 0.0.11) </footer>
 <!--1-->"
 `;

@@ -4,10 +4,10 @@
     {% import ErrorsPanel from '../ErrorsPanel.sht' %}
 
     <PageContent dataLoaded={{dataLoaded}}>
-        {% block 'content' %}
+        {% content %}
             <ErrorsPanel errors={{errors}}/>
             <ProjectsList projects={{projects}}/>
-        {% endblock %}
+        {% end content %}
     </PageContent>
 </template>
 

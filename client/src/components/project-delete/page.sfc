@@ -5,13 +5,13 @@
     {% import BreadCrumb from '../BreadCrumb.sfc' %}
 
     <PageContent dataLoaded={{dataLoaded}}>
-        {% block 'breadcrumbs' %}
+        {% breadcrumbs %}
             <BreadCrumb
                 project={{project}}
                 currentPage="Delete"
             />
-        {% endblock %}
-        {% block 'content' %}
+        {% end breadcrumbs %}
+        {% content %}
             <ErrorsPanel errors={{errors}}/>
             {% if errors.length === 0 %}
                 <ConfirmModal
@@ -22,7 +22,7 @@
                     onCancel={{this$.cancelDeleteProject}}
                 />
             {% endif %}
-        {% endblock %}
+        {% end content %}
     </PageContent>
 </template>
 

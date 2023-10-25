@@ -5,18 +5,18 @@
     {% import BreadCrumb from '../BreadCrumb.sfc' %}
 
     <PageContent dataLoaded={{true}}>
-        {% block 'breadcrumbs' %}
+        {% breadcrumbs %}
             <BreadCrumb currentPage="Create project"/>
-        {% endblock %}
+        {% end breadcrumbs %}
 
-        {% block 'content' %}
+        {% content %}
             <ErrorsPanel errors={{errors}}/>
             <ProjectForm
                 saveButtonText="Create"
                 dataSaving={{dataSaving}}
                 onSubmit={{this$.createProject}}
             />
-        {% endblock %}
+        {% end content %}
     </PageContent>
 </template>
 

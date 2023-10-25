@@ -5,13 +5,13 @@
     {% import BreadCrumb from '../../../BreadCrumb.sfc' %}
 
     <PageContent dataLoaded={{dataLoaded}}>
-        {% block 'breadcrumbs' %}
+        {% breadcrumbs %}
             <BreadCrumb
                 project={{project}}
                 currentPage={{chain.name}}
             />
-        {% endblock %}
-        {% block 'content' %}
+        {% end breadcrumbs %}
+        {% content %}
             <ErrorsPanel errors={{errors}}/>
             {% if errors.length === 0 %}
                 <Info
@@ -20,7 +20,7 @@
                     updateProjectChain={{this$.updateProjectChain}}
                 />
             {% endif %}
-        {% endblock %}
+        {% end content %}
     </PageContent>
 </template>
 

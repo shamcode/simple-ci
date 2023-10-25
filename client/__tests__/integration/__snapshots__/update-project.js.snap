@@ -21,7 +21,7 @@ exports[`update project 1`] = `
   <!--0-->
 </main>
 <footer> Sham 2018
-  (v 0.0.10) </footer>
+  (v 0.0.11) </footer>
 <!--1-->"
 `;
 
@@ -67,7 +67,7 @@ exports[`update project 2`] = `
   <!--0-->
 </main>
 <footer> Sham 2018
-  (v 0.0.10) </footer>
+  (v 0.0.11) </footer>
 <!--1-->"
 `;
 
@@ -121,6 +121,6 @@ exports[`update project 3`] = `
   <!--0-->
 </main>
 <footer> Sham 2018
-  (v 0.0.10) </footer>
+  (v 0.0.11) </footer>
 <!--1-->"
 `;
